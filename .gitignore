@@ -1,39 +1,58 @@
+# app
 # We can leave out everything under "app" - We don't use this crap anyways
 app/*
 
-# buildroot - leave this one in.
 
-# device - here all the BoardConfig.mk files are stored. Small, keep it in
+# buildroot 
+# leave this one in.
 
-# docs - git doesn't like big pdfs. Leave it out, unfortunately
+
+# device
+# here all the BoardConfig.mk files are stored. Small, keep it in
+
+
+# docs 
+# git doesn't like big pdfs. Leave it out, unfortunately
 docs/*
 
-# external - this one is tricky. On the one hand, I do a lot of work here. On the other hand, some of the directories have
+
+# external
+# this one is tricky. On the one hand, I do a lot of work here. On the other hand, some of the directories have
 # hughe files ( would need git lfs for that, but git lfs sucks). So do not track the couple ones that have "too big" files,
 # but leave the rest in
 external/*
+# These directories have some stupid big files (Neural network-s) and we don't need them anyways
+external/rknn-toolkit/*
+external/rknpu/*
+external/tensorflow/*
+
 
 # kernel - track all of it for easy use
 
+
 # prebuilts - they are too big to be tracked
+# NOTE: Needed for compilation ! (but content here NEVER changes)
 prebuilts/*
+
 
 # rkbin - not really needed to do changes here, but has .gitignore and is small enough
 
-# gets generated during bould process
+
+# rockdev
+# gets generated during build process
 rockdev/*
 
-# tools - too big to be tracked
+# tools 
+# too big to be tracked
 tools/*
 
-# u-boot - I don't need to make any changes here, but it is small enough to be tracked in git
+# u-boot 
+# I don't need to make any changes here, but it is small enough to be tracked in git
 
-#do not track the generated images:
+# IMAGE
+# do not track the generated images:
 IMAGE/*
 
-#also do not track this hughe file :)
-kernel.git/*
-packed-refsu-boot.git/*
 
 # do not track the log (it increases with every build run)
 br.log
@@ -47,15 +66,8 @@ rockdev/*
 #I use CLion as ide, but do not add that stuff in github
 .idea/*
 
-# These directories have some stupid big files (Neural network-s) and we don't need them anyways
-external/rknn-toolkit/*
-external/rknpu/*
-external/tensorflow/*
 
 
-
-# Step 1 - do not track any folders
-external/*
 
 
 
