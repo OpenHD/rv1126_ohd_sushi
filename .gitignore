@@ -56,7 +56,6 @@ external/tensorflow/*
 
 # Step 1 - do not track any folders
 external/*
-rkbin/*
 
 
 
