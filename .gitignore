@@ -5,13 +5,26 @@ app/*
 
 # device - here all the BoardConfig.mk files are stored. Small, keep it in
 
+# docs - git doesn't like big pdfs. Leave it out, unfortunately
 
-#Consti:
-#do not track the rknn crap files
-external/rknn-toolkit/packages/*.whl
+# external - this one is tricky. On the one hand, I do a lot of work here. On the other hand, some of the directories have
+# hughe files ( would need git lfs for that, but git lfs sucks). So do not track the couple ones that have "too big" files,
+# but leave the rest in
+external/*
 
-#do not track this crap neither:
-external/rockx/python/*.whl
+# kernel - track all of it for easy use
+
+# prebuilts - they are too big to be tracked
+prebuilts/*
+
+# rkbin - also too big to be tracked
+rkbin/*
+
+# tools - too big to be tracked
+tools/*
+
+# u-boot - I don't need to make any changes here
+u-boot/*
 
 #do not track the generated images:
 IMAGE/*
@@ -42,10 +55,7 @@ external/tensorflow/*
 # Step 1 - do not track any folders
 docs/*
 external/*
-prebuilts/*
 rkbin/*
-tools/*
-u-boot/*
 
 
 
