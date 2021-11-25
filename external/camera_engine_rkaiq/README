@@ -1,0 +1,13 @@
+After downloading source project, you should update git submodules firstly by using below script.
+[about scripts]
+update_submod_source: checkout source branch, it has exclusive access to the ISP Dept.
+update_submod_lib: checkout library branch, it has access to the people except ISP Dept.
+
+For example:
+~$./update_submod_lib
+
+[about compile]
+cd build/linux dir, start compiling:
+~$./make-Makefiles.bash
+
+libs are installed to build/linux/all_lib.

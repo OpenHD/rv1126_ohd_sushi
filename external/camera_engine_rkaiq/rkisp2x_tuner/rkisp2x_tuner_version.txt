@@ -1,0 +1,80 @@
+Current Version: v1.7.2
+
+==================== RKISP2X TUNER VERSION HISTORY ====================
+v0.1.0 - 2020.07.15
+  - first version
+  - new function
+        - calibration tooll: BLC, LSC, CCM, AWB, BNR, YNR, Simulator
+        - capture tool : raw capture(AUTO/MANUAL/MULTI-FRAME)
+ 
+v0.2.0 - 2020.09.11
+  - update AIQ to v1.2.0
+  - new function
+        - tuner(online): AEC, BNR, MFNR, UVNR, YNR, SHARP
+
+v0.2.1 - 2020.09.19
+  - update AIQ to v1.2.1
+  - fix some bugs
+
+v0.3.0 - 2020.10.19
+  - update AIQ to v1.3.0
+  - new function
+        - tuner(online): Edge Filter, Dehaze, Gamma, DPCC, AHDR
+        - calibration tool: FEC/LDCH
+        - tuning assistant: first version
+  - fix some bugs
+        
+v1.3.0 - 2020.11.02
+  - update AIQ to v1.0x23.0
+  - gamma support zoom in/out, mouse drag
+  - ccm support normal/hdr
+  - adapt to dpcc/dehaze/hdr AIQ changes
+        
+v1.3.1 - 2020.12.01
+  - update AIQ to v1.0x23.1
+  - fix some bugs
+
+v1.3.2 - 2020.12.07
+  - connection save function optimization
+  - add tuning_assistant ae exptime precision
+  - add enhance_value precision
+  - fix blc iso 10000 to 6400
+  - fix the bug that mfnr uapi initialize error
+  - tmo parameter rename
+  - fix the bug that enhance_value not update
+  - fix the bug that tmo get function using wrong structure
+  - other optimizations
+
+v1.3.3 - 2020.12.16
+  - add ccm module
+  - add cproc module
+  - add awb module to tuning assistant
+
+v1.4.0 - 2020.12.28
+  - fix some bug
+  - change version matching rule
+
+v1.5.0 -2021.01.07
+  - add motion detect parameter to MFNR
+  - adapt to AIQ v1.0x45.1
+
+v1.5.2 -2021.01.16
+  - fixes some bugs
+  - add sharp coeff and strength
+  - add edge filter coeff and strength
+
+v1.5.3 -2021.01.19
+  - add motion detect reserved8/9 to MFNR
+
+v1.6.0 -2021.02.08
+  - add XML2Bin function
+  - NR/SHARP module support dynamic number of scene
+
+v1.7.0 -2021.06.09
+  - AWB supports adaptive UV white point condition parameters
+  - AWB supports up to 14 lights calibration
+
+v1.7.2 -2021.08.20
+  - update IQ Parser to adapt to CCM and AWB API size changes
+  - fix a bug that ct_grid_num and cri_grid_num  in lutAll[1] lutAll[2] are zero
+==================== RKISP2X TUNER VERSION HISTORY ====================

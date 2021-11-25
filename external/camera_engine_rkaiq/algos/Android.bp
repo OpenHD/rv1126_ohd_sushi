@@ -1,0 +1,333 @@
+cc_defaults {
+    name: "algo_defaults",
+	cppflags: [
+        "-ffast-math",
+		"-funroll-loops",
+		"-Os",
+		"-g",
+		"-Wno-error",
+        "-Wno-unused-value",                                                                                                                  
+        "-Wno-unused-variable",
+        "-Wno-unused-private-field",
+        "-Wno-unused-but-set-variable",
+        "-Wno-unused-function",
+        "-Wno-implicit-fallthrough",
+        "-Wno-address-of-packed-member",
+        "-Wno-ignored-qualifiers",
+        "-Wno-unused-label",
+        "-fno-strict-aliasing",
+        "-Wno-reorder",
+        "-Wno-overloaded-virtual",
+        "-Wno-unused-parameter",
+        "-Wno-extern-c-compat",
+		"-Wno-missing-braces",
+		"-Wno-missing-field-initializers"
+	],
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos",
+		"hardware/rockchip/rk_aiq/include",
+		"hardware/rockchip/rk_aiq/include/xcore/base",
+		"hardware/rockchip/rk_aiq/include/xcore",
+		"hardware/rockchip/rk_aiq/include/iq_parser",
+		"hardware/rockchip/rk_aiq/include/common",
+		"hardware/rockchip/rk_aiq/common",
+		"hardware/rockchip/rk_aiq/xcore/base",
+		"hardware/rockchip/rk_aiq/xcore",
+	],
+}
+
+subdirs = [
+	"algos/ae",
+	"algos/awb",
+	"algos/af",
+	"algos/asd",
+]
+
+cc_library_static {
+	name: "librkaiq_a3dlut",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/a3dlut",
+	],
+	srcs: [
+        "a3dlut/rk_aiq_algo_a3dlut_itf.cpp",
+        "a3dlut/rk_aiq_a3dlut_algo.cpp",
+        "a3dlut/rk_aiq_uapi_a3dlut_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_ablc",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/ablc",
+	],
+	srcs: [
+        "ablc/rk_aiq_algo_ablc_itf.cpp",
+        "ablc/rk_aiq_ablc_algo.cpp",
+        "ablc/rk_aiq_uapi_ablc_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_accm",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/accm",
+	],
+	srcs: [
+		"accm/rk_aiq_algo_accm_itf.cpp",
+		"accm/rk_aiq_accm_algo.cpp",
+		"accm/rk_aiq_uapi_accm_int.cpp",   
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_adebayer",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/adebayer",
+	],
+	srcs: [
+        "adebayer/rk_aiq_algo_adebayer_itf.cpp",
+        "adebayer/rk_aiq_algo_adebayer.cpp",
+        "adebayer/rk_aiq_uapi_adebayer_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_adpcc",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/adpcc",
+	],
+	srcs: [
+        "adpcc/rk_aiq_algo_adpcc_itf.cpp",
+        "adpcc/rk_aiq_adpcc_algo.cpp",
+        "adpcc/rk_aiq_uapi_adpcc_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_afec",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/afec",
+	],
+	srcs: [
+        "afec/rk_aiq_algo_afec_itf.cpp",
+        "afec/rk_aiq_uapi_afec_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_agamma",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/agamma",
+	],
+	srcs: [
+        "agamma/rk_aiq_algo_agamma_itf.cpp",
+        "agamma/rk_aiq_agamma_algo.cpp",
+		"agamma/rk_aiq_uapi_agamma_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_agic",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/agic",
+	],
+	srcs: [
+        "agic/rk_aiq_algo_agic_itf.cpp",
+        "agic/rk_aiq_algo_agic.cpp",
+		"agic/rk_aiq_uapi_agic_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_aie",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/aie",
+	],
+	srcs: [
+        "aie/rk_aiq_algo_aie_itf.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_aldch",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/aldch",
+	],
+	srcs: [
+        "aldch/rk_aiq_algo_aldch_itf.cpp",
+		"aldch/rk_aiq_uapi_aldch_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_alsc",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/alsc",
+	],
+	srcs: [
+        "alsc/rk_aiq_algo_alsc_itf.cpp",
+		"alsc/rk_aiq_alsc_algo.cpp",
+		"alsc/rk_aiq_uapi_alsc_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_aorb",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/aorb",
+	],
+	srcs: [
+        "aorb/rk_aiq_algo_aorb_itf.cpp",
+		"aorb/orb_algos.cpp",
+		"aorb/orb_algos_opencv.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_ar2y",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	srcs: [
+        "ar2y/rk_aiq_algo_ar2y_itf.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_awdr",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	srcs: [
+        "awdr/rk_aiq_algo_awdr_itf.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_ahdr",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/ahdr",
+	],
+	srcs: [
+		"ahdr/rk_aiq_algo_ahdr_itf.cpp",
+		"ahdr/rk_aiq_ahdr_algo.cpp",
+		"ahdr/rk_aiq_ahdr_algo_merge.cpp",
+		"ahdr/rk_aiq_ahdr_algo_tmo.cpp",
+		"ahdr/rk_aiq_uapi_ahdr_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_anr",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/anr",
+	],
+	srcs: [
+		"anr/rk_aiq_algo_anr_itf.cpp",
+		"anr/rk_aiq_anr_algo.cpp",
+		"anr/rk_aiq_anr_algo_bayernr.cpp",
+		"anr/rk_aiq_anr_algo_mfnr.cpp",
+		"anr/rk_aiq_anr_algo_uvnr.cpp",
+		"anr/rk_aiq_anr_algo_ynr.cpp",
+		"anr/rk_aiq_uapi_anr_int.cpp",
+		"anr/rk_aiq_anr_algo_gain.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_asharp",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/asharp",
+	],
+	srcs: [
+		"asharp/rk_aiq_algo_asharp_itf.cpp",
+		"asharp/rk_aiq_asharp_algo.cpp",
+		"asharp/rk_aiq_asharp_algo_edgefilter.cpp",
+		"asharp/rk_aiq_asharp_algo_sharp.cpp",
+		"asharp/rk_aiq_uapi_asharp_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_acp",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/acp",
+	],
+	srcs: [
+		"acp/rk_aiq_algo_acp_itf.cpp",
+		"acp/rk_aiq_uapi_acp_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_adhaz",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	include_dirs: [
+		"hardware/rockchip/rk_aiq/include/algos/adehaze",
+	],
+	srcs: [
+		"adehaze/rk_aiq_algo_adhaz_itf.cpp",
+		"adehaze/rk_aiq_adehaze_algo.cpp",                                                                                     
+		"adehaze/rk_aiq_uapi_adehaze_int.cpp",
+	],
+}
+
+cc_library_static {
+	name: "librkaiq_acgc",
+	vendor: true,
+	defaults: ["algo_defaults"],	
+	
+	srcs: [
+		"acgc/rk_aiq_algo_acgc_itf.cpp",
+	],
+}

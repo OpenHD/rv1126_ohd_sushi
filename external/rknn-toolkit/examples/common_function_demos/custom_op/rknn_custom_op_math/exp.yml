@@ -1,0 +1,9 @@
+name: Exp
+framework: tensorflow
+target_platform: rk1808
+inputs:
+  input:
+    type: VX_TYPE_TENSOR
+outputs:
+  output:
+    type: VX_TYPE_TENSOR

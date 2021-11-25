@@ -1,0 +1,17 @@
+get AIQ version:
+strings /usr/lib/librkaiq.so |grep "AIQ v"
+
+rkmedia path:
+/usr/lib/librkmedia.so
+
+tool_server execute path:
+/tmp/rkaiq_tool_server
+
+adb shell command:
+killall rkaiq_tool_server
+
+adb shell command:
+chmod 777 /tmp/rkaiq_tool_server
+
+run rkaiq_tool_server:
+nohup /tmp/rkaiq_tool_server -m 0 -i /etc/iqfiles/ -w 1920 -h 1080 & sleep 1

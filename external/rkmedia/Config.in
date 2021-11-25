@@ -1,0 +1,88 @@
+menuconfig RV_TARGET_RKMEDIA
+    bool "[rv] media library"
+    default y
+
+if RV_TARGET_RKMEDIA
+
+config RV_TARGET_RKMEDIA_MPP
+    bool "rk mpp wrapper"
+    select RV_TARGET_MPP
+    help
+      wrapped function of rk mpp
+
+if RV_TARGET_RKMEDIA_MPP
+
+config RV_TARGET_RKMEDIA_MPP_ENCODER
+    bool "rk mpp encoder"
+    default y
+    help
+      wrapped function of rk mpp encoder
+
+config RV_TARGET_RKMEDIA_MPP_DECODER
+    bool "rk mpp decoder"
+    default y
+    help
+      wrapped function of rk mpp decoder
+
+endif # RV_TARGET_RKMEDIA_MPP
+
+config RV_TARGET_RKMEDIA_OGG
+    bool "ogg"
+    select RV_TARGET_LIBVORBIS
+    help
+      wrapped function of ogg vorbis
+
+if RV_TARGET_RKMEDIA_OGG
+
+config RV_TARGET_RKMEDIA_OGGVORBIS_DEMUXER
+    bool "ogg vorbis demuxer_decode"
+    default y
+    help
+      wrapped function of libvorbisfile
+
+config RV_TARGET_RKMEDIA_OGGVORBIS_MUXER
+    bool "ogg vorbis encode_muxer"
+    help
+      wrapped function of libvorbisenc
+
+endif # RV_TARGET_RKMEDIA_OGG
+
+if RV_TARGET_ALSA_LIB
+
+config RV_TARGET_RKMEDIA_ALSA_PLAYBACK
+    bool "alsa playback"
+    help
+      wrapped function of alsa playback
+
+config RV_TARGET_RKMEDIA_ALSA_CAPTURE
+    bool "alsa capture"
+    help
+      wrapped function of alsa capture
+
+endif # RV_TARGET_ALSA_LIB
+
+config RV_TARGET_RKMEDIA_LIVE555
+    bool "live555"
+    select RV_TARGET_LIVE555
+    help
+      live555 is an rtsp server and client
+
+if RV_TARGET_RKMEDIA_LIVE555
+
+config RV_TARGET_RKMEDIA_RTSP_SERVER
+    bool "rtsp server"
+    help
+      live555 rtsp server
+
+if RV_TARGET_RKMEDIA_RTSP_SERVER
+
+config RV_TARGET_RKMEDIA_RTSP_SERVER_H264
+    bool "rtsp server h264 session"
+    help
+      live555 rtsp server h264 session
+
+endif # RV_TARGET_RKMEDIA_RTSP_SERVER
+
+endif # RV_TARGET_RKMEDIA_LIVE555
+
+endif # RV_TARGET_RKMEDIA
