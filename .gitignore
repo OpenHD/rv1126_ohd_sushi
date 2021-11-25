@@ -15,16 +15,11 @@ packed-refsu-boot.git/*
 # do not track the log (it increases with every build run)
 br.log
 
-#also, these img files are created during the build process:
-#rockdev/oem.img
-#rockdev/update.img
-# I think we can ignore everything under rockdev, this is also created with each build, right ?
+# everything here is generated with each build,too
 rockdev/*
 
-
-#and this whole directory:
+# everything here is generated with each build
 .rootfs/*
-
 
 #I use CLion as ide, but do not add that stuff in github
 .idea/*
@@ -34,15 +29,13 @@ external/rknn-toolkit/*
 external/rknpu/*
 external/tensorflow/*
 
-# temporary
-zconsti_file/codec_data/mpi_encode/raw.nv12
 
 
-# for now leave everything under /app out
+# We can leave out everything under "app" - We don't use this crap anyways
 app/*
+
 
 # Step 1 - do not track any folders
-app/*
 device/*
 docs/*
 external/*
