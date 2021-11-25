@@ -1,4 +1,4 @@
-SDK for first port of OHD to rv1126 8rockchip)
+SDK for first port of OHD to rv1126 (Rockchip)
 
 Based on rockchip sdk v2.2.0 Released 25.08.2021 
 
