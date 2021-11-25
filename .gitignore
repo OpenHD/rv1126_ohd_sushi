@@ -1,13 +1,16 @@
+# Terminology - TRACKED means the repo is fully tracked by git
+
 # app
 # We can leave out everything under "app" - We don't use this crap anyways
 app/*
 
 
 # buildroot 
-# leave this one in.
+# TRACKED
 
 
 # device
+# TRACKED
 # here all the BoardConfig.mk files are stored. Small, keep it in
 
 
@@ -27,15 +30,19 @@ external/rknpu/*
 external/tensorflow/*
 
 
-# kernel - track all of it for easy use
+# kernel
+# TRACKED
 
 
-# prebuilts - they are too big to be tracked
+# prebuilts
+# Too big to be tracked
 # NOTE: Needed for compilation ! (but content here NEVER changes)
 prebuilts/*
 
 
-# rkbin - not really needed to do changes here, but has .gitignore and is small enough
+# rkbin 
+# TRACKED
+# not really needed to do changes here, but has .gitignore and is small enough
 
 
 # rockdev
@@ -47,6 +54,7 @@ rockdev/*
 tools/*
 
 # u-boot 
+# TRACKED
 # I don't need to make any changes here, but it is small enough to be tracked in git
 
 # IMAGE
@@ -56,9 +64,6 @@ IMAGE/*
 
 # do not track the log (it increases with every build run)
 br.log
-
-# everything here is generated with each build,too
-rockdev/*
 
 # everything here is generated with each build
 .rootfs/*
