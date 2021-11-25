@@ -27,8 +27,7 @@ rockdev/*
 # tools - too big to be tracked
 tools/*
 
-# u-boot - I don't need to make any changes here
-u-boot/*
+# u-boot - I don't need to make any changes here, but it is small enough to be tracked in git
 
 #do not track the generated images:
 IMAGE/*
