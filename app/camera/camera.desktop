@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=camera
+Name[zh_CN]=相机
+Exec=/usr/bin/cameraView
+Icon=/usr/share/icon/icon_camera.png
+Type=Application

@@ -1,0 +1,379 @@
+[
+    {
+        "op": "replace",
+        "path": "/SmartCover/2.items/0/iFaceEnabled",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SmartCover/2.items/0/iFaceRecognitionEnabled",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SmartCover/3.default/1/setting",
+        "value": "INT DEFAULT 1"
+    },
+    {
+        "op": "replace",
+        "path": "/SmartCover/3.default/2/setting",
+        "value": "INT DEFAULT 1"
+    },
+    {
+        "op": "replace",
+        "path": "/StorageConfig/2.items/0/sMountPath",
+        "value": "/userdata"
+    },
+    {
+        "op": "replace",
+        "path": "/StorageDiskPath/2.items/2/sPath",
+        "value": "/userdata"
+    },
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/0/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/1/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/auth",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/auth",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/item/0/auth",
+        "value": 1
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/item/0/item"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/item/0/name",
+        "value": "FacePara"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/item/1/name",
+        "value": "ROI"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/item/2"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/item/0/name",
+        "value": "Config"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/2/item/3"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/2/item/2"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/2/item/1"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/2/name",
+        "value": "face-para"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/auth",
+        "value": 4
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/auth",
+        "value": 4
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/0/auth",
+        "value": 4
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/0/name",
+        "value": "MemberList"
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/0/item",
+        "value": [
+            {
+                "auth": 1,
+                "name": "modify"
+            }
+        ]
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/1/name",
+        "value": "AddOne"
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/2",
+        "value": {
+            "auth": 1,
+            "name": "BatchInput"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/3",
+        "value": {
+            "auth": 4,
+            "item": [
+                {
+                    "auth": 0,
+                    "name": "modify"
+                }
+            ],
+            "name": "SnapShot"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/item/4",
+        "value": {
+            "auth": 4,
+            "item": [
+                {
+                    "auth": 0,
+                    "name": "modify"
+                }
+            ],
+            "name": "Control"
+        }
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/item/0/name",
+        "value": "Manage"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/3/name",
+        "value": "face-manage"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/auth",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/auth",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/0/auth",
+        "value": 1
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/0/item/0/name",
+        "value": "basic"
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/0/item/1",
+        "value": {
+            "auth": 1,
+            "name": "time"
+        }
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/0/name",
+        "value": "Settings"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/1/name",
+        "value": "Maintain"
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/1/item",
+        "value": [
+            {
+                "auth": 1,
+                "name": "upgrade"
+            }
+        ]
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/2/auth",
+        "value": 0
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/2/name",
+        "value": "User"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/4"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/item/3"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/item/0/name",
+        "value": "System"
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/4/item/1",
+        "value": {
+            "auth": 1,
+            "item": [
+                {
+                    "auth": 1,
+                    "item": [
+                        {
+                            "auth": 1,
+                            "name": "TCPIP"
+                        },
+                        {
+                            "auth": 1,
+                            "name": "Port"
+                        }
+                    ],
+                    "name": "Basic"
+                },
+                {
+                    "auth": 1,
+                    "item": [
+                        {
+                            "auth": 1,
+                            "name": "Wi-Fi"
+                        }
+                    ],
+                    "name": "Advanced"
+                }
+            ],
+            "name": "Network"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/SystemPara/2.items/0/para/item/4/item/2",
+        "value": {
+            "auth": 1,
+            "item": [
+                {
+                    "auth": 1,
+                    "name": "GateConfig"
+                },
+                {
+                    "auth": 1,
+                    "name": "ScreenConfig"
+                }
+            ],
+            "name": "Peripherals"
+        }
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/4/name",
+        "value": "config"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/5/auth",
+        "value": 4
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/5/item"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/0/para/item/5/name",
+        "value": "about"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/0/para/item/6"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/4/para/dynamic/sStreamType/mainStream/sResolution/options/0",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/4/para/dynamic/sStreamType/subStream/sResolution/options/1",
+        "value": "1280*720"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/0/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/1/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/2/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/3/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/4/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/5/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/video/2.items/0/iMaxRate",
+        "value": 2048
+    },
+    {
+        "op": "replace",
+        "path": "/video/2.items/0/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/video/3.default/3/setting",
+        "value": "TEXT DEFAULT '1920*1080'"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/4/para/static/sStreamType/options/2"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/11"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/10"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/9"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/8"
+    },
+    {
+        "op": "remove",
+        "path": "/video/2.items/2"
+    }
+]

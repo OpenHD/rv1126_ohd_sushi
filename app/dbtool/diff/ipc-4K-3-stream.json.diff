@@ -1,0 +1,57 @@
+[
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/0/sResolution",
+        "value": "3840*2160"
+    },
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/1/sResolution",
+        "value": "3840*2160"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/4/para/dynamic/sStreamType/mainStream/sResolution/options/0",
+        "value": "3840*2160"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/0/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/1/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/2/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/3/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/4/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/5/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/video/2.items/0/sResolution",
+        "value": "3840*2160"
+    },
+    {
+        "op": "replace",
+        "path": "/video/3.default/3/setting",
+        "value": "TEXT DEFAULT '3840*2160'"
+    }
+]

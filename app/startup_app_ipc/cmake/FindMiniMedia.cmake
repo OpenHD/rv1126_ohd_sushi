@@ -1,0 +1,24 @@
+find_package(PkgConfig QUIET)
+pkg_check_modules(PKG_MINIMEDIA QUIET "libminimedia")
+set(MINIMEDIA_DEFINITIONS ${PKG_MINIMEDIA_CFLAGS_OTHER})
+
+message(${PKG_MINIMEDIA_INCLUDEDIR})
+find_path(MINIMEDIA_INCLUDE_DIR
+    NAMES rkmedia_api.h
+    HINTS ${PKG_MINIMEDIA_INCLUDEDIR} ${PKG_MINIMEDIA_INCLUDE_DIRS}
+    PATH_SUFFIXES easymedia)
+
+find_library(MINIMEDIA_LIBRARY
+    NAMES minimedia
+    HINTS ${PKG_MINIMEDIA_LIBDIR} ${PKG_MINIMEDIA_LIBRARY_DIRS})
+
+include(FindPackageHandleStandardArgs)
+find_package_handle_standard_args(MINIMEDIA DEFAULT_MSG
+    MINIMEDIA_LIBRARY MINIMEDIA_INCLUDE_DIR)
+mark_as_advanced(MINIMEDIA_FOUND MINIMEDIA_INCLUDE_DIR MINIMEDIA_LIBRARY)
+
+if(NOT TARGET MiniMedia::MiniMedia)
+    add_library(MiniMedia::MiniMedia UNKNOWN IMPORTED)
+    set_property(TARGET MiniMedia::MiniMedia PROPERTY IMPORTED_LOCATION ${MINIMEDIA_LIBRARY})
+    set_property(TARGET MiniMedia::MiniMedia PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${MINIMEDIA_INCLUDE_DIR}")
+endif()

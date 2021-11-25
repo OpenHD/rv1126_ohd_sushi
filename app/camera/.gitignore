@@ -1,0 +1,4 @@
+.qmake.stash
+cameraView
+Makefile
+pkg-config_wrapper.sh

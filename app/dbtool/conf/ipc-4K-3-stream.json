@@ -1,0 +1,5088 @@
+[
+    {
+        "1.tableName": "SystemPara",
+        "2.items": [
+            {
+                "id": 0,
+                "name": "webPage",
+                "para": {
+                    "auth": 4,
+                    "item": [
+                        {
+                            "auth": 4,
+                            "name": "preview"
+                        },
+                        {
+                            "auth": 4,
+                            "item": [
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 0,
+                                            "name": "delete"
+                                        }
+                                    ],
+                                    "name": "videoRecord"
+                                },
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 0,
+                                            "name": "delete"
+                                        }
+                                    ],
+                                    "name": "pictureRecord"
+                                }
+                            ],
+                            "name": "download"
+                        },
+                        {
+                            "auth": 4,
+                            "item": [
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "ListManagement"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "AddOne"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "BatchInput"
+                                        }
+                                    ],
+                                    "name": "MemberList"
+                                },
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 0,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "SnapShot"
+                                        }
+                                    ],
+                                    "name": "SnapShot"
+                                },
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 0,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "Control"
+                                        }
+                                    ],
+                                    "name": "Control"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "ParaConfig"
+                                        }
+                                    ],
+                                    "name": "Config"
+                                }
+                            ],
+                            "name": "face"
+                        },
+                        {
+                            "auth": -1,
+                            "item": [
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "FacePara"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "ROI"
+                                        }
+                                    ],
+                                    "name": "Config"
+                                }
+                            ],
+                            "name": "face-para"
+                        },
+                        {
+                            "auth": -1,
+                            "item": [
+                                {
+                                    "auth": 4,
+                                    "item": [
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "MemberList"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "AddOne"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "BatchInput"
+                                        },
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 0,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "SnapShot"
+                                        },
+                                        {
+                                            "auth": 4,
+                                            "item": [
+                                                {
+                                                    "auth": 0,
+                                                    "name": "modify"
+                                                }
+                                            ],
+                                            "name": "Control"
+                                        }
+                                    ],
+                                    "name": "Manage"
+                                }
+                            ],
+                            "name": "face-manage"
+                        },
+                        {
+                            "auth": 1,
+                            "item": [
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "basic"
+                                                },
+                                                {
+                                                    "auth": 1,
+                                                    "name": "time"
+                                                }
+                                            ],
+                                            "name": "Settings"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "upgrade"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "log"
+                                                }
+                                            ],
+                                            "name": "Maintain"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "item": [
+                                                {
+                                                    "auth": -1,
+                                                    "name": "authentication"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "ipAddrFilter"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "securityService"
+                                                }
+                                            ],
+                                            "name": "Security"
+                                        },
+                                        {
+                                            "auth": 0,
+                                            "name": "User"
+                                        }
+                                    ],
+                                    "name": "System"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "TCPIP"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "DDNS"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "PPPoE"
+                                                },
+                                                {
+                                                    "auth": 1,
+                                                    "name": "Port"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "uPnP"
+                                                }
+                                            ],
+                                            "name": "Basic"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "Wi-Fi"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "SMTP"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "FTP"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "eMail"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "Cloud"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "Protocol"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "QoS"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "Https"
+                                                }
+                                            ],
+                                            "name": "Advanced"
+                                        }
+                                    ],
+                                    "name": "Network"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "Encoder"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "AdvancedEncoder"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "ROI"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "RegionCrop"
+                                        }
+                                    ],
+                                    "name": "Video"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "AudioParam"
+                                        }
+                                    ],
+                                    "name": "Audio"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "DisplaySettings"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "OSDSettings"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "PrivacyCover"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "PictureMask"
+                                        }
+                                    ],
+                                    "name": "Image"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "MotionDetect"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "name": "IntrusionDetection"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "AlarmInput"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "AlarmOutput"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "Abnormal"
+                                        }
+                                    ],
+                                    "name": "Event"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "VideoPlan"
+                                                },
+                                                {
+                                                    "auth": 1,
+                                                    "name": "ScreenshotPlan"
+                                                },
+                                                {
+                                                    "auth": 1,
+                                                    "name": "ScreenshotPara"
+                                                }
+                                            ],
+                                            "name": "PlanSettings"
+                                        },
+                                        {
+                                            "auth": 1,
+                                            "item": [
+                                                {
+                                                    "auth": 1,
+                                                    "name": "HardDiskManagement"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "NAS"
+                                                },
+                                                {
+                                                    "auth": -1,
+                                                    "name": "CloudStorage"
+                                                }
+                                            ],
+                                            "name": "StorageManage"
+                                        }
+                                    ],
+                                    "name": "Storage"
+                                },
+                                {
+                                    "auth": 1,
+                                    "item": [
+                                        {
+                                            "auth": 1,
+                                            "name": "MarkCover"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "MaskArea"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "RuleSettings"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "AdvancedCFG"
+                                        }
+                                    ],
+                                    "name": "Intel"
+                                },
+                                {
+                                    "auth": -1,
+                                    "item": [
+                                        {
+                                            "auth": -1,
+                                            "name": "GateConfig"
+                                        },
+                                        {
+                                            "auth": -1,
+                                            "name": "ScreenConfig"
+                                        }
+                                    ],
+                                    "name": "Peripherals"
+                                }
+                            ],
+                            "name": "config"
+                        },
+                        {
+                            "auth": 4,
+                            "name": "about"
+                        }
+                    ],
+                    "name": "header"
+                }
+            },
+            {
+                "id": 1,
+                "name": "StoragePlanSnap",
+                "para": {
+                    "dynamic": {
+                        "id": {
+                            "0": {
+                                "iShotInterval": {
+                                    "for": "timing",
+                                    "range": {
+                                        "max": 604800000,
+                                        "min": 1000
+                                    },
+                                    "type": "range"
+                                },
+                                "timeUnit": {
+                                    "for": "timing",
+                                    "options": [
+                                        "seconds",
+                                        "minutes",
+                                        "hours",
+                                        "days"
+                                    ],
+                                    "type": "options"
+                                }
+                            },
+                            "1": {
+                                "iShotInterval": {
+                                    "for": "timing",
+                                    "range": {
+                                        "max": 65535,
+                                        "min": 1000
+                                    },
+                                    "type": "range"
+                                },
+                                "timeUnit": {
+                                    "for": "timing",
+                                    "options": [
+                                        "seconds",
+                                        "minutes"
+                                    ],
+                                    "type": "options"
+                                }
+                            }
+                        }
+                    },
+                    "relation": {
+                        "iImageQuality": {
+                            "1": "low",
+                            "10": "high",
+                            "5": "middle"
+                        }
+                    },
+                    "static": {
+                        "iImageQuality": {
+                            "options": [
+                                1,
+                                5,
+                                10
+                            ],
+                            "type": "options"
+                        },
+                        "iShotNumber": {
+                            "range": {
+                                "max": 120,
+                                "min": 1
+                            },
+                            "type": "range"
+                        },
+                        "sImageType": {
+                            "options": [
+                                "JPEG"
+                            ],
+                            "type": "options"
+                        },
+                        "sResolution": {
+                            "refer": [
+                                4,
+                                "para",
+                                "dynamic",
+                                "sStreamType",
+                                "mainStream",
+                                "sResolution"
+                            ],
+                            "type": "refer"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "name": "screenshotSchedule",
+                "para": [
+                    {
+                        "color": "#87CEEB",
+                        "name": "timing"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "videoPlanSchedule",
+                "para": [
+                    {
+                        "color": "#87CEEB",
+                        "name": "timing"
+                    },
+                    {
+                        "color": "#74B558",
+                        "name": "motion-detect"
+                    },
+                    {
+                        "color": "#D71820",
+                        "name": "alarm"
+                    },
+                    {
+                        "color": "#E58705",
+                        "name": "motionOrAlarm"
+                    },
+                    {
+                        "color": "#B9E2FE",
+                        "name": "motionAndAlarm"
+                    },
+                    {
+                        "color": "#AA6FFF",
+                        "name": "event"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "video",
+                "para": {
+                    "disabled": [
+                        {
+                            "name": "sStreamType",
+                            "options": {
+                                "subStream": {
+                                    "sOutputDataType": "H.264",
+                                    "sSmart": "close"
+                                },
+                                "thirdStream": {
+                                    "sSmart": "close"
+                                }
+                            },
+                            "type": "disabled/limit"
+                        },
+                        {
+                            "name": "sSmart",
+                            "options": {
+                                "open": {
+                                    "iGOP": null,
+                                    "iStreamSmooth": null,
+                                    "sH264Profile": null,
+                                    "sRCMode": null,
+                                    "sRCQuality": null,
+                                    "sSVC": null
+                                }
+                            },
+                            "type": "disabled"
+                        },
+                        {
+                            "name": "sRCMode",
+                            "options": {
+                                "CBR": {
+                                    "sRCQuality": null
+                                }
+                            },
+                            "type": "disabled"
+                        },
+                        {
+                            "name": "sOutputDataType",
+                            "options": {
+                                "H.265": {
+                                    "sH264Profile": null
+                                }
+                            },
+                            "type": "disabled"
+                        },
+                        {
+                            "name": "unspport",
+                            "options": {
+                                "iStreamSmooth": null,
+                                "sSVC": null,
+                                "sVideoType": null
+                            },
+                            "type": "disabled"
+                        }
+                    ],
+                    "dynamic": {
+                        "sSmart": {
+                            "open": {
+                                "iMinRate": {
+                                    "dynamicRange": {
+                                        "max": "iMaxRate",
+                                        "maxRate": 1,
+                                        "min": "iMaxRate",
+                                        "minRate": 0.125
+                                    },
+                                    "type": "dynamicRange"
+                                }
+                            }
+                        },
+                        "sStreamType": {
+                            "mainStream": {
+                                "iMaxRate": {
+                                    "options": [
+                                        256,
+                                        512,
+                                        1024,
+                                        2048,
+                                        3072,
+                                        4096,
+                                        6144,
+                                        8192,
+                                        12288,
+                                        16384
+                                    ],
+                                    "type": "options"
+                                },
+                                "sResolution": {
+                                    "options": [
+                                        "3840*2160"
+                                    ],
+                                    "type": "options"
+                                }
+                            },
+                            "subStream": {
+                                "iMaxRate": {
+                                    "options": [
+                                        256,
+                                        512,
+                                        1024,
+                                        2048,
+                                        3072,
+                                        4096,
+                                        6144,
+                                        8192
+                                    ],
+                                    "type": "options"
+                                },
+                                "sResolution": {
+                                    "options": [
+                                        "640*480",
+                                        "704*576"
+                                    ],
+                                    "type": "options"
+                                }
+                            },
+                            "thirdStream": {
+                                "iMaxRate": {
+                                    "options": [
+                                        256,
+                                        512,
+                                        1024,
+                                        2048,
+                                        3072,
+                                        4096,
+                                        6144,
+                                        8192,
+                                        12288,
+                                        16384
+                                    ],
+                                    "type": "options"
+                                },
+                                "sResolution": {
+                                    "options": [
+                                        "640*480",
+                                        "704*576",
+                                        "1280*720",
+                                        "1920*1080"
+                                    ],
+                                    "type": "options"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "encoder": [
+                            "sStreamType",
+                            "sVideoType",
+                            "sResolution",
+                            "sRCMode",
+                            "sRCQuality",
+                            "sFrameRate",
+                            "sOutputDataType",
+                            "sSmart",
+                            "sH264Profile",
+                            "sSVC",
+                            "iMaxRate",
+                            "iMinRate",
+                            "iGOP",
+                            "iStreamSmooth"
+                        ]
+                    },
+                    "static": {
+                        "iGOP": {
+                            "range": {
+                                "max": 400,
+                                "min": 0
+                            },
+                            "type": "range"
+                        },
+                        "iStreamSmooth": {
+                            "range": {
+                                "max": 100,
+                                "min": 1,
+                                "step": 1
+                            },
+                            "type": "range"
+                        },
+                        "sFrameRate": {
+                            "dynamicRange": {
+                                "max": "sFrameRateIn",
+                                "maxRate": 1
+                            },
+                            "options": [
+                                "1/16",
+                                "1/8",
+                                "1/4",
+                                "1/2",
+                                "1",
+                                "2",
+                                "4",
+                                "6",
+                                "8",
+                                "10",
+                                "12",
+                                "14",
+                                "16",
+                                "18",
+                                "20",
+                                "25",
+                                "30"
+                            ],
+                            "type": "options/dynamicRange"
+                        },
+                        "sH264Profile": {
+                            "options": [
+                                "high",
+                                "main",
+                                "baseline"
+                            ],
+                            "type": "options"
+                        },
+                        "sOutputDataType": {
+                            "options": [
+                                "H.264",
+                                "H.265"
+                            ],
+                            "type": "options"
+                        },
+                        "sRCMode": {
+                            "options": [
+                                "CBR",
+                                "VBR"
+                            ],
+                            "type": "options"
+                        },
+                        "sRCQuality": {
+                            "options": [
+                                "lowest",
+                                "lower",
+                                "low",
+                                "medium",
+                                "high",
+                                "higher",
+                                "highest"
+                            ],
+                            "type": "options"
+                        },
+                        "sSVC": {
+                            "options": [
+                                "open",
+                                "close"
+                            ],
+                            "type": "options"
+                        },
+                        "sSmart": {
+                            "options": [
+                                "open",
+                                "close"
+                            ],
+                            "type": "options"
+                        },
+                        "sStreamType": {
+                            "options": [
+                                "mainStream",
+                                "subStream",
+                                "thirdStream"
+                            ],
+                            "type": "options"
+                        },
+                        "sVideoType": {
+                            "options": [
+                                "videoStream",
+                                "compositeStream"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 5,
+                "name": "video_advanced_enc",
+                "para": {
+                    "static": {
+                        "sStreamType": {
+                            "refer": [
+                                4,
+                                "para",
+                                "static",
+                                "sStreamType"
+                            ],
+                            "type": "refer"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 6,
+                "name": "roi",
+                "para": {
+                    "static": {
+                        "sStreamType": {
+                            "refer": [
+                                4,
+                                "para",
+                                "static",
+                                "sStreamType"
+                            ],
+                            "type": "refer"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 7,
+                "name": "image_adjustment",
+                "para": {
+                    "layout": {
+                        "image_adjustment": [
+                            "iBrightness",
+                            "iContrast",
+                            "iSaturation",
+                            "iSharpness",
+                            "iHue"
+                        ]
+                    },
+                    "static": {
+                        "iBrightness": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 1
+                            },
+                            "type": "range"
+                        },
+                        "iContrast": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 1
+                            },
+                            "type": "range"
+                        },
+                        "iHue": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 1
+                            },
+                            "type": "range"
+                        },
+                        "iSaturation": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 1
+                            },
+                            "type": "range"
+                        },
+                        "iSharpness": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 1
+                            },
+                            "type": "range"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 8,
+                "name": "image_exposure",
+                "para": {
+                    "dynamic": {
+                        "sExposureMode": {
+                            "auto": {
+                                "iAutoIrisLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            },
+                            "manual": {
+                                "sExposureTime": {
+                                    "options": [
+                                        "1",
+                                        "1/3",
+                                        "1/6",
+                                        "1/12",
+                                        "1/25",
+                                        "1/50",
+                                        "1/100",
+                                        "1/150",
+                                        "1/200",
+                                        "1/250",
+                                        "1/500",
+                                        "1/750",
+                                        "1/1000",
+                                        "1/2000",
+                                        "1/4000",
+                                        "1/10000",
+                                        "1/100000"
+                                    ],
+                                    "type": "options"
+                                },
+                                "sGainMode": {
+                                    "options": [
+                                        "auto",
+                                        "manual"
+                                    ],
+                                    "type": "options"
+                                }
+                            }
+                        },
+                        "sGainMode": {
+                            "manual": {
+                                "iExposureGain": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 1,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "image_exposure": [
+                            "sExposureMode",
+                            "sExposureTime",
+                            "sGainMode",
+                            "iExposureGain"
+                        ]
+                    },
+                    "static": {
+                        "sExposureMode": {
+                            "options": [
+                                "auto",
+                                "manual"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 9,
+                "name": "image_night_to_day",
+                "para": {
+                    "disabled": [
+                        {
+                            "name": "sNightToDay",
+                            "options": {
+                                "day": {
+                                    "iLightBrightness": null,
+                                    "sFillLightMode": null
+                                },
+                                "night": {
+                                    "iDarkBoostLevel": null,
+                                    "iHDRLevel": null,
+                                    "iHLCLevel": null,
+                                    "sHDR": null,
+                                    "sHLC": "close"
+                                }
+                            },
+                            "type": "disabled"
+                        }
+                    ],
+                    "dynamic": {
+                        "sNightToDay": {
+                            "auto": {
+                                "iNightToDayFilterLevel": {
+                                    "options": [
+                                        0,
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "type": "options"
+                                },
+                                "iNightToDayFilterTime": {
+                                    "range": {
+                                        "max": 10,
+                                        "min": 3,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            },
+                            "schedule": {
+                                "sDawnTime": {
+                                    "input": "time",
+                                    "type": "input"
+                                },
+                                "sDuskTime": {
+                                    "input": "time",
+                                    "type": "input"
+                                }
+                            }
+                        },
+                        "sOverexposeSuppress": {
+                            "open": {
+                                "sOverexposeSuppressType": {
+                                    "options": [
+                                        "auto",
+                                        "manual"
+                                    ],
+                                    "type": "options"
+                                }
+                            }
+                        },
+                        "sOverexposeSuppressType": {
+                            "manual": {
+                                "iDistanceLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "image_night_to_day": [
+                            "sNightToDay",
+                            "iNightToDayFilterLevel",
+                            "iNightToDayFilterTime",
+                            "sDawnTime",
+                            "sDuskTime",
+                            "sFillLightMode",
+                            "iLightBrightness"
+                        ]
+                    },
+                    "static": {
+                        "iLightBrightness": {
+                            "range": {
+                                "max": 100,
+                                "min": 0,
+                                "step": 10
+                            },
+                            "type": "range"
+                        },
+                        "sFillLightMode": {
+                            "options": [
+                                "IR"
+                            ],
+                            "type": "options"
+                        },
+                        "sNightToDay": {
+                            "options": [
+                                "auto",
+                                "day",
+                                "night",
+                                "schedule"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 10,
+                "name": "image_blc",
+                "para": {
+                    "disabled": [
+                        {
+                            "name": "sHLC",
+                            "options": {
+                                "open": {
+                                    "sBLCRegion": null
+                                }
+                            },
+                            "type": "disabled"
+                        },
+                        {
+                            "name": "sBLCRegion",
+                            "options": {
+                                "open": {
+                                    "iDarkBoostLevel": null,
+                                    "iHLCLevel": null,
+                                    "sHLC": null
+                                }
+                            },
+                            "type": "disabled"
+                        }
+                    ],
+                    "dynamic": {
+                        "sBLCRegion": {
+                            "open": {
+                                "iBLCStrength": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        },
+                        "sHDR": {
+                            "HDR2": {
+                                "iHDRLevel": {
+                                    "options": [
+                                        1,
+                                        2,
+                                        3,
+                                        4,
+                                        5
+                                    ],
+                                    "type": "options"
+                                }
+                            },
+                            "close": {
+                                "sBLCRegion": {
+                                    "options": [
+                                        "close",
+                                        "open"
+                                    ],
+                                    "type": "options"
+                                },
+                                "sHLC": {
+                                    "options": [
+                                        "close",
+                                        "open"
+                                    ],
+                                    "type": "options"
+                                }
+                            }
+                        },
+                        "sHLC": {
+                            "open": {
+                                "iDarkBoostLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                },
+                                "iHLCLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        },
+                        "sWDR": {
+                            "open": {
+                                "iWDRLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "image_blc": [
+                            "sHDR",
+                            "iHDRLevel",
+                            "sBLCRegion",
+                            "iBLCStrength",
+                            "sHLC",
+                            "iHLCLevel",
+                            "iDarkBoostLevel"
+                        ]
+                    },
+                    "static": {
+                        "sHDR": {
+                            "options": [
+                                "close",
+                                "HDR2"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 11,
+                "name": "image_white_blance",
+                "para": {
+                    "dynamic": {
+                        "sWhiteBlanceStyle": {
+                            "manualWhiteBalance": {
+                                "iWhiteBalanceBlue": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                },
+                                "iWhiteBalanceGreen": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                },
+                                "iWhiteBalanceRed": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "image_white_blance": [
+                            "sWhiteBlanceStyle",
+                            "iWhiteBalanceRed",
+                            "iWhiteBalanceGreen",
+                            "iWhiteBalanceBlue"
+                        ]
+                    },
+                    "static": {
+                        "sWhiteBlanceStyle": {
+                            "options": [
+                                "manualWhiteBalance",
+                                "autoWhiteBalance",
+                                "lockingWhiteBalance",
+                                "fluorescentLamp",
+                                "incandescent",
+                                "warmLight",
+                                "naturalLight"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 12,
+                "name": "image_enhancement",
+                "para": {
+                    "dynamic": {
+                        "sDehaze": {
+                            "open": {
+                                "iDehazeLevel": {
+                                    "range": {
+                                        "max": 10,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        },
+                        "sDistortionCorrection": {
+                            "FEC": {
+                                "iFecLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            },
+                            "LDCH": {
+                                "iLdchLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        },
+                        "sNoiseReduceMode": {
+                            "2dnr": {
+                                "iSpatialDenoiseLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            },
+                            "3dnr": {
+                                "iTemporalDenoiseLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            },
+                            "mixnr": {
+                                "iSpatialDenoiseLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                },
+                                "iTemporalDenoiseLevel": {
+                                    "range": {
+                                        "max": 100,
+                                        "min": 0,
+                                        "step": 1
+                                    },
+                                    "type": "range"
+                                }
+                            }
+                        }
+                    },
+                    "layout": {
+                        "image_enhancement": [
+                            "sNoiseReduceMode",
+                            "iSpatialDenoiseLevel",
+                            "iTemporalDenoiseLevel",
+                            "sDehaze",
+                            "iDehazeLevel",
+                            "sGrayScaleMode",
+                            "sDistortionCorrection",
+                            "iLdchLevel",
+                            "iFecLevel",
+                            "iImageRotation"
+                        ]
+                    },
+                    "static": {
+                        "iImageRotation": {
+                            "options": [
+                                0,
+                                90,
+                                270
+                            ],
+                            "type": "options"
+                        },
+                        "sDIS": {
+                            "options": [
+                                "open",
+                                "close"
+                            ],
+                            "type": "options"
+                        },
+                        "sDehaze": {
+                            "options": [
+                                "open",
+                                "close",
+                                "auto"
+                            ],
+                            "type": "options"
+                        },
+                        "sDistortionCorrection": {
+                            "options": [
+                                "LDCH",
+                                "FEC",
+                                "close"
+                            ],
+                            "type": "options"
+                        },
+                        "sFEC": {
+                            "options": [
+                                "open",
+                                "close"
+                            ],
+                            "type": "options"
+                        },
+                        "sGrayScaleMode": {
+                            "options": [
+                                "[0-255]",
+                                "[16-235]"
+                            ],
+                            "type": "options"
+                        },
+                        "sNoiseReduceMode": {
+                            "options": [
+                                "default",
+                                "2dnr",
+                                "3dnr",
+                                "mixnr"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 13,
+                "name": "image_video_adjustment",
+                "para": {
+                    "layout": {
+                        "image_video_adjustment": [
+                            "sPowerLineFrequencyMode",
+                            "sImageFlip"
+                        ]
+                    },
+                    "static": {
+                        "sImageFlip": {
+                            "options": [
+                                "close",
+                                "flip",
+                                "mirror",
+                                "centrosymmetric"
+                            ],
+                            "type": "options"
+                        },
+                        "sPowerLineFrequencyMode": {
+                            "options": [
+                                "PAL(50HZ)",
+                                "NTSC(60HZ)"
+                            ],
+                            "type": "options"
+                        },
+                        "sSceneMode": {
+                            "options": [
+                                "indoor",
+                                "outdoor"
+                            ],
+                            "type": "options"
+                        }
+                    }
+                }
+            },
+            {
+                "id": 14,
+                "name": "smartCover",
+                "para": {
+                    "capability": {
+                        "SmartCover": {
+                            "sImageQuality": [
+                                "best",
+                                "good",
+                                "general"
+                            ],
+                            "sTargetImageType": [
+                                "head"
+                            ]
+                        }
+                    },
+                    "layout": {
+                        "enabled": [
+                            "iFaceRecognitionEnabled",
+                            "iStreamOverlayEnabled"
+                        ],
+                        "infoEnabled": [
+                            "deviceNum",
+                            "positonInfo"
+                        ],
+                        "snap": [
+                            "sTargetImageType",
+                            "iWidthRatio",
+                            "sImageQuality"
+                        ]
+                    }
+                }
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "name",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "para",
+                "setting": "TEXT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "EventSchedules",
+        "2.items": [
+            {
+                "id": 0,
+                "sSchedulesJson": ""
+            },
+            {
+                "id": 1,
+                "sSchedulesJson": ""
+            },
+            {
+                "id": 2,
+                "sSchedulesJson": ""
+            },
+            {
+                "id": 3,
+                "sSchedulesJson": ""
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sSchedulesJson",
+                "setting": "TEXT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "EventTriggers",
+        "2.items": [
+            {
+                "iNotificationCenterEnabled": 0,
+                "iNotificationEmailEnabled": 0,
+                "iNotificationFTPEnabled": 0,
+                "iNotificationIO1Enabled": 0,
+                "iNotificationRecord1Enabled": 0,
+                "iVideoInputChannelID": 0,
+                "id": 0,
+                "sEventType": "VMD"
+            },
+            {
+                "iNotificationCenterEnabled": 0,
+                "iNotificationEmailEnabled": 0,
+                "iNotificationFTPEnabled": 0,
+                "iNotificationIO1Enabled": 0,
+                "iNotificationRecord1Enabled": 0,
+                "iVideoInputChannelID": 0,
+                "id": 1,
+                "sEventType": "VRI"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sEventType",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iVideoInputChannelID",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iNotificationIO1Enabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iNotificationRecord1Enabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iNotificationEmailEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iNotificationCenterEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iNotificationFTPEnabled",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "EventVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.1"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "FaceConfig",
+        "2.items": [
+            {
+                "iDetectHeight": 1280,
+                "iDetectWidth": 720,
+                "iFaceDetectionThreshold": 55,
+                "iFaceMinPixel": 144,
+                "iFaceRecognitionThreshold": 50,
+                "iLeftCornerX": 0,
+                "iLeftCornerY": 0,
+                "iLiveDetectThreshold": 50,
+                "iNormalizedHeight": 1280,
+                "iNormalizedWidth": 720,
+                "iPromptVolume": 50,
+                "id": 0,
+                "sLiveDetect": "open",
+                "sLiveDetectBeginTime": "00:00",
+                "sLiveDetectEndTime": "23:59"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iPromptVolume",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "sLiveDetect",
+                "setting": "TEXT DEFAULT 'open'"
+            },
+            {
+                "columnName": "sLiveDetectBeginTime",
+                "setting": "TEXT DEFAULT '00:00'"
+            },
+            {
+                "columnName": "sLiveDetectEndTime",
+                "setting": "TEXT DEFAULT '23:59'"
+            },
+            {
+                "columnName": "iLiveDetectThreshold",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iFaceDetectionThreshold",
+                "setting": "INT DEFAULT 55"
+            },
+            {
+                "columnName": "iFaceRecognitionThreshold",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iFaceMinPixel",
+                "setting": "INT DEFAULT 144"
+            },
+            {
+                "columnName": "iLeftCornerX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iLeftCornerY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iDetectWidth",
+                "setting": "INT DEFAULT 720"
+            },
+            {
+                "columnName": "iDetectHeight",
+                "setting": "INT DEFAULT 1280"
+            },
+            {
+                "columnName": "iNormalizedHeight",
+                "setting": "INT DEFAULT 1280"
+            },
+            {
+                "columnName": "iNormalizedWidth",
+                "setting": "INT DEFAULT 720"
+            }
+        ]
+    },
+    {
+        "1.tableName": "FaceControlRecord",
+        "2.items": null,
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sTime",
+                "setting": "TEXT DEFAULT '2020-01-01T00:00:00'"
+            },
+            {
+                "columnName": "iFaceId",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sSnapshotPath",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sStatus",
+                "setting": "TEXT DEFAULT 'open'"
+            },
+            {
+                "columnName": "sSimilarity",
+                "setting": "TEXT DEFAULT '75.00'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "FaceList",
+        "2.items": null,
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sPicturePath",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sRegistrationTime",
+                "setting": "TEXT DEFAULT '2020-01-01T00:00:00'"
+            },
+            {
+                "columnName": "iAge",
+                "setting": "INT DEFAULT 20"
+            },
+            {
+                "columnName": "sListType",
+                "setting": "TEXT DEFAULT 'permanent'"
+            },
+            {
+                "columnName": "sType",
+                "setting": "TEXT DEFAULT 'whiteList'"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT 'User'"
+            },
+            {
+                "columnName": "sGender",
+                "setting": "TEXT DEFAULT 'male'"
+            },
+            {
+                "columnName": "sNation",
+                "setting": "TEXT DEFAULT '汉'"
+            },
+            {
+                "columnName": "sCertificateType",
+                "setting": "TEXT DEFAULT 'identityCard'"
+            },
+            {
+                "columnName": "sCertificateNumber",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sBirthday",
+                "setting": "TEXT DEFAULT '2000-01-01'"
+            },
+            {
+                "columnName": "sTelephoneNumber",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sHometown",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sAddress",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iAccessCardNumber",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iLoadCompleted",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iFaceDBId",
+                "setting": "INT DEFAULT -1"
+            },
+            {
+                "columnName": "sNote",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "FaceSnapshotRecord",
+        "2.items": null,
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sTime",
+                "setting": "TEXT DEFAULT '2020-01-01T00:00:00'"
+            },
+            {
+                "columnName": "sPicturePath",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sStatus",
+                "setting": "TEXT DEFAULT 'Processed'"
+            },
+            {
+                "columnName": "sNote",
+                "setting": "TEXT DEFAULT 'Snapshot'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "MediaVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.1"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "MoveDetection",
+        "2.items": [
+            {
+                "iColumnGranularity": 22,
+                "iEndTriggerTime": 500,
+                "iHighlightEnabled": 0,
+                "iMotionDetectionEnabled": 0,
+                "iRowGranularity": 18,
+                "iSamplingInterval": 2,
+                "iSensitivityLevel": 0,
+                "iStartTriggerTime": 500,
+                "id": 0,
+                "sGridMap": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+                "sRegionType": "grid"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iMotionDetectionEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iHighlightEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iSamplingInterval",
+                "setting": "INT DEFAULT 2"
+            },
+            {
+                "columnName": "iStartTriggerTime",
+                "setting": "INT DEFAULT 500"
+            },
+            {
+                "columnName": "iEndTriggerTime",
+                "setting": "INT DEFAULT 500"
+            },
+            {
+                "columnName": "sRegionType",
+                "setting": "TEXT DEFAULT 'grid'"
+            },
+            {
+                "columnName": "iRowGranularity",
+                "setting": "INT DEFAULT 18"
+            },
+            {
+                "columnName": "iColumnGranularity",
+                "setting": "INT DEFAULT 22"
+            },
+            {
+                "columnName": "iSensitivityLevel",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sGridMap",
+                "setting": "TEXT DEFAULT '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "NetworkIP",
+        "2.items": [
+            {
+                "id": 1,
+                "sDNS1": "",
+                "sDNS2": "",
+                "sInterface": "wlan0",
+                "sNicSpeed": "",
+                "sType": "wifi",
+                "sV4Address": "",
+                "sV4Gateway": "",
+                "sV4Method": "dhcp",
+                "sV4Netmask": "",
+                "sV6Address": "",
+                "sV6Gateway": "",
+                "sV6Method": "",
+                "sV6Netmask": ""
+            },
+            {
+                "id": 2,
+                "sDNS1": "",
+                "sDNS2": "",
+                "sInterface": "eth0",
+                "sNicSpeed": "Auto",
+                "sType": "ethernet",
+                "sV4Address": "",
+                "sV4Gateway": "",
+                "sV4Method": "dhcp",
+                "sV4Netmask": "",
+                "sV6Address": "",
+                "sV6Gateway": "",
+                "sV6Method": "",
+                "sV6Netmask": ""
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sInterface",
+                "setting": "TEXT NOT NULL UNIQUE"
+            },
+            {
+                "columnName": "sType",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sV4Method",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV4Address",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV4Netmask",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV4Gateway",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV6Method",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV6Address",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV6Netmask",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sV6Gateway",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sNicSpeed",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sDNS1",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sDNS2",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "NetworkPower",
+        "2.items": [
+            {
+                "iPower": 0,
+                "id": 1,
+                "sType": "wifi"
+            },
+            {
+                "iPower": 1,
+                "id": 2,
+                "sType": "ethernet"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sType",
+                "setting": "TEXT NOT NULL UNIQUE"
+            },
+            {
+                "columnName": "iPower",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "NetworkService",
+        "2.items": null,
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sService",
+                "setting": "TEXT NOT NULL UNIQUE"
+            },
+            {
+                "columnName": "sPassword",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iFavorite",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iAutoconnect",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "NetworkVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.3"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "Notification",
+        "2.items": null,
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sArrivalTime",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sTopic",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sOperation",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sSource",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sKey",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sData",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sMessage",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sDetails",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "PeripheralsFillLight",
+        "2.items": [
+            {
+                "iNormalBrightness": 50,
+                "iSaveEnergyBrightness": 50,
+                "iSaveEnergyEnable": 0,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iSaveEnergyEnable",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iSaveEnergyBrightness",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iNormalBrightness",
+                "setting": "INT DEFAULT 50"
+            }
+        ]
+    },
+    {
+        "1.tableName": "PeripheralsRelay",
+        "2.items": [
+            {
+                "iDuration": 500,
+                "iEnable": 0,
+                "iIOIndex": 0,
+                "iValidLevel": 1,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iIOIndex",
+                "setting": "INT"
+            },
+            {
+                "columnName": "iEnable",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iValidLevel",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "iDuration",
+                "setting": "INT DEFAULT 500"
+            }
+        ]
+    },
+    {
+        "1.tableName": "PeripheralsVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.0"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "PeripheralsWeigen",
+        "2.items": [
+            {
+                "iDuration": 0,
+                "iEnable": 0,
+                "iWiegandBit": 26,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iEnable",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iWiegandBit",
+                "setting": "INT DEFAULT 26"
+            },
+            {
+                "columnName": "iDuration",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "RegionalInvasion",
+        "2.items": [
+            {
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iProportion": 0,
+                "iSensitivityLevel": 50,
+                "iTimeThreshold": 0,
+                "iWidth": 0,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iTimeThreshold",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iProportion",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iSensitivityLevel",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iPositionX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iWidth",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iHeight",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SmartCover",
+        "2.items": [
+            {
+                "iBodyHeightRatio": 10,
+                "iFaceEnabled": 0,
+                "iFaceHeightRatio": 10,
+                "iFaceRecognitionEnabled": 0,
+                "iImageOverlayEnabled": 0,
+                "iInfoOverlayEnabled": 0,
+                "iStreamOverlayEnabled": 0,
+                "iWidthRatio": 10,
+                "id": 0,
+                "sImageQuality": "good",
+                "sTargetImageType": "head"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iFaceEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iFaceRecognitionEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iStreamOverlayEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iImageOverlayEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iInfoOverlayEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sTargetImageType",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iWidthRatio",
+                "setting": "INT DEFAULT 10"
+            },
+            {
+                "columnName": "iFaceHeightRatio",
+                "setting": "INT DEFAULT 10"
+            },
+            {
+                "columnName": "iBodyHeightRatio",
+                "setting": "INT DEFAULT 10"
+            },
+            {
+                "columnName": "sImageQuality",
+                "setting": "TEXT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SmartCoverOverlay",
+        "2.items": [
+            {
+                "iEnabled": 0,
+                "iOrder": 0,
+                "id": 0,
+                "sInfo": "",
+                "sName": "deviceNum"
+            },
+            {
+                "iEnabled": 0,
+                "iOrder": 1,
+                "id": 1,
+                "sInfo": "",
+                "sName": "snapTime"
+            },
+            {
+                "iEnabled": 0,
+                "iOrder": 2,
+                "id": 2,
+                "sInfo": "",
+                "sName": "positonInfo"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "sInfo",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iOrder",
+                "setting": "INT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StorageAdvancePara",
+        "2.items": [
+            {
+                "iEnabled": 0,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iEnabled",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StorageConfig",
+        "2.items": [
+            {
+                "iFreeSize": 1024,
+                "iFreeSizeNotice": 512,
+                "id": 0,
+                "sMountPath": "/userdata/media"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iFreeSize",
+                "setting": "INT DEFAULT -1"
+            },
+            {
+                "columnName": "iFreeSizeNotice",
+                "setting": "INT"
+            },
+            {
+                "columnName": "sMountPath",
+                "setting": "TEXT NOT NULL UNIQUE"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StorageDiskPath",
+        "2.items": [
+            {
+                "iMount": 0,
+                "id": 1,
+                "sName": "SD Card",
+                "sPath": "/mnt/sdcard"
+            },
+            {
+                "iMount": 0,
+                "id": 2,
+                "sName": "U Disk",
+                "sPath": "/media/usb0"
+            },
+            {
+                "iMount": 0,
+                "id": 3,
+                "sName": "Emmc",
+                "sPath": "/userdata/media"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sPath",
+                "setting": "TEXT NOT NULL UNIQUE"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iMount",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StorageMediaFolder",
+        "2.items": [
+            {
+                "iCamId": 0,
+                "iDuty": 45,
+                "iMaxNum": -1,
+                "iType": 0,
+                "id": 0,
+                "sFormat": "VIDEO_%Y%m%d%H%M%S",
+                "sMediaFolder": "video0",
+                "sThumbFolder": "video0/.thumb"
+            },
+            {
+                "iCamId": 0,
+                "iDuty": 5,
+                "iMaxNum": -1,
+                "iType": 1,
+                "id": 1,
+                "sFormat": "PHOTO_%Y%m%d%H%M%S",
+                "sMediaFolder": "photo0",
+                "sThumbFolder": "photo0/.thumb"
+            },
+            {
+                "iCamId": 1,
+                "iDuty": 45,
+                "iMaxNum": -1,
+                "iType": 0,
+                "id": 2,
+                "sFormat": "VIDEO_%Y%m%d%H%M%S",
+                "sMediaFolder": "video1",
+                "sThumbFolder": "video1/.thumb"
+            },
+            {
+                "iCamId": 1,
+                "iDuty": 5,
+                "iMaxNum": -1,
+                "iType": 1,
+                "id": 3,
+                "sFormat": "PHOTO_%Y%m%d%H%M%S",
+                "sMediaFolder": "photo1",
+                "sThumbFolder": "photo1/.thumb"
+            },
+            {
+                "iCamId": 0,
+                "iDuty": -1,
+                "iMaxNum": -1,
+                "iType": 2,
+                "id": 4,
+                "sFormat": "%Y%m%d%H%M%S",
+                "sMediaFolder": "black_list",
+                "sThumbFolder": ""
+            },
+            {
+                "iCamId": 0,
+                "iDuty": 0,
+                "iMaxNum": -1,
+                "iType": 3,
+                "id": 5,
+                "sFormat": "%Y%m%d%H%M%S",
+                "sMediaFolder": "snapshot",
+                "sThumbFolder": ""
+            },
+            {
+                "iCamId": 0,
+                "iDuty": -1,
+                "iMaxNum": -1,
+                "iType": 4,
+                "id": 6,
+                "sFormat": "%Y%m%d%H%M%S",
+                "sMediaFolder": "white_list",
+                "sThumbFolder": ""
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sMediaFolder",
+                "setting": "TEXT NOT NULL UNIQUE"
+            },
+            {
+                "columnName": "sThumbFolder",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "sFormat",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iCamId",
+                "setting": "INT"
+            },
+            {
+                "columnName": "iType",
+                "setting": "INT"
+            },
+            {
+                "columnName": "iDuty",
+                "setting": "INT"
+            },
+            {
+                "columnName": "iMaxNum",
+                "setting": "INT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StoragePlanSnap",
+        "2.items": [
+            {
+                "iEnabled": 0,
+                "iImageQuality": 10,
+                "iShotInterval": 10000,
+                "iShotNumber": 1,
+                "id": 0,
+                "sImageType": "JPEG",
+                "sResolution": "3840*2160"
+            },
+            {
+                "iEnabled": 0,
+                "iImageQuality": 10,
+                "iShotInterval": 1000,
+                "iShotNumber": 4,
+                "id": 1,
+                "sImageType": "JPEG",
+                "sResolution": "3840*2160"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sImageType",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "sResolution",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iImageQuality",
+                "setting": "INT DEFAULT 10"
+            },
+            {
+                "columnName": "iShotInterval",
+                "setting": "INT DEFAULT 1000"
+            },
+            {
+                "columnName": "iShotNumber",
+                "setting": "INT DEFAULT 1"
+            }
+        ]
+    },
+    {
+        "1.tableName": "StorageVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.3"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SystemDeviceInfo",
+        "2.items": [
+            {
+                "id": 0,
+                "name": "deviceName",
+                "ro": "false",
+                "value": "RK IP Camera"
+            },
+            {
+                "id": 1,
+                "name": "telecontrolID",
+                "ro": "false",
+                "value": "88"
+            },
+            {
+                "id": 2,
+                "name": "model",
+                "ro": "true",
+                "value": "RK-003"
+            },
+            {
+                "id": 3,
+                "name": "serialNumber",
+                "ro": "true",
+                "value": "RK-003-A"
+            },
+            {
+                "id": 4,
+                "name": "firmwareVersion",
+                "ro": "true",
+                "value": "V0.2.6 build 200413"
+            },
+            {
+                "id": 5,
+                "name": "encoderVersion",
+                "ro": "true",
+                "value": "V1.0 build 200413"
+            },
+            {
+                "id": 6,
+                "name": "webVersion",
+                "ro": "true",
+                "value": "V1.12.2 build 200413"
+            },
+            {
+                "id": 7,
+                "name": "pluginVersion",
+                "ro": "true",
+                "value": "V1.0.0.0"
+            },
+            {
+                "id": 8,
+                "name": "channelsNumber",
+                "ro": "true",
+                "value": "1"
+            },
+            {
+                "id": 9,
+                "name": "hardDisksNumber",
+                "ro": "true",
+                "value": "1"
+            },
+            {
+                "id": 10,
+                "name": "alarmInputsNumber",
+                "ro": "true",
+                "value": "0"
+            },
+            {
+                "id": 11,
+                "name": "alarmOutputsNumber",
+                "ro": "true",
+                "value": "0"
+            },
+            {
+                "id": 12,
+                "name": "firmwareVersionInfo",
+                "ro": "true",
+                "value": "CP-3-B"
+            },
+            {
+                "id": 13,
+                "name": "manufacturer",
+                "ro": "true",
+                "value": "Rockchip"
+            },
+            {
+                "id": 14,
+                "name": "hardwareId",
+                "ro": "true",
+                "value": "c3d9b8674f4b94f6"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "name",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "value",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "ro",
+                "setting": "TEXT"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SystemDiscovery",
+        "2.items": [
+            {
+                "iDiscoveryDisabled": 0,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "iDiscoveryDisabled",
+                "setting": "INTEGER DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SystemScopes",
+        "2.items": [
+            {
+                "iScopeDef": 0,
+                "id": 0,
+                "sScopeItem": "onvif://www.onvif.org/Profile/S"
+            },
+            {
+                "iScopeDef": 0,
+                "id": 1,
+                "sScopeItem": "onvif://www.onvif.org/type/video_encoder"
+            },
+            {
+                "iScopeDef": 0,
+                "id": 2,
+                "sScopeItem": "onvif://www.onvif.org/type/audio_encoder"
+            },
+            {
+                "iScopeDef": 1,
+                "id": 5,
+                "sScopeItem": "onvif://www.onvif.org/hardware/c3d9b8674f4b94f6"
+            },
+            {
+                "iScopeDef": 1,
+                "id": 6,
+                "sScopeItem": "onvif://www.onvif.org/location/city/fuzhou"
+            },
+            {
+                "iScopeDef": 1,
+                "id": 7,
+                "sScopeItem": "onvif://www.onvif.org/name/RK_IPC"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sScopeItem",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iScopeDef",
+                "setting": "DEFAULT 1"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SystemUser",
+        "2.items": [
+            {
+                "iAuthLevel": 1,
+                "iFixed": 1,
+                "iUserLevel": 0,
+                "id": 0,
+                "sPassword": "YWRtaW4=",
+                "sUserName": "admin"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sUserName",
+                "setting": "TEXT UNIQUE"
+            },
+            {
+                "columnName": "sPassword",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iFixed",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iUserLevel",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "iAuthLevel",
+                "setting": "INTEGER DEFAULT 1"
+            }
+        ]
+    },
+    {
+        "1.tableName": "SystemVersion",
+        "2.items": [
+            {
+                "id": 0,
+                "sVersion": "1.0.1"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sVersion",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "audio",
+        "2.items": [
+            {
+                "iBitRate": 32000,
+                "iSampleRate": 16000,
+                "iVolume": 50,
+                "id": 0,
+                "sANS": "close",
+                "sEncodeType": "MP2",
+                "sInput": "micIn"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sEncodeType",
+                "setting": "TEXT DEFAULT 'MP2'"
+            },
+            {
+                "columnName": "iSampleRate",
+                "setting": "INT DEFAULT 16000"
+            },
+            {
+                "columnName": "iBitRate",
+                "setting": "INT DEFAULT 32000"
+            },
+            {
+                "columnName": "sInput",
+                "setting": "TEXT DEFAULT 'micIn'"
+            },
+            {
+                "columnName": "iVolume",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "sANS",
+                "setting": "TEXT DEFAULT 'close'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_adjustment",
+        "2.items": [
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 0
+            },
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 1
+            },
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 2
+            },
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 3
+            },
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 4
+            },
+            {
+                "iBrightness": 50,
+                "iContrast": 50,
+                "iFPS": 30,
+                "iHue": 50,
+                "iSaturation": 50,
+                "iSharpness": 50,
+                "id": 5
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iBrightness",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iContrast",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iSaturation",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iSharpness",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iFPS",
+                "setting": "INT DEFAULT 30"
+            },
+            {
+                "columnName": "iHue",
+                "setting": "INT DEFAULT 50"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_blc",
+        "2.items": [
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 0,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            },
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 1,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            },
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 2,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            },
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 3,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            },
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 4,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            },
+            {
+                "iBLCRegionHeight": 92,
+                "iBLCRegionWidth": 120,
+                "iBLCStrength": 1,
+                "iDarkBoostLevel": 0,
+                "iHDRLevel": 1,
+                "iHLCLevel": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iWDRLevel": 0,
+                "id": 5,
+                "sBLCRegion": "close",
+                "sHDR": "close",
+                "sHLC": "close",
+                "sWDR": "close"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sBLCRegion",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iBLCStrength",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "sWDR",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iWDRLevel",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sHDR",
+                "setting": "TEXT DEFAULT 'HDR2'"
+            },
+            {
+                "columnName": "iHDRLevel",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "sHLC",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iHLCLevel",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iDarkBoostLevel",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iBLCRegionWidth",
+                "setting": "INT DEFAULT 120"
+            },
+            {
+                "columnName": "iBLCRegionHeight",
+                "setting": "INT DEFAULT 92"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_enhancement",
+        "2.items": [
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 0,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            },
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 1,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            },
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 2,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            },
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 3,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            },
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 4,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            },
+            {
+                "iDehazeLevel": 0,
+                "iDenoiseLevel": 50,
+                "iFecLevel": 100,
+                "iImageRotation": 0,
+                "iLdchLevel": 0,
+                "iSpatialDenoiseLevel": 50,
+                "iTemporalDenoiseLevel": 50,
+                "id": 5,
+                "sDIS": "close",
+                "sDehaze": "close",
+                "sDistortionCorrection": "close",
+                "sFEC": "close",
+                "sGrayScaleMode": "[0-255]",
+                "sNoiseReduceMode": "default"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sNoiseReduceMode",
+                "setting": "TEXT DEFAULT 'default'"
+            },
+            {
+                "columnName": "iDenoiseLevel",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iSpatialDenoiseLevel",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iTemporalDenoiseLevel",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "sDehaze",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iDehazeLevel",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sDIS",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "sGrayScaleMode",
+                "setting": "TEXT DEFAULT '[0-255]'"
+            },
+            {
+                "columnName": "iImageRotation",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sFEC",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "sDistortionCorrection",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iFecLevel",
+                "setting": "INT DEFAULT 100"
+            },
+            {
+                "columnName": "iLdchLevel",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_exposure",
+        "2.items": [
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 0,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            },
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 1,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            },
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 2,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            },
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 3,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            },
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 4,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            },
+            {
+                "iAutoExposureEnabled": 1,
+                "iAutoGainEnabled": 1,
+                "iAutoIrisLevel": 5,
+                "iExposureGain": 1,
+                "id": 5,
+                "sExposureMode": "auto",
+                "sExposureTime": "1/6",
+                "sGainMode": "auto",
+                "sIrisType": "auto"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sIrisType",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "sExposureMode",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "sGainMode",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "iAutoIrisLevel",
+                "setting": "INT DEFAULT 5"
+            },
+            {
+                "columnName": "iAutoExposureEnabled",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "iAutoGainEnabled",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "sExposureTime",
+                "setting": "TEXT DEFAULT '1/6'"
+            },
+            {
+                "columnName": "iExposureGain",
+                "setting": "INT DEFAULT 1"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_night_to_day",
+        "2.items": [
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 0,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            },
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 1,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            },
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 2,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            },
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 3,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            },
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 4,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            },
+            {
+                "iDistanceLevel": 1,
+                "iLightBrightness": 1,
+                "iNightToDayFilterLevel": 5,
+                "iNightToDayFilterTime": 5,
+                "id": 5,
+                "sBrightnessAdjustmentMode": "auto",
+                "sDawnTime": "07:00:00",
+                "sDuskTime": "18:00:00",
+                "sFillLightMode": "IR",
+                "sIrcutFilterAction": "day",
+                "sNightToDay": "auto",
+                "sOverexposeSuppress": "open",
+                "sOverexposeSuppressType": "auto"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sNightToDay",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "iNightToDayFilterLevel",
+                "setting": "INT DEFAULT 5"
+            },
+            {
+                "columnName": "iNightToDayFilterTime",
+                "setting": "INT DEFAULT 5"
+            },
+            {
+                "columnName": "sDawnTime",
+                "setting": "TEXT DEFAULT '07:00:00'"
+            },
+            {
+                "columnName": "sDuskTime",
+                "setting": "TEXT DEFAULT '18:00:00'"
+            },
+            {
+                "columnName": "sIrcutFilterAction",
+                "setting": "TEXT DEFAULT 'day'"
+            },
+            {
+                "columnName": "sOverexposeSuppress",
+                "setting": "TEXT DEFAULT 'open'"
+            },
+            {
+                "columnName": "sOverexposeSuppressType",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "sFillLightMode",
+                "setting": "TEXT DEFAULT 'IR'"
+            },
+            {
+                "columnName": "sBrightnessAdjustmentMode",
+                "setting": "TEXT DEFAULT 'auto'"
+            },
+            {
+                "columnName": "iLightBrightness",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "iDistanceLevel",
+                "setting": "INT DEFAULT 1"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_scenario",
+        "2.items": [
+            {
+                "id": 0,
+                "sScenario": "normal"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sScenario",
+                "setting": "TEXT DEFAULT 'normal'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_video_adjustment",
+        "2.items": [
+            {
+                "id": 0,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            },
+            {
+                "id": 1,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            },
+            {
+                "id": 2,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            },
+            {
+                "id": 3,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            },
+            {
+                "id": 4,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            },
+            {
+                "id": 5,
+                "sImageFlip": "close",
+                "sPowerLineFrequencyMode": "PAL(50HZ)",
+                "sSceneMode": "indoor"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sImageFlip",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "sSceneMode",
+                "setting": "TEXT DEFAULT 'indoor'"
+            },
+            {
+                "columnName": "sPowerLineFrequencyMode",
+                "setting": "TEXT DEFAULT 'PAL(50HZ)'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "image_white_blance",
+        "2.items": [
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 0,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            },
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 1,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            },
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 2,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            },
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 3,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            },
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 4,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            },
+            {
+                "iWhiteBalanceBlue": 50,
+                "iWhiteBalanceGreen": 50,
+                "iWhiteBalanceRed": 50,
+                "id": 5,
+                "sWhiteBlanceStyle": "autoWhiteBalance"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sWhiteBlanceStyle",
+                "setting": "TEXT DEFAULT 'autoWhiteBalance'"
+            },
+            {
+                "columnName": "iWhiteBalanceRed",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iWhiteBalanceGreen",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "iWhiteBalanceBlue",
+                "setting": "INT DEFAULT 50"
+            }
+        ]
+    },
+    {
+        "1.tableName": "metadata",
+        "2.items": [
+            {
+                "sName": "metaData0",
+                "sToken": "MetaDataToken0"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "sToken",
+                "setting": "TEXT PRIMARY KEY"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "normalized_screen_size",
+        "2.items": [
+            {
+                "iNormalizedScreenHeight": 480,
+                "iNormalizedScreenWidth": 704,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iNormalizedScreenWidth",
+                "setting": "INT DEFAULT 704"
+            },
+            {
+                "columnName": "iNormalizedScreenHeight",
+                "setting": "INT DEFAULT 480"
+            }
+        ]
+    },
+    {
+        "1.tableName": "ntp",
+        "2.items": [
+            {
+                "iAutoDst": 0,
+                "iAutoMode": 1,
+                "iRefreshTime": 60,
+                "id": 0,
+                "sNtpServers": "122.224.9.29 94.130.49.186",
+                "sTimeZone": "ChinaStandardTime-8",
+                "sTimeZoneFile": "posix/Etc/GMT-8",
+                "sTimeZoneFileDst": "posix/Asia/Shanghai"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sNtpServers",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sTimeZone",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sTimeZoneFile",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sTimeZoneFileDst",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "iAutoMode",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iAutoDst",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iRefreshTime",
+                "setting": "INT DEFAULT 120"
+            }
+        ]
+    },
+    {
+        "1.tableName": "osd",
+        "2.items": [
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 1,
+                "iHeight": 0,
+                "iPositionX": 540,
+                "iPositionY": 432,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 0,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "Camera 01",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "channelName"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 1,
+                "iHeight": 0,
+                "iPositionX": 16,
+                "iPositionY": 16,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 1,
+                "sAlignment": "customize",
+                "sDateStyle": "CHR-YYYY-MM-DD",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "24hour",
+                "sType": "dateTime"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 2,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 3,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 4,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 5,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 6,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 7,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 8,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 9,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "character"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 10,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "privacyMask"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 11,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "privacyMask"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 12,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "privacyMask"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 0,
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 13,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "privacyMask"
+            },
+            {
+                "iBoundary": 0,
+                "iDisplayWeekEnabled": 1,
+                "iEnabled": 1,
+                "iHeight": 0,
+                "iPositionX": 16,
+                "iPositionY": 388,
+                "iTransparentColorEnabled": 0,
+                "iWidth": 0,
+                "id": 14,
+                "sAlignment": "customize",
+                "sDateStyle": "",
+                "sDisplayText": "",
+                "sIsPersistentText": "true",
+                "sOSDAttribute": "transparent/not-flashing",
+                "sOSDFontSize": "32*32",
+                "sOSDFrontColor": "fff799",
+                "sOSDFrontColorMode": "customize",
+                "sTimeStyle": "",
+                "sType": "image"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sType",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iWidth",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iHeight",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sIsPersistentText",
+                "setting": "TEXT DEFAULT 'true'"
+            },
+            {
+                "columnName": "sDisplayText",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iDisplayWeekEnabled",
+                "setting": "INT DEFAULT 1"
+            },
+            {
+                "columnName": "sDateStyle",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sTimeStyle",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iTransparentColorEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sOSDAttribute",
+                "setting": "TEXT DEFAULT 'transparent/not-flashing'"
+            },
+            {
+                "columnName": "sOSDFontSize",
+                "setting": "TEXT DEFAULT '32*32'"
+            },
+            {
+                "columnName": "sOSDFrontColorMode",
+                "setting": "TEXT DEFAULT 'customize'"
+            },
+            {
+                "columnName": "sOSDFrontColor",
+                "setting": "TEXT DEFAULT 'fff799'"
+            },
+            {
+                "columnName": "sAlignment",
+                "setting": "TEXT DEFAULT 'customize'"
+            },
+            {
+                "columnName": "iBoundary",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "port",
+        "2.items": [
+            {
+                "iPortNo": 80,
+                "id": 0,
+                "sProtocol": "HTTP"
+            },
+            {
+                "iPortNo": 443,
+                "id": 1,
+                "sProtocol": "HTTPS"
+            },
+            {
+                "iPortNo": 8080,
+                "id": 2,
+                "sProtocol": "DEV_MANAGE"
+            },
+            {
+                "iPortNo": 554,
+                "id": 3,
+                "sProtocol": "RTSP"
+            },
+            {
+                "iPortNo": 1935,
+                "id": 4,
+                "sProtocol": "RTMP"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sProtocol",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "iPortNo",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "profile",
+        "2.items": [
+            {
+                "iFixed": 1,
+                "sAudioDecoderConfigurationToken": "",
+                "sAudioEncoderConfigurationToken": "",
+                "sAudioOutputConfigurationToken": "",
+                "sAudioSourceConfigurationToken": "",
+                "sMetadataConfigurationToken": "",
+                "sName": "mainStream",
+                "sPTZConfigurationToken": "",
+                "sToken": "Profile_0",
+                "sVideoAnalyticsConfigurationToken": "",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_0",
+                "sVideoSourceConfigurationToken": "VideoSourceConfigurationToken"
+            },
+            {
+                "iFixed": 1,
+                "sAudioDecoderConfigurationToken": "",
+                "sAudioEncoderConfigurationToken": "",
+                "sAudioOutputConfigurationToken": "",
+                "sAudioSourceConfigurationToken": "",
+                "sMetadataConfigurationToken": "",
+                "sName": "subStream",
+                "sPTZConfigurationToken": "",
+                "sToken": "Profile_1",
+                "sVideoAnalyticsConfigurationToken": "",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_1",
+                "sVideoSourceConfigurationToken": "VideoSourceConfigurationToken"
+            },
+            {
+                "iFixed": 1,
+                "sAudioDecoderConfigurationToken": "",
+                "sAudioEncoderConfigurationToken": "",
+                "sAudioOutputConfigurationToken": "",
+                "sAudioSourceConfigurationToken": "",
+                "sMetadataConfigurationToken": "",
+                "sName": "thirdStream",
+                "sPTZConfigurationToken": "",
+                "sToken": "Profile_2",
+                "sVideoAnalyticsConfigurationToken": "",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_2",
+                "sVideoSourceConfigurationToken": "VideoSourceConfigurationToken"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "sToken",
+                "setting": "TEXT PRIMARY KEY"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iFixed",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sVideoSourceConfigurationToken",
+                "setting": "TEXT DEFAULT 'VideoSourceConfigurationToken'"
+            },
+            {
+                "columnName": "sAudioSourceConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sVideoEncoderConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sAudioEncoderConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sVideoAnalyticsConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sPTZConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sMetadataConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sAudioOutputConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sAudioDecoderConfigurationToken",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "roi",
+        "2.items": [
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 1,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 0,
+                "sName": "test",
+                "sStreamType": "mainStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 2,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 1,
+                "sName": "test",
+                "sStreamType": "mainStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 3,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 2,
+                "sName": "test",
+                "sStreamType": "mainStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 4,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 3,
+                "sName": "test",
+                "sStreamType": "mainStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 1,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 4,
+                "sName": "test",
+                "sStreamType": "subStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 2,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 5,
+                "sName": "test",
+                "sStreamType": "subStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 3,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 6,
+                "sName": "test",
+                "sStreamType": "subStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 4,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 7,
+                "sName": "test",
+                "sStreamType": "subStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 1,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 8,
+                "sName": "test",
+                "sStreamType": "thirdStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 2,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 9,
+                "sName": "test",
+                "sStreamType": "thirdStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 3,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 10,
+                "sName": "test",
+                "sStreamType": "thirdStream"
+            },
+            {
+                "iHeight": 0,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iQualityLevelOfROI": 3,
+                "iROIEnabled": 0,
+                "iROIId": 4,
+                "iStreamEnabled": 0,
+                "iWidth": 0,
+                "id": 11,
+                "sName": "test",
+                "sStreamType": "thirdStream"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sStreamType",
+                "setting": "TEXT"
+            },
+            {
+                "columnName": "iStreamEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iROIId",
+                "setting": "INT"
+            },
+            {
+                "columnName": "iROIEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT 'test'"
+            },
+            {
+                "columnName": "iQualityLevelOfROI",
+                "setting": "INT DEFAULT 3"
+            },
+            {
+                "columnName": "iPositionX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iWidth",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iHeight",
+                "setting": "INT DEFAULT 0"
+            }
+        ]
+    },
+    {
+        "1.tableName": "stream_url",
+        "2.items": [
+            {
+                "id": 0,
+                "sStreamProtocol": "RTSP"
+            },
+            {
+                "id": 1,
+                "sStreamProtocol": "RTMP"
+            },
+            {
+                "id": 2,
+                "sStreamProtocol": "RTMP"
+            },
+            {
+                "id": 3,
+                "sStreamProtocol": "HTTP"
+            },
+            {
+                "id": 4,
+                "sStreamProtocol": "HTTP"
+            },
+            {
+                "id": 5,
+                "sStreamProtocol": "HTTP"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sStreamProtocol",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    },
+    {
+        "1.tableName": "video",
+        "2.items": [
+            {
+                "iGOP": 50,
+                "iMaxRate": 8192,
+                "iMinRate": 0,
+                "iStreamSmooth": 50,
+                "iTargetRate": 0,
+                "id": 0,
+                "sFrameRate": "25",
+                "sFrameRateIn": "25",
+                "sH264Profile": "high",
+                "sOutputDataType": "H.264",
+                "sRCMode": "CBR",
+                "sRCQuality": "high",
+                "sResolution": "3840*2160",
+                "sSVC": "close",
+                "sSmart": "close",
+                "sStreamType": "mainStream",
+                "sVideoEncoderConfigurationName": "VideoEncoder_0",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_0",
+                "sVideoSourceToken": "VideoSource_0",
+                "sVideoType": "compositeStream"
+            },
+            {
+                "iGOP": 50,
+                "iMaxRate": 1024,
+                "iMinRate": 0,
+                "iStreamSmooth": 50,
+                "iTargetRate": 0,
+                "id": 1,
+                "sFrameRate": "25",
+                "sFrameRateIn": "25",
+                "sH264Profile": "high",
+                "sOutputDataType": "H.264",
+                "sRCMode": "CBR",
+                "sRCQuality": "high",
+                "sResolution": "640*480",
+                "sSVC": "close",
+                "sSmart": "close",
+                "sStreamType": "subStream",
+                "sVideoEncoderConfigurationName": "VideoEncoder_1",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_1",
+                "sVideoSourceToken": "VideoSource_0",
+                "sVideoType": "compositeStream"
+            },
+            {
+                "iGOP": 50,
+                "iMaxRate": 2048,
+                "iMinRate": 0,
+                "iStreamSmooth": 50,
+                "iTargetRate": 0,
+                "id": 2,
+                "sFrameRate": "25",
+                "sFrameRateIn": "25",
+                "sH264Profile": "high",
+                "sOutputDataType": "H.264",
+                "sRCMode": "CBR",
+                "sRCQuality": "high",
+                "sResolution": "1920*1080",
+                "sSVC": "close",
+                "sSmart": "close",
+                "sStreamType": "thirdStream",
+                "sVideoEncoderConfigurationName": "VideoEncoder_2",
+                "sVideoEncoderConfigurationToken": "VideoEncoderToken_2",
+                "sVideoSourceToken": "VideoSource_0",
+                "sVideoType": "compositeStream"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sStreamType",
+                "setting": "TEXT DEFAULT 'mainStream'"
+            },
+            {
+                "columnName": "sVideoType",
+                "setting": "TEXT DEFAULT 'compositeStream'"
+            },
+            {
+                "columnName": "sResolution",
+                "setting": "TEXT DEFAULT '3840*2160'"
+            },
+            {
+                "columnName": "sRCMode",
+                "setting": "TEXT DEFAULT 'CBR'"
+            },
+            {
+                "columnName": "sRCQuality",
+                "setting": "TEXT DEFAULT 'high'"
+            },
+            {
+                "columnName": "sFrameRate",
+                "setting": "TEXT DEFAULT '25'"
+            },
+            {
+                "columnName": "sFrameRateIn",
+                "setting": "TEXT DEFAULT '25'"
+            },
+            {
+                "columnName": "iTargetRate",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iMaxRate",
+                "setting": "INT DEFAULT 4096"
+            },
+            {
+                "columnName": "iMinRate",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "sOutputDataType",
+                "setting": "TEXT DEFAULT 'H.264'"
+            },
+            {
+                "columnName": "sSmart",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "sH264Profile",
+                "setting": "TEXT DEFAULT 'high'"
+            },
+            {
+                "columnName": "iGOP",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "sSVC",
+                "setting": "TEXT DEFAULT 'close'"
+            },
+            {
+                "columnName": "iStreamSmooth",
+                "setting": "INT DEFAULT 50"
+            },
+            {
+                "columnName": "sVideoSourceToken",
+                "setting": "TEXT DEFAULT 'VideoSource_0'"
+            },
+            {
+                "columnName": "sVideoEncoderConfigurationToken",
+                "setting": "TEXT DEFAULT 'VideoEncoderToken_0'"
+            },
+            {
+                "columnName": "sVideoEncoderConfigurationName",
+                "setting": "TEXT DEFAULT 'VideoEncoder_0'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "video_advanced_enc",
+        "2.items": [
+            {
+                "id": 0,
+                "sFunction": "qp",
+                "sParameters": "{\"qp_init\":24,\"qp_step\":4,\"qp_min\":12,\"qp_max\":48,\"min_i_qp\":10,\"max_i_qp\":20}",
+                "sStreamType": "mainStream"
+            },
+            {
+                "id": 1,
+                "sFunction": "split",
+                "sParameters": "{\"mode\":0,\"size\":1024}",
+                "sStreamType": "mainStream"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "sStreamType",
+                "setting": "TEXT DEFAULT 'mainStream'"
+            },
+            {
+                "columnName": "sFunction",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sParameters",
+                "setting": "TEXT DEFAULT ''"
+            }
+        ]
+    },
+    {
+        "1.tableName": "video_region_clip",
+        "2.items": [
+            {
+                "iHeight": 480,
+                "iPositionX": 0,
+                "iPositionY": 0,
+                "iRegionClipEnabled": 0,
+                "iWidth": 640,
+                "id": 0
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY"
+            },
+            {
+                "columnName": "iRegionClipEnabled",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iPositionY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iWidth",
+                "setting": "INT DEFAULT 640"
+            },
+            {
+                "columnName": "iHeight",
+                "setting": "INT DEFAULT 480"
+            }
+        ]
+    },
+    {
+        "1.tableName": "video_source",
+        "2.items": [
+            {
+                "sFrameRateIn": "25",
+                "sResolution": "2688*1520",
+                "sToken": "VideoSource_0"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "sToken",
+                "setting": "TEXT PRIMARY KEY"
+            },
+            {
+                "columnName": "sResolution",
+                "setting": "TEXT DEFAULT '2688*1520'"
+            },
+            {
+                "columnName": "sFrameRateIn",
+                "setting": "TEXT DEFAULT '25'"
+            }
+        ]
+    },
+    {
+        "1.tableName": "video_source_configuration",
+        "2.items": [
+            {
+                "iBoundsHeight": 1520,
+                "iBoundsWidth": 2688,
+                "iBoundsX": 0,
+                "iBoundsY": 0,
+                "sName": "VideoSourceConfig",
+                "sSourceToken": "VideoSource_0",
+                "sToken": "VideoSourceConfigurationToken"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "sToken",
+                "setting": "TEXT PRIMARY KEY"
+            },
+            {
+                "columnName": "sName",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "sSourceToken",
+                "setting": "TEXT DEFAULT ''"
+            },
+            {
+                "columnName": "iBoundsX",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iBoundsY",
+                "setting": "INT DEFAULT 0"
+            },
+            {
+                "columnName": "iBoundsWidth",
+                "setting": "INT DEFAULT 2688"
+            },
+            {
+                "columnName": "iBoundsHeight",
+                "setting": "INT DEFAULT 1520"
+            }
+        ]
+    },
+    {
+        "1.tableName": "zone",
+        "2.items": [
+            {
+                "id": 1,
+                "sTimeZone": "HawaiianStandardTime10",
+                "sTimeZoneFile": "posix/Etc/GMT+10",
+                "sTimeZoneFileDst": "posix/US/Hawaii"
+            },
+            {
+                "id": 2,
+                "sTimeZone": "PacificStandardTime8DaylightTime,M3.2.0,M11.1.0",
+                "sTimeZoneFile": "posix/Etc/GMT+8",
+                "sTimeZoneFileDst": "posix/US/Pacific"
+            },
+            {
+                "id": 3,
+                "sTimeZone": "GMTStandardTime0DaylightTime,M3.5.0/1,M10.5.0",
+                "sTimeZoneFile": "posix/Etc/GMT-0",
+                "sTimeZoneFileDst": "posix/Europe/London"
+            },
+            {
+                "id": 4,
+                "sTimeZone": "ChinaStandardTime-8",
+                "sTimeZoneFile": "posix/Etc/GMT-8",
+                "sTimeZoneFileDst": "posix/Asia/Shanghai"
+            },
+            {
+                "id": 5,
+                "sTimeZone": "TokyoStandardTime-9",
+                "sTimeZoneFile": "posix/Etc/GMT-9",
+                "sTimeZoneFileDst": "posix/Asia/Tokyo"
+            }
+        ],
+        "3.default": [
+            {
+                "columnName": "id",
+                "setting": "INTEGER PRIMARY KEY AUTOINCREMENT"
+            },
+            {
+                "columnName": "sTimeZone",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sTimeZoneFile",
+                "setting": "TEXT NOT NULL"
+            },
+            {
+                "columnName": "sTimeZoneFileDst",
+                "setting": "TEXT NOT NULL"
+            }
+        ]
+    }
+]

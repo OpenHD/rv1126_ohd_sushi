@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/main/return.png</file>
+        <file>image/main/return_big.png</file>
+        <file>camera.qml</file>
+        <file>camera_px3se.qml</file>
+        <file>image/camera/camera_icon.png</file>
+    </qresource>
+</RCC>

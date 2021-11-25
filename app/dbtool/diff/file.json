@@ -1,0 +1,8 @@
+[
+	"../diff/ipc-2K-2-stream.json.diff",
+	"../diff/ipc-4K-2-stream.json.diff",
+	"../diff/ipc-4K-3-stream.json.diff",
+	"../diff/ipc-1080P-2-stream.json.diff",
+	"../diff/ipc-1080P-3-stream.json.diff",
+	"../diff/gate-1080P-3-stream.json.diff"
+]

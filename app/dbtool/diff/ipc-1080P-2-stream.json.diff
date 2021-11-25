@@ -1,0 +1,91 @@
+[
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/0/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/StoragePlanSnap/2.items/1/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/4/para/dynamic/sStreamType/mainStream/sResolution/options/0",
+        "value": "1920*1080"
+    },
+    {
+        "op": "replace",
+        "path": "/SystemPara/2.items/4/para/dynamic/sStreamType/subStream/sResolution/options/1",
+        "value": "1280*720"
+    },
+    {
+        "op": "remove",
+        "path": "/SystemPara/2.items/4/para/static/sStreamType/options/2"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/0/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/1/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/2/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/3/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/4/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "replace",
+        "path": "/image_blc/2.items/5/sHDR",
+        "value": "close"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/11"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/10"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/9"
+    },
+    {
+        "op": "remove",
+        "path": "/roi/2.items/8"
+    },
+    {
+        "op": "replace",
+        "path": "/video/2.items/0/iMaxRate",
+        "value": 2048
+    },
+    {
+        "op": "replace",
+        "path": "/video/2.items/0/sResolution",
+        "value": "1920*1080"
+    },
+    {
+        "op": "remove",
+        "path": "/video/2.items/2"
+    },
+    {
+        "op": "replace",
+        "path": "/video/3.default/3/setting",
+        "value": "TEXT DEFAULT '1920*1080'"
+    }
+]
