@@ -1,3 +1,11 @@
+# We can leave out everything under "app" - We don't use this crap anyways
+app/*
+
+# buildroot - leave this one in.
+
+# device - here all the BoardConfig.mk files are stored. Small, keep it in
+
+
 #Consti:
 #do not track the rknn crap files
 external/rknn-toolkit/packages/*.whl
@@ -31,12 +39,7 @@ external/tensorflow/*
 
 
 
-# We can leave out everything under "app" - We don't use this crap anyways
-app/*
-
-
 # Step 1 - do not track any folders
-device/*
 docs/*
 external/*
 prebuilts/*
