@@ -6,6 +6,7 @@ app/*
 # device - here all the BoardConfig.mk files are stored. Small, keep it in
 
 # docs - git doesn't like big pdfs. Leave it out, unfortunately
+docs/*
 
 # external - this one is tricky. On the one hand, I do a lot of work here. On the other hand, some of the directories have
 # hughe files ( would need git lfs for that, but git lfs sucks). So do not track the couple ones that have "too big" files,
@@ -19,6 +20,9 @@ prebuilts/*
 
 # rkbin - also too big to be tracked
 rkbin/*
+
+# gets generated during bould process
+rockdev/*
 
 # tools - too big to be tracked
 tools/*
@@ -53,7 +57,6 @@ external/tensorflow/*
 
 
 # Step 1 - do not track any folders
-docs/*
 external/*
 rkbin/*
 
