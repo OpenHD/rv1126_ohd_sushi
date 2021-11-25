@@ -1,8 +1,7 @@
 # Terminology - TRACKED means the repo is fully tracked by git
 
 # app
-# We can leave out everything under "app" - We don't use this crap anyways
-# app/*
+# TRACKED
 
 
 # buildroot 
