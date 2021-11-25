@@ -1,0 +1,66 @@
+#Consti:
+#do not track the rknn crap files
+external/rknn-toolkit/packages/*.whl
+
+#do not track this crap neither:
+external/rockx/python/*.whl
+
+#do not track the generated images:
+IMAGE/*
+
+#also do not track this hughe file :)
+kernel.git/*
+packed-refsu-boot.git/*
+
+# do not track the log (it increases with every build run)
+br.log
+
+#also, these img files are created during the build process:
+#rockdev/oem.img
+#rockdev/update.img
+# I think we can ignore everything under rockdev, this is also created with each build, right ?
+rockdev/*
+
+
+#and this whole directory:
+.rootfs/*
+
+
+#I use CLion as ide, but do not add that stuff in github
+.idea/*
+
+# These directories have some stupid big files (Neural network-s) and we don't need them anyways
+external/rknn-toolkit/*
+external/rknpu/*
+external/tensorflow/*
+
+# temporary
+zconsti_file/codec_data/mpi_encode/raw.nv12
+
+
+# for now leave everything under /app out
+app/*
+
+# Step 1 - do not track any folders
+app/*
+buildroot/*
+device/*
+docs/*
+external/*
+prebuilts/*
+rkbin/*
+tools/*
+u-boot/*
+kernel/*
+
+
+
+
+
+
+
+
+
+
+
+
