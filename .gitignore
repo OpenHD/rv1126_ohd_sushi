@@ -43,7 +43,6 @@ app/*
 
 # Step 1 - do not track any folders
 app/*
-buildroot/*
 device/*
 docs/*
 external/*

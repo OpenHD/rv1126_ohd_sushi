@@ -1,0 +1,6 @@
+config BR2_PACKAGE_CVR_APP
+	bool "cvr app"
+        select BR2_PACKAGE_LVGL
+	default n
+	help
+	  cvr app

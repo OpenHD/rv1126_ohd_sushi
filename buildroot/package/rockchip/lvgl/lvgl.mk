@@ -1,0 +1,11 @@
+LVGL_SITE = $(TOPDIR)/../external/lvgl
+LVGL_SITE_METHOD = local
+
+LVGL_INSTALL_STAGING = YES
+
+ifeq ($(BR2_PACKAGE_RK_OEM), y)
+LVGL_INSTALL_TARGET_OPTS = DESTDIR=$(BR2_PACKAGE_RK_OEM_INSTALL_TARGET_DIR) install/fast
+LVGL_DEPENDENCIES += rk_oem
+endif
+
+$(eval $(cmake-package))
