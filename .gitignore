@@ -23,11 +23,15 @@ docs/*
 # this one is tricky. On the one hand, I do a lot of work here. On the other hand, some of the directories have
 # hughe files ( would need git lfs for that, but git lfs sucks). So do not track the couple ones that have "too big" files,
 # but leave the rest in
-external/*
 # These directories have some stupid big files (Neural network-s) and we don't need them anyways
-external/rknn-toolkit/*
-external/rknpu/*
-external/tensorflow/*
+# run locally find -type f -size +99M and pasted output here
+external/rknn-toolkit/packages/rknn_toolkit-1.6.0-cp37-cp37m-macosx_10_15_x86_64.whl
+external/rknn-toolkit/packages/rknn_toolkit-1.6.0-cp36-cp36m-linux_x86_64.whl
+external/rknn-toolkit/packages/rknn_toolkit-1.6.0-cp35-cp35m-linux_x86_64.whl
+external/rknn-toolkit/packages/rknn_toolkit-1.6.0-cp36-cp36m-macosx_10_15_x86_64.whl
+external/rknn-toolkit/packages/rknn_toolkit-1.6.0-cp36-cp36m-win_amd64.whl
+external/rockx/python/RockX-1.2.0-py3-none-any.whl
+external/camera_engine_rkaiq/rkisp2x_tuner/RKISP2.x_Tuner_v1.7.2.exe
 
 
 # kernel
