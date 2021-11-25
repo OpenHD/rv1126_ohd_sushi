@@ -18,8 +18,7 @@ external/*
 # prebuilts - they are too big to be tracked
 prebuilts/*
 
-# rkbin - also too big to be tracked
-rkbin/*
+# rkbin - not really needed to do changes here, but has .gitignore and is small enough
 
 # gets generated during bould process
 rockdev/*
