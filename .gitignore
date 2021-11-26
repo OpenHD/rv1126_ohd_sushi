@@ -15,7 +15,7 @@
 
 # docs 
 # git doesn't like big pdfs. Leave it out, unfortunately
-docs/*
+# docs/*
 
 
 # external
