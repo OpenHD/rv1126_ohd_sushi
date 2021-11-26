@@ -1,4 +1,7 @@
-# Terminology - TRACKED means the repo is fully tracked by git
+# Terminology - 
+# TRACKED means the repo is fully tracked by git
+# WARNING_COMP means that this folder is not tracked by GIT (file limit) but you need to download it manually for a working
+# compilation
 
 # app
 # TRACKED
@@ -14,8 +17,8 @@
 
 
 # docs 
-# git doesn't like big pdfs. Leave it out, unfortunately
-# docs/*
+# TRACKED
+# git doesn't like big pdfs. But aparently buying git premium or something fixed the issues i had with last repo
 
 
 # external
@@ -38,8 +41,7 @@ external/camera_engine_rkaiq/rkisp2x_tuner/RKISP2.x_Tuner_v1.7.2.exe
 
 
 # prebuilts
-# Too big to be tracked
-# NOTE: Needed for compilation ! (but content here NEVER changes)
+# WARNING_COMP
 prebuilts/*
 
 
