@@ -6,4 +6,4 @@ Building: ask me ! (won't work out of the box due to github limitations)
 
 source envsetup.sh -> 84 (rockchip_rv1126_rv1109)
 
-./build.sh lunch -> BoardConfig-openhd.mk
+./build.sh lunch -> BoardConfig-openhd.mk (9)
