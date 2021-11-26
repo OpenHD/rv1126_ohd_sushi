@@ -463,6 +463,7 @@ std::shared_ptr<MediaBuffer> V4L2CaptureStream::Read() {
     if (buf.memory == V4L2_MEMORY_DMABUF) {
       assert(ret_buf->GetFD() == buf.m.fd);
     }
+    // Consti10: Here the (v4l2) timestamp is written
     ret_buf->SetAtomicTimeVal(buf_ts);
     ret_buf->SetTimeVal(buf_ts);
     ret_buf->SetValidSize(bytes_used);

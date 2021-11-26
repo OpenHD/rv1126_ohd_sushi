@@ -110,8 +110,25 @@ void SourceStreamFlow::ReadThreadRun() {
     }
     auto buffer = stream->Read();
 #ifdef RKMEDIA_TIMESTAMP_DEBUG
-    if (buffer)
-      buffer->TimeStampReset();
+    //if (buffer)
+    //  buffer->TimeStampReset();
+    //Consti10:
+    if(buffer){
+        //NOTE: This value is set here: V4L2CaptureStream::Read()
+        //ret_buf->SetAtomicTimeVal(buf_ts);
+        //ret_buf->SetTimeVal(buf_ts);
+        //aka the v4l2 timestamp is written as both atomic time val and time val
+        int64_t now=easymedia::gettimeofday();
+        int64_t bufferSystemTime=buffer->GetAtomicClock();
+        //int64_t delayUs=now - bufferSystemTime;
+        //float delayMs=delayUs/ 1000.0;
+        //printf("Consti10:buffSystemTime:[%lld] now:[%lld] delay:[%f] (ms)\n", bufferSystemTime,
+        //     now, delayMs);
+        buffer->TimeStampReset();
+        buffer->TimeStampRecord("Consti10:SourceBufferValue",bufferSystemTime); //Time value of the buffer (in past), think this is written by ISP (or even the original cif value)
+        //buffer->TimeStampRecord("Consti10:SourceBufferValue2",buffer->GetUSTimeStamp());
+        buffer->TimeStampRecord("Consti10:SourceBufferInsideRkMedia",now); //Time value when (YUV) buffer was first tracked inside rkmedia
+    }
 #endif // RKMEDIA_TIMESTAMP_DEBUG
     SendInput(buffer, 0);
   }

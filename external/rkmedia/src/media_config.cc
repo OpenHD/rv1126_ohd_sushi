@@ -49,7 +49,8 @@ static int ParseMediaConfigFps(std::map<std::string, std::string> &params,
   }
   num = strtok((char *)value.c_str(), "/");
   den = strtok(NULL, "/");
-  if (!num || !den || (strlen(num) > 2) || (strlen(den) > 2)) {
+    //Consti10: rockchip limits the fps to max 2 numbers, which would mean that no more than 99fps are valid
+  if (!num || !den || (strlen(num) > 3) || (strlen(den) > 3)) {
     RKMEDIA_LOGE("MediaCfg: fps: KEY_FPS=%s is invalid!\n", value.c_str());
     return -1;
   }
@@ -63,7 +64,8 @@ static int ParseMediaConfigFps(std::map<std::string, std::string> &params,
   }
   num = strtok((char *)value.c_str(), "/");
   den = strtok(NULL, "/");
-  if (!num || !den || (strlen(num) > 2) || (strlen(den) > 2)) {
+  //Consti10
+  if (!num || !den || (strlen(num) > 3) || (strlen(den) > 3)) {
     RKMEDIA_LOGE("MediaCfg: fps: KEY_FPS_IN(%s) is null!\n", value.c_str());
     return -1;
   }

@@ -9,8 +9,15 @@
 project(rkmedia_examples)
 
 add_definitions(-g -O0 -ggdb -gdwarf -funwind-tables -rdynamic)
+# Consti10
+add_definitions(-Wno-unused-function)
+add_definitions(-Wno-unused-variable)
+add_definitions(-Wno-unused-label)
+add_definitions(-Wno-maybe-uninitialized)
+add_definitions(-Wno-unused-parameter)
 
 aux_source_directory(common COMMON_SRC)
+aux_source_directory(common_consti COMMON_CONSTI_SRC)
 
 ############################################################
 # RKMPP Module tests
@@ -26,6 +33,26 @@ add_dependencies(rkmedia_vi_venc_test easymedia)
 target_link_libraries(rkmedia_vi_venc_test easymedia)
 target_include_directories(rkmedia_vi_venc_test PRIVATE ${CMAKE_SOURCE_DIR}/include)
 install(TARGETS rkmedia_vi_venc_test RUNTIME DESTINATION "bin")
+
+#Consti10: Here I add the executable that is based on rkmedia_vi_venc_test but can be used for live streaming
+# and might differ otherwise (I use it for testing)
+add_executable(consti_stream consti_stream.cpp ${COMMON_SRC} ${COMMON_CONSTI_SRC})
+add_dependencies(consti_stream easymedia)
+target_link_libraries(consti_stream easymedia)
+target_include_directories(consti_stream PRIVATE ${CMAKE_SOURCE_DIR}/include)
+install(TARGETS consti_stream RUNTIME DESTINATION "bin")
+#Consti10
+add_executable(consti_run_isp consti_run_isp.c ${COMMON_SRC})
+add_dependencies(consti_run_isp easymedia)
+target_link_libraries(consti_run_isp easymedia)
+target_include_directories(consti_run_isp PRIVATE ${CMAKE_SOURCE_DIR}/include)
+install(TARGETS consti_run_isp RUNTIME DESTINATION "bin")
+#Consti10
+add_executable(consti_latency consti_latency.cpp ${COMMON_SRC} ${COMMON_CONSTI_SRC})
+add_dependencies(consti_latency easymedia)
+target_link_libraries(consti_latency easymedia)
+target_include_directories(consti_latency PRIVATE ${CMAKE_SOURCE_DIR}/include)
+install(TARGETS consti_latency RUNTIME DESTINATION "bin")
 
 #--------------------------
 # rkmedia_vi_venc_rtsp_test

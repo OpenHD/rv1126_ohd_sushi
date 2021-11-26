@@ -871,4 +871,78 @@ rk_aiq_uapi_sysctl_setCrop(aiq_ctx, rect);*/
   pthread_mutex_unlock(&aiq_ctx_mutex[CamId]);
   return ret;
 }
+
+//Consti10
+RK_S32 SAMPLE_COMM_ISP_GET_Crop(RK_S32 CamId, rk_aiq_rect_t* rect) {
+  if (CamId >= MAX_AIQ_CTX || !g_aiq_ctx[CamId]) {
+    printf("%s : CamId is over 3 or not init\n", __FUNCTION__);
+    return -1;
+  }
+  RK_S32 ret = 0;
+  pthread_mutex_lock(&aiq_ctx_mutex[CamId]);
+  if (g_aiq_ctx[CamId]) {
+    ret = rk_aiq_uapi_sysctl_getCrop(g_aiq_ctx[CamId], rect);
+  }
+  pthread_mutex_unlock(&aiq_ctx_mutex[CamId]);
+  return ret;
+}
+
+//Consti10 disable TNR, NR and SHARP on ISPP - for testing.
+// Think one needs to call that after "run"
+// when looking at the cat /proc/rkisp* output, they seem to be disabled, but there is still some latency value assigned to them ?!
+RK_S32 SAMPLE_COMM_ISP_Consti10_DisableStuff(RK_S32 CamId){
+   if (CamId >= MAX_AIQ_CTX || !g_aiq_ctx[CamId]) {
+    printf("%s : CamId is over 3 or not init\n", __FUNCTION__);
+    return -1;
+  }
+  pthread_mutex_lock(&aiq_ctx_mutex[CamId]);
+   RK_S32 ret = 0;
+   printf("Consti10: Disabling ISP features for testing\n");
+   ret = rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_NR,
+                                      false); // 2D
+      ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_TNR,
+                                      false); // 3D
+
+   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_SHARP,
+                                      false);
+
+   // error message:  can't find 1280x720 in lscResName
+   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_LSC,
+                                      false);
+
+   printf("Consti10: Disabling ISP features for testing done %d\n",ret);
+
+  pthread_mutex_unlock(&aiq_ctx_mutex[CamId]);
+  return ret;
+}
+
+RK_S32 SAMPLE_COMM_ISP_Consti10_DisableLSC(RK_S32 CamId){
+   if (CamId >= MAX_AIQ_CTX || !g_aiq_ctx[CamId]) {
+    printf("%s : CamId is over 3 or not init\n", __FUNCTION__);
+    return -1;
+  }
+  pthread_mutex_lock(&aiq_ctx_mutex[CamId]);
+  RK_S32 ret = 0;
+  printf("Consti10: Disabling LSC to allow any resolution\n");
+
+  // error message:  can't find 1280x720 in lscResName
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_LSC,false);
+
+  // this is not needed, but try it:
+  // For some reason it cannot find the include ?!
+  // Doesn't work anyways
+  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],RK_MODULE_HDRTMO,false);
+  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],17,false);
+
+  // some more experiments:
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_CTK,false); // color correction
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_AE,false); //exposure
+
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_GIC,false); //green balance, outputed YES/NO
+
+  printf("Consti10: Disabling LSC done %d\n",ret);
+
+  pthread_mutex_unlock(&aiq_ctx_mutex[CamId]);
+  return ret;
+}
 #endif

@@ -6,9 +6,11 @@ if(NOT CMAKE_BUILD_TYPE)
         FORCE)
 endif()
 
-if(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-    add_definitions(-DBUILD_TYPE_DEBUG)
-endif()
+#Consti10
+#if(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+#    add_definitions(-DBUILD_TYPE_DEBUG)
+#endif()
+add_definitions(-DBUILD_TYPE_DEBUG)
 
 cmake_minimum_required(VERSION 2.8)
 
@@ -316,9 +318,11 @@ execute_process(COMMAND sh
 # ----------------------------------------------------------------------------
 add_subdirectory(rkisp_api)
 
-if(ENABLE_RKISP_DEMO)
+#Consti10
+#if(ENABLE_RKISP_DEMO)
+#add_subdirectory(rkisp_demo)
+#endif()
 add_subdirectory(rkisp_demo)
-endif()
 
 install(TARGETS rkaiq
     RUNTIME DESTINATION bin

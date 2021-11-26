@@ -35,6 +35,9 @@ add_mpp_test(mpi_dec_mt)
 # mpi encoder unit test
 add_mpp_test(mpi_enc)
 
+#Consti10
+add_mpp_test(mpi_get_frame)
+
 # mpi rc unit test
 add_mpp_test(mpi_rc)
 

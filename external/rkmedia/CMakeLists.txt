@@ -171,7 +171,8 @@ set(EASY_MEDIA_DEPENDENT_LIBS
 add_definitions(-DRKMEDIA_SUPPORT_MINILOG)
 endif()
 
-option(TIMESTAMP_DEBUG "Time-consuming statistics of each stage of MB" OFF)
+#Consti10 switched to ON
+option(TIMESTAMP_DEBUG "Time-consuming statistics of each stage of MB" ON)
 if (TIMESTAMP_DEBUG)
   add_definitions(-DRKMEDIA_TIMESTAMP_DEBUG)
 endif()

@@ -70,6 +70,10 @@ MPP_RET read_image(RK_U8 *buf, FILE *fp, RK_U32 width, RK_U32 height,
 MPP_RET fill_image(RK_U8 *buf, RK_U32 width, RK_U32 height,
                    RK_U32 hor_stride, RK_U32 ver_stride, MppFrameFormat fmt,
                    RK_U32 frame_count);
+// Consti10
+MPP_RET fill_image_consti(RK_U8 *buf, RK_U32 width, RK_U32 height,
+                   RK_U32 hor_stride, RK_U32 ver_stride, MppFrameFormat fmt,
+                   RK_U32 frame_count);
 
 typedef struct OpsLine_t {
     RK_U32      index;

@@ -340,6 +340,17 @@ MPP_RET camera_source_deinit(CamSource *ctx)
     return MPP_OK;
 }
 
+static uint64_t microsec(struct timeval t) {
+    return ((uint64_t)t.tv_sec) * ((uint64_t)1000000) + t.tv_usec;
+}
+
+static uint64_t __attribute__((unused)) getTimeUs(){
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    uint64_t micros = (time.tv_sec * ((uint64_t)1000*1000)) + ((uint64_t)time.tv_usec);
+    return micros;
+}
+
 // Returns a pointer to a captured frame and its meta-data. NOT thread-safe.
 RK_S32 camera_source_get_frame(CamSource *ctx)
 {
@@ -369,6 +380,11 @@ RK_S32 camera_source_get_frame(CamSource *ctx)
 
     if (V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE == type)
         buf.bytesused = buf.m.planes[0].bytesused;
+    //Consti10
+    /*uint64_t buffTsUs=microsec(buf.timestamp);
+    uint64_t delayUs=getTimeUs()-buffTsUs;
+    float delayMs=delayUs > 0 ? ((float)delayUs)/1000.0f : delayUs;
+    printf("Buff sequence: %d ts: %lld delay: %lld us %f ms\n",buf.sequence,buffTsUs,delayUs,delayMs);*/
 
     return buf.index;
 }

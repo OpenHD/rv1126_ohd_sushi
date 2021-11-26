@@ -482,9 +482,9 @@ RkAiqManager::ispStatsCb(SmartPtr<VideoBuffer>& ispStats)
 #ifndef RK_SIMULATOR_HW
     if (get_rkaiq_runtime_dbg() > 0) {
         if (ispStats->get_video_info().format == V4L2_META_FMT_RK_ISP1_STAT_3A) {
-            XCAM_STATIC_FPS_CALCULATION(ISP_STATS_FPS, 60);
+            XCAM_STATIC_FPS_CALCULATION(ISP_STATS_FPS, 60*4); //Consti10
         } else {
-            XCAM_STATIC_FPS_CALCULATION(PP_STATS_FPS, 60);
+            XCAM_STATIC_FPS_CALCULATION(PP_STATS_FPS, 60*4); //Consti10
         }
     }
 #endif

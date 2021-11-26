@@ -33,6 +33,13 @@
 #include "mpi_enc_utils.h"
 #include "camera_source.h"
 
+static uint64_t getTimeMs(){
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    uint64_t millis = (time.tv_sec * ((uint64_t)1000)) + ((uint64_t)time.tv_usec / ((uint64_t)1000));
+    return millis;
+}
+
 typedef struct {
     // global flow control flag
     RK_U32 frm_eos;
@@ -503,6 +510,11 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
 
         mpp_packet_deinit(&packet);
     }
+
+    uint64_t lastTs=getTimeMs();
+    uint64_t frameDeltaAvgSum=0;
+    uint64_t frameDeltaAvgCount=0;
+
     while (!p->pkt_eos) {
         MppMeta meta = NULL;
         MppFrame frame = NULL;
@@ -511,6 +523,20 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         RK_S32 cam_frm_idx = -1;
         MppBuffer cam_buf = NULL;
         RK_U32 eoi = 1;
+
+        uint64_t now=getTimeMs();
+        uint64_t delta=now-lastTs;
+        printf("Frame delta: %lld\n",delta);
+        lastTs=getTimeMs();
+        // calculate average
+        frameDeltaAvgSum+=delta;
+        frameDeltaAvgCount++;
+        if(frameDeltaAvgCount>100){
+            float avgFrameDelta=(float)((double)frameDeltaAvgSum / (double)frameDeltaAvgCount);
+            printf("Avg of frame delta: %f\n",avgFrameDelta);
+            frameDeltaAvgSum=0;
+            frameDeltaAvgCount=0;
+        }
 
         if (p->fp_input) {
             ret = read_image(buf, p->fp_input, p->width, p->height,
@@ -530,8 +556,12 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 goto RET;
         } else {
             if (p->cam_ctx == NULL) {
-                ret = fill_image(buf, p->width, p->height, p->hor_stride,
+                uint64_t before=getTimeMs();
+                //Consti10
+                ret = fill_image_consti(buf, p->width, p->height, p->hor_stride,
                                  p->ver_stride, p->fmt, p->frame_count);
+                uint64_t deltaX=getTimeMs()-before;
+                printf("Filling frame took: %lld ms\n",deltaX);
                 if (ret)
                     goto RET;
             } else {
