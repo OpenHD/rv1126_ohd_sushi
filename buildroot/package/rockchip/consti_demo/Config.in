@@ -1,0 +1,2 @@
+ config BR2_PACKAGE_CONSTI_DEMO
+        bool "Simple Consti Demo"
