@@ -303,7 +303,19 @@ static int isp_show(struct seq_file *p, void *v)
 	default:
 		break;
 	}
-
+    //Consti10
+	seq_printf(p, "Consti10: dev->hdr.op_mode:%d dev->csi_dev.rd_mode:%d\n",dev->hdr.op_mode,dev->csi_dev.rd_mode);
+	seq_printf(p, "Consti10:%-10s frame:%d %s time:%dms v-blank:%dus\n",
+			   "Isp online",
+			   sdev->dbg.id,
+			   (dev->isp_state & ISP_FRAME_END) ? "idle" : "working",
+			   sdev->dbg.interval / 1000 / 1000,
+			   sdev->dbg.delay / 1000);
+	seq_printf(p, "Consti10: dmarx_dev: cur_frame.id:%d pref_frame.id: %d\n",dev->dmarx_dev.cur_frame.id,dev->dmarx_dev.pre_frame.id);
+    seq_printf(p, "Consti10: rkisp_csi_device: rd_mode:%d frame_cnt:%d\n",dev->csi_dev.rd_mode,dev->csi_dev.frame_cnt);
+    seq_printf(p, "Consti10: rkisp_bridge_device: work_mode: %d buf_num:%d\n",dev->br_dev.work_mode,dev->br_dev.buf_num);
+    seq_printf(p, "Consti10: wait_line:%d\n",dev->cap_dev.wait_line);
+	//
 	return 0;
 }
 

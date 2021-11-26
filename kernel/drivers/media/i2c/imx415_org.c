@@ -46,36 +46,23 @@
 #include <linux/rk-preisp.h>
 #include "../platform/rockchip/isp/rkisp_tb_helper.h"
 
-#include "imx415_regs_rockchip.h"
-#include "imx415_write_regs.h"
-
 #define DRIVER_VERSION			KERNEL_VERSION(0, 0x01, 0x06)
 
 #ifndef V4L2_CID_DIGITAL_GAIN
 #define V4L2_CID_DIGITAL_GAIN		V4L2_CID_GAIN
 #endif
 
-//note: multiply by 2 to get the Mbps from spec sheet
-#define MIPI_FREQ_1188M        1188000000  //Consti10 - 2376 Mbps
-// unused                                               2079 Mbps
-#define MIPI_FREQ_891M			891000000  //           1782 Mbps
-#define MIPI_FREQ_743M			743000000  //           1486 Mbps
-#define MIP_FREQ_742p5M         742500000  //Consti10 - 1485 Mbps
-#define MIPI_FREQ_720M          720000000  //Consti10 - 1440 Mbps
-#define MIPI_FREQ_446M			446000000  //            892 Mbps
-// unused                                                720 Mbps
-#define MIPI_FREQ_297M			297000000  //            594  Mbps
-// For comparison: RPI has IMX477_DEFAULT_LINK_FREQ	450000000
+#define MIPI_FREQ_891M			891000000
+#define MIPI_FREQ_446M			446000000
+#define MIPI_FREQ_743M			743000000
+#define MIPI_FREQ_297M			297000000
 
 #define IMX415_4LANES			4
 
-//#define IMX415_MAX_PIXEL_RATE		(MIPI_FREQ_891M / 10 * 2 * IMX415_4LANES)
-#define IMX415_MAX_PIXEL_RATE		(MIPI_FREQ_1188M / 10 * 2 * IMX415_4LANES) //consti10
+#define IMX415_MAX_PIXEL_RATE		(MIPI_FREQ_891M / 10 * 2 * IMX415_4LANES)
 #define OF_CAMERA_HDR_MODE		"rockchip,camera-hdr-mode"
 
 #define IMX415_XVCLK_FREQ_37M		37125000
-#define IMX415_XVCLK_FREQ_24M		24000000 //Consti10
-#define IMX415_XVCLK_FREQ_USED IMX415_XVCLK_FREQ_37M
 
 /* TODO: Get the real chip id from reg */
 #define CHIP_ID				0xE0
@@ -190,10 +177,10 @@ enum imx415_max_pad {
 	PAD_MAX,
 };
 
-/*struct regval {
+struct regval {
 	u16 addr;
 	u8 val;
-};*/
+};
 
 struct imx415_mode {
 	u32 bus_fmt;
@@ -251,7 +238,503 @@ struct imx415 {
 
 #define to_imx415(sd) container_of(sd, struct imx415, subdev)
 
-#include "imx415_regs_rockchip_org.h"
+/*
+ * Xclk 37.125Mhz
+ */
+static __maybe_unused const struct regval imx415_global_12bit_3864x2192_regs[] = {
+	{0x3002, 0x00},
+	{0x3008, 0x7F},
+	{0x300A, 0x5B},
+	{0x30C1, 0x00},
+	{0x3031, 0x01},
+	{0x3032, 0x01},
+	{0x30D9, 0x06},
+	{0x3116, 0x24},
+	{0x3118, 0xC0},
+	{0x311E, 0x24},
+	{0x32D4, 0x21},
+	{0x32EC, 0xA1},
+	{0x3452, 0x7F},
+	{0x3453, 0x03},
+	{0x358A, 0x04},
+	{0x35A1, 0x02},
+	{0x36BC, 0x0C},
+	{0x36CC, 0x53},
+	{0x36CD, 0x00},
+	{0x36CE, 0x3C},
+	{0x36D0, 0x8C},
+	{0x36D1, 0x00},
+	{0x36D2, 0x71},
+	{0x36D4, 0x3C},
+	{0x36D6, 0x53},
+	{0x36D7, 0x00},
+	{0x36D8, 0x71},
+	{0x36DA, 0x8C},
+	{0x36DB, 0x00},
+	{0x3701, 0x03},
+	{0x3724, 0x02},
+	{0x3726, 0x02},
+	{0x3732, 0x02},
+	{0x3734, 0x03},
+	{0x3736, 0x03},
+	{0x3742, 0x03},
+	{0x3862, 0xE0},
+	{0x38CC, 0x30},
+	{0x38CD, 0x2F},
+	{0x395C, 0x0C},
+	{0x3A42, 0xD1},
+	{0x3A4C, 0x77},
+	{0x3AE0, 0x02},
+	{0x3AEC, 0x0C},
+	{0x3B00, 0x2E},
+	{0x3B06, 0x29},
+	{0x3B98, 0x25},
+	{0x3B99, 0x21},
+	{0x3B9B, 0x13},
+	{0x3B9C, 0x13},
+	{0x3B9D, 0x13},
+	{0x3B9E, 0x13},
+	{0x3BA1, 0x00},
+	{0x3BA2, 0x06},
+	{0x3BA3, 0x0B},
+	{0x3BA4, 0x10},
+	{0x3BA5, 0x14},
+	{0x3BA6, 0x18},
+	{0x3BA7, 0x1A},
+	{0x3BA8, 0x1A},
+	{0x3BA9, 0x1A},
+	{0x3BAC, 0xED},
+	{0x3BAD, 0x01},
+	{0x3BAE, 0xF6},
+	{0x3BAF, 0x02},
+	{0x3BB0, 0xA2},
+	{0x3BB1, 0x03},
+	{0x3BB2, 0xE0},
+	{0x3BB3, 0x03},
+	{0x3BB4, 0xE0},
+	{0x3BB5, 0x03},
+	{0x3BB6, 0xE0},
+	{0x3BB7, 0x03},
+	{0x3BB8, 0xE0},
+	{0x3BBA, 0xE0},
+	{0x3BBC, 0xDA},
+	{0x3BBE, 0x88},
+	{0x3BC0, 0x44},
+	{0x3BC2, 0x7B},
+	{0x3BC4, 0xA2},
+	{0x3BC8, 0xBD},
+	{0x3BCA, 0xBD},
+	{0x4004, 0x48},
+	{0x4005, 0x09},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_linear_12bit_3864x2192_891M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xCA},
+	{0x3025, 0x08},
+	{0x3028, 0x4C},
+	{0x3029, 0x04},
+	{0x302C, 0x00},
+	{0x302D, 0x00},
+	{0x3033, 0x05},
+	{0x3050, 0x08},
+	{0x3051, 0x00},
+	{0x3054, 0x19},
+	{0x3058, 0x3E},
+	{0x3060, 0x25},
+	{0x3064, 0x4A},
+	{0x30CF, 0x00},
+	{0x3260, 0x01},
+	{0x400C, 0x00},
+	{0x4018, 0x7F},
+	{0x401A, 0x37},
+	{0x401C, 0x37},
+	{0x401E, 0xF7},
+	{0x401F, 0x00},
+	{0x4020, 0x3F},
+	{0x4022, 0x6F},
+	{0x4024, 0x3F},
+	{0x4026, 0x5F},
+	{0x4028, 0x2F},
+	{0x4074, 0x01},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr2_12bit_3864x2192_1782M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xCA},
+	{0x3025, 0x08},
+	{0x3028, 0x26},
+	{0x3029, 0x02},
+	{0x302C, 0x01},
+	{0x302D, 0x01},
+	{0x3033, 0x04},
+	{0x3050, 0x90},
+	{0x3051, 0x0D},
+	{0x3054, 0x09},
+	{0x3058, 0x3E},
+	{0x3060, 0x4D},
+	{0x3064, 0x4A},
+	{0x30CF, 0x01},
+	{0x3260, 0x00},
+	{0x400C, 0x01},
+	{0x4018, 0xB7},
+	{0x401A, 0x67},
+	{0x401C, 0x6F},
+	{0x401E, 0xDF},
+	{0x401F, 0x01},
+	{0x4020, 0x6F},
+	{0x4022, 0xCF},
+	{0x4024, 0x6F},
+	{0x4026, 0xB7},
+	{0x4028, 0x5F},
+	{0x4074, 0x00},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr3_12bit_3864x2192_1782M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0x96},
+	{0x3025, 0x06},
+	{0x3028, 0x26},
+	{0x3029, 0x02},
+	{0x302C, 0x01},
+	{0x302D, 0x02},
+	{0x3033, 0x04},
+	{0x3050, 0x14},
+	{0x3051, 0x01},
+	{0x3054, 0x0D},
+	{0x3058, 0x26},
+	{0x3060, 0x19},
+	{0x3064, 0x32},
+	{0x30CF, 0x03},
+	{0x3260, 0x00},
+	{0x400C, 0x01},
+	{0x4018, 0xB7},
+	{0x401A, 0x67},
+	{0x401C, 0x6F},
+	{0x401E, 0xDF},
+	{0x401F, 0x01},
+	{0x4020, 0x6F},
+	{0x4022, 0xCF},
+	{0x4024, 0x6F},
+	{0x4026, 0xB7},
+	{0x4028, 0x5F},
+	{0x4074, 0x00},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_global_10bit_3864x2192_regs[] = {
+	{0x3002, 0x00},
+	{0x3008, 0x7F},
+	{0x300A, 0x5B},
+	{0x3031, 0x00},
+	{0x3032, 0x00},
+	{0x30C1, 0x00},
+	{0x30D9, 0x06},
+	{0x3116, 0x24},
+	{0x311E, 0x24},
+	{0x32D4, 0x21},
+	{0x32EC, 0xA1},
+	{0x3452, 0x7F},
+	{0x3453, 0x03},
+	{0x358A, 0x04},
+	{0x35A1, 0x02},
+	{0x36BC, 0x0C},
+	{0x36CC, 0x53},
+	{0x36CD, 0x00},
+	{0x36CE, 0x3C},
+	{0x36D0, 0x8C},
+	{0x36D1, 0x00},
+	{0x36D2, 0x71},
+	{0x36D4, 0x3C},
+	{0x36D6, 0x53},
+	{0x36D7, 0x00},
+	{0x36D8, 0x71},
+	{0x36DA, 0x8C},
+	{0x36DB, 0x00},
+	{0x3701, 0x00},
+	{0x3724, 0x02},
+	{0x3726, 0x02},
+	{0x3732, 0x02},
+	{0x3734, 0x03},
+	{0x3736, 0x03},
+	{0x3742, 0x03},
+	{0x3862, 0xE0},
+	{0x38CC, 0x30},
+	{0x38CD, 0x2F},
+	{0x395C, 0x0C},
+	{0x3A42, 0xD1},
+	{0x3A4C, 0x77},
+	{0x3AE0, 0x02},
+	{0x3AEC, 0x0C},
+	{0x3B00, 0x2E},
+	{0x3B06, 0x29},
+	{0x3B98, 0x25},
+	{0x3B99, 0x21},
+	{0x3B9B, 0x13},
+	{0x3B9C, 0x13},
+	{0x3B9D, 0x13},
+	{0x3B9E, 0x13},
+	{0x3BA1, 0x00},
+	{0x3BA2, 0x06},
+	{0x3BA3, 0x0B},
+	{0x3BA4, 0x10},
+	{0x3BA5, 0x14},
+	{0x3BA6, 0x18},
+	{0x3BA7, 0x1A},
+	{0x3BA8, 0x1A},
+	{0x3BA9, 0x1A},
+	{0x3BAC, 0xED},
+	{0x3BAD, 0x01},
+	{0x3BAE, 0xF6},
+	{0x3BAF, 0x02},
+	{0x3BB0, 0xA2},
+	{0x3BB1, 0x03},
+	{0x3BB2, 0xE0},
+	{0x3BB3, 0x03},
+	{0x3BB4, 0xE0},
+	{0x3BB5, 0x03},
+	{0x3BB6, 0xE0},
+	{0x3BB7, 0x03},
+	{0x3BB8, 0xE0},
+	{0x3BBA, 0xE0},
+	{0x3BBC, 0xDA},
+	{0x3BBE, 0x88},
+	{0x3BC0, 0x44},
+	{0x3BC2, 0x7B},
+	{0x3BC4, 0xA2},
+	{0x3BC8, 0xBD},
+	{0x3BCA, 0xBD},
+	{0x4004, 0x48},
+	{0x4005, 0x09},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr3_10bit_3864x2192_1485M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xBD},
+	{0x3025, 0x06},
+	{0x3028, 0x1A},
+	{0x3029, 0x02},
+	{0x302C, 0x01},
+	{0x302D, 0x02},
+	{0x3033, 0x08},
+	{0x3050, 0x90},
+	{0x3051, 0x15},
+	{0x3054, 0x0D},
+	{0x3058, 0xA4},
+	{0x3060, 0x97},
+	{0x3064, 0xB6},
+	{0x30CF, 0x03},
+	{0x3118, 0xA0},
+	{0x3260, 0x00},
+	{0x400C, 0x01},
+	{0x4018, 0xA7},
+	{0x401A, 0x57},
+	{0x401C, 0x5F},
+	{0x401E, 0x97},
+	{0x401F, 0x01},
+	{0x4020, 0x5F},
+	{0x4022, 0xAF},
+	{0x4024, 0x5F},
+	{0x4026, 0x9F},
+	{0x4028, 0x4F},
+	{0x4074, 0x00},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr3_10bit_3864x2192_1782M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xEA},
+	{0x3025, 0x07},
+	{0x3028, 0xCA},
+	{0x3029, 0x01},
+	{0x302C, 0x01},
+	{0x302D, 0x02},
+	{0x3033, 0x04},
+	{0x3050, 0x3E},
+	{0x3051, 0x01},
+	{0x3054, 0x0D},
+	{0x3058, 0x9E},
+	{0x3060, 0x91},
+	{0x3064, 0xC2},
+	{0x30CF, 0x03},
+	{0x3118, 0xC0},
+	{0x3260, 0x00},
+	{0x400C, 0x01},
+	{0x4018, 0xB7},
+	{0x401A, 0x67},
+	{0x401C, 0x6F},
+	{0x401E, 0xDF},
+	{0x401F, 0x01},
+	{0x4020, 0x6F},
+	{0x4022, 0xCF},
+	{0x4024, 0x6F},
+	{0x4026, 0xB7},
+	{0x4028, 0x5F},
+	{0x4074, 0x00},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr2_10bit_3864x2192_1485M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xFC},
+	{0x3025, 0x08},
+	{0x3028, 0x1A},
+	{0x3029, 0x02},
+	{0x302C, 0x01},
+	{0x302D, 0x01},
+	{0x3033, 0x08},
+	{0x3050, 0xA8},
+	{0x3051, 0x0D},
+	{0x3054, 0x09},
+	{0x3058, 0x3E},
+	{0x3060, 0x4D},
+	{0x3064, 0x4a},
+	{0x30CF, 0x01},
+	{0x3118, 0xA0},
+	{0x3260, 0x00},
+	{0x400C, 0x01},
+	{0x4018, 0xA7},
+	{0x401A, 0x57},
+	{0x401C, 0x5F},
+	{0x401E, 0x97},
+	{0x401F, 0x01},
+	{0x4020, 0x5F},
+	{0x4022, 0xAF},
+	{0x4024, 0x5F},
+	{0x4026, 0x9F},
+	{0x4028, 0x4F},
+	{0x4074, 0x00},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_linear_10bit_3864x2192_891M_regs[] = {
+	{0x3020, 0x00},
+	{0x3021, 0x00},
+	{0x3022, 0x00},
+	{0x3024, 0xCA},
+	{0x3025, 0x08},
+	{0x3028, 0x4C},
+	{0x3029, 0x04},
+	{0x302C, 0x00},
+	{0x302D, 0x00},
+	{0x3033, 0x05},
+	{0x3050, 0x08},
+	{0x3051, 0x00},
+	{0x3054, 0x19},
+	{0x3058, 0x3E},
+	{0x3060, 0x25},
+	{0x3064, 0x4a},
+	{0x30CF, 0x00},
+	{0x3118, 0xC0},
+	{0x3260, 0x01},
+	{0x400C, 0x00},
+	{0x4018, 0x7F},
+	{0x401A, 0x37},
+	{0x401C, 0x37},
+	{0x401E, 0xF7},
+	{0x401F, 0x00},
+	{0x4020, 0x3F},
+	{0x4022, 0x6F},
+	{0x4024, 0x3F},
+	{0x4026, 0x5F},
+	{0x4028, 0x2F},
+	{0x4074, 0x01},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_linear_12bit_1932x1096_594M_regs[] = {
+	{0x3020, 0x01},
+	{0x3021, 0x01},
+	{0x3022, 0x01},
+	{0x3024, 0x5D}, //IMX415_VMAX_L
+	{0x3025, 0x0C}, //IMX415_VMAX_M
+	{0x3028, 0x0E}, //IMX415_HMAX_L
+	{0x3029, 0x03}, //IMX415_HMAX_H
+	{0x302C, 0x00},
+	{0x302D, 0x00},
+	{0x3031, 0x00},
+	{0x3033, 0x07}, //SYS_MODE
+	{0x3050, 0x08},
+	{0x3051, 0x00},
+	{0x3054, 0x19},
+	{0x3058, 0x3E},
+	{0x3060, 0x25},
+	{0x3064, 0x4A},
+	{0x30CF, 0x00},
+	{0x30D9, 0x02},
+	{0x30DA, 0x01},
+	{0x3118, 0x80},
+	{0x3260, 0x01},
+	{0x3701, 0x00},
+	{0x400C, 0x00},
+	{0x4018, 0x67},
+	{0x401A, 0x27},
+	{0x401C, 0x27},
+	{0x401E, 0xB7},
+	{0x401F, 0x00},
+	{0x4020, 0x2F},
+	{0x4022, 0x4F},
+	{0x4024, 0x2F},
+	{0x4026, 0x47},
+	{0x4028, 0x27},
+	{0x4074, 0x01},
+	{REG_NULL, 0x00},
+};
+
+static __maybe_unused const struct regval imx415_hdr2_12bit_1932x1096_891M_regs[] = {
+	{0x3020, 0x01},
+	{0x3021, 0x01},
+	{0x3022, 0x01},
+	{0x3024, 0xFC},
+	{0x3025, 0x08},
+	{0x3028, 0x1A},
+	{0x3029, 0x02},
+	{0x302C, 0x01},
+	{0x302D, 0x01},
+	{0x3031, 0x00},
+	{0x3033, 0x05},
+	{0x3050, 0xB8},
+	{0x3051, 0x00},
+	{0x3054, 0x09},
+	{0x3058, 0x3E},
+	{0x3060, 0x25},
+	{0x3064, 0x4A},
+	{0x30CF, 0x01},
+	{0x30D9, 0x02},
+	{0x30DA, 0x01},
+	{0x3118, 0xC0},
+	{0x3260, 0x00},
+	{0x3701, 0x00},
+	{0x400C, 0x00},
+	{0x4018, 0xA7},
+	{0x401A, 0x57},
+	{0x401C, 0x5F},
+	{0x401E, 0x97},
+	{0x401F, 0x01},
+	{0x4020, 0x5F},
+	{0x4022, 0xAF},
+	{0x4024, 0x5F},
+	{0x4026, 0x9F},
+	{0x4028, 0x4F},
+	{0x4074, 0x01},
+	{REG_NULL, 0x00},
+};
 
 /*
  * The width and height must be configured to be
@@ -266,313 +749,297 @@ struct imx415 {
  * }
  */
 static const struct imx415_mode supported_modes[] = {
-        /*
+	/*
 	 * frame rate = 1 / (Vtt * 1H) = 1 / (VMAX * 1H)
 	 * VMAX >= (PIX_VWIDTH / 2) + 46 = height + 46
 	 */
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x08ca - 0x08,
-                .hts_def = 0x044c * IMX415_4LANES * 2,
-                .vts_def = 0x08ca,
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_3864x2192_891M_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 1,
-                .bpp = 10,
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x08fc * 2 - 0x0da8,
-                .hts_def = 0x0226 * IMX415_4LANES * 2,
-                /*
-                 * IMX415 HDR mode T-line is half of Linear mode,
-                 * make vts double to workaround.
-                 */
-                .vts_def = 0x08fc * 2,
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_hdr2_10bit_3864x2192_1485M_regs,
-                .hdr_mode = HDR_X2,
-                .mipi_freq_idx = 4,
-                .bpp = 10,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 200000,
-                },
-                .exp_def = 0x13e,
-                .hts_def = 0x021A * IMX415_4LANES * 2,
-                /*
-                 * IMX415 HDR mode T-line is half of Linear mode,
-                 * make vts double to workaround.
-                 */
-                .vts_def = 0x06BD * 4,
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_hdr3_10bit_3864x2192_1485M_regs,
-                .hdr_mode = HDR_X3,
-                .mipi_freq_idx = 4,
-                .bpp = 10,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 200000,
-                },
-                .exp_def = 0x13e,
-                .hts_def = 0x01ca * IMX415_4LANES * 2,
-                /*
-                 * IMX415 HDR mode T-line is half of Linear mode,
-                 * make vts double to workaround.
-                 */
-                .vts_def = 0x07ea * 4,
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_hdr3_10bit_3864x2192_1782M_regs,
-                .hdr_mode = HDR_X3,
-                .mipi_freq_idx = 4,
-                .bpp = 10,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
-        },
-        {
-                /* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x08ca - 0x08,
-                .hts_def = 0x044c * IMX415_4LANES * 2,
-                .vts_def = 0x08ca,
-                .global_reg_list = imx415_global_12bit_3864x2192_regs,
-                .reg_list = imx415_linear_12bit_3864x2192_891M_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 1,
-                .bpp = 12,
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x08CA * 2 - 0x0d90,
-                .hts_def = 0x0226 * IMX415_4LANES * 2,
-                /*
-                 * IMX415 HDR mode T-line is half of Linear mode,
-                 * make vts double(that is FSC) to workaround.
-                 */
-                .vts_def = 0x08CA * 2,
-                .global_reg_list = imx415_global_12bit_3864x2192_regs,
-                .reg_list = imx415_hdr2_12bit_3864x2192_1782M_regs,
-                .hdr_mode = HDR_X2,
-                .mipi_freq_idx = 4,
-                .bpp = 12,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-                .width = 3864,
-                .height = 2192,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 200000,
-                },
-                .exp_def = 0x114,
-                .hts_def = 0x0226 * IMX415_4LANES * 2,
-                /*
-                 * IMX415 HDR mode T-line is half of Linear mode,
-                 * make vts double(that is FSC) to workaround.
-                 */
-                .vts_def = 0x0696 * 4,
-                .global_reg_list = imx415_global_12bit_3864x2192_regs,
-                .reg_list = imx415_hdr3_12bit_3864x2192_1782M_regs,
-                .hdr_mode = HDR_X3,
-                .mipi_freq_idx = 4,
-                .bpp = 12,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
-        },
-        /*{
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-                .width = 1944,
-                .height = 1097,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x05dc - 0x08, //1500-8
-                .hts_def = 0x030e * 3, //782*3=2346
-                .vts_def = 0x0c5d,     //3165
-                .global_reg_list = imx415_global_12bit_3864x2192_regs,
-                .reg_list = imx415_linear_12bit_1932x1096_594M_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 0,
-                .bpp = 12,
-        },
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
-                .width = 1944,
-                .height = 1097,
-                .max_fps = {
-                        .numerator = 10000,
-                        .denominator = 300000,
-                },
-                .exp_def = 0x08FC / 4,
-                .hts_def = 0x021A * 4,
-                //
-                 //IMX415 HDR mode T-line is half of Linear mode,
-                 //make vts double(that is FSC) to workaround.
-                 //
-                .vts_def = 0x08FC * 2,
-                .global_reg_list = imx415_global_12bit_3864x2192_regs,
-                .reg_list = imx415_hdr2_12bit_1932x1096_891M_regs,
-                .hdr_mode = HDR_X2,
-                .mipi_freq_idx = 1,
-                .bpp = 12,
-                .vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
-                .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
-                .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
-        },*/
-        // the one I created
-        /*{
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1920+(6+6+12),
-                .height = 1080+(1+6+4+4+1+1),
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator = 1800000,
-                },
-                .exp_def = 0x08ca - 0x08, //2250-8=2248
-                .hts_def = 0x16E * IMX415_4LANES * 2, // 366*4*2 = 2928
-                .vts_def = 0x08ca ,                     // 2250        | seems to be VMAX from spec sheet
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_3864x2192_2376_regs_binning,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 5,
-                .bpp = 10,
-        },*/
-        // the one I created in this repo
-        /*milch{
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1920+(6+6+12),
-                .height = 1080+(1+6+4+4+1+1),
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator =  900000,
-                },
-                .exp_def = 0x08ca - 0x08, //2250-8=2248
-                //.hts_def = 0x226 * IMX415_4LANES * 2, //550
-                .hts_def = 0x16D * IMX415_4LANES * 2,  //365
-                .vts_def = 0x08ca ,                     // 2250        | seems to be VMAX from spec sheet
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_XxX_1782Mbps_regs_cropping,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 4,
-                .bpp = 10,
-        },*/
-        // the new one
-        /*{
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1284,
-                .height = 720,
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator = 1199880, //119.988fps
-                },
-                .exp_def = 0x066C - 0x04,                  // VMAX - X
-                .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
-                .vts_def = 0x066C ,                        // VMAX
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_720p_120fps_bin_and_crop_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 2,
-                .bpp = 10,
-        },*/
-        // the new one with new INCK
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1284,
-                .height = 720,
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator = 1349870, //134.987fps
-                },
-                .exp_def = 0x05E3 - 0x04,                  // VMAX - X
-                .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
-                .vts_def = 0x05E3 ,                        // VMAX
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_720p_134fps_bin_and_crop_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 3,
-                .bpp = 10,
-        },
-        // the other new one with new INCK
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1920,
-                .height = 1080,
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator =  901100, //90.011fps
-                },
-                .exp_def = 0x08D4 - 0x04,                  // VMAX - X
-                .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
-                .vts_def = 0x08D4 ,                        // VMAX
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_1080p_90fps_bin_and_crop_regs_X,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 3,
-                .bpp = 10,
-        },
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x08ca - 0x08,
+		.hts_def = 0x044c * IMX415_4LANES * 2,
+		.vts_def = 0x08ca,
+		.global_reg_list = imx415_global_10bit_3864x2192_regs,
+		.reg_list = imx415_linear_10bit_3864x2192_891M_regs,
+		.hdr_mode = NO_HDR,
+		.mipi_freq_idx = 1,
+		.bpp = 10,
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x08fc * 2 - 0x0da8,
+		.hts_def = 0x0226 * IMX415_4LANES * 2,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double to workaround.
+		 */
+		.vts_def = 0x08fc * 2,
+		.global_reg_list = imx415_global_10bit_3864x2192_regs,
+		.reg_list = imx415_hdr2_10bit_3864x2192_1485M_regs,
+		.hdr_mode = HDR_X2,
+		.mipi_freq_idx = 2,
+		.bpp = 10,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 200000,
+		},
+		.exp_def = 0x13e,
+		.hts_def = 0x021A * IMX415_4LANES * 2,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double to workaround.
+		 */
+		.vts_def = 0x06BD * 4,
+		.global_reg_list = imx415_global_10bit_3864x2192_regs,
+		.reg_list = imx415_hdr3_10bit_3864x2192_1485M_regs,
+		.hdr_mode = HDR_X3,
+		.mipi_freq_idx = 2,
+		.bpp = 10,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 200000,
+		},
+		.exp_def = 0x13e,
+		.hts_def = 0x01ca * IMX415_4LANES * 2,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double to workaround.
+		 */
+		.vts_def = 0x07ea * 4,
+		.global_reg_list = imx415_global_10bit_3864x2192_regs,
+		.reg_list = imx415_hdr3_10bit_3864x2192_1782M_regs,
+		.hdr_mode = HDR_X3,
+		.mipi_freq_idx = 3,
+		.bpp = 10,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
+	},
+	{
+		/* 1H period = (1100 clock) = (1100 * 1 / 74.25MHz) */
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x08ca - 0x08,
+		.hts_def = 0x044c * IMX415_4LANES * 2,
+		.vts_def = 0x08ca,
+		.global_reg_list = imx415_global_12bit_3864x2192_regs,
+		.reg_list = imx415_linear_12bit_3864x2192_891M_regs,
+		.hdr_mode = NO_HDR,
+		.mipi_freq_idx = 1,
+		.bpp = 12,
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x08CA * 2 - 0x0d90,
+		.hts_def = 0x0226 * IMX415_4LANES * 2,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double(that is FSC) to workaround.
+		 */
+		.vts_def = 0x08CA * 2,
+		.global_reg_list = imx415_global_12bit_3864x2192_regs,
+		.reg_list = imx415_hdr2_12bit_3864x2192_1782M_regs,
+		.hdr_mode = HDR_X2,
+		.mipi_freq_idx = 3,
+		.bpp = 12,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 3864,
+		.height = 2192,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 200000,
+		},
+		.exp_def = 0x114,
+		.hts_def = 0x0226 * IMX415_4LANES * 2,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double(that is FSC) to workaround.
+		 */
+		.vts_def = 0x0696 * 4,
+		.global_reg_list = imx415_global_12bit_3864x2192_regs,
+		.reg_list = imx415_hdr3_12bit_3864x2192_1782M_regs,
+		.hdr_mode = HDR_X3,
+		.mipi_freq_idx = 3,
+		.bpp = 12,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_2,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 1944,
+		.height = 1097,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x05dc - 0x08, //1500-8
+		.hts_def = 0x030e * 3, //782*3=2346
+		.vts_def = 0x0c5d,     //3165
+		.global_reg_list = imx415_global_12bit_3864x2192_regs,
+		.reg_list = imx415_linear_12bit_1932x1096_594M_regs,
+		.hdr_mode = NO_HDR,
+		.mipi_freq_idx = 0,
+		.bpp = 12,
+	},
+	{
+		.bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
+		.width = 1944,
+		.height = 1097,
+		.max_fps = {
+			.numerator = 10000,
+			.denominator = 300000,
+		},
+		.exp_def = 0x08FC / 4,
+		.hts_def = 0x021A * 4,
+		/*
+		 * IMX415 HDR mode T-line is half of Linear mode,
+		 * make vts double(that is FSC) to workaround.
+		 */
+		.vts_def = 0x08FC * 2,
+		.global_reg_list = imx415_global_12bit_3864x2192_regs,
+		.reg_list = imx415_hdr2_12bit_1932x1096_891M_regs,
+		.hdr_mode = HDR_X2,
+		.mipi_freq_idx = 1,
+		.bpp = 12,
+		.vc[PAD0] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD1] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
+		.vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_1,
+		.vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_1,//M->csi wr2
+	},
 };
 
 static const s64 link_freq_items[] = {
 	MIPI_FREQ_297M,
 	MIPI_FREQ_446M,
-    MIPI_FREQ_720M, //Consti10 - added at the right place. Note that therefore the freq_idx'es of other modes change
 	MIPI_FREQ_743M,
 	MIPI_FREQ_891M,
-    MIPI_FREQ_1188M //Consti10 - this is the highest one
 };
+
+/* Write registers up to 4 at a time */
+static int imx415_write_reg(struct i2c_client *client, u16 reg,
+			    u32 len, u32 val)
+{
+	u32 buf_i, val_i;
+	u8 buf[6];
+	u8 *val_p;
+	__be32 val_be;
+
+	if (len > 4)
+		return -EINVAL;
+
+	buf[0] = reg >> 8;
+	buf[1] = reg & 0xff;
+
+	val_be = cpu_to_be32(val);
+	val_p = (u8 *)&val_be;
+	buf_i = 2;
+	val_i = 4 - len;
+
+	while (val_i < 4)
+		buf[buf_i++] = val_p[val_i++];
+
+	if (i2c_master_send(client, buf, len + 2) != len + 2)
+		return -EIO;
+
+	return 0;
+}
+
+static int imx415_write_array(struct i2c_client *client,
+			      const struct regval *regs)
+{
+	u32 i;
+	int ret = 0;
+
+	for (i = 0; ret == 0 && regs[i].addr != REG_NULL; i++) {
+		ret = imx415_write_reg(client, regs[i].addr,
+				       IMX415_REG_VALUE_08BIT, regs[i].val);
+	}
+	return ret;
+}
+
+/* Read registers up to 4 at a time */
+static int imx415_read_reg(struct i2c_client *client, u16 reg, unsigned int len,
+			   u32 *val)
+{
+	struct i2c_msg msgs[2];
+	u8 *data_be_p;
+	__be32 data_be = 0;
+	__be16 reg_addr_be = cpu_to_be16(reg);
+	int ret;
+
+	if (len > 4 || !len)
+		return -EINVAL;
+
+	data_be_p = (u8 *)&data_be;
+	/* Write register address */
+	msgs[0].addr = client->addr;
+	msgs[0].flags = 0;
+	msgs[0].len = 2;
+	msgs[0].buf = (u8 *)&reg_addr_be;
+
+	/* Read data from register */
+	msgs[1].addr = client->addr;
+	msgs[1].flags = I2C_M_RD;
+	msgs[1].len = len;
+	msgs[1].buf = &data_be_p[4 - len];
+
+	ret = i2c_transfer(client->adapter, msgs, ARRAY_SIZE(msgs));
+	if (ret != ARRAY_SIZE(msgs))
+		return -EIO;
+
+	*val = be32_to_cpu(data_be);
+
+	return 0;
+}
 
 static int imx415_get_reso_dist(const struct imx415_mode *mode,
 				struct v4l2_mbus_framefmt *framefmt)
@@ -1531,10 +1998,10 @@ int __imx415_power_on(struct imx415 *imx415)
 	/* At least 1us between XCLR and clk */
 	/* fix power on timing if insmod this ko */
 	usleep_range(10 * 1000, 20 * 1000);
-	ret = clk_set_rate(imx415->xvclk, IMX415_XVCLK_FREQ_USED); //Consti10
+	ret = clk_set_rate(imx415->xvclk, IMX415_XVCLK_FREQ_37M);
 	if (ret < 0)
 		dev_warn(dev, "Failed to set xvclk rate\n");
-	if (clk_get_rate(imx415->xvclk) != IMX415_XVCLK_FREQ_USED) //Consti10
+	if (clk_get_rate(imx415->xvclk) != IMX415_XVCLK_FREQ_37M)
 		dev_warn(dev, "xvclk mismatched\n");
 	ret = clk_prepare_enable(imx415->xvclk);
 	if (ret < 0) {
@@ -1651,8 +2118,6 @@ static int imx415_enum_frame_interval(struct v4l2_subdev *sd,
 #define DST_HEIGHT_2160 2160
 #define DST_WIDTH_1920 1920
 #define DST_HEIGHT_1080 1080
-#define DST_WIDTH_720P 1280
-#define DST_HEIGHT_720P 720
 
 /*
  * The resolution of the driver configuration needs to be exactly
@@ -1680,17 +2145,10 @@ static int imx415_get_selection(struct v4l2_subdev *sd,
 			sel->r.width = DST_WIDTH_1920;
 			sel->r.top = CROP_START(imx415->cur_mode->height, DST_HEIGHT_1080);
 			sel->r.height = DST_HEIGHT_1080;
-		} else if (imx415->cur_mode->width==1284) { //Consti10 added
-		    //sel->r.left = CROP_START(imx415->cur_mode->width, DST_WIDTH_720P);
-            sel->r.left = 0;
-			sel->r.width = DST_WIDTH_720P;
-			//sel->r.top = CROP_START(imx415->cur_mode->height, DST_HEIGHT_720P);
-            sel->r.top = 0;
-			sel->r.height = DST_HEIGHT_720P;
-		}else {
-			sel->r.left = 0;
+		} else {
+			sel->r.left = CROP_START(imx415->cur_mode->width, imx415->cur_mode->width);
 			sel->r.width = imx415->cur_mode->width;
-			sel->r.top = 0;
+			sel->r.top = CROP_START(imx415->cur_mode->height, imx415->cur_mode->height);
 			sel->r.height = imx415->cur_mode->height;
 		}
 		return 0;
@@ -1781,9 +2239,6 @@ static int imx415_set_ctrl(struct v4l2_ctrl *ctrl)
 				       IMX415_FETCH_EXP_H(shr0));
 		dev_dbg(&client->dev, "set exposure(shr0) %d = cur_vts(%d) - val(%d)\n",
 			shr0, imx415->cur_vts, ctrl->val);
-        if(shr0<8 || shr0>(imx415->cur_vts-4)){
-            dev_dbg(&client->dev, "Consti10: I think the exposure is set wrong\n");
-        }
 		break;
 	case V4L2_CID_ANALOGUE_GAIN:
 		if (imx415->cur_mode->hdr_mode != NO_HDR)

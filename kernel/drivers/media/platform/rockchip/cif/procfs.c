@@ -313,6 +313,7 @@ static void rkcif_show_format(struct rkcif_device *dev, struct seq_file *f)
 			   rkcif_pixelcode_to_string(stream->cif_fmt_out->fourcc),
 			   dev->channels[0].width, dev->channels[0].height,
 			   dev->channels[0].crop_st_x, dev->channels[0].crop_st_y);
+
 		seq_printf(f, "\tcompact:%s\n", stream->is_compact ? "enable" : "disabled");
 		seq_printf(f, "\tframe amount:%d\n", stream->frame_idx);
 		time_val = div_u64(stream->readout.early_time, 1000000);
@@ -346,6 +347,44 @@ static void rkcif_show_format(struct rkcif_device *dev, struct seq_file *f)
 		}
 		seq_printf(f, "\t\t\tall err count:%llu\n", dev->irq_stats.all_err_cnt);
 		seq_printf(f, "\t\t\tframe dma end:%llu\n", dev->irq_stats.all_frm_end_cnt);
+
+		//Consti10
+		seq_puts(f, "\tConsti10 latency:\n");
+		seq_printf(f, "\tNow %lld\n",ktime_get_ns());
+		seq_printf(f, "\tfs_timestamp %lld\n",stream->readout.fs_timestamp);
+		seq_printf(f, "\tfe_timestamp %lld\n",stream->readout.fe_timestamp);
+		seq_printf(f, "\twk_timestamp %lld\n",stream->readout.wk_timestamp);
+		seq_printf(f, "\treadout_time %lld\n",stream->readout.readout_time);
+		seq_printf(f, "\tearly_time %lld\n",stream->readout.early_time);
+		seq_printf(f, "\ttotal_time %lld\n",stream->readout.total_time);
+
+		seq_printf(f, "\tDelay fe_ts-fs_ts : %lld ms\n",div_u64(stream->readout.fe_timestamp-stream->readout.fs_timestamp,1000*1000));
+		seq_printf(f, "\tDelay wk_ts-fs_ts : %lld ms\n",div_u64(stream->readout.wk_timestamp-stream->readout.fs_timestamp,1000*1000));
+        seq_printf(f, "\tDelay now-fs_ts : %lld ms\n",div_u64(ktime_get_ns()-stream->readout.fs_timestamp,1000*1000));
+        // weird- so fs_timestamp can be higher than fe-timestamp ?!
+        // fs_timestamp is written by rkcif_irq_pingpong()
+        // every time when intstat & CSI_FRAME0_START_ID0=true (or when CSI_FRAME1_START_ID0)
+        // fe_timestamp is also written by
+
+        if(stream->curr_buf){
+		    seq_printf(f, "\tcurr_buff ts: %lld\n",stream->curr_buf->vb.vb2_buf.timestamp);
+		}
+		if(stream->next_buf){
+		    seq_printf(f, "\tnext_buf ts: %lld\n",stream->next_buf->vb.vb2_buf.timestamp);
+		}
+        seq_printf(f, "\tConsti10: rkcif_stream->id:%d\n",stream->id);
+		seq_printf(f, "\tConst10:format_in:dvp_fmt_val:%d  csi_fmt_val:%d csi_yuv_order:%d fmt_type:%s field:%d\n",
+			   stream->cif_fmt_in->dvp_fmt_val,stream->cif_fmt_in->csi_fmt_val,stream->cif_fmt_in->csi_yuv_order,
+			   stream->cif_fmt_in->fmt_type==CIF_FMT_TYPE_YUV ? "CIF_FMT_TYPE_YUV" : "CIF_FMT_TYPE_RAW",
+			   stream->cif_fmt_in->field);
+        seq_printf(f, "\tConsti10:out_fmt: fmt_val:%d csi_fmt_val%d | cplanes:%d mplanes:%d raw_bpp:%d\n",
+                   stream->cif_fmt_out->fmt_val,stream->cif_fmt_out->csi_fmt_val,
+                   stream->cif_fmt_out->cplanes,stream->cif_fmt_out->mplanes,stream->cif_fmt_out->raw_bpp);
+		for(i=0;i<stream->cif_fmt_out->cplanes;i++){
+		    seq_printf(f, "\tConsti10:bpp for cplane %d is %d",i,stream->cif_fmt_out->bpp[i]);
+		}
+		seq_printf(f, "\tConsti10:wait_line:%d wait_line_bak:%d wait_line_cache:%d\n",
+                   dev->wait_line,dev->wait_line_bak,dev->wait_line_cache);
 	}
 }
 

@@ -177,7 +177,8 @@ static const char * const rv1126_ispp_clks[] = {
 };
 
 static const struct ispp_clk_info rv1126_ispp_clk_rate[] = {
-	{
+    //Consti10
+	/*{
 		.clk_rate = 150,
 		.refer_data = 0,
 	}, {
@@ -189,7 +190,7 @@ static const struct ispp_clk_info rv1126_ispp_clk_rate[] = {
 	}, {
 		.clk_rate = 400,
 		.refer_data = 3072,
-	}, {
+	},*/ {
 		.clk_rate = 500,
 		.refer_data = 3840,
 	}

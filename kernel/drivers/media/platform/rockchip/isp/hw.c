@@ -352,7 +352,8 @@ static const struct isp_clk_info rk3568_isp_clk_rate[] = {
 };
 
 static const struct isp_clk_info rv1126_isp_clk_rate[] = {
-	{
+    //Consti10
+	/*{
 		.clk_rate = 20,
 		.refer_data = 0,
 	}, {
@@ -364,7 +365,7 @@ static const struct isp_clk_info rv1126_isp_clk_rate[] = {
 	}, {
 		.clk_rate = 500,
 		.refer_data = 3072,
-	}, {
+	},*/ {
 		.clk_rate = 600,
 		.refer_data = 3840,
 	}

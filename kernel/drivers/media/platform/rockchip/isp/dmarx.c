@@ -1010,6 +1010,12 @@ void rkisp_dmarx_get_frame(struct rkisp_device *dev, u32 *id,
 		*sof_timestamp = sof_time;
 	if (timestamp)
 		*timestamp = frame_timestamp;
+
+    //Consti10
+    v4l2_err(&dev->v4l2_dev, "rkisp_dmarx_get_frame sof_timestamp:%lld timestamp:%lld\n",sof_time,frame_timestamp);
+    v4l2_err(&dev->v4l2_dev, "rkisp_dmarx_get_frame delay now-ts: %lld (ms) now-sof_ts: %lld (ms)\n",
+             div_u64(ktime_get_ns()-frame_timestamp,1000*1000),
+             div_u64(ktime_get_ns()-sof_time,1000*1000));
 }
 
 int rkisp_register_dmarx_vdev(struct rkisp_device *dev)

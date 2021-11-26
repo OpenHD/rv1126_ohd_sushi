@@ -417,8 +417,14 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 		struct rkispp_stream *vir = &dev->stream_vdev.stream[STREAM_VIR];
 		u64 ns = dev->ispp_sdev.frame_timestamp;
 
-		if (!ns)
-			ns = ktime_get_ns();
+		if (!ns){
+            ns = ktime_get_ns();
+            //Consti10: this timestamp should not be 0
+            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is 0\n");
+		}else{
+            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is %lld\n",ns);
+            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: delay now-ts:%lldms\n",div_u64(ktime_get_ns()-ns,1000*1000));
+		}
 
 		for (i = 0; i < fmt->mplanes; i++) {
 			u32 payload_size =
@@ -1498,6 +1504,7 @@ static int limit_check_scl(struct rkispp_stream *stream,
 			 "\t[width max:%d ratio max:%d min:%d]\n",
 			 stream->id - STREAM_S0, *w, *h,
 			 max_width, max_ratio, min_ratio);
+		//Consti10:TODO note: was fixed, issue was in imx415 driver itself
 		if (!try_fmt) {
 			*w = 0;
 			*h = 0;
@@ -2590,11 +2597,13 @@ static void fec_work_event(struct rkispp_device *dev,
 			dev->ispp_sdev.frame_timestamp =
 				vdev->fec.cur_rd->timestamp;
 			dev->ispp_sdev.frm_sync_seq = seq;
+            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X1: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 		} else {
 			seq = vdev->nr.buf.wr[0].id;
 			dev->ispp_sdev.frame_timestamp =
 				vdev->nr.buf.wr[0].timestamp;
 			dev->ispp_sdev.frm_sync_seq = seq;
+            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X2: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 		}
 
 		stream = &vdev->stream[STREAM_MB];
@@ -2875,6 +2884,7 @@ static void nr_work_event(struct rkispp_device *dev,
 			if (!is_fec_en && !is_quick) {
 				dev->ispp_sdev.frame_timestamp = timestamp;
 				dev->ispp_sdev.frm_sync_seq = seq;
+                v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X3: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 			}
 		}
 

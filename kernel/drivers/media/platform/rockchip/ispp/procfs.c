@@ -12,12 +12,26 @@
 #include "version.h"
 
 #ifdef CONFIG_PROC_FS
+
+//Consti10
+static char* consti10_rkispp_input_as_string(enum rkispp_input val){
+    if(val==INP_INVAL){
+        return "INP_INVAL";
+    }else if(val==INP_ISP){
+        return "INP_ISP";
+    }else if(val==INP_DDR){
+        return "INP_DDR";
+    }
+    return "Unknown";
+}
+
 static int ispp_show(struct seq_file *p, void *v)
 {
 	struct rkispp_device *dev = p->private;
 	enum rkispp_state state = dev->ispp_sdev.state;
 	struct rkispp_stream *stream;
 	u32 val;
+	int i=0;//Consti10
 
 	seq_printf(p, "%-10s Version:v%02x.%02x.%02x\n",
 		   dev->name,
@@ -108,6 +122,19 @@ static int ispp_show(struct seq_file *p, void *v)
 		   "Monitor",
 		   dev->stream_vdev.monitor.is_en ? "ON" : "OFF",
 		   dev->stream_vdev.monitor.retry);
+	//
+	seq_printf(p, "Consti10:rkispp_device inp:%s stream_sync:%d \n",consti10_rkispp_input_as_string(dev->inp),dev->stream_sync);
+	seq_printf(p, "Consti10:rkispp_device:rkispp_hw_dev  max_input:(%d:%d@%d)\n", dev->hw_dev->max_in.w,dev->hw_dev->max_in.h,dev->hw_dev->max_in.fps);
+	seq_printf(p, "Consti10:rkispp_device:rkispp_stream_vdev dbg id:%d timestamp:%lld interval:%d delay:%d\n",dev->stream_vdev.dbg.id,dev->stream_vdev.dbg.timestamp,
+               dev->stream_vdev.dbg.interval,dev->stream_vdev.dbg.delay);
+	seq_printf(p, "Consti10:VIDEO_MAX_FRAME:%d\n",VIDEO_MAX_FRAME);
+	for(i=0;i<VIDEO_MAX_FRAME;i++){
+        if(dev->stream_vdev.input[i].frame_id!=0 || dev->stream_vdev.input[i].frame_timestamp!=0){
+            seq_printf(p, "Consti10:rkispp_device:rkispp_stream_vdev input buff nr: %d frame_id:%d frame_timestamp:%lld index:%d\n",i,
+                   dev->stream_vdev.input[i].frame_id,dev->stream_vdev.input[i].frame_timestamp,dev->stream_vdev.input[i].index);
+        }
+	}
+    seq_printf(p, "Consti10:rkispp wait_line %d\n",dev->stream_vdev.wait_line);
 	return 0;
 }
 

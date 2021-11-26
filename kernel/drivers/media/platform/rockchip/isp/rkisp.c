@@ -2424,6 +2424,7 @@ void rkisp_isp_isr(unsigned int isp_mis,
 			dev->isp_sdev.dbg.delay = dev->isp_sdev.dbg.timestamp - tmp;
 		}
 		rkisp_set_state(dev, ISP_FRAME_VS);
+        v4l2_err(&dev->v4l2_dev,"Consti10: ISP_FRAME_VS %d: %lld\n",dev->csi_dev.frame_cnt,ktime_get_ns());
 		/* last vsync to config next buf */
 		if (!dev->csi_dev.filt_state[CSI_F_VS])
 			rkisp_bridge_update_mi(dev);
@@ -2506,6 +2507,7 @@ vs_skip:
 	/* sampled input frame is complete */
 	if (isp_mis & CIF_ISP_FRAME_IN) {
 		rkisp_set_state(dev, ISP_FRAME_IN);
+        v4l2_err(&dev->v4l2_dev,"Consti10: ISP_FRAME_IN %d: %lld\n",dev->csi_dev.frame_cnt,ktime_get_ns());
 		writel(CIF_ISP_FRAME_IN, base + CIF_ISP_ICR);
 		isp_mis_tmp = readl(base + CIF_ISP_MIS);
 		if (isp_mis_tmp & CIF_ISP_FRAME_IN)
@@ -2521,6 +2523,7 @@ vs_skip:
 			ktime_get_ns() - dev->isp_sdev.dbg.timestamp;
 		/* Clear Frame In (ISP) */
 		rkisp_set_state(dev, ISP_FRAME_END);
+        v4l2_err(&dev->v4l2_dev,"Consti10: ISP_FRAME_END %d: %lld\n",dev->csi_dev.frame_cnt,ktime_get_ns());
 		writel(CIF_ISP_FRAME, base + CIF_ISP_ICR);
 		isp_mis_tmp = readl(base + CIF_ISP_MIS);
 		if (isp_mis_tmp & CIF_ISP_FRAME)
