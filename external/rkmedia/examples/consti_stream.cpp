@@ -41,6 +41,8 @@ extern "C"{
 //
 #include "easymedia/utils.h"
 #include "easymedia/codec.h"
+// well just write helper functions for rkmedia into my own helper file
+#include "common_consti/consti_rkmedia_helper.h"
 
 static bool quit = false;
 static void sigterm_handler(int sig) {
@@ -164,9 +166,9 @@ void video_packet_cb(MEDIA_BUFFER mb) {
     sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
     // confirmed, IDR frame comes prefixed with SPS/PPS
     //checkForAnotherNALSequence(mb_data,mb_data_size);
-    sendAsRTP(mb_data,mb_data_size, false);
+    //sendAsRTP(mb_data,mb_data_size, false);
     //
-    sendAsRTP2(mb_data,mb_data_size,false);
+    //sendAsRTP2(mb_data,mb_data_size,false);
 
     //optionally write to file for debugging
     writeToFileIfEnabled(mb_data,mb_data_size);
@@ -211,6 +213,7 @@ static const struct option long_options[] = {
         {"crop",required_argument,NULL, 'c'},
         {"output",required_argument,NULL, 'o'},
         {"bitrate",required_argument,NULL, 'b'},
+        {"hdr",required_argument,NULL, 'x'},
         {NULL, 0, NULL, 0},
 };
 
@@ -236,6 +239,7 @@ static void print_usage(const RK_CHAR *name) {
            "Option:[rkispp_m_bypass, rkispp_scale0, rkispp_scale1, rkispp_scale2]\n");
     printf("\t-b | --bitrate Use custom bitrate, in MBit/s (e.g. 5==5 MBit/s)\n");
     printf("\t-o | --output Write raw data to file (optional)\n");
+    printf("\t-x | --hdr HDR working mode. 0=NO_HDR\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -251,6 +255,7 @@ int main(int argc, char *argv[]) {
     bool m_crop=false;
     std::string destinationIpAddress="192.168.0.13";
     int bitrateMbitps=5; // 5 MBit/s
+    int m_HdrModeInt=0;
     
     int ret = 0;
     int c;
@@ -294,6 +299,9 @@ int main(int argc, char *argv[]) {
             case 'b':
                 bitrateMbitps = atoi(optarg);
                 break;
+            case 'x':
+                m_HdrModeInt = atoi(optarg);
+                break;
             case '?':
             default:
                 print_usage(argv[0]);
@@ -305,6 +313,11 @@ int main(int argc, char *argv[]) {
     if(strcmp(device_name.c_str(),"rkispp_m_bypass")==0){
       m_image_type=IMAGE_TYPE_FBC0;
     }
+    // optionally enable HDR
+    rk_aiq_working_mode_t hdr_mode = RK_AIQ_WORKING_MODE_NORMAL;
+    hdr_mode=convert_rk_aiq_working_mode_t(m_HdrModeInt);
+    print_rk_aiq_working_mode_t(hdr_mode);
+
 
     udpSender=std::make_unique<UDPSender>(destinationIpAddress,M_DESTINATION_PORT,MY_WANTED_UDP_SENDBUFF_SIZE);
     rtp_enc_init(&rtpEnc);
@@ -326,7 +339,6 @@ int main(int argc, char *argv[]) {
     if (!iq_file_dir.empty()) {
 #ifdef RKAIQ
         printf("#Aiq xml dirpath: %s\n", iq_file_dir.c_str());
-        rk_aiq_working_mode_t hdr_mode = RK_AIQ_WORKING_MODE_NORMAL;
         RK_BOOL fec_enable = RK_FALSE;
         int fps = m_framerate;
         SAMPLE_COMM_ISP_Init(s32CamId,hdr_mode, fec_enable, iq_file_dir.c_str());
