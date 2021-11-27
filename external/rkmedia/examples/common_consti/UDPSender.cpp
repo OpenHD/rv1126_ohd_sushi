@@ -33,7 +33,7 @@ UDPSender::UDPSender(const std::string &IP,const int Port,const int WANTED_SNDBU
     std::cout<<"Default socket send buffer is "<<StringHelper::memorySizeReadable(sendBufferSize)<<"\n";
     if(WANTED_SNDBUFF_SIZE!=0){
         if(setsockopt(sockfd, SOL_SOCKET, SO_SNDBUF, &WANTED_SNDBUFF_SIZE,len)) {
-            std::cout<<"Cannot increase buffer size to "<<StringHelper::memorySizeReadable(WANTED_SNDBUFF_SIZE);
+            std::cout<<"Cannot increase buffer size to "<<StringHelper::memorySizeReadable(WANTED_SNDBUFF_SIZE)<<"\n";
         }
         sendBufferSize=0;
         getsockopt(sockfd, SOL_SOCKET, SO_SNDBUF, &sendBufferSize, &len);
