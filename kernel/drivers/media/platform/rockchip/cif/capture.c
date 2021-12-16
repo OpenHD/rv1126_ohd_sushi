@@ -4255,9 +4255,16 @@ static void rkcif_vb_done_oneframe(struct rkcif_stream *stream,
 				      stream->pixm.plane_fmt[i].sizeimage);
 	}
 
+    v4l2_err(&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: %lld ns\n",ktime_get_ns()-vb_done->vb2_buf.timestamp);
+
 	if (stream->cifdev->hdr.mode == NO_HDR)
 		vb_done->vb2_buf.timestamp = ktime_get_ns();
 
+    //Consti10 doc: https://docs.huihoo.com/doxygen/linux/kernel/3.7/videobuf2-core_8c.html#a60f915d25af4dab4c964b5a920e422ac
+    // inform videobuf that an operation on a buffer is finished
+    // also in cif-luma.c
+    v4l2_err(&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe sequence: %d idx: %d timestamp: %lld\n",
+             vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
 	vb2_buffer_done(&vb_done->vb2_buf, VB2_BUF_STATE_DONE);
 }
 

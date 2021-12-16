@@ -359,6 +359,8 @@ static void rkcif_show_format(struct rkcif_device *dev, struct seq_file *f)
 		seq_printf(f, "\ttotal_time %lld\n",stream->readout.total_time);
 
 		seq_printf(f, "\tDelay fe_ts-fs_ts : %lld ms\n",div_u64(stream->readout.fe_timestamp-stream->readout.fs_timestamp,1000*1000));
+        // Note: wk_timestamp is confirmed to be the timestamp when the subdev is done with the buffer
+        // (or rather this delay + the time it takes until rkcif_vb_done_oneframe is actually called, but this one should be minimal)
 		seq_printf(f, "\tDelay wk_ts-fs_ts : %lld ms\n",div_u64(stream->readout.wk_timestamp-stream->readout.fs_timestamp,1000*1000));
         seq_printf(f, "\tDelay now-fs_ts : %lld ms\n",div_u64(ktime_get_ns()-stream->readout.fs_timestamp,1000*1000));
         // weird- so fs_timestamp can be higher than fe-timestamp ?!

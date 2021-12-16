@@ -270,6 +270,7 @@ rkcif_stats_send_luma(struct rkcif_luma_vdev *vdev,
 			      sizeof(struct rkisp_isp2x_luma_buffer));
 	cur_buf->vb.sequence = cur_frame_id;
 	cur_buf->vb.vb2_buf.timestamp = work->timestamp;
+    // Consti10
 	vb2_buffer_done(&cur_buf->vb.vb2_buf, VB2_BUF_STATE_DONE);
 }
 
