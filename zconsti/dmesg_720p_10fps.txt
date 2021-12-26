@@ -1,0 +1,1421 @@
+./consti_stream -a -w 1280 -h 720 -d rkispp_m
+_bypass -f 10
+
+[root@RV1126_RV1109:/]# dmesg
+[ 1150.022461] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.022484] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.022602] rkisp0: Consti10: ISP_FRAME_IN 8: 1150019277368
+[ 1150.022629] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.022652] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.022682] rkisp0: Consti10: ISP_FRAME_VS 8: 1150019357868
+[ 1150.022713] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.022736] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.022766] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.022789] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.023694] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.023733] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.023758] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.023776] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.023802] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.023827] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.023850] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.023874] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.023897] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.023921] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.024121] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024150] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.024177] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024200] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.024321] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024350] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.024375] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024399] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.024420] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1150.024442] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150021118076
+[ 1150.024465] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1149516271000 delay:504 ms
+[ 1150.024486] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1149616279000 delay:404 ms
+[ 1150.024640] rkisp0: Consti10: ISP_FRAME_IN 8: 1150021314660
+[ 1150.024667] rkisp0: Consti10: ISP_FRAME_END 8: 1150021342368
+[ 1150.024690] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024713] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.024732] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.024754] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.025475] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150008944200 timestamp:1150016284000
+[ 1150.025501] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 13 (ms)
+[ 1150.025955] rkispp0: Consti10:rkispp:X3: timestamp written 1150016284000
+[ 1150.027748] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150016284000
+[ 1150.027783] rkispp0: Consti10:rkispp_frame_end: delay now-ts:8ms
+[ 1150.027804] rkispp0: Consti10:YYY::rkispp_frame_endB: 8 idx: 2 timestamp: 1150016284000
+[ 1150.113182] imx415 1-001a: set analog gain 0x5
+[ 1150.119634] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1150.119688] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 9 idx: 1 timestamp: 1150116360669
+[ 1150.120530] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.120591] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 7 (ms)
+[ 1150.121247] rkisp0: Consti10: ISP_FRAME_VS 9: 1150117905628
+[ 1150.121293] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.121334] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.122072] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122108] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122134] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122157] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122183] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122206] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122230] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122253] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122272] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122289] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122467] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122495] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122521] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122539] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.122660] rkisp0: Consti10: ISP_FRAME_IN 9: 1150119335086
+[ 1150.122686] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122711] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.122740] rkisp0: Consti10: ISP_FRAME_VS 9: 1150119416170
+[ 1150.122769] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122797] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.122828] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.122851] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.123755] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.123788] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.123814] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.123837] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.123861] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.123883] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.123906] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.123929] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.123952] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.123974] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.124166] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124194] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.124231] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124250] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.124376] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124422] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.124442] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124460] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.124482] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1150.124498] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150121174628
+[ 1150.124530] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1149616279000 delay:504 ms
+[ 1150.124565] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1149716282000 delay:404 ms
+[ 1150.124755] rkisp0: Consti10: ISP_FRAME_IN 9: 1150121421378
+[ 1150.124789] rkisp0: Consti10: ISP_FRAME_END 9: 1150121463961
+[ 1150.124808] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124833] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.124875] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.124901] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.125657] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150109370002 timestamp:1150116360000
+[ 1150.125703] rkisp0: rkisp_dmarx_get_frame delay now-ts: 6 (ms) now-sof_ts: 13 (ms)
+[ 1150.126060] rkispp0: Consti10:rkispp:X3: timestamp written 1150116360000
+[ 1150.127602] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150116360000
+[ 1150.127640] rkispp0: Consti10:rkispp_frame_end: delay now-ts:7ms
+[ 1150.127666] rkispp0: Consti10:YYY::rkispp_frame_endB: 9 idx: 3 timestamp: 1150116360000
+[ 1150.213363] imx415 1-001a: set analog gain 0x7
+[ 1150.219591] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1150.219643] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 10 idx: 2 timestamp: 1150216315721
+[ 1150.220590] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.220643] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.221072] rkisp0: Consti10: ISP_FRAME_VS 10: 1150217745471
+[ 1150.221100] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.221127] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.221155] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.221179] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.222131] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222179] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.222205] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222229] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.222256] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222280] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.222304] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222327] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.222346] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222369] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.222511] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222536] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.222562] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222580] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.222704] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222733] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.222757] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.222780] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.222801] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1150.222822] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150219498680
+[ 1150.222841] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1149716282000 delay:503 ms
+[ 1150.222866] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1149816282000 delay:403 ms
+[ 1150.223025] rkisp0: Consti10: ISP_FRAME_IN 10: 1150219698763
+[ 1150.223052] rkisp0: Consti10: ISP_FRAME_END 10: 1150219727930
+[ 1150.223071] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.223095] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.223119] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.223143] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.223864] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150209010345 timestamp:1150216315000
+[ 1150.223889] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.224353] rkispp0: Consti10:rkispp:X3: timestamp written 1150216315000
+[ 1150.225919] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150216315000
+[ 1150.225950] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1150.225991] rkispp0: Consti10:YYY::rkispp_frame_endB: 10 idx: 4 timestamp: 1150216315000
+[ 1150.312774] imx415 1-001a: set analog gain 0x8
+[ 1150.319570] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1150.319624] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 11 idx: 3 timestamp: 1150316295856
+[ 1150.320572] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.320639] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.321127] rkisp0: Consti10: ISP_FRAME_VS 11: 1150317790356
+[ 1150.321171] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.321200] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.321232] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.321255] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.322246] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322298] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322324] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322347] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322374] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322392] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322417] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322440] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322464] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322487] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322556] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322582] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.322608] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322626] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.322750] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322777] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.322800] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.322823] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.322845] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1150.322862] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150319539190
+[ 1150.322886] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1149816282000 delay:503 ms
+[ 1150.322911] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1149916363000 delay:403 ms
+[ 1150.323073] rkisp0: Consti10: ISP_FRAME_IN 11: 1150319747440
+[ 1150.323094] rkisp0: Consti10: ISP_FRAME_END 11: 1150319770190
+[ 1150.323124] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.323148] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.323172] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.323195] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.323913] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150308948189 timestamp:1150316295000
+[ 1150.323943] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.324412] rkispp0: Consti10:rkispp:X3: timestamp written 1150316295000
+[ 1150.325987] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150316295000
+[ 1150.326027] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1150.326055] rkispp0: Consti10:YYY::rkispp_frame_endB: 11 idx: 5 timestamp: 1150316295000
+[ 1150.414340] imx415 1-001a: set analog gain 0x9
+[ 1150.419576] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1166 ns
+[ 1150.419627] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 12 idx: 0 timestamp: 1150416299616
+[ 1150.420465] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.420505] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 7 (ms)
+[ 1150.420951] rkisp0: Consti10: ISP_FRAME_VS 12: 1150417610366
+[ 1150.421003] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.421022] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.421978] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422021] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422048] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422070] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422096] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422118] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422143] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422165] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422188] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422210] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422365] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422392] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422419] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422442] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422558] rkisp0: Consti10: ISP_FRAME_IN 12: 1150419232033
+[ 1150.422587] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422610] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.422640] rkisp0: Consti10: ISP_FRAME_VS 12: 1150419315741
+[ 1150.422669] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422693] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.422723] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.422741] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.423645] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.423675] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.423700] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.423722] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.423746] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.423763] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.423787] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.423810] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.423833] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.423855] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.424050] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424078] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.424104] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424127] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.424251] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424278] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.424303] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424326] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.424347] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1150.424368] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150421045033
+[ 1150.424392] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1149916363000 delay:504 ms
+[ 1150.424417] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150016284000 delay:404 ms
+[ 1150.424567] rkisp0: Consti10: ISP_FRAME_IN 12: 1150421241325
+[ 1150.424593] rkisp0: Consti10: ISP_FRAME_END 12: 1150421268742
+[ 1150.424617] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424640] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.424664] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.424687] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.425404] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150409301949 timestamp:1150416299000
+[ 1150.425429] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.425885] rkispp0: Consti10:rkispp:X3: timestamp written 1150416299000
+[ 1150.427415] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150416299000
+[ 1150.427444] rkispp0: Consti10:rkispp_frame_end: delay now-ts:7ms
+[ 1150.427469] rkispp0: Consti10:YYY::rkispp_frame_endB: 12 idx: 0 timestamp: 1150416299000
+[ 1150.513823] imx415 1-001a: set analog gain 0xa
+[ 1150.519578] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1150.519629] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 13 idx: 1 timestamp: 1150516301918
+[ 1150.520577] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.520614] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1150.521037] rkisp0: Consti10: ISP_FRAME_VS 13: 1150517708918
+[ 1150.521073] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.521093] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.522078] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522119] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.522146] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522169] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.522195] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522212] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.522237] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522259] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.522283] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522305] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.522463] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522488] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.522514] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522537] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.522656] rkisp0: Consti10: ISP_FRAME_IN 13: 1150519331168
+[ 1150.522682] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522699] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.522730] rkisp0: Consti10: ISP_FRAME_VS 13: 1150519405251
+[ 1150.522759] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522782] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.522811] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.522834] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.523767] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.523819] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.523845] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.523869] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.523899] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.523931] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.523951] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.523974] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.524001] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524032] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.524154] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524188] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.524219] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524261] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.524348] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524379] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.524403] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524425] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.524442] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1150.524463] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150521139793
+[ 1150.524486] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150016284000 delay:504 ms
+[ 1150.524512] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150116360000 delay:404 ms
+[ 1150.524676] rkisp0: Consti10: ISP_FRAME_IN 13: 1150521347460
+[ 1150.524701] rkisp0: Consti10: ISP_FRAME_END 13: 1150521376335
+[ 1150.524726] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524763] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.524792] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.524815] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.525565] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150508953959 timestamp:1150516301000
+[ 1150.525611] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 13 (ms)
+[ 1150.525998] rkispp0: Consti10:rkispp:X3: timestamp written 1150516301000
+[ 1150.527547] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150516301000
+[ 1150.527587] rkispp0: Consti10:rkispp_frame_end: delay now-ts:7ms
+[ 1150.527614] rkispp0: Consti10:YYY::rkispp_frame_endB: 13 idx: 1 timestamp: 1150516301000
+[ 1150.613585] imx415 1-001a: set analog gain 0xb
+[ 1150.619650] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1166 ns
+[ 1150.619706] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 14 idx: 2 timestamp: 1150616378886
+[ 1150.620659] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.620699] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1150.621212] rkisp0: Consti10: ISP_FRAME_VS 14: 1150617872803
+[ 1150.621261] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.621287] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 9 (ms)
+[ 1150.622241] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622284] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622310] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622332] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622358] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622380] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622406] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622425] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622449] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622471] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622628] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622650] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622671] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622696] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.622821] rkisp0: Consti10: ISP_FRAME_IN 14: 1150619494178
+[ 1150.622850] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622874] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.622916] rkisp0: Consti10: ISP_FRAME_VS 14: 1150619591012
+[ 1150.622946] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.622970] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.622999] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.623022] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.623933] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.623979] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.624005] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624029] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.624056] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624079] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.624106] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624125] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.624148] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624171] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.624323] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624351] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.624374] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624397] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.624513] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624543] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.624574] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.624596] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.624623] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1150.624652] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150621328178
+[ 1150.624677] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150116360000 delay:504 ms
+[ 1150.624703] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150216315000 delay:405 ms
+[ 1150.624912] rkisp0: Consti10: ISP_FRAME_IN 14: 1150621570553
+[ 1150.624956] rkisp0: Consti10: ISP_FRAME_END 14: 1150621630928
+[ 1150.624978] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.625002] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.625028] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.625051] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.625778] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150608957427 timestamp:1150616378000
+[ 1150.625806] rkisp0: rkisp_dmarx_get_frame delay now-ts: 6 (ms) now-sof_ts: 13 (ms)
+[ 1150.626206] rkispp0: Consti10:rkispp:X3: timestamp written 1150616378000
+[ 1150.627740] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150616378000
+[ 1150.627774] rkispp0: Consti10:rkispp_frame_end: delay now-ts:8ms
+[ 1150.627809] rkispp0: Consti10:YYY::rkispp_frame_endB: 14 idx: 2 timestamp: 1150616378000
+[ 1150.719651] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1150.719705] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 15 idx: 3 timestamp: 1150716378271
+[ 1150.721058] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.721109] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.721608] rkisp0: Consti10: ISP_FRAME_VS 15: 1150718279355
+[ 1150.721643] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.721673] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 9 (ms)
+[ 1150.722572] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722606] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.722632] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722654] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.722680] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722702] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.722726] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722744] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.722767] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722790] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.722966] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.722985] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.723013] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.723036] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.723160] rkisp0: Consti10: ISP_FRAME_IN 15: 1150719834522
+[ 1150.723186] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.723208] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.723289] rkisp0: Consti10: ISP_FRAME_VS 15: 1150719960522
+[ 1150.723323] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.723347] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.723377] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.723405] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.724276] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724336] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.724376] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724399] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.724426] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724449] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.724473] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724496] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.724519] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724542] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.724673] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724702] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.724730] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724752] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.724871] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724899] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.724923] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.724946] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.724973] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:5ms
+[ 1150.725000] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150721676688
+[ 1150.725025] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150216315000 delay:505 ms
+[ 1150.725050] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150316295000 delay:405 ms
+[ 1150.725242] rkisp0: Consti10: ISP_FRAME_IN 15: 1150721906230
+[ 1150.725298] rkisp0: Consti10: ISP_FRAME_END 15: 1150721969230
+[ 1150.725337] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.725359] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.725388] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.725411] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.726138] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150709275312 timestamp:1150716378000
+[ 1150.726168] rkisp0: rkisp_dmarx_get_frame delay now-ts: 6 (ms) now-sof_ts: 13 (ms)
+[ 1150.726546] rkispp0: Consti10:rkispp:X3: timestamp written 1150716378000
+[ 1150.728076] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150716378000
+[ 1150.728100] rkispp0: Consti10:rkispp_frame_end: delay now-ts:8ms
+[ 1150.728121] rkispp0: Consti10:YYY::rkispp_frame_endB: 15 idx: 3 timestamp: 1150716378000
+[ 1150.819654] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1750 ns
+[ 1150.819706] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 16 idx: 0 timestamp: 1150816378823
+[ 1150.820672] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.820736] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.821229] rkisp0: Consti10: ISP_FRAME_VS 16: 1150817889073
+[ 1150.821275] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.821295] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.822259] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822300] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.822320] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822338] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.822359] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822376] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.822395] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822412] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.822430] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822447] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.822645] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822672] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.822694] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822711] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.822838] rkisp0: Consti10: ISP_FRAME_IN 16: 1150819511323
+[ 1150.822867] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822885] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.822909] rkisp0: Consti10: ISP_FRAME_VS 16: 1150819585115
+[ 1150.822932] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822950] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.822975] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.822992] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.823958] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.823988] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824012] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824035] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824068] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824093] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824112] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824139] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824165] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824196] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824374] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824424] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824461] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824485] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.824560] rkisp0: Consti10: ISP_FRAME_IN 16: 1150821235657
+[ 1150.824586] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824607] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.824631] rkisp0: Consti10: ISP_FRAME_END 16: 1150821306823
+[ 1150.824655] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824678] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 12 (ms)
+[ 1150.824718] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.824744] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.825475] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.825514] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.825560] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.825586] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 12 (ms)
+[ 1150.825610] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150809274989 timestamp:1150816378000
+[ 1150.825630] rkisp0: rkisp_dmarx_get_frame delay now-ts: 5 (ms) now-sof_ts: 13 (ms)
+[ 1150.825646] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:5ms
+[ 1150.825667] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150822344282
+[ 1150.825691] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150316295000 delay:506 ms
+[ 1150.825716] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150416299000 delay:406 ms
+[ 1150.827246] rkispp0: Consti10:rkispp:X3: timestamp written 1150816378000
+[ 1150.828810] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150816378000
+[ 1150.828842] rkispp0: Consti10:rkispp_frame_end: delay now-ts:9ms
+[ 1150.828870] rkispp0: Consti10:YYY::rkispp_frame_endB: 16 idx: 4 timestamp: 1150816378000
+[ 1150.919588] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1150.919638] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 17 idx: 1 timestamp: 1150916309958
+[ 1150.920409] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.920462] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1150.920920] rkisp0: Consti10: ISP_FRAME_VS 17: 1150917579583
+[ 1150.920982] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.921009] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.921039] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.921063] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1150.921960] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922009] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.922037] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922060] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.922087] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922110] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.922135] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922154] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.922173] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922197] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1150.922347] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922374] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.922397] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922414] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.922541] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922569] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.922593] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922616] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1150.922636] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1150.922653] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1150919330458
+[ 1150.922678] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150416299000 delay:503 ms
+[ 1150.922704] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150516301000 delay:403 ms
+[ 1150.922874] rkisp0: Consti10: ISP_FRAME_IN 17: 1150919547167
+[ 1150.922896] rkisp0: Consti10: ISP_FRAME_END 17: 1150919571667
+[ 1150.922920] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922943] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.922967] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.922990] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1150.923784] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1150908965207 timestamp:1150916309000
+[ 1150.923834] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1150.924218] rkispp0: Consti10:rkispp:X3: timestamp written 1150916309000
+[ 1150.925782] rkispp0: Consti10:rkispp_frame_end: timestamp is 1150916309000
+[ 1150.925834] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1150.925873] rkispp0: Consti10:YYY::rkispp_frame_endB: 17 idx: 5 timestamp: 1150916309000
+[ 1151.019589] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1151.019639] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 18 idx: 2 timestamp: 1151016311385
+[ 1151.020435] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.020471] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1151.020900] rkisp0: Consti10: ISP_FRAME_VS 18: 1151017571093
+[ 1151.020941] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.020968] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.021000] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.021037] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.021952] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.021996] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.022023] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022046] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.022071] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022094] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.022119] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022137] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.022161] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022183] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.022343] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022366] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.022387] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022413] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.022535] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022562] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.022585] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022605] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.022623] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:2ms
+[ 1151.022644] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151019320510
+[ 1151.022668] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150516301000 delay:503 ms
+[ 1151.022693] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150616378000 delay:402 ms
+[ 1151.022854] rkisp0: Consti10: ISP_FRAME_IN 18: 1151019527302
+[ 1151.022875] rkisp0: Consti10: ISP_FRAME_END 18: 1151019550635
+[ 1151.022903] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022926] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.022949] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.022972] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.023804] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151008966342 timestamp:1151016311000
+[ 1151.023850] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.024203] rkispp0: Consti10:rkispp:X3: timestamp written 1151016311000
+[ 1151.025746] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151016311000
+[ 1151.025776] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.025797] rkispp0: Consti10:YYY::rkispp_frame_endB: 18 idx: 0 timestamp: 1151016311000
+[ 1151.119595] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1151.119645] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 19 idx: 3 timestamp: 1151116317186
+[ 1151.120577] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.120634] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 7 (ms)
+[ 1151.121094] rkisp0: Consti10: ISP_FRAME_VS 19: 1151117757437
+[ 1151.121153] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.121185] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.121218] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.121246] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.122137] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122183] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122210] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122233] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122256] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122275] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122300] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122322] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122346] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122369] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122522] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122548] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122574] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122596] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.122715] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122737] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.122756] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.122781] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.122803] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.122824] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151119501020
+[ 1151.122848] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150616378000 delay:503 ms
+[ 1151.122873] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150716378000 delay:403 ms
+[ 1151.123033] rkisp0: Consti10: ISP_FRAME_IN 19: 1151119706353
+[ 1151.123061] rkisp0: Consti10: ISP_FRAME_END 19: 1151119736395
+[ 1151.123086] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.123109] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.123133] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.123161] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.123965] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151109329436 timestamp:1151116317000
+[ 1151.124037] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.124360] rkispp0: Consti10:rkispp:X3: timestamp written 1151116317000
+[ 1151.125890] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151116317000
+[ 1151.125920] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.125947] rkispp0: Consti10:YYY::rkispp_frame_endB: 19 idx: 1 timestamp: 1151116317000
+[ 1151.219600] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1151.219650] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 20 idx: 0 timestamp: 1151216322696
+[ 1151.220652] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.220689] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.221153] rkisp0: Consti10: ISP_FRAME_VS 20: 1151217814280
+[ 1151.221227] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.221254] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.221284] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.221308] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 9 (ms)
+[ 1151.222252] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222297] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222331] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222355] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222381] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222404] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222428] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222451] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222474] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222497] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222574] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222600] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.222625] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222647] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.222768] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222794] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.222817] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.222840] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.222862] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.222885] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151219561363
+[ 1151.222909] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150716378000 delay:503 ms
+[ 1151.222934] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150816378000 delay:403 ms
+[ 1151.223092] rkisp0: Consti10: ISP_FRAME_IN 20: 1151219766405
+[ 1151.223119] rkisp0: Consti10: ISP_FRAME_END 20: 1151219794697
+[ 1151.223143] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.223166] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.223189] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.223213] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.223930] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151208971821 timestamp:1151216322000
+[ 1151.223955] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.224782] rkispp0: Consti10:rkispp:X3: timestamp written 1151216322000
+[ 1151.226325] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151216322000
+[ 1151.226356] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.226392] rkispp0: Consti10:YYY::rkispp_frame_endB: 20 idx: 2 timestamp: 1151216322000
+[ 1151.319665] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1151.319717] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 21 idx: 1 timestamp: 1151316390623
+[ 1151.320638] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.320673] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1151.321094] rkisp0: Consti10: ISP_FRAME_VS 21: 1151317768457
+[ 1151.321121] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.321139] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.321161] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.321178] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.322207] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322262] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322288] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322311] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322338] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322360] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322385] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322403] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322427] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322451] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322542] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322568] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322595] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322618] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.322736] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322764] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.322788] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.322812] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.322833] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.322854] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151319530415
+[ 1151.322873] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150816378000 delay:503 ms
+[ 1151.322897] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1150916309000 delay:403 ms
+[ 1151.323052] rkisp0: Consti10: ISP_FRAME_IN 21: 1151319726415
+[ 1151.323079] rkisp0: Consti10: ISP_FRAME_END 21: 1151319754124
+[ 1151.323100] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.323117] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.323142] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.323165] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.323886] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151309328498 timestamp:1151316390000
+[ 1151.323920] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.324405] rkispp0: Consti10:rkispp:X3: timestamp written 1151316390000
+[ 1151.325978] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151316390000
+[ 1151.326029] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.326052] rkispp0: Consti10:YYY::rkispp_frame_endB: 21 idx: 3 timestamp: 1151316390000
+[ 1151.419601] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1151.419656] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 22 idx: 2 timestamp: 1151416328467
+[ 1151.420495] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.420558] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1151.421056] rkisp0: Consti10: ISP_FRAME_VS 22: 1151417710383
+[ 1151.421118] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.421156] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.421189] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.421212] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.422048] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422095] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.422123] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422143] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.422164] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422187] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.422212] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422234] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.422257] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422280] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.422432] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422453] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.422474] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422492] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.422626] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422654] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.422678] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.422702] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.422723] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.422740] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151419416925
+[ 1151.422764] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1150916309000 delay:503 ms
+[ 1151.422789] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151016311000 delay:403 ms
+[ 1151.422960] rkisp0: Consti10: ISP_FRAME_IN 22: 1151419633634
+[ 1151.422980] rkisp0: Consti10: ISP_FRAME_END 22: 1151419656675
+[ 1151.423002] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.423026] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.423052] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.423075] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.423816] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151409026883 timestamp:1151416328000
+[ 1151.423844] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.424294] rkispp0: Consti10:rkispp:X3: timestamp written 1151416328000
+[ 1151.425817] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151416328000
+[ 1151.425848] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.425875] rkispp0: Consti10:YYY::rkispp_frame_endB: 22 idx: 4 timestamp: 1151416328000
+[ 1151.519673] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1151.519725] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 23 idx: 3 timestamp: 1151516398143
+[ 1151.520832] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.520877] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.521308] rkisp0: Consti10: ISP_FRAME_VS 23: 1151517975768
+[ 1151.521350] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.521375] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.521403] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.521425] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 9 (ms)
+[ 1151.522353] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522396] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.522422] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522446] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.522471] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522491] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.522517] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522539] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.522563] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522585] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.522740] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522767] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.522793] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522816] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.522934] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.522956] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.522983] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.523006] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.523027] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.523048] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151519725185
+[ 1151.523072] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151016311000 delay:503 ms
+[ 1151.523097] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151116317000 delay:403 ms
+[ 1151.523296] rkisp0: Consti10: ISP_FRAME_IN 23: 1151519963769
+[ 1151.523354] rkisp0: Consti10: ISP_FRAME_END 23: 1151520023852
+[ 1151.523394] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.523430] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 11 (ms)
+[ 1151.523459] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.523492] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 11 (ms)
+[ 1151.524275] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151509098893 timestamp:1151516398000
+[ 1151.524315] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.524639] rkispp0: Consti10:rkispp:X3: timestamp written 1151516398000
+[ 1151.526175] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151516398000
+[ 1151.526203] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.526228] rkispp0: Consti10:YYY::rkispp_frame_endB: 23 idx: 5 timestamp: 1151516398000
+[ 1151.619674] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1151.619727] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 24 idx: 0 timestamp: 1151616400737
+[ 1151.620703] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.620749] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.621181] rkisp0: Consti10: ISP_FRAME_VS 24: 1151617848279
+[ 1151.621229] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.621250] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.621272] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.621290] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.622223] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622264] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.622286] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622303] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.622324] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622341] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.622360] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622377] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.622395] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622411] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.622614] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622643] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.622664] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622682] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.622808] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622836] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.622855] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.622874] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.622890] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.622906] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151619583112
+[ 1151.622924] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151116317000 delay:503 ms
+[ 1151.622943] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151216322000 delay:403 ms
+[ 1151.623106] rkisp0: Consti10: ISP_FRAME_IN 24: 1151619778529
+[ 1151.623128] rkisp0: Consti10: ISP_FRAME_END 24: 1151619803904
+[ 1151.623146] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.623164] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.623182] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.623200] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.623946] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151609306819 timestamp:1151616400000
+[ 1151.623976] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.624501] rkispp0: Consti10:rkispp:X3: timestamp written 1151616400000
+[ 1151.626052] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151616400000
+[ 1151.626090] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.626114] rkispp0: Consti10:YYY::rkispp_frame_endB: 24 idx: 0 timestamp: 1151616400000
+[ 1151.719610] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1151.719657] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 25 idx: 1 timestamp: 1151716329830
+[ 1151.720623] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.720676] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.721132] rkisp0: Consti10: ISP_FRAME_VS 25: 1151717791080
+[ 1151.721193] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.721215] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.721241] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.721258] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.722177] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722224] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.722245] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722263] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.722284] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722301] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.722326] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722362] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.722389] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722412] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.722555] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722583] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.722610] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722632] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.722747] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722773] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.722792] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.722816] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.722837] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.722858] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151719534955
+[ 1151.722882] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151216322000 delay:503 ms
+[ 1151.722906] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151316390000 delay:403 ms
+[ 1151.723066] rkisp0: Consti10: ISP_FRAME_IN 25: 1151719739122
+[ 1151.723092] rkisp0: Consti10: ISP_FRAME_END 25: 1151719767997
+[ 1151.723116] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.723139] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.723162] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.723185] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.723967] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151709033204 timestamp:1151716329000
+[ 1151.724017] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.724391] rkispp0: Consti10:rkispp:X3: timestamp written 1151716329000
+[ 1151.725945] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151716329000
+[ 1151.725981] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.726006] rkispp0: Consti10:YYY::rkispp_frame_endB: 25 idx: 1 timestamp: 1151716329000
+[ 1151.819679] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1151.819732] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 26 idx: 2 timestamp: 1151816405048
+[ 1151.820644] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.820696] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1151.821204] rkisp0: Consti10: ISP_FRAME_VS 26: 1151817875632
+[ 1151.821249] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.821280] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.821309] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.821328] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.822185] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822235] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.822260] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822284] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.822311] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822333] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.822354] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822376] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.822401] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822424] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.822569] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822588] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.822616] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822639] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.822763] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822790] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.822814] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.822832] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.822854] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.822875] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151819552132
+[ 1151.822899] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151316390000 delay:503 ms
+[ 1151.822924] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151416328000 delay:403 ms
+[ 1151.823080] rkisp0: Consti10: ISP_FRAME_IN 26: 1151819753674
+[ 1151.823100] rkisp0: Consti10: ISP_FRAME_END 26: 1151819776424
+[ 1151.823118] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.823136] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.823155] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.823172] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.823891] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151809036089 timestamp:1151816405000
+[ 1151.823911] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.824412] rkispp0: Consti10:rkispp:X3: timestamp written 1151816405000
+[ 1151.825985] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151816405000
+[ 1151.826015] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.826034] rkispp0: Consti10:YYY::rkispp_frame_endB: 26 idx: 2 timestamp: 1151816405000
+[ 1151.919619] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1166 ns
+[ 1151.919669] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 27 idx: 3 timestamp: 1151916340850
+[ 1151.920753] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.920800] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.921222] rkisp0: Consti10: ISP_FRAME_VS 27: 1151917894850
+[ 1151.921259] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.921284] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.921312] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.921335] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1151.922257] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922288] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.922314] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922331] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1151.922358] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922380] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.922405] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922428] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.922451] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922474] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1151.922659] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922685] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.922711] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922734] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.922853] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922880] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.922904] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.922928] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.922950] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1151.922971] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1151919647767
+[ 1151.922995] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151416328000 delay:503 ms
+[ 1151.923020] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151516398000 delay:403 ms
+[ 1151.923178] rkisp0: Consti10: ISP_FRAME_IN 27: 1151919852517
+[ 1151.923205] rkisp0: Consti10: ISP_FRAME_END 27: 1151919881101
+[ 1151.923231] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.923248] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.923273] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.923292] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1151.924016] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1151909011266 timestamp:1151916340000
+[ 1151.924044] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1151.924496] rkispp0: Consti10:rkispp:X3: timestamp written 1151916340000
+[ 1151.926032] rkispp0: Consti10:rkispp_frame_end: timestamp is 1151916340000
+[ 1151.926061] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1151.926081] rkispp0: Consti10:YYY::rkispp_frame_endB: 27 idx: 3 timestamp: 1151916340000
+[ 1152.019616] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1152.019665] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 28 idx: 0 timestamp: 1152016337902
+[ 1152.020614] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.020657] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 7 (ms)
+[ 1152.021123] rkisp0: Consti10: ISP_FRAME_VS 28: 1152017782819
+[ 1152.021183] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.021210] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.021248] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.021278] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.022176] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022226] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022253] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022276] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022302] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022325] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022345] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022367] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022391] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022414] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022526] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022553] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022575] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022598] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.022720] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022748] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.022772] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.022795] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.022813] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.022835] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152019511527
+[ 1152.022858] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151516398000 delay:503 ms
+[ 1152.022883] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151616400000 delay:403 ms
+[ 1152.023054] rkisp0: Consti10: ISP_FRAME_IN 28: 1152019727361
+[ 1152.023082] rkisp0: Consti10: ISP_FRAME_END 28: 1152019757694
+[ 1152.023106] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.023129] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.023153] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.023176] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.023922] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152009332651 timestamp:1152016337000
+[ 1152.023950] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.024392] rkispp0: Consti10:rkispp:X3: timestamp written 1152016337000
+[ 1152.025926] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152016337000
+[ 1152.025960] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.025987] rkispp0: Consti10:YYY::rkispp_frame_endB: 28 idx: 4 timestamp: 1152016337000
+[ 1152.119626] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1166 ns
+[ 1152.119674] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 29 idx: 1 timestamp: 1152116347204
+[ 1152.120509] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.120571] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.121046] rkisp0: Consti10: ISP_FRAME_VS 29: 1152117710745
+[ 1152.121097] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.121123] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.121152] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.121170] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.122168] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122208] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.122227] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122245] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.122265] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122283] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.122302] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122319] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.122337] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122354] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.122479] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122509] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.122531] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122548] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.122672] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122694] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.122713] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.122732] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.122748] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.122764] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152119441787
+[ 1152.122783] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151616400000 delay:503 ms
+[ 1152.122802] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151716329000 delay:403 ms
+[ 1152.122960] rkisp0: Consti10: ISP_FRAME_IN 29: 1152119634871
+[ 1152.122983] rkisp0: Consti10: ISP_FRAME_END 29: 1152119658787
+[ 1152.123001] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.123019] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.123038] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.123055] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.123832] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152108995745 timestamp:1152116347000
+[ 1152.123872] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.124288] rkispp0: Consti10:rkispp:X3: timestamp written 1152116347000
+[ 1152.125827] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152116347000
+[ 1152.125875] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.125904] rkispp0: Consti10:YYY::rkispp_frame_endB: 29 idx: 5 timestamp: 1152116347000
+[ 1152.219621] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1152.219671] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 30 idx: 2 timestamp: 1152216343380
+[ 1152.220595] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.220645] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.221074] rkisp0: Consti10: ISP_FRAME_VS 30: 1152217747464
+[ 1152.221110] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.221135] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.221164] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.221188] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.222107] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222136] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.222161] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222178] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.222203] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222227] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.222252] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222275] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.222299] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222322] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.222510] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222535] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.222562] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222584] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.222703] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222729] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.222753] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.222777] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.222799] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.222819] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152219496297
+[ 1152.222843] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151716329000 delay:503 ms
+[ 1152.222868] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151816405000 delay:403 ms
+[ 1152.223017] rkisp0: Consti10: ISP_FRAME_IN 30: 1152219691422
+[ 1152.223045] rkisp0: Consti10: ISP_FRAME_END 30: 1152219720881
+[ 1152.223069] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.223092] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.223116] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.223134] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.223854] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152208997755 timestamp:1152216343000
+[ 1152.223879] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.224630] rkispp0: Consti10:rkispp:X3: timestamp written 1152216343000
+[ 1152.226177] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152216343000
+[ 1152.226215] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.226251] rkispp0: Consti10:YYY::rkispp_frame_endB: 30 idx: 0 timestamp: 1152216343000
+[ 1152.319625] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1152.319677] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 31 idx: 3 timestamp: 1152316349182
+[ 1152.320539] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.320602] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.321123] rkisp0: Consti10: ISP_FRAME_VS 31: 1152317779807
+[ 1152.321193] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.321222] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.321252] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.321288] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.322121] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322181] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.322218] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322240] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.322262] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322279] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.322299] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322317] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.322337] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322358] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.322488] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322517] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.322544] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322566] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.322677] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322713] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.322738] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.322761] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.322784] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.322805] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152319481682
+[ 1152.322828] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151816405000 delay:503 ms
+[ 1152.322854] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1151916340000 delay:403 ms
+[ 1152.323015] rkisp0: Consti10: ISP_FRAME_IN 31: 1152319687307
+[ 1152.323043] rkisp0: Consti10: ISP_FRAME_END 31: 1152319719391
+[ 1152.323068] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.323091] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.323115] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.323139] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.323855] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152309001515 timestamp:1152316349000
+[ 1152.323876] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.324323] rkispp0: Consti10:rkispp:X3: timestamp written 1152316349000
+[ 1152.325860] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152316349000
+[ 1152.325898] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.325920] rkispp0: Consti10:YYY::rkispp_frame_endB: 31 idx: 1 timestamp: 1152316349000
+[ 1152.419698] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1152.419755] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 32 idx: 0 timestamp: 1152416428484
+[ 1152.420716] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.420759] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.421201] rkisp0: Consti10: ISP_FRAME_VS 32: 1152417860567
+[ 1152.421253] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.421275] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.421299] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.421317] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.422213] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422240] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422258] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422275] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422295] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422312] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422331] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422348] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422367] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422383] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422619] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422645] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422666] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422683] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.422813] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422841] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.422860] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.422879] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.422896] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.422912] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152419589276
+[ 1152.422931] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1151916340000 delay:503 ms
+[ 1152.422951] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152016337000 delay:403 ms
+[ 1152.423112] rkisp0: Consti10: ISP_FRAME_IN 32: 1152419785859
+[ 1152.423133] rkisp0: Consti10: ISP_FRAME_END 32: 1152419809484
+[ 1152.423151] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.423169] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.423188] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.423205] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.424043] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152409375983 timestamp:1152416428000
+[ 1152.424082] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.424485] rkispp0: Consti10:rkispp:X3: timestamp written 1152416428000
+[ 1152.426015] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152416428000
+[ 1152.426046] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.426067] rkispp0: Consti10:YYY::rkispp_frame_endB: 32 idx: 2 timestamp: 1152416428000
+[ 1152.519631] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1152.519683] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 33 idx: 1 timestamp: 1152516355827
+[ 1152.520708] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.520745] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.521162] rkisp0: Consti10: ISP_FRAME_VS 33: 1152517834286
+[ 1152.521192] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.521213] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.521235] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.521252] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.522214] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522253] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.522283] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522308] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.522333] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522356] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.522381] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522403] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.522426] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522449] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.522599] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522627] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.522654] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522677] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.522794] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522822] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.522846] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.522870] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.522891] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.522912] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152519588369
+[ 1152.522935] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1152016337000 delay:503 ms
+[ 1152.522960] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152116347000 delay:403 ms
+[ 1152.523132] rkisp0: Consti10: ISP_FRAME_IN 33: 1152519806244
+[ 1152.523159] rkisp0: Consti10: ISP_FRAME_END 33: 1152519834536
+[ 1152.523183] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.523202] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.523221] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.523239] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.523989] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152509005826 timestamp:1152516355000
+[ 1152.524011] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.524484] rkispp0: Consti10:rkispp:X3: timestamp written 1152516355000
+[ 1152.526013] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152516355000
+[ 1152.526056] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.526081] rkispp0: Consti10:YYY::rkispp_frame_endB: 33 idx: 3 timestamp: 1152516355000
+[ 1152.619633] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1458 ns
+[ 1152.619684] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 34 idx: 2 timestamp: 1152616355795
+[ 1152.620648] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.620713] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.621190] rkisp0: Consti10: ISP_FRAME_VS 34: 1152617859921
+[ 1152.621231] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.621251] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.621273] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.621291] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.622243] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622288] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.622313] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622336] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.622361] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622384] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.622408] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622431] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.622454] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622477] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.622629] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622657] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.622686] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622708] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.622823] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622851] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.622875] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.622900] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.622921] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.622942] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152619618671
+[ 1152.622962] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1152116347000 delay:503 ms
+[ 1152.622986] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152216343000 delay:403 ms
+[ 1152.623159] rkisp0: Consti10: ISP_FRAME_IN 34: 1152619832463
+[ 1152.623186] rkisp0: Consti10: ISP_FRAME_END 34: 1152619861629
+[ 1152.623205] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.623231] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.623250] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.623268] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.624048] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152609057128 timestamp:1152616355000
+[ 1152.624097] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.624463] rkispp0: Consti10:rkispp:X3: timestamp written 1152616355000
+[ 1152.626007] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152616355000
+[ 1152.626038] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.626060] rkispp0: Consti10:YYY::rkispp_frame_endB: 34 idx: 4 timestamp: 1152616355000
+[ 1152.719703] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1152.719756] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 35 idx: 3 timestamp: 1152716429556
+[ 1152.720626] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.720686] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.721203] rkisp0: Consti10: ISP_FRAME_VS 35: 1152717869222
+[ 1152.721249] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.721274] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.721307] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.721331] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.722637] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722681] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.722717] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722741] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.722765] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722788] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.722813] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722836] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.722860] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722886] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.722905] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.722927] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.722961] rkisp0: Consti10: ISP_FRAME_IN 35: 1152719637306
+[ 1152.722986] rkisp0: Consti10: ISP_FRAME_END 35: 1152719661806
+[ 1152.723010] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.723033] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.723056] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.723080] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.723841] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.723890] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.723982] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.724008] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.724029] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152709060596 timestamp:1152716429000
+[ 1152.724060] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.724077] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:4ms
+[ 1152.724093] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152720770723
+[ 1152.724112] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1152216343000 delay:504 ms
+[ 1152.724139] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152316349000 delay:404 ms
+[ 1152.725685] rkispp0: Consti10:rkispp:X3: timestamp written 1152716429000
+[ 1152.727487] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152716429000
+[ 1152.727529] rkispp0: Consti10:rkispp_frame_end: delay now-ts:7ms
+[ 1152.727559] rkispp0: Consti10:YYY::rkispp_frame_endB: 35 idx: 5 timestamp: 1152716429000
+[ 1152.819687] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1166 ns
+[ 1152.819739] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 36 idx: 0 timestamp: 1152816411441
+[ 1152.820661] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.820723] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.821897] rkisp0: Consti10: ISP_FRAME_VS 36: 1152818554316
+[ 1152.821950] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.821970] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.821995] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822012] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822192] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822220] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822239] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822256] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822276] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822293] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822312] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822329] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822346] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822364] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.822599] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822625] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.822646] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822663] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 10 (ms)
+[ 1152.822793] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822821] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.822841] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.822858] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.822876] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.822893] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152819570191
+[ 1152.822912] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1152316349000 delay:503 ms
+[ 1152.822932] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152416428000 delay:403 ms
+[ 1152.823089] rkisp0: Consti10: ISP_FRAME_IN 36: 1152819763858
+[ 1152.823111] rkisp0: Consti10: ISP_FRAME_END 36: 1152819786899
+[ 1152.823129] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.823146] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.823165] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.823182] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.823900] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152809259190 timestamp:1152816411000
+[ 1152.823920] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.824392] rkispp0: Consti10:rkispp:X3: timestamp written 1152816411000
+[ 1152.825921] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152816411000
+[ 1152.825951] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.825972] rkispp0: Consti10:YYY::rkispp_frame_endB: 36 idx: 0 timestamp: 1152816411000
+[ 1152.919643] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 1167 ns
+[ 1152.919695] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 37 idx: 1 timestamp: 1152916367659
+[ 1152.920652] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.920691] rkisp0: rkisp_dmarx_get_frame delay now-ts: 0 (ms) now-sof_ts: 8 (ms)
+[ 1152.921118] rkisp0: Consti10: ISP_FRAME_VS 37: 1152917790117
+[ 1152.921154] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.921173] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.921195] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.921212] rkisp0: rkisp_dmarx_get_frame delay now-ts: 1 (ms) now-sof_ts: 8 (ms)
+[ 1152.922169] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922215] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922236] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922254] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922274] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922292] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922311] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922328] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922346] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922363] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922554] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922582] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922604] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922621] rkisp0: rkisp_dmarx_get_frame delay now-ts: 2 (ms) now-sof_ts: 9 (ms)
+[ 1152.922749] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922777] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.922796] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.922814] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.922832] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:3ms
+[ 1152.922847] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 1152919524659
+[ 1152.922867] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 1152416428000 delay:503 ms
+[ 1152.922886] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 1152516355000 delay:403 ms
+[ 1152.923049] rkisp0: Consti10: ISP_FRAME_IN 37: 1152919723868
+[ 1152.923071] rkisp0: Consti10: ISP_FRAME_END 37: 1152919747201
+[ 1152.923090] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.923107] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.923126] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.923143] rkisp0: rkisp_dmarx_get_frame delay now-ts: 3 (ms) now-sof_ts: 10 (ms)
+[ 1152.923935] rkisp0: rkisp_dmarx_get_frame sof_timestamp:1152909360367 timestamp:1152916367000
+[ 1152.923977] rkisp0: rkisp_dmarx_get_frame delay now-ts: 4 (ms) now-sof_ts: 11 (ms)
+[ 1152.924423] rkispp0: Consti10:rkispp:X3: timestamp written 1152916367000
+[ 1152.925964] rkispp0: Consti10:rkispp_frame_end: timestamp is 1152916367000
+[ 1152.926009] rkispp0: Consti10:rkispp_frame_end: delay now-ts:6ms
+[ 1152.926034] rkispp0: Consti10:YYY::rkispp_frame_endB: 37 idx: 1 timestamp: 1152916367000

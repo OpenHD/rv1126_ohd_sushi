@@ -660,7 +660,11 @@ static void rkisp_dev_trigger_handle(struct rkisp_device *dev, u32 cmd)
 		isp->dmarx_dev.pre_frame = isp->dmarx_dev.cur_frame;
 		isp->dmarx_dev.cur_frame.id = t.frame_id;
 		isp->dmarx_dev.cur_frame.sof_timestamp = t.sof_timestamp;
-		isp->dmarx_dev.cur_frame.timestamp = t.frame_timestamp;
+		// Consti10 isp->dmarx_dev.cur_frame.timestamp = t.frame_timestamp;
+        // "and you can directly see the total cost of the three stages through the node
+        // Time"
+        isp->dmarx_dev.cur_frame.timestamp = t.sof_timestamp;
+
 		isp->isp_sdev.frm_timestamp = t.sof_timestamp;
 		mode = t.mode;
 		times = t.times;

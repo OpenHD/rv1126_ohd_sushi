@@ -1,0 +1,184 @@
+/consti_stream -a -w 1280 -h 720 -d rkispp_s
+cale0 --ip_address 192.168.0.13 -b 5 -f 120
+
+[root@RV1126_RV1109:/]# cat /proc/rkisp* /proc/rkcif_mipi_lvds 
+rkisp0     Version:v01.06.02
+clk_isp    594000000
+aclk_isp   500000000
+hclk_isp   250000000
+Interrupt  Cnt:11722 ErrCnt:0
+Input      rkcif_mipi_lvds Format:SGBRG10_1X10 Size:1280x720@134fps Offset(0,0)
+Isp Read   mode:frame1 (frame:2837 rate:8ms idle time:2ms) cnt(total:2837 X1:2821 X2:15 X3:-1)
+Output     rkispp0 Format:FBC420 Size:1280x720 (frame:2837 rate:8ms)
+DPCC0      ON(0x5)
+DPCC1      ON(0x5)
+DPCC2      ON(0x5)
+BLS        ON(0x1)
+SDG        OFF(0x80446197)
+LSC        OFF(0x0)
+AWBGAIN    ON(0x80446197) (gain: 0x010d010d, 0x0228030a)
+DEBAYER    ON(0x7000111)
+CCM        OFF(0x0)
+GAMMA_OUT  ON(0x80000001)
+CPROC      ON(0xf)
+IE         OFF(0x0) (effect: BLACKWHITE)
+WDR        OFF(0x30cf0)
+HDRTMO     ON(0xa1d05a17)
+HDRMGE     OFF(0x0)
+RAWNR      ON(0x80100001)
+GIC        OFF(0x0)
+DHAZ       ON(0x80101015)
+3DLUT      OFF(0x2)
+GAIN       ON(0x80010100)
+LDCH       OFF(0x0)
+CSM        FULL(0x80446197)
+SIAF       OFF(0x0)
+SIAWB      OFF(0x0)
+YUVAE      ON(0x400100f3)
+SIHST      ON(0x38000107)
+RAWAF      ON(0x7)
+RAWAWB     ON(0x776887)
+RAWAE0     ON(0x40000003)
+RAWAE1     ON(0x400000f5)
+RAWAE2     ON(0x400000f5)
+RAWAE3     ON(0x400000f5)
+RAWHIST0   ON(0x40000501)
+RAWHIST1   ON(0x60000501)
+RAWHIST2   ON(0x60000501)
+RAWHIST3   ON(0x60000501)
+Consti10: dev->hdr.op_mode:4 dev->csi_dev.rd_mode:4
+Consti10:Isp online frame:2837 idle time:2ms v-blank:6528us
+Consti10: dmarx_dev: cur_frame.id:2837 pref_frame.id: 2836
+Consti10: rkisp_csi_device: rd_mode:4 frame_cnt:2837
+Consti10: rkisp_bridge_device: work_mode: 1 buf_num:5
+Consti10: wait_line:0
+rkispp0    Version:v01.06.02
+clk_ispp   500000000
+aclk_ispp  500000000
+hclk_ispp  250000000
+Interrupt  Cnt:8514 ErrCnt:0
+Input      rkisp0 Format:FBC420 Size:1280x720 (frame:2837 rate:8ms delay:10ms)
+Output     rkispp_scale0 Format:NV12 Size:1280x720 (frame:2837 rate:8ms delay:14ms)
+TNR        ON(0x200000d) (mode: 2to1) (global gain: disable) (frame:2837 time:1ms idle) CNT:0x0 STATE:0x1e000000
+NR         ON(0x7) (external gain: enable) (frame:2837 time:1ms idle) 0x5f0:0x0 0x5f4:0x0
+SHARP      ON(0x19) (YNR input filter: ON) (local ratio: OFF) 0x630:0x0
+FEC        OFF(0x2) (frame:0 time:0ms idle) 0xc90:0x0
+ORB        OFF(0x0)
+Monitor    ON Cnt:0
+Consti10:rkispp_device inp:INP_ISP stream_sync:0 
+Consti10:rkispp_device:rkispp_hw_dev  max_input:(0:0@0)
+Consti10:rkispp_device:rkispp_stream_vdev dbg id:2837 timestamp:2961943157798 interval:8690792 delay:10817626
+Consti10:VIDEO_MAX_FRAME:64
+Consti10:rkispp wait_line 0
+rkispp1    Version:v01.06.02
+clk_ispp   500000000
+aclk_ispp  500000000
+hclk_ispp  250000000
+Driver Version:v00.01.0a
+Work Mode:ping pong
+Monitor Mode:idle
+aclk_cif:500000000
+hclk_cif:250000000
+dclk_cif:297000000
+Input Info:
+	src subdev:m00_f_imx415 1-001a
+	interface:mipi csi2
+	lanes:4
+	vc channel: 0
+	hdr mode: normal
+	format:SGBRG10_1X10/1284x720@134
+	crop.bounds:(0, 0)/1280x720
+Output Info:
+	format:GB10/1280x720(0,0)
+	compact:enable
+	frame amount:2839
+	early:0 ms
+	readout:7 ms
+	rate:8 ms
+	fps:125
+	irq statistics:
+			total:2839
+			csi over flow:0
+			csi bandwidth lack:0
+			all err count:0
+			frame dma end:2839
+	Consti10 latency:
+	Now 2961949324507
+	fs_timestamp 2961949020882
+	fe_timestamp 2961948429674
+	wk_timestamp 0
+	readout_time 7728876
+	early_time 0
+	total_time 0
+	Delay fe_ts-fs_ts : 18446744073708 ms
+	Delay wk_ts-fs_ts : 18446741111760 ms
+	Delay now-fs_ts : 0 ms
+	curr_buff ts: 0
+	next_buf ts: 0
+	Consti10: rkcif_stream->id:0
+	Const10:format_in:dvp_fmt_val:2064  csi_fmt_val:2 csi_yuv_order:0 fmt_type:CIF_FMT_TYPE_RAW field:1
+	Consti10:out_fmt: fmt_val:0 csi_fmt_val2 | cplanes:1 mplanes:1 raw_bpp:10
+	Consti10:bpp for cplane 0 is 16	Consti10:wait_line:0 wait_line_bak:0 wait_line_cache:0
+	
+	
+Get Video Encoded packet(P Slice):ptr:0x96802b60, fd:-1, size:4833, mode:4
+Current time 3016588(ms), delta 8(ms) MB ts:3016567385
+#[Consti10:SourceBufferValue]:[3016567385]: 3016567.385ms
+#[Consti10:SourceBufferInsideRkMedia]:[3016580911]: 13.526ms
+#[SourceFlow:v4l2_capture_stream:SendInput]:[3016580948]: 0.037ms
+#[SourceFlow:v4l2_capture_stream:FetchInput]:[3016580963]: 0.015ms
+#[SourceFlow:v4l2_capture_stream:SetOutput]:[3016580975]: 0.012ms
+#[VideoEncoderFlow:SendInput]:[3016580994]: 0.019ms
+#[VideoEncoderFlow:FetchInput]:[3016582066]: 1.072ms
+#[VideoEncoderFlow:SetOutput]:[3016588282]: 6.216ms
+[00:50:16.590934][ALSC]:XCAM ERROR rk_aiq_alsc_algo.cpp:313: can't find 1280x720 in lscResName
+
+Get Video Encoded packet(P Slice):ptr:0x96802c00, fd:-1, size:4624, mode:4
+Current time 3016597(ms), delta 9(ms) MB ts:3016575720
+#[Consti10:SourceBufferValue]:[3016575720]: 3016575.720ms
+#[Consti10:SourceBufferInsideRkMedia]:[3016589534]: 13.814ms
+#[SourceFlow:v4l2_capture_stream:SendInput]:[3016589574]: 0.040ms
+#[SourceFlow:v4l2_capture_stream:FetchInput]:[3016589588]: 0.014ms
+#[SourceFlow:v4l2_capture_stream:SetOutput]:[3016589600]: 0.012ms
+#[VideoEncoderFlow:SendInput]:[3016589616]: 0.016ms
+#[VideoEncoderFlow:FetchInput]:[3016589675]: 0.059ms
+#[VideoEncoderFlow:SetOutput]:[3016596492]: 6.817ms
+[00:50:16.598811][ALSC]:XCAM ERROR rk_aiq_alsc_algo.cpp:313: can't find 1280x720 in lscResName
+
+Get Video Encoded packet(P Slice):ptr:0x96802b60, fd:-1, size:3580, mode:4
+Current time 3016606(ms), delta 9(ms) MB ts:3016584052
+#[Consti10:SourceBufferValue]:[3016584052]: 3016584.052ms
+#[Consti10:SourceBufferInsideRkMedia]:[3016597815]: 13.763ms
+#[SourceFlow:v4l2_capture_stream:SendInput]:[3016597858]: 0.043ms
+#[SourceFlow:v4l2_capture_stream:FetchInput]:[3016597874]: 0.016ms
+#[SourceFlow:v4l2_capture_stream:SetOutput]:[3016597885]: 0.011ms
+#[VideoEncoderFlow:SendInput]:[3016597904]: 0.019ms
+#[VideoEncoderFlow:FetchInput]:[3016598525]: 0.621ms
+#[VideoEncoderFlow:SetOutput]:[3016605378]: 6.853ms
+[00:50:16.607956][ALSC]:XCAM ERROR rk_aiq_alsc_algo.cpp:313: can't find 1280x720 in lscResName
+
+Get Video Encoded packet(P Slice):ptr:0x96802c00, fd:-1, size:2684, mode:4
+Current time 3016613(ms), delta 7(ms) MB ts:3016592384
+#[Consti10:SourceBufferValue]:[3016592384]: 3016592.384ms
+#[Consti10:SourceBufferInsideRkMedia]:[3016606227]: 13.843ms
+#[SourceFlow:v4l2_capture_stream:SendInput]:[3016606264]: 0.037ms
+#[SourceFlow:v4l2_capture_stream:FetchInput]:[3016606279]: 0.015ms
+#[SourceFlow:v4l2_capture_stream:SetOutput]:[3016606290]: 0.011ms
+#[VideoEncoderFlow:SendInput]:[3016606308]: 0.018ms
+#[VideoEncoderFlow:FetchInput]:[3016606679]: 0.371ms
+#[VideoEncoderFlow:SetOutput]:[3016612820]: 6.141ms
+[00:50:16.614968][ALSC]:XCAM ERROR rk_aiq_alsc_algo.cpp:313: can't find 1280x720 in lscResName
+
+Get Video Encoded packet(P Slice):ptr:0x96802b60, fd:-1, size:3576, mode:4
+Current time 3016622(ms), delta 9(ms) MB ts:3016600714
+#[Consti10:SourceBufferValue]:[3016600714]: 3016600.714ms
+#[Consti10:SourceBufferInsideRkMedia]:[3016614318]: 13.604ms
+#[SourceFlow:v4l2_capture_stream:SendInput]:[3016614366]: 0.048ms
+#[SourceFlow:v4l2_capture_stream:FetchInput]:[3016614381]: 0.015ms
+#[SourceFlow:v4l2_capture_stream:SetOutput]:[3016614393]: 0.012ms
+#[VideoEncoderFlow:SendInput]:[3016614411]: 0.018ms
+#[VideoEncoderFlow:FetchInput]:[3016614682]: 0.271ms
+#[VideoEncoderFlow:SetOutput]:[3016621543]: 6.861ms
+[00:50:16.623848][ALSC]:XCAM ERROR rk_aiq_alsc_algo.cpp:313: can't find 1280x720 in lscResName
+	
+	
