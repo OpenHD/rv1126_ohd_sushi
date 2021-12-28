@@ -2,13 +2,14 @@ DEPS =
 OBJ = consti_demo.o
 CFLAGS =
 #_LDFLAGS := $(LDFLAGS) -lrt -lpcap -lsodium
+_LDFLAGS := $(LDFLAGS) -lrt -lsodium
 #_LDFLAGS := $(LDFLAGS)
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS) #$(_LDFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS) $(_LDFLAGS)
 
 consti_demo: $(OBJ)
-	$(CXX) -o $@ $^ $(CFLAGS) #$(_LDFLAGS)
+	$(CXX) -o $@ $^ $(CFLAGS) $(_LDFLAGS)
 
 .PHONY: clean
 clean:
