@@ -287,4 +287,5 @@ source "package/rockchip/rkaiq_tool_server/Config.in"
 source "package/rockchip/lvgl/Config.in"
 source "package/rockchip/cvr_app/Config.in"
 source "package/rockchip/consti_demo/Config.in"
+source "package/rockchip/wifibroadcast/Config.in"
 endif

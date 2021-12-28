@@ -1,8 +1,8 @@
 DEPS =
 OBJ = consti_demo.o
 CFLAGS =
-#_LDFLAGS := $(LDFLAGS) -lrt -lpcap -lsodium
-_LDFLAGS := $(LDFLAGS) -lrt -lsodium
+_LDFLAGS := $(LDFLAGS) -lrt -lpcap -lsodium
+#_LDFLAGS := $(LDFLAGS) -lrt -lsodium
 #_LDFLAGS := $(LDFLAGS)
 
 %.o: %.c $(DEPS)
