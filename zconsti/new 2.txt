@@ -1,0 +1,6 @@
+build.sh is a symlink to device/rockchip/common/build.sh
+
+So build.sh lunch:
+creates a symlink between the top level .mk file (device/rockchip/.BoardConfig.mk) and the selected config file
+
+source envsetup.sh:

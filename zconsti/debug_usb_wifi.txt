@@ -1,0 +1,89 @@
+what happens if i clear dmesg
+then plug in the rtl8812au wifi adapter:
+[root@RV1126_RV1109:/sys/module]# dmesg
+[   54.984907] usb 1-1: new high-speed USB device number 2 using ehci-platform
+[   55.134645] usb 1-1: New USB device found, idVendor=0b05, idProduct=17d2, bcdDevice= 0.00
+[   55.134700] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   55.134719] usb 1-1: Product: 802.11n NIC
+[   55.134737] usb 1-1: Manufacturer: Realtek
+[   55.134801] usb 1-1: SerialNumber: 123456
+[   55.512559] usb 1-1: 88XXau 24:4b:fe:b7:1c:05 hw_info[d7]
+
+-------- booting it with already pluged in wifi card: -------------
+[root@RV1126_RV1109:/]# dmesg | grep usb
+[    0.159962] usbcore: registered new interface driver usbfs
+[    0.160056] usbcore: registered new interface driver hub
+[    0.160236] usbcore: registered new device driver usb
+[    0.188058] rockchip-usb2phy-naneng ff4c0000.usb2-phy: GPIO lookup for consumer vup
+[    0.188071] rockchip-usb2phy-naneng ff4c0000.usb2-phy: using device tree for GPIO lookup
+[    0.188114] of_get_named_gpiod_flags: parsed 'vup-gpios' property of node '/usb2-phy@ff4c0000[0]' - status (0)
+[    0.188996] phy phy-ff4c0000.usb2-phy.1: Failed to get VBUS supply regulator
+[    0.190780] rockchip-usb2phy-naneng ff4c8000.usb2-phy: GPIO lookup for consumer vup
+[    0.190794] rockchip-usb2phy-naneng ff4c8000.usb2-phy: using device tree for GPIO lookup
+[    0.190820] of_get_named_gpiod_flags: can't parse 'vup-gpios' property of node '/usb2-phy@ff4c8000[0]'
+[    0.190841] of_get_named_gpiod_flags: can't parse 'vup-gpio' property of node '/usb2-phy@ff4c8000[0]'
+[    0.190853] rockchip-usb2phy-naneng ff4c8000.usb2-phy: using lookup tables for GPIO lookup
+[    0.190864] rockchip-usb2phy-naneng ff4c8000.usb2-phy: No GPIO consumer vup found
+[    0.380018] usbcore: registered new interface driver rtl88XXau
+[    0.390945] ehci-platform ffe00000.usb: EHCI Host Controller
+[    0.391008] ehci-platform ffe00000.usb: new USB bus registered, assigned bus number 1
+[    0.391214] ehci-platform ffe00000.usb: irq 69, io mem 0xffe00000
+[    0.401350] ehci-platform ffe00000.usb: USB 2.0 started, EHCI 1.00
+[    0.401634] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 4.19
+[    0.401683] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.401708] usb usb1: Product: EHCI Host Controller
+[    0.401732] usb usb1: Manufacturer: Linux 4.19.111 ehci_hcd
+[    0.401755] usb usb1: SerialNumber: ffe00000.usb
+[    0.404009] ohci-platform ffe10000.usb: Generic Platform OHCI controller
+[    0.404069] ohci-platform ffe10000.usb: new USB bus registered, assigned bus number 2
+[    0.404278] ohci-platform ffe10000.usb: irq 70, io mem 0xffe10000
+[    0.462259] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 4.19
+[    0.462295] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.462314] usb usb2: Product: Generic Platform OHCI controller
+[    0.462333] usb usb2: Manufacturer: Linux 4.19.111 ohci_hcd
+[    0.462374] usb usb2: SerialNumber: ffe10000.usb
+[    0.464921] usbcore: registered new interface driver usb-storage
+[    0.688698] usbcore: registered new interface driver usbhid
+[    0.688757] usbhid: USB HID core driver
+[    0.731439] usb 1-1: new high-speed USB device number 2 using ehci-platform
+[    0.887774] usb 1-1: New USB device found, idVendor=0b05, idProduct=17d2, bcdDevice= 0.00
+[    0.887841] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    0.887860] usb 1-1: Product: 802.11n NIC
+[    0.887893] usb 1-1: Manufacturer: Realtek
+[    0.887912] usb 1-1: SerialNumber: 123456
+[    1.598012] phy phy-ff4c0000.usb2-phy.1: charger = USB_SDP_CHARGER
+[    1.651958] usb 1-1: 88XXau 24:4b:fe:b7:1c:05 hw_info[d7]
+
+----------
+on my ubuntu pc:
+root@consti10-AERO-15XV8:/home/consti10# dmesg
+[   58.317351] r8169 0000:02:00.0 enp2s0: Link is Down
+[   60.875526] r8169 0000:02:00.0 enp2s0: Link is Up - 1Gbps/Full - flow control rx/tx
+[   61.506305] usb 1-3: USB disconnect, device number 6
+[   62.145571] r8169 0000:02:00.0 enp2s0: Link is Down
+[   67.882176] Generic FE-GE Realtek PHY r8169-0-200:00: Downshift occurred from negotiated speed 1Gbps to actual speed 100Mbps, check cabling!
+[   67.882183] r8169 0000:02:00.0 enp2s0: Link is Up - 100Mbps/Full (downshifted) - flow control rx/tx
+[   75.511017] usb 1-3: new high-speed USB device number 7 using xhci_hcd
+[   75.661181] usb 1-3: New USB device found, idVendor=0b05, idProduct=17d2, bcdDevice= 0.00
+[   75.661184] usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[   75.661185] usb 1-3: Product: 802.11n NIC
+[   75.661187] usb 1-3: Manufacturer: Realtek
+[   75.661187] usb 1-3: SerialNumber: 123456
+[   75.693852] RTL871X: module init start
+[   75.693854] RTL871X: rtl8812au v4.3.8_12175.20140902
+[   75.693854] RTL871X: build time: Dec 19 2021 16:05:03
+[   75.693912] ------------[ cut here ]------------
+[   75.693913] WARNING: CPU: 7 PID: 6785 at net/wireless/core.c:889 wiphy_register+0x728/0x9d0 [cfg80211]
+[   75.693940] Modules linked in: 8812au(O+) rfcomm ip6table_filter ip6_tables iptable_filter bpfilter cmac algif_hash algif_skcipher af_alg bnep nvidia_uvm(PO) nvidia_drm(PO) nvidia_modeset(PO) snd_sof_pci snd_sof_intel_hda_common snd_sof_intel_hda snd_sof_intel_byt snd_sof_intel_ipc snd
+........
+
+
+
+
+
+
+
+
+
+---- 
+cat /sys/kernel/debug/usb/devices when plugged in during boot:

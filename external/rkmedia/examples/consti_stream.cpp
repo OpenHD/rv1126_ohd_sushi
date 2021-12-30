@@ -51,7 +51,7 @@ static void sigterm_handler(int sig) {
 }
 
 static const int M_DESTINATION_PORT=5600;
-static const int CHUNK_SIZE=6550;
+static const int CHUNK_SIZE=1446;
 static const int MY_WANTED_UDP_SENDBUFF_SIZE=1024*1024*10;
 static std::unique_ptr<UDPSender> udpSender=nullptr;
 static RK_CHAR *pOutPath = NULL;

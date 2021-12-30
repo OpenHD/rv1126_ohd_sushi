@@ -1,0 +1,5 @@
+RV1126:
+.isp_ver = ISP_V20,
+
+rk3568:
+.isp_ver = ISP_V21,
