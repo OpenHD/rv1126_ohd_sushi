@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBPCAP_VERSION = 1.8.1
+LIBPCAP_VERSION = 1.8.1 # Consti10: changed from 1.8.1 - heh 1.9.1 doesn't compile ?!
 LIBPCAP_SITE = http://www.tcpdump.org/release
 LIBPCAP_LICENSE = BSD-3-Clause
 LIBPCAP_LICENSE_FILES = LICENSE
