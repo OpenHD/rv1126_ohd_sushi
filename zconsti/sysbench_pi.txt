@@ -1,0 +1,101 @@
+sysbench on rpi clocked at 600Mhz:
+
+pi@raspberrypi:~/Desktop/wifibroadcast $ sysbench --test=cpu run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing CPU performance benchmark
+
+Threads started!
+Done.
+
+Maximum prime number checked in CPU test: 10000
+
+
+Test execution summary:
+    total time:                          232.9790s
+    total number of events:              10000
+    total time taken by event execution: 232.9556
+    per-request statistics:
+         min:                                 22.61ms
+         avg:                                 23.30ms
+         max:                                 28.19ms
+         approx.  95 percentile:              23.85ms
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   232.9556/0.00
+
+
+pi@raspberrypi:~/Desktop/wifibroadcast $ sysbench --test=memory --memory-block-size=1M --memory-total-size=1G run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing memory operations speed test
+Memory block size: 1024K
+
+Memory transfer size: 1024M
+
+Memory operations type: write
+Memory scope type: global
+Threads started!
+Done.
+
+Operations performed: 1024 ( 1300.37 ops/sec)
+
+1024.00 MB transferred (1300.37 MB/sec)
+
+
+Test execution summary:
+    total time:                          0.7875s
+    total number of events:              1024
+    total time taken by event execution: 0.7848
+    per-request statistics:
+         min:                                  0.64ms
+         avg:                                  0.77ms
+         max:                                  3.91ms
+         approx.  95 percentile:               0.81ms
+
+Threads fairness:
+    events (avg/stddev):           1024.0000/0.00
+    execution time (avg/stddev):   0.7848/0.00
+
+pi@raspberrypi:~/Desktop/wifibroadcast $ sysbench --test=memory --memory-block-size=10K --memory-total-size=1G run
+sysbench 0.4.12:  multi-threaded system evaluation benchmark
+
+Running the test with following options:
+Number of threads: 1
+
+Doing memory operations speed test
+Memory block size: 10K
+
+Memory transfer size: 1024M
+
+Memory operations type: write
+Memory scope type: global
+Threads started!
+Done.
+
+Operations performed: 104858 (97770.78 ops/sec)
+
+1024.00 MB transferred (954.79 MB/sec)
+
+
+Test execution summary:
+    total time:                          1.0725s
+    total number of events:              104858
+    total time taken by event execution: 0.9151
+    per-request statistics:
+         min:                                  0.01ms
+         avg:                                  0.01ms
+         max:                                  0.29ms
+         approx.  95 percentile:               0.01ms
+
+Threads fairness:
+    events (avg/stddev):           104858.0000/0.00
+    execution time (avg/stddev):   0.9151/0.00
+

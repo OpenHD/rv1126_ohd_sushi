@@ -1079,6 +1079,7 @@ menu "Crypto"
 	source "package/trousers/Config.in"
 	source "package/ustream-ssl/Config.in"
 	source "package/wolfssl/Config.in"
+	source "package/sysbench/Config.in"
 endmenu
 
 menu "Database"
