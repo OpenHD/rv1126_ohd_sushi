@@ -32,10 +32,10 @@ DECLARE_GLOBAL_DATA_PTR;
 static struct rockchip_cpu_rate_table rv1126_cpu_rates[] = {
 	RV1126_CPUCLK_RATE(1200000000, 1, 5),
 	RV1126_CPUCLK_RATE(1008000000, 1, 5),
-    // Consti10 CPU
-	/* RV1126_CPUCLK_RATE(816000000, 1, 3),
+    // Consti10 CPU 
+	RV1126_CPUCLK_RATE(816000000, 1, 3),
 	RV1126_CPUCLK_RATE(600000000, 1, 3),
-	RV1126_CPUCLK_RATE(408000000, 1, 1),*/
+	RV1126_CPUCLK_RATE(408000000, 1, 1),
 };
 
 static struct rockchip_pll_rate_table rv1126_pll_rates[] = {

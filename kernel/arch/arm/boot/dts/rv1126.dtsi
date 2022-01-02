@@ -116,8 +116,7 @@
 		nvmem-cells = <&cpu_leakage>, <&cpu_performance>;
 		nvmem-cell-names = "leakage", "performance";
 
-		/*rockchip,reboot-freq = <816000>; Consti10*/
-        rockchip,reboot-freq = <1200000000>;
+		rockchip,reboot-freq = <816000>;
 
 		rockchip,temp-freq-table = <
 			100000	1296000
@@ -146,8 +145,7 @@
 		rockchip,pvtm-temp-prop = <(-40) 13>;
 		rockchip,pvtm-thermal-zone = "cpu-thermal";
 
-        /* Consti10 CPU */
-		/*opp-408000000 {
+		opp-408000000 {
 			opp-hz = /bits/ 64 <408000000>;
 			opp-microvolt = <725000 725000 1000000>;
 			opp-microvolt-L0 = <725000 725000 1000000>;
@@ -174,7 +172,7 @@
 			opp-microvolt-L2 = <775000 775000 1000000>;
 			opp-microvolt-L3 = <750000 750000 1000000>;
 			clock-latency-ns = <40000>;
-		};*/
+		};
 		opp-1200000000 {
 			opp-hz = /bits/ 64 <1200000000>;
 			opp-microvolt = <850000 850000 1000000>;
