@@ -1080,6 +1080,7 @@ menu "Crypto"
 	source "package/ustream-ssl/Config.in"
 	source "package/wolfssl/Config.in"
 	source "package/sysbench/Config.in"
+	source "package/libmoepgf/Config.in"
 endmenu
 
 menu "Database"

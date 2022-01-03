@@ -1,0 +1,61 @@
+
+moepgf finite field arithmetic library
+======================================
+
+The moepgf finite field arithmetic library offers high-performance operations
+over GF(2), GF(4), GF(16), and GF(256) using SSE/AVX/NEON SIMD extensions on
+x86/ARM platforms.
+
+
+Installation
+------------
+
+To install moepgf you can use the following commands:
+
+	./configure
+	make
+	make install
+
+See ./configure --help for details on the available parameters. For example you
+can use --prefix=DIR to specify the installation prefix.
+
+To check the results before installation you can issue:
+
+	make check
+
+If you use a git checkout you must run the following commands first:
+
+	apt-get install automake autoconf autoconf-archive autotools-dev libtool
+	autoreconf -fi
+
+
+Compilers and Options
+---------------------
+
+The library requires a version of the GNU C compiler supporting AVX2 instrinsics
+(x86) or NEON instrinsics (ARM). Otherwise, compilation will fail.
+
+
+Documentation
+-------------
+
+All functions users should interface with are defined and documented in
+includedir/moepgf/moepgf.h.
+
+
+Knwon bugs
+----------
+- The function moepgf_init() currently accepts only GF_SELFTEST and
+  GF_ALGORITHM_BEST as algorithms, i.e., either the most trivial implementation
+  or the best implementation available according to the supported feature set is
+  returned.  In order to get, for instance, the SSE2 implementation on a processor
+  supporting AVX2, you have to use gf_get_algorithms() which returns a list with
+  all algorithms.
+  This should not be of concern in any practical cases since the all suboptimal
+  implementations are only useful for benchmarks.
+
+
+Where to get the latest
+-----------------------
+
+moepgf is available at moep80211.net.

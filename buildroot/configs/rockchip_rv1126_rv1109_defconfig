@@ -87,5 +87,6 @@ BR2_PACKAGE_NETPERF=y
 # add_sysbench_to_debug_cpu
 # wont work since sysbench doesnt support cross compile
 # BR2_PACKAGE_SYSBENCH=y
+BR2_PACKAGE_LIBMOEPGF=y
 # BR2_PACKAGE_GSTREAMER1_ROCKCHIP=y
 # Consti test end
