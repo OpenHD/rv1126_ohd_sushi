@@ -324,7 +324,9 @@ benchmark(struct args *args)
 
 	fset = moepgf_check_available_simd_extensions();
 
-	fprintf(stderr, 
+    fprintf(stderr,"Test was unrolled2\n");
+
+            fprintf(stderr,
 		"\nEncoding benchmark: "
 		"Encoding throughput in Gbps (1e9 bits per sec)\n"
 		"maxsize=%d, count=%d, repetitions=%d, "

@@ -101,7 +101,9 @@ maddrc256_log_table(uint8_t *region1, const uint8_t *region2,
 		*region1 ^= alogt[x];
 	}
 }
-__attribute__((optimize("unroll-loops")))
+
+#define UNROLL 8
+//__attribute__((optimize("unroll-loops")))
 void
 maddrc256_flat_table(uint8_t *region1, const uint8_t *region2,
 					uint8_t constant, size_t length)
@@ -114,9 +116,21 @@ maddrc256_flat_table(uint8_t *region1, const uint8_t *region2,
 		return ;
 	}
 
-	for (; length; region1++, region2++, length--) {
-		*region1 ^= mult[constant][*region2];
-	}
+	//for (; length; region1++, region2++, length--) {
+	//	*region1 ^= mult[constant][*region2];
+	//}
+
+    uint8_t* forThisConstant=mult[constant];
+    for (; length; region1+=UNROLL, region2+=UNROLL, length-=UNROLL) {
+    	region1[0] ^= forThisConstant[region2[0]];
+        region1[1] ^= forThisConstant[region2[1]];
+        region1[2] ^= forThisConstant[region2[2]];
+        region1[3] ^= forThisConstant[region2[3]];
+        region1[4] ^= forThisConstant[region2[4]];
+        region1[5] ^= forThisConstant[region2[5]];
+        region1[6] ^= forThisConstant[region2[6]];
+        region1[7] ^= forThisConstant[region2[7]];
+    }
 }
 
 void
