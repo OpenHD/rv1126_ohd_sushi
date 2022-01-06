@@ -86,6 +86,8 @@ static int __set_clk_rates(struct device_node *node, bool clk_supplier)
 	struct clk *clk;
 	u32 rate;
 
+    pr_err("%s Consti10 CPU begin %s\n",__func__,node->name);
+
 	of_property_for_each_u32(node, "assigned-clock-rates", prop, cur, rate) {
 		if (rate) {
 			rc = of_parse_phandle_with_args(node, "assigned-clocks",
@@ -117,6 +119,7 @@ static int __set_clk_rates(struct device_node *node, bool clk_supplier)
 		}
 		index++;
 	}
+    pr_err("Consti10 CPU %s end\n",__func__ );
 	return 0;
 }
 

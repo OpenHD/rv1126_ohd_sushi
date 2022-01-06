@@ -719,6 +719,8 @@ void __init rockchip_clk_register_armclk(struct rockchip_clk_provider *ctx,
 {
 	struct clk *clk;
 
+    pr_err("Consti10 CPU begin %s\n", __func__);
+
 	clk = rockchip_clk_register_cpuclk(name, parent_names, num_parents,
 					   reg_data, rates, nrates,
 					   ctx->reg_base, &ctx->lock);
@@ -729,6 +731,8 @@ void __init rockchip_clk_register_armclk(struct rockchip_clk_provider *ctx,
 	}
 
 	rockchip_clk_add_lookup(ctx, clk, lookup_id);
+
+    pr_err("Consti10 CPU end %s\n", __func__);
 }
 
 void __init rockchip_clk_protect_critical(const char *const clocks[],

@@ -254,8 +254,8 @@ static int rockchip_cpuclk_notifier_cb(struct notifier_block *nb,
 	struct clk_notifier_data *ndata = data;
 	struct rockchip_cpuclk *cpuclk = to_rockchip_cpuclk_nb(nb);
 	int ret = 0;
-
-	pr_debug("%s: event %lu, old_rate %lu, new_rate: %lu\n",
+    // Consti10 CPU: changed to pr_err
+	pr_err("%s: event %lu, old_rate %lu, new_rate: %lu\n",
 		 __func__, event, ndata->old_rate, ndata->new_rate);
 	if (event == PRE_RATE_CHANGE)
 		ret = rockchip_cpuclk_pre_rate_change(cpuclk, ndata);
@@ -275,6 +275,7 @@ struct clk *rockchip_clk_register_cpuclk(const char *name,
 	struct clk_init_data init;
 	struct clk *clk, *cclk, *pll_clk;
 	int ret;
+    pr_err("Consti10 CPU begin %s\n", __func__);
 
 	if (num_parents < 2) {
 		pr_err("%s: needs at least two parent clocks\n", __func__);

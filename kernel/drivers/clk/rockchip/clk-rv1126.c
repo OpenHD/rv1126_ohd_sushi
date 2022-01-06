@@ -130,8 +130,8 @@ static struct rockchip_cpuclk_rate_table rv1126_cpuclk_rates[] __initdata = {
 	RV1126_CPUCLK_RATE(912000000, 1, 5),
 	RV1126_CPUCLK_RATE(816000000, 1, 3),
 	RV1126_CPUCLK_RATE(696000000, 1, 3),
-	/*RV1126_CPUCLK_RATE(600000000, 1, 3),
-	RV1126_CPUCLK_RATE(408000000, 1, 1),
+	RV1126_CPUCLK_RATE(600000000, 1, 3),
+	/*RV1126_CPUCLK_RATE(408000000, 1, 1),
 	RV1126_CPUCLK_RATE(312000000, 1, 1),
 	RV1126_CPUCLK_RATE(216000000,  1, 1),
 	RV1126_CPUCLK_RATE(96000000, 1, 1),*/
@@ -1491,6 +1491,8 @@ static void __init rv1126_clk_init(struct device_node *np)
 		return;
 	}
 
+    pr_err("Consti10 CPU begin %s\n", __func__);
+
 	rockchip_clk_register_plls(ctx, rv1126_pll_clks,
 				   ARRAY_SIZE(rv1126_pll_clks),
 				   RV1126_GRF_SOC_STATUS0);
@@ -1515,6 +1517,8 @@ static void __init rv1126_clk_init(struct device_node *np)
 
 	atomic_notifier_chain_register(&panic_notifier_list,
 				       &rv1126_clk_panic_block);
+
+    pr_err("Consti10 CPU end %s\n", __func__);
 }
 
 CLK_OF_DECLARE(rv1126_cru, "rockchip,rv1126-cru", rv1126_clk_init);
