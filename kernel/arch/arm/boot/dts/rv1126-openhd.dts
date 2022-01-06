@@ -421,7 +421,7 @@
         status = "okay";
         clock-frequency = <400000>;
 
-        imx415: imx415@1a {
+        /*imx415: imx415@1a {
                    compatible = "sony,imx415";
                    reg = <0x1a>;
                    clocks = <&cru CLK_MIPICSI_OUT>;
@@ -444,32 +444,8 @@
                                                    data-lanes = <1 2 3 4>;
                                    };
                    };
-        };
-        /*imx415: imx415@1a {
-                           compatible = "sony,imx415";
-                           reg = <0x1a>;
-                           clocks = <&cru CLK_MIPICSI_OUT>;
-                           clock-names = "xvclk";
-                           power-domains = <&power RV1126_PD_VI>;
-                           pinctrl-names = "rockchip,camera_default";
-                           pinctrl-0 = <&mipicsi_clk1>;
-                           avdd-supply = <&vcc3v3_sys>;
-                           dovdd-supply = <&vcc_1v8>;
-                           dvdd-supply = <&vcc_dvdd>;
-                           reset-gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_LOW>;
-                           rockchip,camera-module-index = <0>;
-                           rockchip,camera-module-facing = "front";
-                           rockchip,camera-module-name = "YT10092";
-                           rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
-                           ir-cut = <&cam_ircut0>;
-                           port {
-                                           ucam_out1: endpoint {
-                                                           remote-endpoint = <&csi_dphy1_input>;
-                                                           data-lanes = <1 2 3 4>;
-                                           };
-                           };
-                };*/
-	
+        };*/
+
 	        gc2053_2: gc2053_2@3f {
                 compatible = "galaxycore,gc2053";
                 reg = <0x3f>;
@@ -480,8 +456,6 @@
                 pinctrl-names = "rockchip,camera_default";
                 pinctrl-0 = <&mipicsi_clk1>;
 
-//              pwd-gpios = <&gpio3 RK_PA4 GPIO_ACTIVE_HIGH>;
-//              reset-gpios = <&gpio2 RK_PA0 GPIO_ACTIVE_LOW>;
                 rockchip,camera-module-index = <1>;
                 rockchip,camera-module-facing = "front";
                 rockchip,camera-module-name = "CMK-OT1726-PG1";
@@ -493,6 +467,31 @@
                                 data-lanes = <1 2>;
                         };
                 };
+        };
+
+        imx415: imx415@1a {
+                   compatible = "sony,imx415";
+                   reg = <0x1a>;
+                   clocks = <&cru CLK_MIPICSI_OUT>;
+                   clock-names = "xvclk";
+                   power-domains = <&power RV1126_PD_VI>;
+                   pinctrl-names = "rockchip,camera_default";
+                   pinctrl-0 = <&mipicsi_clk0>;
+                   /*avdd-supply = <&vcc3v3_sys>;
+                   dovdd-supply = <&vcc_1v8>;
+                   dvdd-supply = <&vcc_dvdd>;*/
+                   reset-gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_LOW>;
+                   rockchip,camera-module-index = <0>;
+                   rockchip,camera-module-facing = "front";
+                   rockchip,camera-module-name = "YT10092";
+                   rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
+                   ir-cut = <&cam_ircut0>;
+                   port {
+                                   ucam_out0: endpoint {
+                                                   remote-endpoint = <&mipi_in_ucam0>;
+                                                   data-lanes = <1 2 3 4>;
+                                   };
+                   };
         };
 
 
