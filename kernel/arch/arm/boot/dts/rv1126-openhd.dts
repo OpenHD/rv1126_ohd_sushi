@@ -321,22 +321,22 @@
 
 
 
-/*&csi_dphy1 {
+&csi_dphy1 {
 	status = "okay";
 	ports {
 		port@0 {
 			csi_dphy1_input: endpoint@1 {
 				remote-endpoint = <&ucam_out1>;
-				data-lanes = <1 2>;
+				data-lanes = <1 2>; // for gc2053
 			};
 		};
 		port@1 {
 			csi_dphy1_output: endpoint@0 {
-				remote-endpoint = <&isp_virt1>;
+				remote-endpoint = <&isp_virt1_in>;
 			};
 		};
 	};
-};*/
+};
 
 
 
@@ -463,14 +463,14 @@
                            rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
                            ir-cut = <&cam_ircut0>;
                            port {
-                                           ucam_out0: endpoint {
-                                                           remote-endpoint = <&mipi_in_ucam0>;
+                                           ucam_out1: endpoint {
+                                                           remote-endpoint = <&csi_dphy1_input>;
                                                            data-lanes = <1 2 3 4>;
                                            };
                            };
                 };*/
 	
-	        /*gc2053_2: gc2053_2@3f {
+	        gc2053_2: gc2053_2@3f {
                 compatible = "galaxycore,gc2053";
                 reg = <0x3f>;
                 clocks = <&cru CLK_MIPICSI_OUT>;
@@ -493,7 +493,7 @@
                                 data-lanes = <1 2>;
                         };
                 };
-        };*/
+        };
 
 
 };
@@ -742,16 +742,16 @@
 	};
 };
 
-/*&rkisp_vir1 {
+&rkisp_vir1 {
 	status = "okay";
 	ports {
 		port@0 {
-			isp_virt1: endpoint@0 {
+			isp_virt1_in: endpoint@0 {
 				remote-endpoint = <&csi_dphy1_output>;
 			};
 		};
 	};
-};*/
+};
 
 
 
