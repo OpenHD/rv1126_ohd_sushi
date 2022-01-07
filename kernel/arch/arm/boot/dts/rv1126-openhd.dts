@@ -664,7 +664,7 @@
 &rkcif_mipi_lvds {
 	status = "okay";
 	port {
-		/* MIPI CSI-2 endpoint */
+		// MIPI CSI-2 endpoint
 		// Consti10: I think here ends this crap ?
 		cif_mipi_in: endpoint {
 			remote-endpoint = <&mipi_csi2_output>;
@@ -677,7 +677,7 @@
 	status = "okay";
 
 	port {
-		/* MIPI CSI-2 endpoint */
+		// MIPI CSI-2 endpoint
 		mipi_lvds_sditf: endpoint {
 			remote-endpoint = <&isp_virt0_in>;
 			data-lanes = <1 2 3 4>;
