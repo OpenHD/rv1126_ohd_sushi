@@ -1952,6 +1952,12 @@ static int imx415_check_sensor_id(struct imx415 *imx415,
 
 	ret = imx415_read_reg(client, IMX415_REG_CHIP_ID,
 			      IMX415_REG_VALUE_08BIT, &id);
+    if(ret != 0){
+        dev_err(dev,"Consti10 - error while reading from i2c. Error code:%d Value for debug:%d\n",ret,id);
+        return -ENODEV;
+    }else{
+        dev_err(dev,"Consti10 - Successfully red something ?\n");
+    }
 	if (id != CHIP_ID) {
 		dev_err(dev, "Unexpected sensor id(%06x), ret(%d)\n", id, ret);
 		return -ENODEV;

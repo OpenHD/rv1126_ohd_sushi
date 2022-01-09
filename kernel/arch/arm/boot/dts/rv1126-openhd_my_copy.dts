@@ -10,8 +10,6 @@
 #include <dt-bindings/display/drm_mipi_dsi.h>
 #include <dt-bindings/input/input.h>
 
-#include "rv1126-openhd-camera.dtsi"
-
 / {
 	model = "Rockchip RV1126 38x38 V10 EMMC DDR3 Board";
 	compatible = "rockchip,rv1126-38x38-v10-emmc", "rockchip,rv1126";
@@ -290,6 +288,49 @@
 	};
 };
 
+
+&csi_dphy0 {
+	status = "okay";
+	ports {
+		port@0 {
+			csi_dphy0_input: endpoint@1 {
+				reg = <1>;
+				remote-endpoint = <&ucam_out0>;
+				data-lanes = <1 2 3 4>;
+				//data-lanes = <1 2>;
+			};
+		};
+		port@1 {
+			csi_dphy0_output: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&mipi_csi2_input>;
+			};
+		};
+	};
+};
+
+
+
+/*&csi_dphy1 {
+	status = "okay";
+	ports {
+		port@0 {
+			csi_dphy1_input: endpoint@1 {
+				remote-endpoint = <&ucam_out1>;
+				data-lanes = <1 2>; // for gc2053
+				//data-lanes = <1 2 3 4>;
+			};
+		};
+		port@1 {
+			csi_dphy1_output: endpoint@0 {
+				remote-endpoint = <&isp_virt1_in>;
+			};
+		};
+	};
+};*/
+
+
+
 &emmc {
 	bus-width = <8>;
 	cap-mmc-highspeed;
@@ -367,6 +408,60 @@
 };
 
 
+&i2c1 {
+        status = "okay";
+        clock-frequency = <400000>;
+
+        /*gc2053_2: gc2053_2@3f {
+                compatible = "galaxycore,gc2053";
+                reg = <0x3f>;
+                clocks = <&cru CLK_MIPICSI_OUT>;
+                clock-names = "xvclk";
+                power-domains = <&power RV1126_PD_VI>;
+                pinctrl-names = "rockchip,camera_default";
+                pinctrl-0 = <&mipicsi_clk1>;
+
+                rockchip,camera-module-index = <1>;
+                rockchip,camera-module-facing = "front";
+                rockchip,camera-module-name = "CMK-OT1726-PG1";
+                rockchip,camera-module-lens-name = "29IR-2MP-F25";
+//              ir-cut = <&cam_ircut0>;
+                port {
+                        ucam_out1: endpoint {
+                                remote-endpoint = <&csi_dphy1_input>;
+                                data-lanes = <1 2>;
+                        };
+                };
+        };*/
+
+        imx415: imx415@1a {
+                   compatible = "sony,imx415";
+                   reg = <0x1a>;
+                   clocks = <&cru CLK_MIPICSI_OUT>;
+                   clock-names = "xvclk";
+                   power-domains = <&power RV1126_PD_VI>;
+                   pinctrl-names = "rockchip,camera_default";
+                   pinctrl-0 = <&mipicsi_clk0>;
+
+                   reset-gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_LOW>;
+
+                   rockchip,camera-module-index = <0>;
+                   rockchip,camera-module-facing = "front";
+                   rockchip,camera-module-name = "YT10092";
+                   rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
+                   ir-cut = <&cam_ircut0>;
+                   port {
+                           ucam_out0: endpoint {
+                                           remote-endpoint = <&csi_dphy0_input>;
+                                           data-lanes = <1 2 3 4>;
+                           };
+                   };
+        };
+
+
+};
+
+
 &i2c5 {
 	status = "okay";
 
@@ -374,6 +469,14 @@
 		compatible = "icn6211";
 		reg = <0x2c>;
 	};
+};
+
+
+// isp cma buffer don't fiddle with it, dual camera(1920 * 1080) need 92M buffer
+// consti10: I am not sure if you need this one, but never tested removing it. Make sure here is enough though.
+&isp_reserved {
+	//size = <0x5c00000>;
+	size = <0xb800000>;
 };
 
 
@@ -425,6 +528,41 @@
 		compatible = "ethernet-phy-ieee802.3-c22";
 		reg = <0x0>;
 		clocks = <&cru CLK_GMAC_ETHERNET_OUT>;
+	};
+};
+
+&mipi_csi2 {
+	status = "okay";
+
+	ports {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		port@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			mipi_csi2_input: endpoint@1 {
+				reg = <1>;
+				remote-endpoint = <&csi_dphy0_output>;
+				data-lanes = <1 2 3 4>;
+				//data-lanes = <1 2>;
+			};
+		};
+
+		port@1 {
+			reg = <1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			mipi_csi2_output: endpoint@0 {
+				reg = <0>;
+				remote-endpoint = <&cif_mipi_in>;
+				data-lanes = <1 2 3 4>;
+				//data-lanes = <1 2>;
+			};
+		};
 	};
 };
 
@@ -502,6 +640,93 @@
 &rk_rga {
 	status = "okay";
 };
+
+
+&rkcif {
+	status = "okay";
+};
+
+&rkcif_mmu {
+	status = "disabled";
+};
+
+&rkcif_dvp {
+	status = "okay";
+
+	port {
+		/* Parallel bus endpoint */
+		/*
+		cif_para_in: endpoint {
+			remote-endpoint = <&cam_para_out1>;
+			bus-width = <12>;
+			hsync-active = <1>;
+			vsync-active = <0>;
+		};
+		*/
+	};
+};
+&rkcif_mipi_lvds {
+	status = "okay";
+	port {
+		// MIPI CSI-2 endpoint
+		// Consti10: I think here ends this crap ?
+		cif_mipi_in: endpoint {
+			remote-endpoint = <&mipi_csi2_output>;
+			data-lanes = <1 2 3 4>;
+			//data-lanes = <1 2>;
+		};
+	};
+};
+
+&rkcif_mipi_lvds_sditf {
+	status = "okay";
+
+	port {
+		// MIPI CSI-2 endpoint
+		mipi_lvds_sditf: endpoint {
+			remote-endpoint = <&isp_virt0_in>;
+			data-lanes = <1 2 3 4>;
+			//data-lanes = <1 2>;
+		};
+	};
+};
+
+
+&rkisp_vir0 {
+	status = "okay";
+	ports {
+		port@0 {
+			isp_virt0_in: endpoint@0 {
+				remote-endpoint = <&mipi_lvds_sditf>;
+			};
+		};
+	};
+};
+
+/*&rkisp_vir1 {
+	status = "okay";
+	ports {
+		port@0 {
+			isp_virt1_in: endpoint@0 {
+				remote-endpoint = <&csi_dphy1_output>;
+			};
+		};
+	};
+};*/
+
+
+
+&rkispp_vir1 {
+	status = "okay";
+};
+
+/*&rkispp {
+	status = "okay";
+	//the max input w h and fps of mulit sensor - not sure why they write that here
+	//max-input = <1920 1080 30>;
+	max-input = <3840 2160 30>;
+};*/
+
 
 
 &rkvenc {
