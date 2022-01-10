@@ -1,5 +1,5 @@
-// I moved all the camera-related stuff (How CSI0,CSI1 are set up and everything regarding the "pipeline" from camera to ISP into this file
-// since I had/have to do a lot of changes here, and we might even want different "setups" where only the camera(s) change during development/releases
+// GC2053 on CSI0
+// nothing on CSI1
 
 
 &csi_dphy0 {
@@ -16,7 +16,7 @@
 			csi_dphy0_input: endpoint@1 {
 				reg = <1>;
 				remote-endpoint = <&ucam_out0>;
-				data-lanes = <1 2 3 4>;
+				data-lanes = <1 2>;
 			};
 		};
 		port@1 {
@@ -34,7 +34,7 @@
 
 
 
-&csi_dphy1 {
+/*&csi_dphy1 {
 	status = "okay";
 	ports {
 		port@0 {
@@ -49,7 +49,7 @@
 			};
 		};
 	};
-};
+};*/
 
 
 &i2c1 {
@@ -63,46 +63,20 @@
                 clock-names = "xvclk";
                 power-domains = <&power RV1126_PD_VI>;
                 pinctrl-names = "rockchip,camera_default";
-                pinctrl-0 = <&mipicsi_clk1>;
+                pinctrl-0 = <&mipicsi_clk0>;
 
-                rockchip,camera-module-index = <1>;
+                rockchip,camera-module-index = <0>;
                 rockchip,camera-module-facing = "front";
                 rockchip,camera-module-name = "CMK-OT1726-PG1";
                 rockchip,camera-module-lens-name = "29IR-2MP-F25";
 //              ir-cut = <&cam_ircut0>;
                 port {
-                        ucam_out1: endpoint {
-                                remote-endpoint = <&csi_dphy1_input>;
+                        ucam_out0: endpoint {
+                                remote-endpoint = <&csi_dphy0_input>;
                                 data-lanes = <1 2>;
                         };
                 };
         };
-
-        imx415: imx415@1a {
-               compatible = "sony,imx415";
-               reg = <0x1a>;
-               clocks = <&cru CLK_MIPICSI_OUT>;
-               clock-names = "xvclk";
-               power-domains = <&power RV1126_PD_VI>;
-               pinctrl-names = "rockchip,camera_default";
-               pinctrl-0 = <&mipicsi_clk0>;
-
-               reset-gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_LOW>;
-
-               rockchip,camera-module-index = <0>;
-               rockchip,camera-module-facing = "front";
-               rockchip,camera-module-name = "YT10092";
-               rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
-               ir-cut = <&cam_ircut0>;
-               port {
-                       ucam_out0: endpoint {
-                                       remote-endpoint = <&csi_dphy0_input>;
-                                       data-lanes = <1 2 3 4>;
-                       };
-               };
-        };
-
-
 };
 
 // isp cma buffer don't fiddle with it, dual camera(1920 * 1080) need 92M buffer
@@ -128,7 +102,7 @@
 			mipi_csi2_input: endpoint@1 {
 				reg = <1>;
 				remote-endpoint = <&csidphy0_out>;
-				data-lanes = <1 2 3 4>;
+				data-lanes = <1 2>;
 			};
 		};
 
@@ -140,7 +114,7 @@
 			mipi_csi2_output: endpoint@0 {
 				reg = <0>;
 				remote-endpoint = <&cif_mipi_in>;
-				data-lanes = <1 2 3 4>;
+				data-lanes = <1 2>;
 			};
 		};
 	};
@@ -177,7 +151,7 @@
 		// Consti10: I think here ends this crap ?
 		cif_mipi_in: endpoint {
 			remote-endpoint = <&mipi_csi2_output>;
-			data-lanes = <1 2 3 4>;
+			data-lanes = <1 2>;
 		};
 	};
 };
@@ -189,7 +163,7 @@
 		// MIPI CSI-2 endpoint
 		mipi_lvds_sditf: endpoint {
 			remote-endpoint = <&isp_in>;
-			data-lanes = <1 2 3 4>;
+			data-lanes = <1 2>;
 		};
 	};
 };
@@ -212,7 +186,7 @@
 	};
 };
 
-&rkisp_vir1 {
+/*&rkisp_vir1 {
 	status = "okay";
 	ports {
 		port@0 {
@@ -221,16 +195,16 @@
 			};
 		};
 	};
-};
+};*/
 
 
 &rkispp_vir1 {
 	status = "okay";
 };
 
-&rkispp {
+/*&rkispp {
 	status = "okay";
 	//the max input w h and fps of mulit sensor - not sure why they write that here
 	//max-input = <1920 1080 30>;
 	max-input = <3840 2160 30>;
-};
+};*/

@@ -10,7 +10,9 @@
 #include <dt-bindings/display/drm_mipi_dsi.h>
 #include <dt-bindings/input/input.h>
 
-#include "rv1126-openhd-camera.dtsi"
+//#include "rv1126-openhd-camera-x.dtsi"
+#include "rv1126-openhd-camera-imx415.dtsi"
+//#include "rv1126-openhd-camera-gc2053.dtsi"
 
 / {
 	model = "Rockchip RV1126 38x38 V10 EMMC DDR3 Board";

@@ -201,7 +201,7 @@ void video_packet_cb(MEDIA_BUFFER mb) {
     RK_MPI_MB_ReleaseBuffer(mb);
 }
 
-static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:";
+static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:y:";
 static const struct option long_options[] = {
         {"aiq", optional_argument, NULL, 'a'},
         {"height", required_argument, NULL, 'h'},
@@ -214,6 +214,7 @@ static const struct option long_options[] = {
         {"output",required_argument,NULL, 'o'},
         {"bitrate",required_argument,NULL, 'b'},
         {"hdr",required_argument,NULL, 'x'},
+        {"cam_id",required_argument,NULL, 'y'},
         {NULL, 0, NULL, 0},
 };
 
@@ -302,6 +303,9 @@ int main(int argc, char *argv[]) {
             case 'x':
                 m_HdrModeInt = atoi(optarg);
                 break;
+            case 'y':
+                s32CamId = atoi(optarg);
+                break;
             case '?':
             default:
                 print_usage(argv[0]);
@@ -330,6 +334,7 @@ int main(int argc, char *argv[]) {
     printf("#UDP Destination: %s %d\n",destinationIpAddress.c_str(),M_DESTINATION_PORT);
     printf("#image type:%d\n",(int)m_image_type);
     printf("#Bitrate:%d Mbit/s\n",(int)bitrateMbitps);
+    printf("#Camera id %d\n",(int)s32CamId);
     if(pOutPath!=NULL){
         printf("#Output Path: %s\n", pOutPath);
     }else{
