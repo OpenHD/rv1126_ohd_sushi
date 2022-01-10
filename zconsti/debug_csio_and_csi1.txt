@@ -1,0 +1,7 @@
+with rv1126-aybering
+/* */ the node where gc2053 is both on CSI0 und CSI1 ?!
+
+CSI0 works
+CSI1 works
+./consti_stream works with cam_idx 0 regardless if on CSI0 und CSI1 ?!
+
