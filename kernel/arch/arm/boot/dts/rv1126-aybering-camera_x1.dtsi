@@ -1,6 +1,7 @@
 // took rv1126-aybering-camera.dts
 // moved all the camera stuff here unmodified
 // GC2053 AND imx415 node uncommented
+// and replaced the lanes with "4" where needed
 
 &csi_dphy0 {
 	status = "okay";
