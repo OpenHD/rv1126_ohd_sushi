@@ -2,7 +2,10 @@
 // moved all the camera stuff here unmodified
 // X0 : GC2053 node (2x) is uncommented
 // GC2053 works on CSI1, but not on CSI0 ?!
-// saved & stored
+// ./consti_stream works with cam_idx 0 on CSI1
+// on CSI0: i2cdetect -y  -> 30,7 (with gc2053 on this port)
+// on CSI1: i2cdetect -y  -> 30,f (with gc2053 on this port)
+//
 
 &csi_dphy0 {
 	status = "okay";
