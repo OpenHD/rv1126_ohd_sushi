@@ -56,26 +56,24 @@
         status = "okay";
         clock-frequency = <400000>;
 
-        gc2053_2: gc2053_2@3f {
-                compatible = "galaxycore,gc2053";
-                reg = <0x3f>;
-                clocks = <&cru CLK_MIPICSI_OUT>;
-                clock-names = "xvclk";
-                power-domains = <&power RV1126_PD_VI>;
-                pinctrl-names = "rockchip,camera_default";
-                pinctrl-0 = <&mipicsi_clk0>;
-
-                rockchip,camera-module-index = <0>;
-                rockchip,camera-module-facing = "front";
-                rockchip,camera-module-name = "CMK-OT1726-PG1";
-                rockchip,camera-module-lens-name = "29IR-2MP-F25";
-//              ir-cut = <&cam_ircut0>;
-                port {
-                        ucam_out0: endpoint {
-                                remote-endpoint = <&csi_dphy0_input>;
-                                data-lanes = <1 2>;
-                        };
+        gc2053: gc2053@37 {
+            compatible = "galaxycore,gc2053";
+            reg = <0x37>;
+            clocks = <&cru CLK_MIPICSI_OUT>;
+            clock-names = "xvclk";
+            power-domains = <&power RV1126_PD_VI>;
+            pinctrl-names = "rockchip,camera_default";
+            pinctrl-0 = <&mipicsi_clk0>;
+            rockchip,camera-module-index = <0>;
+            rockchip,camera-module-facing = "front";
+            rockchip,camera-module-name = "YT-RV1109-2-V1";
+            rockchip,camera-module-lens-name = "40IR-2MP-F20";
+            port {
+                ucam_out0: endpoint {
+                    remote-endpoint = <&csi_dphy0_input>;
+                    data-lanes = <1 2>;
                 };
+            };
         };
 };
 
