@@ -13,7 +13,7 @@
 //#include "rv1126-openhd-camera-x.dtsi"
 //#include "rv1126-openhd-camera-imx415.dtsi"
 //#include "rv1126-openhd-camera-gc2053.dtsi"
-#include "rv1126-aybering-camera.dtsi"
+#include "rv1126-aybering-camera_x1.dtsi"
 
 
 / {
