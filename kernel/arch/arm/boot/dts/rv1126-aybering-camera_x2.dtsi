@@ -70,7 +70,7 @@
                    clock-names = "xvclk";
                    power-domains = <&power RV1126_PD_VI>;
                    pinctrl-names = "rockchip,camera_default";
-                   pinctrl-0 = <&mipicsi_clk0>;
+                   pinctrl-0 = <&mipicsi_clk1>;
 //                   avdd-supply = <&vcc3v3_sys>;
 //                   dovdd-supply = <&vcc_1v8>;
 //                   dvdd-supply = <&vcc_dvdd>;
@@ -81,8 +81,8 @@
                    rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
                    ir-cut = <&cam_ircut0>;
                    port {
-                                   ucam_out0: endpoint {
-                                                   remote-endpoint = <&mipi_in_ucam0>;
+                                   ucam_out1: endpoint {
+                                                   remote-endpoint = <&csi_dphy1_input>;
                                                    data-lanes = <1 2 3 4>;
                                    };
                    };
@@ -96,7 +96,7 @@
 
                 power-domains = <&power RV1126_PD_VI>;
                 pinctrl-names = "rockchip,camera_default";
-                pinctrl-0 = <&mipicsi_clk1>;
+                pinctrl-0 = <&mipicsi_clk0>;
 
 //              pwd-gpios = <&gpio3 RK_PA4 GPIO_ACTIVE_HIGH>;
 //              reset-gpios = <&gpio2 RK_PA0 GPIO_ACTIVE_LOW>;
@@ -106,8 +106,8 @@
                 rockchip,camera-module-lens-name = "29IR-2MP-F25";
 //              ir-cut = <&cam_ircut0>;
                 port {
-                        ucam_out1: endpoint {
-                                remote-endpoint = <&csi_dphy1_input>;
+                        ucam_out0: endpoint {
+                                remote-endpoint = <&mipi_in_ucam0>;
                                 data-lanes = <1 2>;
                         };
                 };
