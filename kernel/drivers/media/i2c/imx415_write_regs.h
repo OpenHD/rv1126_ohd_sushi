@@ -88,8 +88,10 @@ static int imx415_read_reg(struct i2c_client *client, u16 reg, unsigned int len,
     msgs[1].buf = &data_be_p[4 - len];
 
     ret = i2c_transfer(client->adapter, msgs, ARRAY_SIZE(msgs));
-    if (ret != ARRAY_SIZE(msgs))
+    if (ret != ARRAY_SIZE(msgs)){
+        dev_dbg(&client->dev, "Consti10: i2c_transfer returned %d\n",ret);
         return -EIO;
+    }
 
     *val = be32_to_cpu(data_be);
 
