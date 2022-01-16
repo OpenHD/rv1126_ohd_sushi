@@ -90,4 +90,7 @@ BR2_PACKAGE_NETPERF=y
 # now_that_it_works_we_dont_need_anymore
 # BR2_PACKAGE_LIBMOEPGF=y
 # BR2_PACKAGE_GSTREAMER1_ROCKCHIP=y
+# we_want_dtc_for_dev
+BR2_PACKAGE_DTC=y
+BR2_PACKAGE_DTC_PROGRAMS=y
 # Consti test end
