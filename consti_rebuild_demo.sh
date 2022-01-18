@@ -14,7 +14,8 @@ echo "removed directory"
 
 echo "rebuild done"
 
-#adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/examples/consti_stream /oem/usr/bin/consti_stream
+adb push buildroot/output/rockchip_rv1126_rv1109/build/consti_demo-1.0.0/v4l2_test /oem/usr/bin/v4l2_test
+adb push buildroot/output/rockchip_rv1126_rv1109/build/consti_demo-1.0.0/v4l2_test_mplane /oem/usr/bin/v4l2_test_mplane
 
 
 echo "flashing done"

@@ -19,7 +19,8 @@
 //#include "rv1126-aybering-camera_x4.dtsi"
 //#include "rv1126-aybering-camera_x5.dtsi"
 //#include "rv1126-aybering-camera_x6.dtsi"
-#include "rv1126-aybering-camera_x7.dtsi"
+//#include "rv1126-aybering-camera_x7.dtsi"
+#include "rv1126-aybering-camera_x8.dtsi"
 
 / {
 	model = "Rockchip RV1126 38x38 V10 EMMC DDR3 Board";

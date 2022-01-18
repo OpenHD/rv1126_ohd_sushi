@@ -201,7 +201,7 @@ void video_packet_cb(MEDIA_BUFFER mb) {
     RK_MPI_MB_ReleaseBuffer(mb);
 }
 
-static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:y:";
+static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:y:z::";
 static const struct option long_options[] = {
         {"aiq", optional_argument, NULL, 'a'},
         {"height", required_argument, NULL, 'h'},
@@ -215,6 +215,7 @@ static const struct option long_options[] = {
         {"bitrate",required_argument,NULL, 'b'},
         {"hdr",required_argument,NULL, 'x'},
         {"cam_id",required_argument,NULL, 'y'},
+        {"disable_processing",optional_argument,NULL, 'z'},
         {NULL, 0, NULL, 0},
 };
 
@@ -241,6 +242,7 @@ static void print_usage(const RK_CHAR *name) {
     printf("\t-b | --bitrate Use custom bitrate, in MBit/s (e.g. 5==5 MBit/s)\n");
     printf("\t-o | --output Write raw data to file (optional)\n");
     printf("\t-x | --hdr HDR working mode. 0=NO_HDR\n");
+    printf("\t-z | disable as much isp processing\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -257,6 +259,7 @@ int main(int argc, char *argv[]) {
     std::string destinationIpAddress="192.168.0.13";
     int bitrateMbitps=5; // 5 MBit/s
     int m_HdrModeInt=0;
+    bool disableAsMuchIspAsPossible=false;
     
     int ret = 0;
     int c;
@@ -306,6 +309,9 @@ int main(int argc, char *argv[]) {
             case 'y':
                 s32CamId = atoi(optarg);
                 break;
+            case 'z':
+                disableAsMuchIspAsPossible=true;
+                break;
             case '?':
             default:
                 print_usage(argv[0]);
@@ -340,6 +346,7 @@ int main(int argc, char *argv[]) {
     }else{
         printf("#File output disabled\n");
     }
+    printf("Test isp processing disabled: %s\n",(disableAsMuchIspAsPossible ? "y":"n"));
 
     if (!iq_file_dir.empty()) {
 #ifdef RKAIQ
@@ -350,6 +357,10 @@ int main(int argc, char *argv[]) {
         // no matter what, disable LSC. LSC gives errors when the resolution in the iqfile
         // does not match the exact isp input resolution.
         SAMPLE_COMM_ISP_Consti10_DisableLSC(s32CamId);
+        // test
+        if(disableAsMuchIspAsPossible){
+            SAMPLE_COMM_ISP_Consti10_DisableStuff(s32CamId);
+        }
         if(m_crop){
             // crop the image before it goes into the ISP
             rk_aiq_rect_t cropRect;

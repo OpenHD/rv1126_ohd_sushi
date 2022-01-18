@@ -896,19 +896,27 @@ RK_S32 SAMPLE_COMM_ISP_Consti10_DisableStuff(RK_S32 CamId){
     return -1;
   }
   pthread_mutex_lock(&aiq_ctx_mutex[CamId]);
-   RK_S32 ret = 0;
-   printf("Consti10: Disabling ISP features for testing\n");
-   ret = rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_NR,
+    RK_S32 ret = 0;
+    printf("Consti10: Disabling ISP features for testing\n");
+    ret = rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_NR,
                                       false); // 2D
-      ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_TNR,
-                                      false); // 3D
+    ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_TNR,
+                                  false); // 3D
 
-   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_SHARP,
+    ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_SHARP,
                                       false);
 
-   // error message:  can't find 1280x720 in lscResName
-   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_LSC,
-                                      false);
+   // some more experiments:
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_CTK,false); // color correction
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_AE,false); //exposure
+
+  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_GIC,false); //green balance, outputed YES/NO
+
+  // this is not needed, but try it:
+  // For some reason it cannot find the include ?!
+  // Doesn't work anyways
+  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],RK_MODULE_HDRTMO,false);
+  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],17,false);
 
    printf("Consti10: Disabling ISP features for testing done %d\n",ret);
 
@@ -927,18 +935,6 @@ RK_S32 SAMPLE_COMM_ISP_Consti10_DisableLSC(RK_S32 CamId){
 
   // error message:  can't find 1280x720 in lscResName
   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_LSC,false);
-
-  // this is not needed, but try it:
-  // For some reason it cannot find the include ?!
-  // Doesn't work anyways
-  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],RK_MODULE_HDRTMO,false);
-  //ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId],17,false);
-
-  // some more experiments:
-  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_CTK,false); // color correction
-  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_AE,false); //exposure
-
-  ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_GIC,false); //green balance, outputed YES/NO
 
   printf("Consti10: Disabling LSC done %d\n",ret);
 

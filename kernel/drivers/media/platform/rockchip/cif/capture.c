@@ -671,6 +671,7 @@ static const struct
 cif_output_fmt *find_output_fmt(struct rkcif_stream *stream, u32 pixelfmt)
 {
 	const struct cif_output_fmt *fmt;
+    struct rkcif_device *dev = stream->cifdev; //Consti10
 	u32 i;
 
 	for (i = 0; i < ARRAY_SIZE(out_fmts); i++) {
@@ -678,7 +679,7 @@ cif_output_fmt *find_output_fmt(struct rkcif_stream *stream, u32 pixelfmt)
 		if (fmt->fourcc == pixelfmt)
 			return fmt;
 	}
-
+    v4l2_err(&dev->v4l2_dev, "Consti10 find_output_fmt failed. Wanted:0x%x %d\n",pixelfmt,pixelfmt);
 	return NULL;
 }
 
@@ -3059,8 +3060,12 @@ static void rkcif_set_fmt(struct rkcif_stream *stream,
 	int ret, vc;
 
 	fmt = find_output_fmt(stream, pixm->pixelformat);
-	if (!fmt)
-		fmt = &out_fmts[0];
+	if (!fmt) {
+        v4l2_err(&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting default format?!\n");
+        fmt = &out_fmts[0];
+    }else{
+        v4l2_err(&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting format okay!\n");
+    }
 
 	input_rect.width = RKCIF_DEFAULT_WIDTH;
 	input_rect.height = RKCIF_DEFAULT_HEIGHT;

@@ -129,3 +129,7 @@ mkdir -p /userdata/media && sync
 echo "fsck /userdata/media"
 fsck.$FSTYPE -y $MEDIA_DEV
 mount $MEDIA_DEV /userdata/media
+
+# Consti10 - we don't want the stupid meadiaserver to be running
+./RkLunch-stop.sh
+

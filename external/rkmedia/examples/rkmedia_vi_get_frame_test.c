@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <sys/time.h>
 
 #include "common/sample_common.h"
 #include "rkmedia_api.h"
@@ -25,6 +26,13 @@ static bool quit = false;
 static void sigterm_handler(int sig) {
   fprintf(stderr, "signal %d\n", sig);
   quit = true;
+}
+
+static uint64_t __attribute__((unused)) getTimeUs(){
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    uint64_t micros = (time.tv_sec * ((uint64_t)1000*1000)) + ((uint64_t)time.tv_usec);
+    return micros;
 }
 
 static void *GetMediaBuffer(void *arg) {
@@ -52,11 +60,13 @@ static void *GetMediaBuffer(void *arg) {
     if (ret)
       printf("Warn: Get image info failed! ret = %d\n", ret);
 
+    uint64_t delay=getTimeUs()-RK_MPI_MB_GetTimestamp(mb);
+
     printf("Get Frame:ptr:%p, fd:%d, size:%zu, mode:%d, channel:%d, "
-           "timestamp:%lld, ImgInfo:<wxh %dx%d, fmt 0x%x>\n",
+           "timestamp:%lld, delay:%lld us ImgInfo:<wxh %dx%d, fmt 0x%x>\n",
            RK_MPI_MB_GetPtr(mb), RK_MPI_MB_GetFD(mb), RK_MPI_MB_GetSize(mb),
            RK_MPI_MB_GetModeID(mb), RK_MPI_MB_GetChannelID(mb),
-           RK_MPI_MB_GetTimestamp(mb), stImageInfo.u32Width,
+           RK_MPI_MB_GetTimestamp(mb),delay, stImageInfo.u32Width,
            stImageInfo.u32Height, stImageInfo.enImgType);
 
     if (save_file) {

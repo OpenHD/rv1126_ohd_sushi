@@ -17,6 +17,7 @@ echo "rebuild done"
 adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/examples/consti_stream /oem/usr/bin/consti_stream
 adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/examples/consti_run_isp /oem/usr/bin/consti_run_isp
 adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/examples/consti_latency /oem/usr/bin/consti_latency
+adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/examples/rkmedia_vi_get_frame_test /oem/usr/bin/rkmedia_vi_get_frame_test
 
 echo "flashing libs"
 adb push buildroot/output/rockchip_rv1126_rv1109/build/rkmedia/src/libeasymedia.so        /oem/usr/lib/libeasymedia.so
