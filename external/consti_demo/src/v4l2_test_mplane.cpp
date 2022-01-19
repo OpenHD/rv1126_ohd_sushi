@@ -1,6 +1,7 @@
 /* csdn: 专题讲解
  * https://blog.csdn.net/ldl617/category_11380464.html
  */
+// https://developer.ridgerun.com/wiki/index.php?title=Color_space_conversion_tools
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,31 +20,16 @@
 #include <chrono>
 #include <iostream>
 #include <sstream>
-#include "consti_formats_helper.h"
+#include "consti_formats_helper.hpp"
+#include <array>
 
-using namespace std::chrono;
-constexpr nanoseconds timevalToDuration(timeval tv){
-    auto duration = seconds{tv.tv_sec}
-                    + microseconds {tv.tv_usec};
-    return duration_cast<nanoseconds>(duration);
-}
-constexpr time_point<system_clock, nanoseconds>
-timevalToTimePointSystemClock(timeval tv){
-    return time_point<system_clock, nanoseconds>{
-            duration_cast<system_clock::duration>(timevalToDuration(tv))};
-}
-constexpr time_point<steady_clock, nanoseconds>
-timevalToTimePointSteadyClock(timeval tv){
-    return time_point<steady_clock, nanoseconds>{
-            duration_cast<steady_clock::duration>(timevalToDuration(tv))};
-}
+// gc2053 uses MEDIA_BUS_FMT_SGRBG10_1X10
+// which should be equal to V4L2_PIX_FMT_SGRBG10
+//constexpr auto WANTED_PIX_FMT=MEDIA_BUS_FMT_SGRBG10_1X10;
+constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGRBG10;
+//constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SRGGB12;
 
-static uint64_t getTimeUs(){
-    struct timeval time;
-    gettimeofday(&time, NULL);
-    uint64_t micros = (time.tv_sec * ((uint64_t)1000*1000)) + ((uint64_t)time.tv_usec);
-    return micros;
-}
+constexpr auto N_REQUESTED_V4l2_BUFFERS=5;
 
 struct plane_start_t {
     void * start;
@@ -53,6 +39,8 @@ struct buffer {
     struct plane_start_t* plane_start;
     struct v4l2_plane* planes_buffer;
 };
+
+static std::array<uint8_t,1920*1080*100> dataCopyBuffer;
 
 int main(int argc, char **argv)
 {
@@ -77,8 +65,10 @@ int main(int argc, char **argv)
         printf("example: v4l2_test /dev/video0 10 test.yuv\n");
         return ret;
     }
+    const char* VIDEO_DEVICE=argv[1];
+    const int N_FRAMES=atoi(argv[2]);
 
-    fd = open(argv[1], O_RDWR);
+    fd = open(VIDEO_DEVICE, O_RDWR);
 
     if (fd < 0) {
         printf("open device: %s fail\n", argv[1]);
@@ -110,7 +100,7 @@ int main(int argc, char **argv)
     // gc2053:
     //fmt.fmt.pix_mp.pixelformat = V4L2_PIX_FMT_SRGGB12;
     // from procfs.c : { "BA10", V4L2_PIX_FMT_SGRBG10},
-    fmt.fmt.pix_mp.pixelformat =V4L2_PIX_FMT_SGRBG10;
+    fmt.fmt.pix_mp.pixelformat =WANTED_PIX_FMT;
     fmt.fmt.pix_mp.field = V4L2_FIELD_ANY;
 
     if (ioctl(fd, VIDIOC_S_FMT, &fmt) < 0) {
@@ -123,7 +113,8 @@ int main(int argc, char **argv)
     printf("numplane = %d\n", fmt.fmt.pix_mp.num_planes);
     // #define MEDIA_BUS_FMT_SGRBG10_1X10		0x300a
     // gc2053 gives 842090322 == 0x32314752
-    printf("pixelformat = %d %s\n", fmt.fmt.pix_mp.pixelformat, consti10_rkcif_pixelcode_to_string(fmt.fmt.pix_mp.pixelformat));
+    printf("pixelformat wanted = %d %s\n", WANTED_PIX_FMT, consti10_rkcif_pixelcode_to_string(WANTED_PIX_FMT));
+    printf("pixelformat actual = %d %s\n", fmt.fmt.pix_mp.pixelformat, consti10_rkcif_pixelcode_to_string(fmt.fmt.pix_mp.pixelformat));
 
     //memset(&fmt, 0, sizeof(struct v4l2_format));
     //fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
@@ -134,7 +125,7 @@ int main(int argc, char **argv)
 
     //printf("nmplane = %d\n", fmt.fmt.pix_mp.num_planes);
 
-    req.count = 5;
+    req.count = N_REQUESTED_V4l2_BUFFERS;
     req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
     req.memory = V4L2_MEMORY_MMAP;
     if (ioctl(fd, VIDIOC_REQBUFS, &req) < 0) {
@@ -239,13 +230,16 @@ int main(int argc, char **argv)
         printf("Ts: %lld Delay: %f ms\n",timestampUs,latencyUs/1000.0f);*/
         const auto timestamp=timevalToTimePointSystemClock(buf.timestamp);
         const auto delay=std::chrono::system_clock::now()-timestamp;
-        std::cout<<"Buff idx:"<<buf.index<<" Delay:"<<std::chrono::duration_cast<std::chrono::microseconds>(delay).count()/1000.0f<<" ms\n";
+        std::cout<<"Buff idx:"<<buf.index<<" Delay:"<<std::chrono::duration_cast<std::chrono::microseconds>(delay).count()/1000.0f<<" ms"
+        "timestamp: "<<timestamp.time_since_epoch().count()<<"\n";
 
         for (j = 0; j < num_planes; j++) {
             buffer* thisBuffer=&buffers[buf.index];
             //v4l2_plane* thisPlane=thisBuffer->planes_buffer;
+            const uint8_t* data=(uint8_t*)((buffers + buf.index)->plane_start + j)->start;
+            const int data_len=(tmp_plane + j)->bytesused;
 
-            printf("plane[%d] start = %p, bytesused = %d\n", j, ((buffers + buf.index)->plane_start + j)->start, (tmp_plane + j)->bytesused);
+            printf("plane[%d] start = %p, bytesused = %d\n", j, ((buffers + buf.index)->plane_start + j)->start,data_len);
 
             // for gc2053:
             // data len is     3317760
@@ -253,19 +247,32 @@ int main(int argc, char **argv)
             // 1920*1080*16/8= 4147200
             // 3317760-3110400= 207360
             // when I use v4l2, I get 3317760 -> same
-            uint8_t* data=(uint8_t*)((buffers + buf.index)->plane_start + j)->start;
-            std::size_t data_len=(tmp_plane + j)->bytesused;
+            // -------- hm data len changes when I use different formats ?! ------------------
+            // with V4L2_PIX_FMT_SGRBG10 aka "BA10"
+            // here https://git.yoctoproject.org/linux-yocto-contrib/plain/drivers/media/test-drivers/vimc/vimc-common.c
+            // 2 bpp ?! ->
+            //                    2764800
+            // 1920*1080=         2073600
+            // 1920*1080*8/(10)=  1658880
+            // 1920*1080*8*3/10=  4976640
+            // from https://picamera.readthedocs.io/en/release-1.12/recipes2.html
+
             std::stringstream ss;
             for(int i=0;i<10;i++){
                 ss<<(int)data[i]<<",";
             }
             std::cout<<ss.str()<<"\n";
 
-            //fwrite(((buffers + buf.index)->plane_start + j)->start, (tmp_plane + j)->bytesused, 1, file_fd);
+            const auto before=std::chrono::steady_clock::now();
+            //memcpy(dataCopyBuffer.data(),data,data_len);
+            const auto deltaMemcpy=std::chrono::steady_clock::now()-before;
+            //std::cout<<"Buff memcpy took: "<<(std::chrono::duration_cast<std::chrono::microseconds>(delay).count()/1000.0f)<<" ms\n";
+
+            fwrite(data,data_len, 1, file_fd);
         }
 
         num++;
-        if(num >= atoi(argv[2]))
+        if(num >= N_FRAMES)
             break;
 
         if (ioctl (fd, VIDIOC_QBUF, &buf) < 0)

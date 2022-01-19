@@ -1,0 +1,46 @@
+-> timestamp analyzed (compared with dmesg)
+=> they are equal except the last 3 digits 
+(I think ns resolution is missing, only microseconds)
+but else everything is fine here
+The resolution difference makes sense -
+struct timeval only has microseconds resoluton
+
+
+Buff idx:0 Delay:0.162 mstimestamp: 1579380809000
+plane[0] start = 0xa6851000, bytesused = 4147200
+31,33,49,50,224,36,35,51,50,250,
+Buff idx:1 Delay:0.111 mstimestamp: 1579414159000
+plane[0] start = 0xa6446000, bytesused = 4147200
+32,33,47,48,144,34,32,49,49,66,
+Buff idx:2 Delay:0.165 mstimestamp: 1579447501000
+plane[0] start = 0xa603b000, bytesused = 4147200
+32,33,52,50,105,34,33,49,52,21,
+Buff idx:3 Delay:0.112 mstimestamp: 1579480831000
+plane[0] start = 0xa5c30000, bytesused = 4147200
+34,33,47,48,79,34,33,50,49,14,
+Buff idx:4 Delay:0.163 mstimestamp: 1579514158000
+plane[0] start = 0xa5825000, bytesused = 4147200
+33,32,48,48,228,33,34,46,48,217,
+
+[ 1579.382724] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 2041 ns Delta 1001145310049 ns
+[ 1579.382746] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 0 idx: 0 call_count 1 timestamp: 1579380809129
+[ 1579.383162] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.415988] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.416052] rkcif_mipi_lvds: Consti10:rrkcif_buf_done_prepare
+[ 1579.416074] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 2042 ns Delta 33350628 ns
+[ 1579.416096] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 1 idx: 1 call_count 2 timestamp: 1579414159174
+[ 1579.416497] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.449322] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.449385] rkcif_mipi_lvds: Consti10:rrkcif_buf_done_prepare
+[ 1579.449410] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 2042 ns Delta 33335170 ns
+[ 1579.449438] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 2 idx: 2 call_count 3 timestamp: 1579447501344
+[ 1579.449829] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.482658] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.482724] rkcif_mipi_lvds: Consti10:rrkcif_buf_done_prepare
+[ 1579.482747] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 2042 ns Delta 33336629 ns
+[ 1579.482768] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 3 idx: 3 call_count 4 timestamp: 1579480831265
+[ 1579.483180] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.515987] rkcif_mipi_lvds: Consti10:rkcif_irq_pingpong
+[ 1579.516051] rkcif_mipi_lvds: Consti10:rrkcif_buf_done_prepare
+[ 1579.516074] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: 2041 ns Delta 33326420 ns
+[ 1579.516095] rkcif_mipi_lvds: Consti10:YYY::rkcif_vb_done_oneframe sequence: 4 idx: 4 call_count 5 timestamp: 1579514158268
