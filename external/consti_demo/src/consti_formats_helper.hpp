@@ -2,8 +2,8 @@
 // Created by consti10 on 18.01.22.
 //
 
-#ifndef CONSTI_DEMO_CONSTI_FORMATS_HELPER_H
-#define CONSTI_DEMO_CONSTI_FORMATS_HELPER_H
+#ifndef CONSTI_DEMO_CONSTI_FORMATS_HELPER_HPP
+#define CONSTI_DEMO_CONSTI_FORMATS_HELPER_HPP
 
 // copy paste from procfs.c
 
@@ -194,4 +194,30 @@ static const char *consti10_rkcif_pixelcode_to_string(uint32_t mbus_code)
     return "unknown";
 }
 
-#endif //CONSTI_DEMO_CONSTI_FORMATS_HELPER_H
+#include <sys/time.h>
+#include <chrono>
+using namespace std::chrono;
+constexpr nanoseconds timevalToDuration(timeval tv){
+    auto duration = seconds{tv.tv_sec}
+                    + microseconds {tv.tv_usec};
+    return duration_cast<nanoseconds>(duration);
+}
+constexpr time_point<system_clock, nanoseconds>
+timevalToTimePointSystemClock(timeval tv){
+    return time_point<system_clock, nanoseconds>{
+            duration_cast<system_clock::duration>(timevalToDuration(tv))};
+}
+constexpr time_point<steady_clock, nanoseconds>
+timevalToTimePointSteadyClock(timeval tv){
+    return time_point<steady_clock, nanoseconds>{
+            duration_cast<steady_clock::duration>(timevalToDuration(tv))};
+}
+
+static uint64_t getTimeUs(){
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    uint64_t micros = (time.tv_sec * ((uint64_t)1000*1000)) + ((uint64_t)time.tv_usec);
+    return micros;
+}
+
+#endif //CONSTI_DEMO_CONSTI_FORMATS_HELPER_HPP
