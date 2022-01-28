@@ -28,7 +28,7 @@
 //constexpr auto WANTED_PIX_FMT=MEDIA_BUS_FMT_SGRBG10_1X10;
 //constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGRBG10; // This one works on gc2053 !!
 //constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SRGGB12;
-constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGBRG10; // I think this one works on imx415
+auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGBRG10; // I think this one works on imx415
 
 constexpr auto N_REQUESTED_V4l2_BUFFERS=5;
 
@@ -61,24 +61,50 @@ int main(int argc, char **argv)
     enum v4l2_buf_type type;
     int num = 0;
 
-    if (argc != 4) {
-        printf("Usage: v4l2_test <device> <frame_num> <save_file>\n");
-        printf("example: v4l2_test /dev/video0 10 test.yuv\n");
-        return ret;
+    const char* VIDEO_DEVICE="/dev/video0";
+    int N_FRAMES=1;
+    const char* OUTPUT_FILENAME="/tmp/out.raw";
+    int FORMAT_ID=0;
+
+    int option;
+    while ((option = getopt (argc, argv, "i:o:n:f:")) != -1){
+        switch (option){
+            case 'i':
+                VIDEO_DEVICE=optarg;
+                break;
+            case 'o':
+                OUTPUT_FILENAME=optarg;
+                break;
+            case 'n':
+                N_FRAMES=atoi(optarg);
+                break;
+            case 'f':
+                FORMAT_ID=atoi(optarg);
+                break;
+            default:
+                printf("Usage: v4l2_test -i <input_device> -o <output_filename> -n <n frames> -f <format id>\n");
+                printf("Format id: 0=gc2053, 1=imx415\n");
+                printf("example: v4l2_test -i /dev/video0 -o test.raw -n 1 -f 0\n");
+                break;
+        }
     }
-    const char* VIDEO_DEVICE=argv[1];
-    const int N_FRAMES=atoi(argv[2]);
+    if(FORMAT_ID==0){
+        WANTED_PIX_FMT=V4L2_PIX_FMT_SGRBG10; // This one works on gc2053 !!
+        std::cout<<"GC2053 raw\n";
+    }else{
+        WANTED_PIX_FMT=V4L2_PIX_FMT_SGBRG10; // This one works on imx415
+        std::cout<<"IMX415 raw\n";
+    }
 
     fd = open(VIDEO_DEVICE, O_RDWR);
-
     if (fd < 0) {
-        printf("open device: %s fail\n", argv[1]);
+        printf("open device: %s fail\n",VIDEO_DEVICE);
         goto err;
     }
 
-    file_fd = fopen(argv[3], "wb+");
+    file_fd = fopen(OUTPUT_FILENAME, "wb+");
     if (!file_fd) {
-        printf("open save_file: %s fail\n", argv[3]);
+        printf("open save_file: %s fail\n",OUTPUT_FILENAME);
         goto err1;
     }
 
