@@ -10,9 +10,11 @@
 // hmmmm test switch up a couple of things
 // 1) use a #define to quickly switch lines
 // ----> works, colorfull image from imx415 (only imx415 connected to CSI0), colorfull image from gc2053 (only gc2053 connnected to CSI1)
+// now switch imx415 and gc2053
+// ----> doesn't work, not even gc2053 on CSI0
 
-#define CONSTI10_LANES_CSIO data-lanes = <1 2 3 4>;
-#define CONSTI10_LANES_CSI1 data-lanes = <1 2>;
+#define CONSTI10_LANES_CSIO data-lanes = <1 2>;
+#define CONSTI10_LANES_CSI1 data-lanes = <1 2 3 4>;
 
 &csi_dphy0 {
 	status = "okay";
@@ -65,54 +67,6 @@
 };
 
 
-/*&i2c1 {
-        status = "okay";
-        clock-frequency = <400000>;
-
-        imx415: imx415@1a {
-                   compatible = "sony,imx415";
-                   reg = <0x1a>;
-                   clocks = <&cru CLK_MIPICSI_OUT>;
-                   clock-names = "xvclk";
-                   power-domains = <&power RV1126_PD_VI>;
-                   pinctrl-names = "rockchip,camera_default";
-                   pinctrl-0 = <&mipicsi_clk0>;
-                   rockchip,camera-module-index = <0>;
-                   rockchip,camera-module-facing = "front";
-                   rockchip,camera-module-name = "YT10092";
-                   rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
-                   ir-cut = <&cam_ircut0>;
-                   port {
-                                   ucam_out0: endpoint {
-                                                   remote-endpoint = <&mipi_in_ucam0>;
-                                                   data-lanes = <1 2 3 4>;
-                                   };
-                   };
-        };
-        imx415_2: imx415_2@2a {
-                   compatible = "sony,imx415";
-                   reg = <0x2a>;
-                   clocks = <&cru CLK_MIPICSI_OUT>;
-                   clock-names = "xvclk";
-                   power-domains = <&power RV1126_PD_VI>;
-                   pinctrl-names = "rockchip,camera_default";
-                   pinctrl-0 = <&mipicsi_clk1>;
-                   rockchip,camera-module-index = <1>;
-                   rockchip,camera-module-facing = "front";
-                   rockchip,camera-module-name = "YT10092";
-                   rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
-                   ir-cut = <&cam_ircut0>;
-                   port {
-                                   ucam_out1: endpoint {
-                                                   remote-endpoint = <&csi_dphy1_input>;
-                                                   data-lanes = <1 2 3 4>;
-                                   };
-                   };
-        };
-};*/
-
-
-
 &i2c1 {
 	status = "okay";
 	clock-frequency = <400000>;
@@ -143,15 +97,15 @@
        clock-names = "xvclk";
        power-domains = <&power RV1126_PD_VI>;
        pinctrl-names = "rockchip,camera_default";
-       pinctrl-0 = <&mipicsi_clk0>;
-       rockchip,camera-module-index = <0>;
+       pinctrl-0 = <&mipicsi_clk1>;
+       rockchip,camera-module-index = <1>;
        rockchip,camera-module-facing = "front";
        rockchip,camera-module-name = "YT10092";
        rockchip,camera-module-lens-name = "IR0147-28IRC-8M-F20";
        ir-cut = <&cam_ircut0>;
        port {
-               ucam_out0: endpoint {
-                               remote-endpoint = <&mipi_in_ucam0>;
+               ucam_out1: endpoint {
+                               remote-endpoint = <&csi_dphy1_input>;
                                data-lanes = <1 2 3 4>;
                };
        };
@@ -164,78 +118,20 @@
         clock-names = "xvclk";
         power-domains = <&power RV1126_PD_VI>;
         pinctrl-names = "rockchip,camera_default";
-        pinctrl-0 = <&mipicsi_clk1>;
-        rockchip,camera-module-index = <1>;
+        pinctrl-0 = <&mipicsi_clk0>;
+        rockchip,camera-module-index = <0>;
         rockchip,camera-module-facing = "front";
         rockchip,camera-module-name = "CMK-OT1726-PG1";
         rockchip,camera-module-lens-name = "29IR-2MP-F25";
         port {
-            ucam_out1: endpoint {
-                remote-endpoint = <&csi_dphy1_input>;
+            ucam_out0: endpoint {
+                remote-endpoint = <&mipi_in_ucam0>;
                 data-lanes = <1 2>;
             };
         };
     };
 };
 
-/*
-&i2c1 {
-        status = "okay";
-        clock-frequency = <400000>;
-
-	gc2053: gc2053@37 {
-  	compatible = "galaxycore,gc2053";
-  	reg = <0x37>;
-
-  	clocks = <&cru CLK_MIPICSI_OUT>;
-  	clock-names = "xvclk";
-
-  	power-domains = <&power RV1126_PD_VI>;
-  	pinctrl-names = "rockchip,camera_default";
-  	pinctrl-0 = <&mipicsi_clk0>;
-	//  power-gpios = <&gpio3 RK_PA6 GPIO_ACTIVE_HIGH>;
-	//  pwdn-gpios = <&gpio1 RK_PD4 GPIO_ACTIVE_LOW>;
-	//reset-gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_HIGH>;
-
-	rockchip,camera-module-index = <0>;
-	rockchip,camera-module-facing = "front";
-	rockchip,camera-module-name = "YT-RV1109-2-V1";
-	rockchip,camera-module-lens-name = "40IR-2MP-F20";
-	port {
-   		ucam_out0: endpoint {
-    		remote-endpoint = <&mipi_in_ucam0>;
-    		data-lanes = <1 2>;
-   			};
-  		};
- 	};
-
-	gc2093: gc2093@7e {
-	compatible = "galaxycore,gc2093";
-	reg = <0x7e>;
-	clocks = <&cru CLK_MIPICSI_OUT>;
-	clock-names = "xvclk";
-	power-domains = <&power RV1126_PD_VI>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&mipicsi_clk1>;
-	//avdd-supply = <&vcc_avdd>;
-	//dovdd-supply = <&vcc_dovdd>;
-	//dvdd-supply = <&vcc_dvdd>;
-	//pwdn-gpios = <&gpio1 RK_PD6 GPIO_ACTIVE_HIGH>;
-	//reset-gpios = <&gpio2 RK_PA0 GPIO_ACTIVE_HIGH>;
-	rockchip,camera-module-index = <1>;
-	rockchip,camera-module-facing = "front";
-	rockchip,camera-module-name = "YT-RV1109-2-V1";
-	rockchip,camera-module-lens-name = "40IR-2MP-F20";
-	ir-cut = <&cam_ircut0>;
-	port {
-		ucam_out1: endpoint {
-		remote-endpoint = <&csi_dphy1_input>;
-		data-lanes = <1 2>;
-			};
-		};
-	 };
-};
-*/
 
 
 /* isp cma buffer don't fiddle with it, dual camera(1920 * 1080) need 92M buffer */
