@@ -1504,7 +1504,7 @@ int __imx415_power_on(struct imx415 *imx415)
 {
 	int ret;
 	struct device *dev = &imx415->client->dev;
-
+    dev_err(dev, "__imx415_power_on_begin\n");
 	if (imx415->is_thunderboot)
 		return 0;
 
@@ -1544,7 +1544,7 @@ int __imx415_power_on(struct imx415 *imx415)
 
 	/* At least 20us between XCLR and I2C communication */
 	usleep_range(20*1000, 30*1000);
-
+    dev_err(dev, "__imx415_power_on_end\n");
 	return 0;
 
 err_clk:
@@ -1953,7 +1953,7 @@ static int imx415_check_sensor_id(struct imx415 *imx415,
 	ret = imx415_read_reg(client, IMX415_REG_CHIP_ID,
 			      IMX415_REG_VALUE_08BIT, &id);
     if(ret != 0){
-        dev_err(dev,"Consti10 - error while reading from i2c. Error code:%d Value for debug:%d\n",ret,id);
+        dev_err(dev,"Consti10 - error while reading from i2c (check sensor id). Error code:%d Value for debug:%d\n",ret,id);
         return -ENODEV;
     }else{
         dev_err(dev,"Consti10 - Successfully red something ?\n");
@@ -1990,6 +1990,7 @@ static int imx415_probe(struct i2c_client *client,
 	char facing[2];
 	int ret;
 	u32 i, hdr_mode = 0;
+    dev_err(dev,"imx415_probe_begin!\n");
 
 	dev_info(dev, "driver version: %02x.%02x.%02x",
 		DRIVER_VERSION >> 16,
@@ -2012,6 +2013,8 @@ static int imx415_probe(struct i2c_client *client,
 		dev_err(dev, "could not get module information!\n");
 		return -EINVAL;
 	}
+    dev_err(dev,"Consti10:module information: module_index:%d module_facing:%s module_name:%s len_name%s!\n",
+            imx415->module_index,imx415->module_facing,imx415->module_name,imx415->len_name);
 
 	ret = of_property_read_u32(node, OF_CAMERA_HDR_MODE, &hdr_mode);
 	if (ret) {
@@ -2028,7 +2031,9 @@ static int imx415_probe(struct i2c_client *client,
 	}
 
 	imx415->is_thunderboot = IS_ENABLED(CONFIG_VIDEO_ROCKCHIP_THUNDER_BOOT_ISP);
+    dev_err(dev,"Consti10:is_thunderboot %s\n",imx415->is_thunderboot ? "y":"n");
 
+    // Consti10 -I think here one just gets the handle to the clock
 	imx415->xvclk = devm_clk_get(dev, "xvclk");
 	if (IS_ERR(imx415->xvclk)) {
 		dev_err(dev, "Failed to get xvclk\n");
@@ -2111,7 +2116,7 @@ static int imx415_probe(struct i2c_client *client,
 	pm_runtime_set_active(dev);
 	pm_runtime_enable(dev);
 	pm_runtime_idle(dev);
-
+    dev_err(dev,"imx415_probe_end!\n");
 	return 0;
 
 err_clean_entity:

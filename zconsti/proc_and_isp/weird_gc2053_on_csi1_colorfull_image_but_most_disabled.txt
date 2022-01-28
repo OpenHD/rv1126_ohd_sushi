@@ -1,0 +1,90 @@
+ ---------------------------------
+ aparently the iqfiles dir here got corrupted, whch is why the isp stages are off ?!!
+ 
+ 
+ ./consti_stream -a -w 1280 -h 720 -d rkispp_scale0 --ip_address 192.168.0.13 -b 5 -o mamamia.h264
+ 
+ [root@RV1126_RV1109:/]# cat /proc/rkcif_mipi_lvds /proc/rkisp*
+Driver Version:v00.01.0a
+Work Mode:ping pong
+Monitor Mode:idle
+aclk_cif:500000000
+hclk_cif:250000000
+dclk_cif:297000000
+rkisp0     Version:v01.06.02
+clk_isp    594000000
+aclk_isp   500000000
+hclk_isp   250000000
+rkisp1     Version:v01.06.02
+clk_isp    594000000
+aclk_isp   500000000
+hclk_isp   250000000
+Interrupt  Cnt:227 ErrCnt:0
+Input      rockchip-mipi-dphy-rx Format:SGRBG10_1X10 Size:1920x1080@30fps Offset(0,0)
+Isp Read   mode:frame1 (frame:0 rate:0ms idle time:3ms) cnt(total:86 X1:86 X2:-1 X3:-1)
+Output     rkispp1 Format:FBC420 Size:1920x1080 (frame:86 rate:33ms)
+DPCC0      OFF(0x4)
+DPCC1      OFF(0x4)
+DPCC2      OFF(0x4)
+BLS        OFF(0x0)
+SDG        OFF(0x80446317)
+LSC        OFF(0x0)
+AWBGAIN    OFF(0x80446317) (gain: 0x01000100, 0x01000100)
+DEBAYER    ON(0x111)
+CCM        OFF(0x0)
+GAMMA_OUT  OFF(0x0)
+CPROC      OFF(0x0)
+IE         OFF(0x0) (effect: BLACKWHITE)
+WDR        OFF(0x30cf0)
+HDRTMO     OFF(0xfff0000)
+HDRMGE     OFF(0x0)
+RAWNR      OFF(0x100000)
+GIC        OFF(0x0)
+DHAZ       OFF(0x110)
+3DLUT      OFF(0x0)
+GAIN       OFF(0x0)
+LDCH       OFF(0x0)
+CSM        FULL(0x80446317)
+SIAF       OFF(0x0)
+SIAWB      OFF(0x0)
+YUVAE      OFF(0x0)
+SIHST      OFF(0x28000000)
+RAWAF      OFF(0x6)
+RAWAWB     OFF(0x0)
+RAWAE0     OFF(0x0)
+RAWAE1     OFF(0x0)
+RAWAE2     OFF(0x0)
+RAWAE3     OFF(0x0)
+RAWHIST0   OFF(0x80000000)
+RAWHIST1   OFF(0xa0000000)
+RAWHIST2   OFF(0xa0000000)
+RAWHIST3   OFF(0xa0000000)
+Consti10: dev->hdr.op_mode:4 dev->csi_dev.rd_mode:4
+Consti10:Isp online frame:86 idle time:3ms v-blank:29314us
+Consti10: dmarx_dev: cur_frame.id:0 pref_frame.id: 0
+Consti10: rkisp_csi_device: rd_mode:4 frame_cnt:87
+Consti10: rkisp_bridge_device: work_mode: 1 buf_num:5
+Consti10: wait_line:0
+rkispp0    Version:v01.06.02
+clk_ispp   500000000
+aclk_ispp  500000000
+hclk_ispp  250000000
+rkispp1    Version:v01.06.02
+clk_ispp   500000000
+aclk_ispp  500000000
+hclk_ispp  250000000
+Interrupt  Cnt:144 ErrCnt:0
+Input      rkisp1 Format:FBC420 Size:1920x1080 (frame:86 rate:33ms delay:0ms)
+Output     rkispp_scale0 Format:NV12 Size:1280x720 (frame:86 rate:33ms delay:3ms)
+TNR        OFF(0x200001e) (mode: 3to1) (global gain: enable) (frame:0 time:0ms idle) CNT:0x0 STATE:0x1e000000
+NR         OFF(0x10) (external gain: enable) (frame:86 time:3ms idle) 0x5f0:0x0 0x5f4:0x0
+SHARP      OFF(0x2) (YNR input filter: OFF) (local ratio: ON) 0x630:0x0
+FEC        OFF(0x2) (frame:0 time:0ms idle) 0xc90:0x0
+ORB        OFF(0x0)
+Monitor    ON Cnt:0
+Consti10:rkispp_device inp:INP_ISP stream_sync:0 
+Consti10:rkispp_device:rkispp_hw_dev  max_input:(3840:2160@30)
+Consti10:rkispp_device:rkispp_stream_vdev dbg id:86 timestamp:395269989946 interval:33090461 delay:3791
+Consti10:VIDEO_MAX_FRAME:64
+Consti10:rkispp wait_line 0
+

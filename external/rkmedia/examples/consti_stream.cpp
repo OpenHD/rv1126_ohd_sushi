@@ -201,7 +201,7 @@ void video_packet_cb(MEDIA_BUFFER mb) {
     RK_MPI_MB_ReleaseBuffer(mb);
 }
 
-static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:y:z::";
+static RK_CHAR optstr[] = "?:a::h:w:e:d:f:i:c:o:b:y:t:z::";
 static const struct option long_options[] = {
         {"aiq", optional_argument, NULL, 'a'},
         {"height", required_argument, NULL, 'h'},
@@ -215,6 +215,7 @@ static const struct option long_options[] = {
         {"bitrate",required_argument,NULL, 'b'},
         {"hdr",required_argument,NULL, 'x'},
         {"cam_id",required_argument,NULL, 'y'},
+        {"run_time",required_argument,NULL, 't'},
         {"disable_processing",optional_argument,NULL, 'z'},
         {NULL, 0, NULL, 0},
 };
@@ -243,6 +244,7 @@ static void print_usage(const RK_CHAR *name) {
     printf("\t-o | --output Write raw data to file (optional)\n");
     printf("\t-x | --hdr HDR working mode. 0=NO_HDR\n");
     printf("\t-z | disable as much isp processing\n");
+    printf("\t-t | specify how long to run (else infinite),in seconds\n");
 }
 
 int main(int argc, char *argv[]) {
@@ -260,6 +262,8 @@ int main(int argc, char *argv[]) {
     int bitrateMbitps=5; // 5 MBit/s
     int m_HdrModeInt=0;
     bool disableAsMuchIspAsPossible=false;
+    // default to -1 (infinite)
+    int runTimeSeconds=-1;
     
     int ret = 0;
     int c;
@@ -311,6 +315,9 @@ int main(int argc, char *argv[]) {
                 break;
             case 'z':
                 disableAsMuchIspAsPossible=true;
+                break;
+            case 't':
+                runTimeSeconds=atoi(optarg);
                 break;
             case '?':
             default:
@@ -477,8 +484,17 @@ int main(int argc, char *argv[]) {
     printf("%s initial finish\n", __func__);
     signal(SIGINT, sigterm_handler);
 
+    const unsigned long beginMs=getTimeMs();
+
     while (!quit) {
         usleep(100);
+        if(runTimeSeconds>0){
+            const unsigned long currentRunTimeSeconds=(getTimeMs()-beginMs)/1000;
+            if(currentRunTimeSeconds>=(unsigned long)runTimeSeconds){
+                printf("Run time elapsed\n");
+                quit=true;
+            }
+        }
     }
 
     if (g_output_file){

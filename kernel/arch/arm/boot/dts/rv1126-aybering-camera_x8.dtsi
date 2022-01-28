@@ -36,7 +36,6 @@
 };
 
 
-
 /*&csi_dphy1 {
 	status = "okay";
 	ports {
@@ -110,27 +109,6 @@
 	status = "okay";
 	clock-frequency = <400000>;
 
-
-	/*gc2053_2: gc2053_2@3f {
-		compatible = "galaxycore,gc2053";
-		reg = <0x3f>;
-		clocks = <&cru CLK_MIPICSI_OUT>;
-		clock-names = "xvclk";
-		power-domains = <&power RV1126_PD_VI>;
-		pinctrl-names = "rockchip,camera_default";
-		pinctrl-0 = <&mipicsi_clk1>;
-  		rockchip,camera-module-index = <1>;
-  		rockchip,camera-module-facing = "front";
-  		rockchip,camera-module-name = "CMK-OT1726-PG1";
-  		rockchip,camera-module-lens-name = "29IR-2MP-F25";
-		port {
-			ucam_out1: endpoint {
-				remote-endpoint = <&csi_dphy1_input>;
-				data-lanes = <1 2>;
-			};
-		};
-	};*/
-
 	gc2053: gc2053@37 {
 		compatible = "galaxycore,gc2053";
 		reg = <0x37>;
@@ -151,7 +129,25 @@
 		};
 	};
 
-
+    /*gc2053_2: gc2053_2@3f {
+        compatible = "galaxycore,gc2053";
+        reg = <0x3f>;
+        clocks = <&cru CLK_MIPICSI_OUT>;
+        clock-names = "xvclk";
+        power-domains = <&power RV1126_PD_VI>;
+        pinctrl-names = "rockchip,camera_default";
+        pinctrl-0 = <&mipicsi_clk1>;
+        rockchip,camera-module-index = <1>;
+        rockchip,camera-module-facing = "front";
+        rockchip,camera-module-name = "CMK-OT1726-PG1";
+        rockchip,camera-module-lens-name = "29IR-2MP-F25";
+        port {
+            ucam_out1: endpoint {
+                remote-endpoint = <&csi_dphy1_input>;
+                data-lanes = <1 2>;
+            };
+        };
+    };*/
 };
 
 /*
@@ -282,7 +278,7 @@
 &rkcif_mipi_lvds {
 	status = "okay";
 	port {
-		/* MIPI CSI-2 endpoint */
+		// MIPI CSI-2 endpoint
 		cif_mipi_in: endpoint {
 			remote-endpoint = <&mipi_csi2_output>;
 			data-lanes = <1 2>;//sure
@@ -295,7 +291,7 @@
 	status = "okay";
 
 	port {
-		/* MIPI CSI-2 endpoint */
+		// MIPI CSI-2 endpoint
 		mipi_lvds_sditf: endpoint {
 			remote-endpoint = <&isp_in>;
 			data-lanes = <1 2>;//sure
@@ -303,7 +299,6 @@
 		};
 	};
 };
-
 
 &rkisp_vir0 {
 	status = "okay";
@@ -332,7 +327,6 @@
 		};
 	};
 };
-
 
 &rkispp_vir1 {
 	status = "okay";

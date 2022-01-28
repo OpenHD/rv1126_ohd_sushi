@@ -1,0 +1,77 @@
+echo 0 > /sys/devices/platform/rkcif_mipi_lvds/compact_test
+
+start consti_stream once 
+->
+Output Info:
+	format:BA10/1920x1080(0,0)
+-> start v4l2 stream	
+
+v4l2-ctl --stream-mmap --stream-count=1 -d /dev/video0 --stream-to=/tmp/gc2053_0.raw
+
+Output Info:
+	format:BA10/1920x1080(0,0)
+
+still same
+
+-> pull via adb
+
+convert
+cat> gc2053_0_a.pgm << EOF
+P5
+1920
+1080
+65535
+EOF
+
+cat gc2053_0.raw >> gc2053_0_a.pgm
+
+
+cat> gc2053_0_b.pgm << EOF
+P5
+1920
+1080
+4095
+EOF
+
+cat gc2053_0.raw >> gc2053_0_b.pgm
+
+-------------------------------------------------------------------------
+same for another image (with blue bottle)
+v4l2-ctl --stream-mmap --stream-count=1 -d /dev/video0 --stream-to=/tmp/gc2053_1.raw
+
+cat> gc2053_1_a.pgm << EOF
+P5
+1920
+1080
+65535
+EOF
+
+cat gc2053_1.raw >> gc2053_1_a.pgm
+
+
+cat> gc2053_1_b.pgm << EOF
+P5
+1920
+1080
+4095
+EOF
+
+cat gc2053_1.raw >> gc2053_1_b.pgm
+
+------------------------------------------------------------------------------------
+v4l2-ctl --stream-mmap --stream-count=1 -d /dev/video0 --stream-to=/tmp/imx415_1080p_v4l2.raw
+
+echo 0 > /sys/devices/platform/rkcif_mipi_lvds/compact_test
+
+v4l2-ctl --stream-mmap --stream-count=1 -d /dev/video0 --stream-to=/tmp/imx415_1080p_v4l2_noncomp.raw
+
+---------
+(after running consti_stream first)
+echo 0 > /sys/devices/platform/rkcif_mipi_lvds/compact_test
+./v4l2_test_mplane /dev/video0 1 imx415_1080p_c_noncomp.raw
+
+
+
+
+
+

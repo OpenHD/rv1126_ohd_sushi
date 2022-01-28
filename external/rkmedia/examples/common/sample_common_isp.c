@@ -935,6 +935,7 @@ RK_S32 SAMPLE_COMM_ISP_Consti10_DisableLSC(RK_S32 CamId){
 
   // error message:  can't find 1280x720 in lscResName
   ret |= rk_aiq_uapi_sysctl_setModuleCtl(g_aiq_ctx[CamId], RK_MODULE_LSC,false);
+  // black white
 
   printf("Consti10: Disabling LSC done %d\n",ret);
 

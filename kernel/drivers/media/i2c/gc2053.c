@@ -397,7 +397,7 @@ static int gc2053_read_reg(struct i2c_client *client, u8 reg, u8 *val)
 	}
 
 	dev_err(&client->dev,
-		"gc2053 read reg(0x%x val:0x%x) failed !\n", reg, *val);
+		"gc2053 read reg(0x%x val:0x%x) failed ! ret%d\n", reg, *val,ret);
 
 	return ret;
 }
@@ -710,6 +710,7 @@ static int __gc2053_power_on(struct gc2053 *gc2053)
 	int ret;
 	u32 delay_us;
 	struct device *dev = &gc2053->client->dev;
+    dev_err(dev, "__gc2053_power_on_begin\n");
 
 	if (!IS_ERR_OR_NULL(gc2053->pins_default)) {
 		ret = pinctrl_select_state(gc2053->pinctrl,
@@ -751,6 +752,7 @@ static int __gc2053_power_on(struct gc2053 *gc2053)
 	/* 8192 cycles prior to first SCCB transaction */
 	delay_us = gc2053_cal_delay(8192);
 	usleep_range(delay_us, delay_us * 2);
+    dev_err(dev, "__gc2053_power_on_end\n");
 	return 0;
 
 disable_clk:
@@ -762,6 +764,7 @@ static void __gc2053_power_off(struct gc2053 *gc2053)
 {
 	int ret;
 	struct device *dev = &gc2053->client->dev;
+    dev_err(dev, "__gc2053_power_off_begin\n");
 
 	if (!IS_ERR(gc2053->pwdn_gpio))
 		gpiod_set_value_cansleep(gc2053->pwdn_gpio, 1);
@@ -779,6 +782,7 @@ static void __gc2053_power_off(struct gc2053 *gc2053)
 	if (!IS_ERR(gc2053->power_gpio))
 		gpiod_set_value_cansleep(gc2053->power_gpio, 0);
 	regulator_bulk_disable(GC2053_NUM_SUPPLIES, gc2053->supplies);
+    dev_err(dev, "__gc2053_power_off_end\n");
 }
 
 static int gc2053_check_sensor_id(struct gc2053 *gc2053,
@@ -793,7 +797,7 @@ static int gc2053_check_sensor_id(struct gc2053 *gc2053,
 	ret = gc2053_read_reg(client, GC2053_REG_CHIP_ID_H, &pid);
 	ret |= gc2053_read_reg(client, GC2053_REG_CHIP_ID_L, &ver);
 	if (ret) {
-		dev_err(&client->dev, "gc2053_read_reg failed (%d)\n", ret);
+		dev_err(&client->dev, "gc2053_read_reg failed (check sensor id) (%d)\n", ret);
 		return ret;
 	}
 
@@ -835,7 +839,7 @@ static int gc2053_set_flip(struct gc2053 *gc2053, u8 mode)
 static int __gc2053_start_stream(struct gc2053 *gc2053)
 {
 	int ret;
-
+    dev_err(&gc2053->client->dev, "__gc2053_start_stream_begin\n");
 	ret = gc2053_write_array(gc2053->client, gc2053->cur_mode->reg_list);
 	if (ret)
 		return ret;
@@ -848,12 +852,15 @@ static int __gc2053_start_stream(struct gc2053 *gc2053)
 	ret = gc2053_set_flip(gc2053, gc2053->flip);
 	if (ret)
 		return ret;
-	return gc2053_write_reg(gc2053->client, GC2053_REG_CTRL_MODE,
+	ret=gc2053_write_reg(gc2053->client, GC2053_REG_CTRL_MODE,
 							GC2053_MODE_STREAMING);
+    dev_err(&gc2053->client->dev, "__gc2053_start_stream_end\n");
+    return ret;
 }
 
 static int __gc2053_stop_stream(struct gc2053 *gc2053)
 {
+    dev_err(&gc2053->client->dev, "__gc2053_stop_stream\n");
 	return gc2053_write_reg(gc2053->client, GC2053_REG_CTRL_MODE,
 							GC2053_MODE_SW_STANDBY);
 }
@@ -1319,6 +1326,7 @@ static int gc2053_probe(struct i2c_client *client,
 	struct v4l2_subdev *sd;
 	char facing[2];
 	int ret;
+    dev_err(dev,"gc2053_probe_begin!\n");
 
 	dev_info(dev, "driver version: %02x.%02x.%02x",
 		DRIVER_VERSION >> 16,
@@ -1343,6 +1351,8 @@ static int gc2053_probe(struct i2c_client *client,
 			"could not get module information!\n");
 		return -EINVAL;
 	}
+    dev_err(dev,"Consti10:module information: module_index:%d module_facing:%s module_name:%s len_name%s!\n",
+            gc2053->module_index,gc2053->module_facing,gc2053->module_name,gc2053->len_name);
 
 	gc2053->xvclk = devm_clk_get(&client->dev, "xvclk");
 	if (IS_ERR(gc2053->xvclk)) {
@@ -1436,7 +1446,7 @@ static int gc2053_probe(struct i2c_client *client,
 	pm_runtime_set_active(dev);
 	pm_runtime_enable(dev);
 	pm_runtime_idle(dev);
-
+    dev_err(dev,"gc2053_probe_end!\n");
 	return 0;
 
 err_clean_entity:

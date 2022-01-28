@@ -1,0 +1,13 @@
+bayer2rgb --input=gc2053_1.raw --output=pic.tiff --width=1920 --height=1080 --bpp=16 --first=RGGB --method=BILINEAR --tiff 
+
+---- the swap makes at least part of it work
+
+bayer2rgb --input=gc2053_1.raw --output=pic.tiff --width=1920 --height=1080 --bpp=16 --first=GRBG --method=NEAREST --tiff --swap
+
+
+---------- now it works ----------
+bayer2rgb --input=gc2053_6_taken_wtih_c.raw --output=pic.tiff --width=1920 --height=1080 --bpp=16 --first=GRBG --method=VNG --tiff --swap
+
+
+------- for imx415 --------
+bayer2rgb --input=imx415_1080p_c_noncomp.raw --output=imx415_1080p_c_noncomp.raw.tiff --width=1920 --height=1080 --bpp=16 --first=GBRG --method=VNG --tiff --swap

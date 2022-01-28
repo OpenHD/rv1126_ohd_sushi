@@ -26,8 +26,9 @@
 // gc2053 uses MEDIA_BUS_FMT_SGRBG10_1X10
 // which should be equal to V4L2_PIX_FMT_SGRBG10
 //constexpr auto WANTED_PIX_FMT=MEDIA_BUS_FMT_SGRBG10_1X10;
-constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGRBG10; // This one works on gc2053 !!
+//constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGRBG10; // This one works on gc2053 !!
 //constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SRGGB12;
+constexpr auto WANTED_PIX_FMT=V4L2_PIX_FMT_SGBRG10; // I think this one works on imx415
 
 constexpr auto N_REQUESTED_V4l2_BUFFERS=5;
 

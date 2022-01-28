@@ -1,3 +1,0 @@
-adb pull /oem/usr/bin/test0.h264
-
-gst-launch-1.0 filesrc location=test0.h264 ! h264parse ! avdec_h264 ! xvimagesink

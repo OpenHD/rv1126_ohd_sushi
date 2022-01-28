@@ -1003,6 +1003,8 @@ static int read_frame_pp_oneframe(demo_context_t *ctx)
         int i,ii, bytesused;
         static int first_time = 1;
 
+        DBG("read_frame_pp_oneframe_begin\n");
+
         CLEAR(buf);
         // dq one buf from isp mp
         DBG("------ dq 1 from isp mp --------------\n");
@@ -1070,6 +1072,7 @@ static int read_frame_pp_oneframe(demo_context_t *ctx)
             errno_exit(ctx, "VIDIOC_QBUF");
 
         first_time = 0;
+        DBG("read_frame_pp_oneframe_end\n");
         return 1;
 }
 
@@ -1857,7 +1860,16 @@ static void rkisp_routine(demo_context_t *ctx)
 
     printf("work_mode %d\n", work_mode);
 
-    strcpy(sns_entity_name, rk_aiq_uapi_sysctl_getBindedSnsEntNmByVd(get_dev_name(ctx)));
+    char* tmp_device_name=get_dev_name(ctx);
+    printf("Consti10:tmp_device_name:%s\n",tmp_device_name);
+    const char* someting_something=rk_aiq_uapi_sysctl_getBindedSnsEntNmByVd(get_dev_name(ctx));
+    if(someting_something== NULL){
+        printf("somethingsomething didnt work\n");
+        someting_something="";
+    }
+
+    strcpy(sns_entity_name, someting_something);
+    printf("Done strcpy\n");
     printf("sns_entity_name:%s\n", sns_entity_name);
     sscanf(&sns_entity_name[6], "%s", ctx->sns_name);
     printf("sns_name:%s\n", ctx->sns_name);

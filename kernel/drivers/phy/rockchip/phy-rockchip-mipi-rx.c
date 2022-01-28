@@ -1693,6 +1693,7 @@ static int rockchip_mipidphy_probe(struct platform_device *pdev)
 	const struct of_device_id *of_id;
 	const struct dphy_drv_data *drv_data;
 	int i, ret;
+    dev_err(dev, "Consti10:rockchip_mipidphy_probe\n");
 
 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
 	if (!priv)
