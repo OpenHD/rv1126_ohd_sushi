@@ -172,7 +172,7 @@ void video_packet_cb(MEDIA_BUFFER mb) {
 
     //optionally write to file for debugging
     writeToFileIfEnabled(mb_data,mb_data_size);
-    writeToFileIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
+    //writeToFileIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
     //Consti10: print time to check for fps
     uint64_t ts=getTimeMs();
     uint64_t delta=ts-lastTimeStamp;

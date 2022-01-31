@@ -30,7 +30,17 @@
 // test use imx415
 // works on CSI0,
 // ---------- argh found this table -----------
+//rockchip uses:
+//011010 = 0x1a
+//The sheet has
+//011010 = 0x1A
+//010000 = 0x10
+//110110 = 0x36
+//110111 = 0x37
+//-- sigmastar says i2c address:
+//110100 = 0x34
 // try out 0x10
+// YEAH it works (0x1A and 0x10)
 
 #define CONSTI10_LANES_CSIO data-lanes = <1 2 3 4>;
 #define CONSTI10_LANES_CSI1 data-lanes = <1 2 3 4>;

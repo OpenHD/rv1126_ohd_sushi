@@ -2029,6 +2029,9 @@ static int imx415_probe(struct i2c_client *client,
 			break;
 		}
 	}
+    // Consti10 - hack go to 1080p by default
+    // imx415->cur_mode = &supported_modes[imx415->cfg_num-1];
+
 
 	imx415->is_thunderboot = IS_ENABLED(CONFIG_VIDEO_ROCKCHIP_THUNDER_BOOT_ISP);
     dev_err(dev,"Consti10:is_thunderboot %s\n",imx415->is_thunderboot ? "y":"n");
