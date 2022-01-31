@@ -307,6 +307,10 @@ static const struct regval gc2053_1920x1080_regs_2lane[] = {
 	{REG_NULL, 0x00},
 };
 
+static void debug_i2c(struct i2c_client* client){
+    dev_err(&client->dev, "gc2053 debug_i2c %s\n", client->name);
+}
+
 static const struct gc2053_mode supported_modes[] = {
 	{
 		.width = 1920,
@@ -792,7 +796,7 @@ static int gc2053_check_sensor_id(struct gc2053 *gc2053,
 	u8 pid = 0, ver = 0;
 	u16 id = 0;
 	int ret = 0;
-
+    debug_i2c(client);
 	/* Check sensor revision */
 	ret = gc2053_read_reg(client, GC2053_REG_CHIP_ID_H, &pid);
 	ret |= gc2053_read_reg(client, GC2053_REG_CHIP_ID_L, &ver);
