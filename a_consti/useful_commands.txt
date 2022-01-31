@@ -1,0 +1,115 @@
+echo 0x300 > /sys/module/video_rkisp/parameters/debug
+
+echo 0x300 > /sys/module/video_rkispp/parameters/debug
+
+echo 0x300 > /sys/module/rk_vcodec/parameters/mpp_dev_debug
+
+// nothing interesting
+echo 0x300 > /sys/module/video_rkcif/parameters/debug
+echo 0x000 > /sys/module/videobuf2_v4l2/parameters/debug
+
+cat /sys/kernel/debug/clk/clk_summary
+
+for USB debugging
+cat /sys/kernel/debug/usb/devices
+
+
+-f 44
+
+rv1126 has vepu541 ?!
+
+
+
+v4l2-ctl --stream-mmap --stream-count=1000 -d /dev/video0 --stream-to=/dev/null
+ 
+ 
+ nc -ul 5600 > /dev/udp/192.168.61.245/5600
+
+// setting log level of camera_engine_rkaiq:
+export persist_camera_engine_log=0x4ff4
+
+// this should be CAMHW Debug (24 x 0 added)
+export persist_camera_engine_log=0x4000000FF4
+
+
+
+export persist_camera_engine_log=0x200FF4
+For expo and more
+export persist_camera_engine_log=0x1ff3
+
+----------
+print info:
+media-ctl -pd /dev/media0
+
+change sensor "mode":
+media-ctl -v -d /dev/media0 --set-v4l2 '"m00_f_imx415 1-001a":0[fmt:SGBRG10_1X10/3864x2192]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":0[fmt:SGBRG10_1X10/3864x2192]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":0[crop:(24,17)/3864x2192]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":2[fmt:SGBRG10_1X10/3864x2192]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":2[crop:(24,17)/3864x2192]'
+
+
+media-ctl -v -d /dev/media0 --set-v4l2 '"m00_f_imx415 1-001a":0[fmt:SGBRG12_1X12/1944x1097]'
+// NOTE: Is /dev/media0 in the tutorial, but probably should be media1
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":0[fmt:SGBRG12_1X12/1944x1097]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":0[crop:(24,17)/1944x1097]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":2[fmt:SGBRG12_1X12/1944x1097]'
+media-ctl -v -d /dev/media1 --set-v4l2 '"rkisp-isp-subdev":2[crop:(24,17)/1944x1097]'
+
+
+# the wait line stuff:
+echo 2000 > /sys/devices/platform/rkcif_mipi_lvds/wait_line
+echo 2000 > /sys/module/video_rkisp/parameters/wait_line
+echo 2000 > /sys/module/video_rkispp/parameters/wait_line
+
+./rkmedia_vi_venc_test -a -o /userdata/x5.h264
+gst-launch-1.0 filesrc location=/home/consti10/Desktop/hmm/x5.h264 ! h264parse ! avdec_h264 ! xvimagesink
+
+./consti_stream -a -w 1280 -h 720 -d rkispp_scale0 --ip_address 192.168.0.13 -b 5
+
+media-ctl -v -d /dev/media0 --set-v4l2 '"m00_f_imx415 1-001a":0[fmt:SGBRG10_1X10/1284x720]'
+media-ctl -v -d /dev/media0 --set-v4l2 '"m00_f_imx415 1-001a":0[fmt:SGBRG10_1X10/1944x1097]'
+media-ctl -v -d /dev/media0 --set-v4l2 '"m00_f_imx415 1-001a":0[fmt:SGBRG10_1X10/1920x1080]'
+// for imx415 on CSI1
+media-ctl -vd /dev/media2 --set-v4l2 '"m01_f_imx415 1-0010":0[fmt:SGBRG10_1X10/1920x1080]'
+media-ctl -d /dev/media2 --set-v4l2 '"rkisp-isp-subdev":0[fmt:SGBRG10_1X10/1920x1080]'
+media-ctl -d /dev/media2 --set-v4l2 '"rkisp-isp-subdev":0[crop:(0,0)/1920x1080]'
+media-ctl -d /dev/media2 --set-v4l2 '"rkisp-isp-subdev":2[crop:(0,0)/1920x1080]'
+v4l2-ctl -d /dev/video5 --set-selection=target=crop,top=0,left=0,width=1920,height=1080
+--- added ---
+media-ctl -d /dev/media2 --set-v4l2 '"rkisp-isp-subdev":2[fmt:SGBRG10_1X10/1920x1080]'
+
+cat /proc/mpp_service/session_summary
+echo 100 > /sys/devices/platform/rkcif_mipi_lvds/wait_line
+echo 100 > /sys/module/video_rkisp/parameters/wait_line
+echo 100 > /sys/module/video_rkispp/parameters/wait_line
+
+// 1024*1024*10=10485760==10 Mbyte
+sysctl -w net.core.wmem_max=10485760
+sysctl -w net.core.wmem_default=10485760
+
+./mpi_enc_test -w 1280 -h 720 -o /tmp/test.h264
+
+// https://elinux.org/images/f/f9/Petazzoni-device-tree-dummies_0.pdf
+cd /sys/firmware/devicetree/base
+dtc -I fs /sys/firmware/devicetree/base
+
+
+cat /sys/kernel/debug/clk/armclk/clk_rate
+
+From Rockchip_Developer_Guide_Power_Analysis_EN.pdf
+Print temperature: cat /sys/class/thermal/thermal_zone0/temp
+from same too, shows some stuff:
+cat /sys/kernel/debug/opp/opp_summary
+
+// close CPU
+echo 0 > /sys/devices/system/cpu/cpu2/online
+
+
+export TERM=xterm
+top
+
+// https://usermanual.wiki/Document/RockchipC2A0Linux20CameraC2A0Developer20Guide20V11.324153775/view
+grep -H '' /sys/class/video4linux/video*/name
+
+
