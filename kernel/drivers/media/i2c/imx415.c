@@ -51,6 +51,8 @@
 
 #define DRIVER_VERSION			KERNEL_VERSION(0, 0x01, 0x06)
 
+//#define CONSTI10_INCLUDE_LEGACY_SENSOR_MODES
+
 #ifndef V4L2_CID_DIGITAL_GAIN
 #define V4L2_CID_DIGITAL_GAIN		V4L2_CID_GAIN
 #endif
@@ -266,6 +268,7 @@ struct imx415 {
  * }
  */
 static const struct imx415_mode supported_modes[] = {
+#ifdef CONSTI10_INCLUDE_LEGACY_SENSOR_MODES
         /*
 	 * frame rate = 1 / (Vtt * 1H) = 1 / (VMAX * 1H)
 	 * VMAX >= (PIX_VWIDTH / 2) + 46 = height + 46
@@ -430,6 +433,7 @@ static const struct imx415_mode supported_modes[] = {
                 .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
                 .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
         },
+#endif //CONSTI10_INCLUDE_LEGACY_SENSOR_MODES
         /*{
                 .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
                 .width = 1944,

@@ -2842,8 +2842,8 @@ static int rkcif_start_streaming(struct vb2_queue *queue, unsigned int count)
 	int ret;
 
     stream->countCallRkcifVbDoneOneframe=0;
-	v4l2_info(&dev->v4l2_dev, "stream[%d] start streaming\n", stream->id);
-    v4l2_err(&dev->v4l2_dev, "Consti10 countCallRkcifVbDoneOneframe %d nFrames %d\n",
+    v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev, "stream[%d] start streaming\n", stream->id);
+    v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev, "Consti10 countCallRkcifVbDoneOneframe %d nFrames %d\n",
              stream->countCallRkcifVbDoneOneframe,0);
 
 	mutex_lock(&dev->stream_lock);
@@ -2964,7 +2964,7 @@ static int rkcif_start_streaming(struct vb2_queue *queue, unsigned int count)
 	}
 
 	if (dev->hdr.mode == NO_HDR) {
-        v4l2_err(&dev->v4l2_dev, "Consti10:rkcif_start_streaming: NO_HDR\n");
+        v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev, "Consti10:rkcif_start_streaming: NO_HDR\n");
 		if (dev->stream[RKCIF_STREAM_MIPI_ID0].state == RKCIF_STATE_STREAMING) {
 			rkcif_start_luma(&dev->luma_vdev,
 					dev->stream[RKCIF_STREAM_MIPI_ID0].cif_fmt_in);
@@ -3065,10 +3065,10 @@ static void rkcif_set_fmt(struct rkcif_stream *stream,
 
 	fmt = find_output_fmt(stream, pixm->pixelformat);
 	if (!fmt) {
-        v4l2_err(&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting default format?!\n");
+        v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting default format?!\n");
         fmt = &out_fmts[0];
     }else{
-        v4l2_err(&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting format okay!\n");
+        v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev, "Consti10 rkcif_set_fmt Selecting format okay!\n");
     }
 
 	input_rect.width = RKCIF_DEFAULT_WIDTH;
@@ -4271,7 +4271,7 @@ static void rkcif_vb_done_oneframe(struct rkcif_stream *stream,
     lastCallRkcifVbDoneOneframe=ktime_get_ns();
     stream->countCallRkcifVbDoneOneframe++;
 
-    v4l2_err(&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: %lld ns Delta %lld ns\n",
+    v4l2_dbg(1,rkcif_debug,&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe Delay overwrite ts-wk_time: %lld ns Delta %lld ns\n",
              ktime_get_ns()-vb_done->vb2_buf.timestamp,deltaNs);
 
 
@@ -4281,7 +4281,7 @@ static void rkcif_vb_done_oneframe(struct rkcif_stream *stream,
     //Consti10 doc: https://docs.huihoo.com/doxygen/linux/kernel/3.7/videobuf2-core_8c.html#a60f915d25af4dab4c964b5a920e422ac
     // inform videobuf that an operation on a buffer is finished
     // also in cif-luma.c
-    v4l2_err(&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe sequence: %d idx: %d call_count %d timestamp: %lld\n",
+    v4l2_dbg(1,rkcif_debug,&stream->cifdev->v4l2_dev,"Consti10:YYY::rkcif_vb_done_oneframe sequence: %d idx: %d call_count %d timestamp: %lld\n",
              vb_done->sequence,vb_done->vb2_buf.index,stream->countCallRkcifVbDoneOneframe,vb_done->vb2_buf.timestamp);
 	vb2_buffer_done(&vb_done->vb2_buf, VB2_BUF_STATE_DONE);
 }
@@ -4292,7 +4292,7 @@ void rkcif_irq_oneframe(struct rkcif_device *cif_dev)
 	struct rkcif_stream *stream;
 	u32 lastline, lastpix, ctl, cif_frmst, intstat, frmid;
 	int ret = 0;
-    v4l2_err(&cif_dev->v4l2_dev,
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,
              "Consti10:rkcif_irq_oneframe\n");
 
 	intstat = rkcif_read_register(cif_dev, CIF_REG_DVP_INTSTAT);
@@ -4759,7 +4759,7 @@ static void rkcif_rdbk_frame_end(struct rkcif_stream *stream)
 	u32 denominator, numerator;
 	u64 l_ts, m_ts, s_ts, time = 30000000LL;
 	int ret, fps = -1;
-    v4l2_err(&dev->v4l2_dev,
+    v4l2_dbg(1,rkcif_debug,&dev->v4l2_dev,
              "Consti10:rkcif_rdbk_frame_end\n");
 
 
@@ -4912,7 +4912,7 @@ static void rkcif_buf_done_prepare(struct rkcif_stream *stream,
 	unsigned long flags;
 	struct vb2_v4l2_buffer *vb_done = NULL;
 	struct rkcif_device *cif_dev = stream->cifdev;
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_buf_done_prepare_begin\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_buf_done_prepare_begin\n");
 
 	if (active_buf) {
 		vb_done = &active_buf->vb;
@@ -4997,7 +4997,7 @@ static void rkcif_buf_done_prepare(struct rkcif_stream *stream,
 				  cif_dev->stream[3].state != RKCIF_STATE_STREAMING ? "stopped" : "running");
 		}
 	}
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_buf_done_prepare_end()\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_buf_done_prepare_end()\n");
 }
 
 static void rkcif_line_wake_up(struct rkcif_stream *stream, int mipi_id)
@@ -5006,7 +5006,7 @@ static void rkcif_line_wake_up(struct rkcif_stream *stream, int mipi_id)
 	struct rkcif_buffer *active_buf = NULL;
 	struct rkcif_device *cif_dev = stream->cifdev;
 	int ret = 0;
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_line_wake_up\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_line_wake_up\n");
 
 	mode = stream->line_int_cnt % 2;
 	if (mode) {
@@ -5067,7 +5067,7 @@ static void rkcif_update_stream(struct rkcif_device *cif_dev,
 	unsigned long flags;
 	int ret = 0;
 
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_update_stream\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_update_stream\n");
 
 	if (stream->frame_phase == (CIF_CSI_FRAME0_READY | CIF_CSI_FRAME1_READY)) {
 
@@ -5726,12 +5726,12 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 	unsigned int intstat = 0x0, i = 0xff, bak_intstat = 0x0;
 	unsigned long flags;
 	int ret = 0;
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong_begin\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong_begin\n");
 
 	if (!cif_dev->active_sensor)
 		return;
 
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongA\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongA\n");
 
 	mbus = &cif_dev->active_sensor->mbus;
 	if ((mbus->type == V4L2_MBUS_CSI2 ||
@@ -5741,7 +5741,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 	     cif_dev->chip_id == CHIP_RK3568_CIF)) {
 		int mipi_id;
 		u32 lastline = 0;
-        v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_begin\n");
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_begin\n");
 
 		intstat = rkcif_read_register(cif_dev, CIF_REG_MIPI_LVDS_INTSTAT);
 		lastline = rkcif_read_register(cif_dev, CIF_REG_MIPI_LVDS_LINE_LINE_CNT_ID0_1);
@@ -5779,7 +5779,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 		}
 
 		if (intstat & CSI_FRAME0_START_ID0) {
-            v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_FRAME0_START_ID0\n");
+            v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_FRAME0_START_ID0\n");
 			if (mbus->type == V4L2_MBUS_CSI2)
 				rkcif_csi2_event_inc_sof();
 			else if (mbus->type == V4L2_MBUS_CCP2)
@@ -5791,7 +5791,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 		}
 
 		if (intstat & CSI_FRAME1_START_ID0) {
-            v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_FRAME1_START_ID0\n");
+            v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_FRAME1_START_ID0\n");
 			if (mbus->type == V4L2_MBUS_CSI2)
 				rkcif_csi2_event_inc_sof();
 			else if (mbus->type == V4L2_MBUS_CCP2)
@@ -5803,7 +5803,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 		}
 		for (i = 0; i < RKCIF_MAX_STREAM_MIPI; i++) {
 			if (intstat & CSI_LINE_INTSTAT(i)) {
-                v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_LINE_INTSTAT %d\n",i);
+                v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong:CSI_LINE_INTSTAT %d\n",i);
 				stream = &cif_dev->stream[i];
 				if (stream->is_line_inten) {
 					stream->line_int_cnt++;
@@ -5823,7 +5823,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 		if (mipi_id < 0)
 			return;
 
-        v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_2\n");
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_2\n");
 
 		for (i = 0; i < RKCIF_MAX_STREAM_MIPI; i++) {
 			mipi_id = rkcif_csi_g_mipi_id(&cif_dev->v4l2_dev,
@@ -5842,7 +5842,7 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 			if (stream->state != RKCIF_STATE_STREAMING)
 				continue;
 
-            v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_3\n");
+            v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_3\n");
 
 			switch (mipi_id) {
 			case RKCIF_STREAM_MIPI_ID0:
@@ -5885,14 +5885,14 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 			}
 		}
 		cif_dev->irq_stats.all_frm_end_cnt++;
-        v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_end\n");
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB1_end\n");
 	} else {
 		u32 lastline, lastpix, ctl;
 		u32 cif_frmst, frmid, int_en;
 		struct rkcif_stream *stream;
 		int ch_id;
         // Consti10: This branch is never called on rv1126
-        v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB2_begin\n");
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB2_begin\n");
 
 		intstat = rkcif_read_register(cif_dev, CIF_REG_DVP_INTSTAT);
 		cif_frmst = rkcif_read_register(cif_dev, CIF_REG_DVP_FRAME_STATUS);
@@ -6081,9 +6081,9 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 
 		if (stream->crop_dyn_en)
 			rkcif_dynamic_crop(stream);
-        v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB2_end\n");
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpongB2_end\n");
 	}
-    v4l2_err(&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong_end\n");
+    v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong_end\n");
 }
 
 void rkcif_irq_lite_lvds(struct rkcif_device *cif_dev)
