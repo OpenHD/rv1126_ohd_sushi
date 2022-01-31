@@ -304,7 +304,7 @@ static void vir_cpy_image(struct work_struct *work)
 		vir->curr_buf->vb.vb2_buf.timestamp = src_buf->vb.vb2_buf.timestamp;
         {
             struct vb2_v4l2_buffer *vb_done=&vir->curr_buf->vb;
-            v4l2_err(&vir->isppdev->v4l2_dev,"Consti10:YYY::vir_cpy_image sequence: %d idx: %d timestamp: %lld\n",
+            v4l2_dbg(1, rkispp_debug,&vir->isppdev->v4l2_dev,"Consti10:YYY::vir_cpy_image sequence: %d idx: %d timestamp: %lld\n",
                      vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
         }
 		vb2_buffer_done(&vir->curr_buf->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -313,7 +313,7 @@ end:
 		if (src_buf){
             {
                 struct vb2_v4l2_buffer *vb_done=&src_buf->vb;
-                v4l2_err(&vir->isppdev->v4l2_dev,"Consti10:YYY::vir_cpy_image sequenceA: %d idx: %d timestamp: %lld\n",
+                v4l2_dbg(1, rkispp_debug,&vir->isppdev->v4l2_dev,"Consti10:YYY::vir_cpy_image sequenceA: %d idx: %d timestamp: %lld\n",
                          vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
             }
             vb2_buffer_done(&src_buf->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -432,10 +432,10 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 		if (!ns){
             ns = ktime_get_ns();
             //Consti10: this timestamp should not be 0
-            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is 0\n");
+            v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is 0\n");
 		}else{
-            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is %lld\n",ns);
-            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp_frame_end: delay now-ts:%lldms\n",div_u64(ktime_get_ns()-ns,1000*1000));
+            v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp_frame_end: timestamp is %lld\n",ns);
+            v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp_frame_end: delay now-ts:%lldms\n",div_u64(ktime_get_ns()-ns,1000*1000));
 		}
 
 		for (i = 0; i < fmt->mplanes; i++) {
@@ -482,7 +482,7 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 			if (!vir->streaming){
                 {
                     struct vb2_v4l2_buffer *vb_done=&stream->curr_buf->vb;
-                    v4l2_err(&vir->isppdev->v4l2_dev,"Consti10:YYY::rkispp_frame_endA: %d idx: %d timestamp: %lld\n",
+                    v4l2_dbg(1, rkispp_debug,&vir->isppdev->v4l2_dev,"Consti10:YYY::rkispp_frame_endA: %d idx: %d timestamp: %lld\n",
                              vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
                 }
                 vb2_buffer_done(&stream->curr_buf->vb.vb2_buf,
@@ -491,7 +491,7 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 		} else {
             {
                 struct vb2_v4l2_buffer *vb_done=&stream->curr_buf->vb;
-                v4l2_err(&vir->isppdev->v4l2_dev,"Consti10:YYY::rkispp_frame_endB: %d idx: %d timestamp: %lld\n",
+                v4l2_dbg(1, rkispp_debug,&vir->isppdev->v4l2_dev,"Consti10:YYY::rkispp_frame_endB: %d idx: %d timestamp: %lld\n",
                          vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
             }
 			vb2_buffer_done(&stream->curr_buf->vb.vb2_buf,
@@ -2442,7 +2442,7 @@ static void restart_module(struct rkispp_device *dev)
 					inbuf = vdev->nr.cur_rd->priv;
                     {
                         struct vb2_v4l2_buffer *vb_done=&inbuf->vb;
-                        v4l2_err(&dev->v4l2_dev,"Consti10:YYY::restart_module: %d idx: %d timestamp: %lld\n",
+                        v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:YYY::restart_module: %d idx: %d timestamp: %lld\n",
                                  vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
                     }
 					vb2_buffer_done(&inbuf->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -2625,13 +2625,13 @@ static void fec_work_event(struct rkispp_device *dev,
 			dev->ispp_sdev.frame_timestamp =
 				vdev->fec.cur_rd->timestamp;
 			dev->ispp_sdev.frm_sync_seq = seq;
-            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X1: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
+            v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp:X1: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 		} else {
 			seq = vdev->nr.buf.wr[0].id;
 			dev->ispp_sdev.frame_timestamp =
 				vdev->nr.buf.wr[0].timestamp;
 			dev->ispp_sdev.frm_sync_seq = seq;
-            v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X2: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
+            v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp:X2: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 		}
 
 		stream = &vdev->stream[STREAM_MB];
@@ -2786,7 +2786,7 @@ static void nr_work_event(struct rkispp_device *dev,
 				inbuf = vdev->nr.cur_rd->priv;
                 {
                     struct vb2_v4l2_buffer *vb_done=&inbuf->vb;
-                    v4l2_err(&dev->v4l2_dev,"Consti10:YYY::nr_work_event: %d idx: %d timestamp: %lld\n",
+                    v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:YYY::nr_work_event: %d idx: %d timestamp: %lld\n",
                              vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
                 }
 				vb2_buffer_done(&inbuf->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -2917,7 +2917,7 @@ static void nr_work_event(struct rkispp_device *dev,
 			if (!is_fec_en && !is_quick) {
 				dev->ispp_sdev.frame_timestamp = timestamp;
 				dev->ispp_sdev.frm_sync_seq = seq;
-                v4l2_err(&dev->v4l2_dev,"Consti10:rkispp:X3: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
+                v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp:X3: timestamp written %lld\n",dev->ispp_sdev.frame_timestamp);
 			}
 		}
 
@@ -3079,7 +3079,7 @@ static void tnr_work_event(struct rkispp_device *dev,
 				inbuf = vdev->tnr.cur_rd->priv;
                 {
                     struct vb2_v4l2_buffer *vb_done=&inbuf->vb;
-                    v4l2_err(&dev->v4l2_dev,"Consti10:YYY::tnr_work_event: %d idx: %d timestamp: %lld\n",
+                    v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:YYY::tnr_work_event: %d idx: %d timestamp: %lld\n",
                              vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
                 }
 				vb2_buffer_done(&inbuf->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -3126,7 +3126,7 @@ static void tnr_work_event(struct rkispp_device *dev,
 				inbuf = vdev->tnr.nxt_rd->priv;
                 {
                     struct vb2_v4l2_buffer *vb_done=&inbuf->vb;
-                    v4l2_err(&dev->v4l2_dev,"Consti10:YYY::tnr_work_eventB: %d idx: %d timestamp: %lld\n",
+                    v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:YYY::tnr_work_eventB: %d idx: %d timestamp: %lld\n",
                              vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp);
                 }
 				vb2_buffer_done(&inbuf->vb.vb2_buf, VB2_BUF_STATE_DONE);

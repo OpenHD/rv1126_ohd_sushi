@@ -1334,7 +1334,7 @@ static void rdbk_frame_end(struct rkisp_stream *stream)
         // think this is called when we do no HDR
         struct vb2_v4l2_buffer *vb_done=&cap->rdbk_buf[RDBK_S]->vb;
         u64 delay=ktime_get_ns()-vb_done->vb2_buf.timestamp;
-        v4l2_err(&isp_dev->v4l2_dev,"Consti10:YYY::rdbk_frame_end sequence: %d idx: %d timestamp: %lld delay: %lld\n",
+        v4l2_dbg(1,rkisp_debug,&isp_dev->v4l2_dev,"Consti10:YYY::rdbk_frame_end sequence: %d idx: %d timestamp: %lld delay: %lld\n",
                  vb_done->sequence,vb_done->vb2_buf.index,vb_done->vb2_buf.timestamp,delay);
         //
 		vb2_buffer_done(&cap->rdbk_buf[RDBK_S]->vb.vb2_buf, VB2_BUF_STATE_DONE);
@@ -1439,7 +1439,7 @@ static int mi_frame_end(struct rkisp_stream *stream)
 			} else {
                 // weird one
                 u64 delay=ktime_get_ns()-vb2_buf->timestamp;
-                v4l2_err(&dev->v4l2_dev,"Consti10:YYY::mi_frame_endX: idx: %d timestamp: %lld delay: %lld\n",
+                v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:YYY::mi_frame_endX: idx: %d timestamp: %lld delay: %lld\n",
                          vb2_buf->index,vb2_buf->timestamp,delay);
                 //
 				vb2_buffer_done(vb2_buf, VB2_BUF_STATE_DONE);
@@ -1455,7 +1455,7 @@ static int mi_frame_end(struct rkisp_stream *stream)
 			} else {
                 // weird one
                 u64 delay=ktime_get_ns()-vb2_buf->timestamp;
-                v4l2_err(&dev->v4l2_dev,"Consti10:YYY::mi_frame_endY: idx: %d timestamp: %lld delay: %lld\n",
+                v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:YYY::mi_frame_endY: idx: %d timestamp: %lld delay: %lld\n",
                          vb2_buf->index,vb2_buf->timestamp,delay);
                 //
 				vb2_buffer_done(vb2_buf, VB2_BUF_STATE_DONE);
