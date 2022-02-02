@@ -281,7 +281,7 @@ static const struct imx415_mode supported_modes[] = {
                         .numerator = 10000,
                         .denominator = 300000,
                 },
-                .exp_def = 0x08ca - 0x08,
+                .exp_def = 0x08ca - 0x08, // 2250-8
                 .hts_def = 0x044c * IMX415_4LANES * 2,
                 .vts_def = 0x08ca,
                 .global_reg_list = imx415_global_10bit_3864x2192_regs,
@@ -433,7 +433,6 @@ static const struct imx415_mode supported_modes[] = {
                 .vc[PAD2] = V4L2_MBUS_CSI2_CHANNEL_0,//L->csi wr0
                 .vc[PAD3] = V4L2_MBUS_CSI2_CHANNEL_2,//S->csi wr2
         },
-#endif //CONSTI10_INCLUDE_LEGACY_SENSOR_MODES
         /*{
                 .bus_fmt = MEDIA_BUS_FMT_SGBRG12_1X12,
                 .width = 1944,
@@ -531,25 +530,7 @@ static const struct imx415_mode supported_modes[] = {
                 .mipi_freq_idx = 2,
                 .bpp = 10,
         },*/
-        // the new one with new INCK
-        {
-                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
-                .width = 1284,
-                .height = 720,
-                .max_fps = {
-                        .numerator =     10000,
-                        .denominator = 1349870, //134.987fps
-                },
-                .exp_def = 0x05E3 - 0x04,                  // VMAX - X
-                .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
-                .vts_def = 0x05E3 ,                        // VMAX
-                .global_reg_list = imx415_global_10bit_3864x2192_regs,
-                .reg_list = imx415_linear_10bit_720p_134fps_bin_and_crop_regs,
-                .hdr_mode = NO_HDR,
-                .mipi_freq_idx = 3,
-                .bpp = 10,
-        },
-        // the other new one with new INCK
+        // the new ones
         {
                 .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
                 .width = 1920,
@@ -558,11 +539,31 @@ static const struct imx415_mode supported_modes[] = {
                         .numerator =     10000,
                         .denominator =  901100, //90.011fps
                 },
-                .exp_def = 0x08D4 - 0x04,                  // VMAX - X
+                //.exp_def = 0x08D4 - 0x04,                  // VMAX - X
+                .exp_def = 0x05E3 - 0x08,
                 .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
                 .vts_def = 0x08D4 ,                        // VMAX
                 .global_reg_list = imx415_global_10bit_3864x2192_regs,
                 .reg_list = imx415_linear_10bit_1080p_90fps_bin_and_crop_regs_X,
+                .hdr_mode = NO_HDR,
+                .mipi_freq_idx = 3,
+                .bpp = 10,
+        },
+#endif //CONSTI10_INCLUDE_LEGACY_SENSOR_MODES
+        {
+                .bus_fmt = MEDIA_BUS_FMT_SGBRG10_1X10,
+                .width = 1284,
+                .height = 720,
+                .max_fps = {
+                        .numerator =     10000,
+                        .denominator = 1349870, //134.987fps
+                },
+                //.exp_def = 0x05E3 - 0x04,                  // VMAX - X 1507-4=1503
+                .exp_def = 0x05E3 - 0x08,
+                .hts_def = 0x016D * IMX415_4LANES * 2,     // HMAX
+                .vts_def = 0x05E3 ,                        // VMAX
+                .global_reg_list = imx415_global_10bit_3864x2192_regs,
+                .reg_list = imx415_linear_10bit_720p_134fps_bin_and_crop_regs,
                 .hdr_mode = NO_HDR,
                 .mipi_freq_idx = 3,
                 .bpp = 10,
@@ -1869,6 +1870,12 @@ static const struct v4l2_ctrl_ops imx415_ctrl_ops = {
 	.s_ctrl = imx415_set_ctrl,
 };
 
+static void consti10_check_handler_error(struct imx415* imx415,struct v4l2_ctrl_handler* handler,const char* operation){
+    if (handler->error) {
+        dev_err(&imx415->client->dev,"Failed to init control %s (%d)\n",operation,handler->error);
+    }
+}
+
 static int imx415_initialize_controls(struct imx415 *imx415)
 {
 	const struct imx415_mode *mode;
@@ -1890,18 +1897,21 @@ static int imx415_initialize_controls(struct imx415 *imx415)
 				ARRAY_SIZE(link_freq_items) - 1, 0,
 				link_freq_items);
 	__v4l2_ctrl_s_ctrl(imx415->link_freq, mode->mipi_freq_idx);
+    consti10_check_handler_error(imx415,handler,"0");
 
 	/* pixel rate = link frequency * 2 * lanes / BITS_PER_SAMPLE */
 	pixel_rate = (u32)link_freq_items[mode->mipi_freq_idx] / mode->bpp * 2 * IMX415_4LANES;
 	imx415->pixel_rate = v4l2_ctrl_new_std(handler, NULL,
 		V4L2_CID_PIXEL_RATE, 0, IMX415_MAX_PIXEL_RATE,
 		1, pixel_rate);
+    consti10_check_handler_error(imx415,handler,"1");
 
 	h_blank = mode->hts_def - mode->width;
 	imx415->hblank = v4l2_ctrl_new_std(handler, NULL, V4L2_CID_HBLANK,
 				h_blank, h_blank, 1, h_blank);
 	if (imx415->hblank)
 		imx415->hblank->flags |= V4L2_CTRL_FLAG_READ_ONLY;
+    consti10_check_handler_error(imx415,handler,"2");
 
 	vblank_def = mode->vts_def - mode->height;
 	imx415->vblank = v4l2_ctrl_new_std(handler, &imx415_ctrl_ops,
@@ -1909,17 +1919,20 @@ static int imx415_initialize_controls(struct imx415 *imx415)
 				IMX415_VTS_MAX - mode->height,
 				1, vblank_def);
 	imx415->cur_vts = mode->vts_def;
+    consti10_check_handler_error(imx415,handler,"3");
 
 	exposure_max = mode->vts_def - 8;
 	imx415->exposure = v4l2_ctrl_new_std(handler, &imx415_ctrl_ops,
 				V4L2_CID_EXPOSURE, IMX415_EXPOSURE_MIN,
 				exposure_max, IMX415_EXPOSURE_STEP,
 				mode->exp_def);
+    consti10_check_handler_error(imx415,handler,"4");
 
 	imx415->anal_a_gain = v4l2_ctrl_new_std(handler, &imx415_ctrl_ops,
 				V4L2_CID_ANALOGUE_GAIN, IMX415_GAIN_MIN,
 				IMX415_GAIN_MAX, IMX415_GAIN_STEP,
 				IMX415_GAIN_DEFAULT);
+    consti10_check_handler_error(imx415,handler,"5");
 
 	v4l2_ctrl_new_std(handler, &imx415_ctrl_ops, V4L2_CID_HFLIP, 0, 1, 1, 0);
 	v4l2_ctrl_new_std(handler, &imx415_ctrl_ops, V4L2_CID_VFLIP, 0, 1, 1, 0);
@@ -2035,6 +2048,7 @@ static int imx415_probe(struct i2c_client *client,
 	}
     // Consti10 - hack go to 1080p by default
     // imx415->cur_mode = &supported_modes[imx415->cfg_num-1];
+    dev_err(dev,"Consti10:selected mode %d %d %d",imx415->cur_mode->width,imx415->cur_mode->height,imx415->cur_mode->max_fps.denominator);
 
 
 	imx415->is_thunderboot = IS_ENABLED(CONFIG_VIDEO_ROCKCHIP_THUNDER_BOOT_ISP);

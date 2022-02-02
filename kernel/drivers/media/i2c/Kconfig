@@ -809,6 +809,28 @@ config VIDEO_IMX415
 	  To compile this driver as a module, choose M here: the
 	  module will be called imx415.
 
+config VIDEO_IMX477
+    tristate "Sony IMX477 sensor support"
+    depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+    depends on MEDIA_CAMERA_SUPPORT
+    help
+	  This is a Video4Linux2 sensor driver for the Sony
+	  IMX477 camera.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called imx477.
+
+config VIDEO_IMX499
+    tristate "Sony IMX499 sensor support"
+    depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
+    depends on MEDIA_CAMERA_SUPPORT
+    help
+	  Consti10 This is a Video4Linux2 sensor driver for the Sony
+	  IMX499 camera, which doesnt exist (testing)
+	  To compile this driver as a module, choose M here: the
+	  module will be called imx499.
+
+
 config VIDEO_IMX462
 	tristate "Sony IMX462 sensor support"
 	depends on I2C && VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
