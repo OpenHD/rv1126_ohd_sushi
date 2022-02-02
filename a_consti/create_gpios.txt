@@ -1,0 +1,5 @@
+echo 77 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio77/direction
+echo 1 > /sys/class/gpio/gpio77/value
+
+echo 76 > /sys/class/gpio/export & echo out > /sys/class/gpio/gpio76/direction & echo 1 > /sys/class/gpio/gpio76/value

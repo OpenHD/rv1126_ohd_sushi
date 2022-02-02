@@ -507,6 +507,8 @@ void rkisp_trigger_read_back(struct rkisp_csi_device *csi, u8 dma2frm, u32 mode)
 	u64 iq_feature = hw->iq_feature;
 	bool is_upd = false, is_3dlut_upd = false;
 
+    v4l2_dbg(1, rkisp_debug, &dev->v4l2_dev,"rkisp_trigger_read_back\n");
+
 	hw->cur_dev_id = dev->dev_id;
 	rkisp_dmarx_get_frame(dev, &cur_frame_id, NULL, NULL, true);
 
@@ -817,4 +819,18 @@ void rkisp_unregister_csi_subdev(struct rkisp_device *dev)
 	kfifo_free(&dev->csi_dev.rdbk_kfifo);
 	v4l2_device_unregister_subdev(sd);
 	media_entity_cleanup(&sd->entity);
+}
+
+void consti10_print_rkisp_device(struct rkisp_device *dev,const char* caller){
+    struct v4l2_device* v4l2_dev=&dev->v4l2_dev;
+    struct rkisp_csi_device *csi=&dev->csi_dev;
+    struct rkisp_dmarx_device* dmarx=&dev->dmarx_dev;
+    struct rkisp_bridge_device* bridge=&dev->br_dev;
+    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:print_rkisp_device:%s time:%lld\n",caller,ktime_get_ns());
+    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_csi_device frm_cnt:(%d:%d:%d:%d)\n",
+             csi->frame_cnt,csi->frame_cnt_x1,csi->frame_cnt_x2,csi->frame_cnt_x3);
+    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_dmarx_device pre_frame:(%d:%lld) cur_frame:(%d:%lld)\n",
+             dmarx->pre_frame.id,dmarx->pre_frame.timestamp,dmarx->cur_frame.id,dmarx->cur_frame.timestamp);
+    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:bridge_device: fs_ns:%lld buf_num:%d dbg:(%d:%lld)\n",
+             bridge->fs_ns,bridge->buf_num,bridge->dbg.id,bridge->dbg.timestamp);
 }

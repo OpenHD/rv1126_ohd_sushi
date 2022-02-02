@@ -113,3 +113,4 @@ top
 grep -H '' /sys/class/video4linux/video*/name
 
 
+/sys/bus/i2c/drivers/imx415

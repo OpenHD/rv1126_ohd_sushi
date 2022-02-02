@@ -1,0 +1,1136 @@
+./consti_stream -a -w 320 -h 240 -d rkispp_scale0 --ip_address 169.254.210.192 -b 5 -f 120 -e 1 -t 1
+
+[root@RV1126_RV1109:/]# dmesg
+[   74.564201] rkisp0: rkisp_isp_sd_s_power on:1
+[   74.564816] rkisp0: rkisp_isp_sd_s_power on:0
+[   74.614666] rkisp-bridge-ispp: bridge_s_power 1
+[   74.614723] imx415 1-0010: __imx415_power_on_begin
+[   74.684667] imx415 1-0010: __imx415_power_on_end
+[   74.684750] rkisp1: rkisp_isp_sd_s_power on:1
+[   74.686480] rkispp1: scale0:0x0 out of range:
+[   74.686480] 	[width max:3264 ratio max:8 min:1]
+[   74.686573] rkispp1: scale0:0x0 out of range:
+[   74.686573] 	[width max:2080 ratio max:8 min:1]
+[   74.686618] rkispp1: scale0:0x0 out of range:
+[   74.686618] 	[width max:3264 ratio max:8 min:1]
+[   74.686671] rkispp1: scale0:0x0 out of range:
+[   74.686671] 	[width max:3264 ratio max:8 min:1]
+[   74.686718] rkispp1: scale0:0x0 out of range:
+[   74.686718] 	[width max:3264 ratio max:8 min:1]
+[   74.733099] rkisp-bridge-ispp: work mode:0x1 buf num:5
+[   74.733116] rkisp1: init_buf pic size:12960016 gain size:522256
+[   74.733712] rkisp1: rkisp_alloc_buffer buf:0x5dc08000~0x5e865000 size:12963840
+[   74.733780] rkisp1: rkisp_alloc_buffer buf:0x5e865000~0x5e8e5000 size:524288
+[   74.743315] rkisp1: rkisp_alloc_buffer buf:0x5e8e5000~0x5f542000 size:12963840
+[   74.743375] rkisp1: rkisp_alloc_buffer buf:0x5f542000~0x5f5c2000 size:524288
+[   74.753033] rkisp1: rkisp_alloc_buffer buf:0x5f5c2000~0x6021f000 size:12963840
+[   74.753099] rkisp1: rkisp_alloc_buffer buf:0x6021f000~0x6029f000 size:524288
+[   74.762726] rkisp1: rkisp_alloc_buffer buf:0x6029f000~0x60efc000 size:12963840
+[   74.762795] rkisp1: rkisp_alloc_buffer buf:0x60efc000~0x60f7c000 size:524288
+[   74.772395] rkisp1: rkisp_alloc_buffer buf:0x60f7c000~0x61bd9000 size:12963840
+[   74.772477] rkisp1: rkisp_alloc_buffer buf:0x61bd9000~0x61c59000 size:524288
+[   74.781698] rkisp1: rkisp_alloc_buffer buf:0x61c59000~0x61d94000 size:1290240
+[   74.781714] rkisp1: rkisp_alloc_common_dummy_buf buf:0x61c59000 size:1290240
+[   74.781934] rkisp-bridge-ispp: bridge_s_stream 1
+[   74.781962] rkisp1: CSI ch0 vc:0 dt:0x2b 1284x720
+[   74.781973] rkisp1: CSI ch1 vc:0 dt:0x2b 1284x720
+[   74.781981] rkisp1: CSI ch2 vc:0 dt:0x2b 1284x720
+[   74.781990] rkisp1: CSI ch3 vc:0 dt:0x2b 1284x720
+[   74.781998] rkisp1: CSI ch4 vc:0 dt:0x2b 1284x720
+[   74.782063] rkisp1: CSI2RX_IDS 0x2b2b2b2b 0x0000002b
+[   74.782127] rkisp1: rkisp_alloc_buffer buf:0x61d94000~0x61ecf000 size:1290240
+[   74.782135] rkisp1: hdr buf[0][0]:0x61d94000
+[   74.782191] rkisp1: rkisp_alloc_buffer buf:0x61ecf000~0x6200a000 size:1290240
+[   74.782199] rkisp1: hdr buf[0][1]:0x61ecf000
+[   74.782267] rkisp1: rkisp_alloc_buffer buf:0x6200a000~0x62145000 size:1290240
+[   74.782274] rkisp1: hdr buf[0][2]:0x6200a000
+[   74.782283] rkisp1: hdr:1 buf index dma0:1 dma1:2 dma2:0
+[   74.782294] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.782312] rkisp1: rkisp_set_fmt: stream: 3 req(1284, 720) out(1284, 720)
+[   74.782323] rkisp1: rawrd_config_mi id:3 0x2b2b2b2b 1284x720
+[   74.782337] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.782344] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.782350] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.782363] rkisp1: CSI2RX CTRL0:0x20820400 CTRL1:0x3
+[   74.782363] WR CTRL RAW0:0x2e0200 RAW1:0x200 RAW2:0x80000801
+[   74.782363] RD CTRL:0x4
+[   74.782380] rkisp1: SP streaming = 0, MP streaming = 0
+[   74.782386] rkisp1: CIF_ID 0x02001909
+[   74.782407] rkisp rkisp-vir1: can not get first iq setting in stream on
+[   74.782469] rkisp1: SP streaming = 0, MP streaming = 0
+[   74.782481] rkisp1: SP streaming = 0, MP streaming = 0 MI_CTRL 0x00381000
+[   74.782481]   ISP_CTRL 0x80446117 MIPI_CTRL 0x20820401
+[   74.782495] rockchip-mipi-dphy-rx ff4b8000.csi-dphy: stream on:1
+[   74.782517] rockchip-mipi-dphy-rx: data_rate_mbps 1486
+[   74.783590] imx415 1-0010: s_stream: ON 1284x720, hdr: 0, bpp: 10
+[   74.870187] imx415 1-0010: set vblank 0x313 vts 1507
+[   74.870603] imx415 1-0010: set exposure(shr0) 8 = cur_vts(1507) - val(1499)
+[   74.870870] imx415 1-0010: set analog gain 0x0
+[   74.900352] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.900368] rkisp1: rkisp_trigger_read_back
+[   74.900379] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.900691] rkisp1: Consti10:rkisp_isp_isr: delay -185968455 interval: 1662208
+[   74.900711] rkisp1: Consti10: ISP_FRAME_VS 0: 74897097257
+[   74.900730] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.900754] rkisp1: MIPI error: size: 0x40104004
+[   74.902384] rkisp1: Consti10: ISP_FRAME_IN 0: 74898753049
+[   74.902401] rkisp1: Consti10: ISP_FRAME_END 0: 74898787466
+[   74.902410] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.902417] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.902426] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.902471] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.902493] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74898877007 now2: 74898878174
+[   74.902510] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 110 buf_idx: 0 frame_timestamp: 49298505060 delay:25600 ms
+[   74.902520] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 0
+[   74.902533] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74898 ms
+[   74.902548] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 0 buf_idx: 0 frame_timestamp: 49298505060 delay:25600 ms
+[   74.902563] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 111 buf_idx: 0 frame_timestamp: 49305881019 delay:25592 ms
+[   74.902574] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7375959 (ns)
+[   74.907714] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.907728] rkisp1: rkisp_trigger_read_back
+[   74.907739] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.908114] rkisp1: Consti10:rkisp_isp_isr: delay 5690709 interval: 1713542
+[   74.908127] rkisp1: Consti10: ISP_FRAME_VS 1: 74904512300
+[   74.908141] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909688] rkisp1: Consti10: ISP_FRAME_IN 1: 74906055508
+[   74.909704] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909728] rkisp1: Consti10: ISP_FRAME_END 1: 74906112091
+[   74.909734] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909741] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909750] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909767] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909778] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74906161091 now2: 74906162550
+[   74.909788] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 111 buf_idx: 0 frame_timestamp: 49305881019 delay:25600 ms
+[   74.909794] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 1
+[   74.909803] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74906 ms
+[   74.909813] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 1 buf_idx: 0 frame_timestamp: 49305881019 delay:25600 ms
+[   74.909824] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 107 buf_idx: 0 frame_timestamp: 49276255558 delay:25629 ms
+[   74.909830] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: -29625461 (ns)
+[   74.915393] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.915408] rkisp1: rkisp_trigger_read_back
+[   74.915419] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 2
+[   74.915711] rkisp1: Consti10:rkisp_isp_isr: delay 5982959 interval: 1634208
+[   74.915719] rkisp1: Consti10: ISP_FRAME_VS 2: 74912104967
+[   74.915731] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 2
+[   74.915746] rkisp1: MIPI error: size: 0x40104004
+[   74.917353] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.917372] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74913752884 now2: 74913754342
+[   74.917385] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 107 buf_idx: 0 frame_timestamp: 49276255558 delay:25637 ms
+[   74.917391] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.917400] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74913 ms
+[   74.917411] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 3 buf_idx: 0 frame_timestamp: 49276255558 delay:25637 ms
+[   74.917423] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 108 buf_idx: 0 frame_timestamp: 49283651934 delay:25630 ms
+[   74.917430] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7396376 (ns)
+[   74.917517] rkisp1: Consti10: ISP_FRAME_IN 2: 74913896092
+[   74.917526] rkisp1: Consti10: ISP_FRAME_END 2: 74913912425
+[   74.917532] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.917540] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.917551] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.922849] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.922865] rkisp1: rkisp_trigger_read_back
+[   74.922876] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.923194] rkisp1: Consti10:rkisp_isp_isr: delay 5660376 interval: 1817083
+[   74.923204] rkisp1: Consti10: ISP_FRAME_VS 3: 74919589426
+[   74.923218] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 3
+[   74.924803] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.924826] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74921204676 now2: 74921205843
+[   74.924840] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 108 buf_idx: 0 frame_timestamp: 49283651934 delay:25637 ms
+[   74.924846] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.924856] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74921 ms
+[   74.924867] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 4 buf_idx: 0 frame_timestamp: 49283651934 delay:25637 ms
+[   74.924877] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 109 buf_idx: 0 frame_timestamp: 49291076310 delay:25630 ms
+[   74.924884] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7424376 (ns)
+[   74.924980] rkisp1: Consti10: ISP_FRAME_IN 3: 74921359260
+[   74.924990] rkisp1: Consti10: ISP_FRAME_END 3: 74921376176
+[   74.924997] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.925004] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.925013] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.930475] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.930491] rkisp1: rkisp_trigger_read_back
+[   74.930502] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.930826] rkisp1: Consti10:rkisp_isp_isr: delay 5832459 interval: 1803375
+[   74.930835] rkisp1: Consti10: ISP_FRAME_VS 4: 74927220593
+[   74.930848] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 4
+[   74.930863] rkisp1: MIPI error: size: 0x40104004
+[   74.932442] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.932462] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74928843719 now2: 74928844885
+[   74.932475] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 109 buf_idx: 0 frame_timestamp: 49291076310 delay:25637 ms
+[   74.932480] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.932489] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74928 ms
+[   74.932500] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 49291076310 delay:25637 ms
+[   74.932510] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 0 buf_idx: 0 frame_timestamp: 74898973257 delay:29 ms
+[   74.932516] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 25607896947 (ns)
+[   74.932608] rkisp1: Consti10: ISP_FRAME_IN 4: 74928992760
+[   74.932617] rkisp1: Consti10: ISP_FRAME_END 4: 74929003844
+[   74.932624] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.932631] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.932640] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.937345] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.937361] rkisp1: rkisp_trigger_read_back
+[   74.937372] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.937671] rkisp1: Consti10:rkisp_isp_isr: delay 5047000 interval: 1795209
+[   74.937683] rkisp1: Consti10: ISP_FRAME_VS 5: 74934066886
+[   74.937699] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.939302] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.939321] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74935701386 now2: 74935702553
+[   74.939332] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 0 buf_idx: 0 frame_timestamp: 74898973257 delay:36 ms
+[   74.939338] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.939347] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74935 ms
+[   74.939357] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 74898973257 delay:36 ms
+[   74.939368] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 1 buf_idx: 0 frame_timestamp: 74906223508 delay:29 ms
+[   74.939374] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7250251 (ns)
+[   74.939485] rkisp1: Consti10: ISP_FRAME_IN 5: 74935869386
+[   74.939496] rkisp1: Consti10: ISP_FRAME_END 5: 74935881636
+[   74.939502] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.939509] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.939518] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 5
+[   74.944762] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.944777] rkisp1: rkisp_trigger_read_back
+[   74.944788] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.945108] rkisp1: Consti10:rkisp_isp_isr: delay 5593876 interval: 1830500
+[   74.945123] rkisp1: Consti10: ISP_FRAME_VS 6: 74941507012
+[   74.945138] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.945154] rkisp1: MIPI error: size: 0x40104004
+[   74.946720] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.946742] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74943120512 now2: 74943121970
+[   74.946755] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 1 buf_idx: 0 frame_timestamp: 74906223508 delay:36 ms
+[   74.946761] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.946769] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74943 ms
+[   74.946780] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 6 buf_idx: 0 frame_timestamp: 74906223508 delay:36 ms
+[   74.946790] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 3 buf_idx: 0 frame_timestamp: 74913823175 delay:29 ms
+[   74.946797] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7599667 (ns)
+[   74.946880] rkisp1: Consti10: ISP_FRAME_IN 6: 74943259345
+[   74.946892] rkisp1: Consti10: ISP_FRAME_END 6: 74943277720
+[   74.946899] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.946907] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.946918] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 6
+[   74.952850] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.952865] rkisp1: rkisp_trigger_read_back
+[   74.952875] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 7
+[   74.953165] rkisp1: Consti10:rkisp_isp_isr: delay 6272001 interval: 1802208
+[   74.953173] rkisp1: Consti10: ISP_FRAME_VS 7: 74949558762
+[   74.953186] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 7
+[   74.953200] rkisp1: MIPI error: size: 0x40104004
+[   74.955189] rkisp1: Consti10: ISP_FRAME_IN 7: 74951558138
+[   74.955206] rkisp1: Consti10: ISP_FRAME_END 7: 74951591971
+[   74.955214] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.955221] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.955230] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.955252] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.955263] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74951646804 now2: 74951647971
+[   74.955274] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 3 buf_idx: 0 frame_timestamp: 74913823175 delay:37 ms
+[   74.955280] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.955288] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74951 ms
+[   74.955299] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74913823175 delay:37 ms
+[   74.955309] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 4 buf_idx: 0 frame_timestamp: 74921277010 delay:30 ms
+[   74.955315] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7453835 (ns)
+[   74.959611] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.959626] rkisp1: rkisp_trigger_read_back
+[   74.959638] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.959933] rkisp1: Consti10:rkisp_isp_isr: delay 4721792 interval: 2042250
+[   74.959942] rkisp1: Consti10: ISP_FRAME_VS 8: 74956327763
+[   74.959958] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.959976] rkisp1: MIPI error: size: 0x40104004
+[   74.961595] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.961618] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74957998138 now2: 74957999888
+[   74.961630] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 4 buf_idx: 0 frame_timestamp: 74921277010 delay:36 ms
+[   74.961636] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.961645] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74957 ms
+[   74.961655] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74921277010 delay:36 ms
+[   74.961665] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 74928909635 delay:29 ms
+[   74.961672] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7632625 (ns)
+[   74.961757] rkisp1: Consti10: ISP_FRAME_IN 8: 74958139013
+[   74.961767] rkisp1: Consti10: ISP_FRAME_END 8: 74958153305
+[   74.961773] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.961780] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.961789] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 8
+[   74.967006] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.967022] rkisp1: rkisp_trigger_read_back
+[   74.967041] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.967383] rkisp1: Consti10:rkisp_isp_isr: delay 5604667 interval: 1839834
+[   74.967396] rkisp1: Consti10: ISP_FRAME_VS 9: 74963779555
+[   74.967410] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.967430] rkisp1: MIPI error: size: 0x40104004
+[   74.968983] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.969003] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74965383139 now2: 74965384306
+[   74.969015] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 74928909635 delay:36 ms
+[   74.969021] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.969030] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74965 ms
+[   74.969041] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 9 buf_idx: 0 frame_timestamp: 74928909635 delay:36 ms
+[   74.969051] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 74935767303 delay:29 ms
+[   74.969057] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6857668 (ns)
+[   74.969155] rkisp1: Consti10: ISP_FRAME_IN 9: 74965529264
+[   74.969167] rkisp1: Consti10: ISP_FRAME_END 9: 74965552597
+[   74.969176] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.969183] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.969192] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 9
+[   74.974384] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.974399] rkisp1: rkisp_trigger_read_back
+[   74.974410] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.974694] rkisp1: Consti10:rkisp_isp_isr: delay 5526209 interval: 1794625
+[   74.974702] rkisp1: Consti10: ISP_FRAME_VS 10: 74971088140
+[   74.974714] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.976332] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.976349] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74972731098 now2: 74972732556
+[   74.976361] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 5 buf_idx: 0 frame_timestamp: 74935767303 delay:36 ms
+[   74.976367] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.976375] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74972 ms
+[   74.976386] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 10 buf_idx: 0 frame_timestamp: 74935767303 delay:36 ms
+[   74.976397] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 6 buf_idx: 0 frame_timestamp: 74943189928 delay:29 ms
+[   74.976403] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7422625 (ns)
+[   74.976469] rkisp1: Consti10: ISP_FRAME_IN 10: 74972853890
+[   74.976478] rkisp1: Consti10: ISP_FRAME_END 10: 74972864681
+[   74.976485] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.976492] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.976501] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 10
+[   74.981811] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.981827] rkisp1: rkisp_trigger_read_back
+[   74.981840] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.982174] rkisp1: Consti10:rkisp_isp_isr: delay 5686334 interval: 1786167
+[   74.982186] rkisp1: Consti10: ISP_FRAME_VS 11: 74978570557
+[   74.982201] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.982223] rkisp1: MIPI error: size: 0x40104004
+[   74.983756] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.983786] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74980163349 now2: 74980164515
+[   74.983807] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 6 buf_idx: 0 frame_timestamp: 74943189928 delay:36 ms
+[   74.983822] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.983835] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74980 ms
+[   74.983851] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 11 buf_idx: 0 frame_timestamp: 74943189928 delay:36 ms
+[   74.983866] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74951708346 delay:28 ms
+[   74.983878] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8518418 (ns)
+[   74.983951] rkisp1: Consti10: ISP_FRAME_IN 11: 74980335724
+[   74.983960] rkisp1: Consti10: ISP_FRAME_END 11: 74980346807
+[   74.983967] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.983973] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.983981] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 11
+[   74.989203] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.989222] rkisp1: rkisp_trigger_read_back
+[   74.989236] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.989545] rkisp1: Consti10:rkisp_isp_isr: delay 5580459 interval: 1795500
+[   74.989556] rkisp1: Consti10: ISP_FRAME_VS 12: 74985939516
+[   74.989569] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.991179] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.991199] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74987580725 now2: 74987581891
+[   74.991210] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74951708346 delay:35 ms
+[   74.991217] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.991225] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74987 ms
+[   74.991236] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 12 buf_idx: 0 frame_timestamp: 74951708346 delay:35 ms
+[   74.991246] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74958065222 delay:29 ms
+[   74.991253] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6356876 (ns)
+[   74.991387] rkisp1: Consti10: ISP_FRAME_IN 12: 74987763016
+[   74.991399] rkisp1: Consti10: ISP_FRAME_END 12: 74987785766
+[   74.991407] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.991414] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.991423] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 12
+[   74.996611] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   74.996625] rkisp1: rkisp_trigger_read_back
+[   74.996636] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.996932] rkisp1: Consti10:rkisp_isp_isr: delay 5530292 interval: 1858500
+[   74.996940] rkisp1: Consti10: ISP_FRAME_VS 13: 74993325683
+[   74.996952] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.997024] rkisp1: MIPI error: size: 0x40104004
+[   74.998724] rkisp1: Consti10: ISP_FRAME_IN 13: 74995092892
+[   74.998743] rkisp1: Consti10: ISP_FRAME_END 13: 74995128475
+[   74.998751] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.998758] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.998767] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.998822] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.998833] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 74995215975 now2: 74995217434
+[   74.998844] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 8 buf_idx: 0 frame_timestamp: 74958065222 delay:37 ms
+[   74.998849] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 13
+[   74.998858] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:74995 ms
+[   74.998868] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 13 buf_idx: 0 frame_timestamp: 74958065222 delay:37 ms
+[   74.998878] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 9 buf_idx: 0 frame_timestamp: 74965451097 delay:29 ms
+[   74.998884] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7385875 (ns)
+[   75.004029] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.004045] rkisp1: rkisp_trigger_read_back
+[   75.004056] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.004350] rkisp1: Consti10:rkisp_isp_isr: delay 5603500 interval: 1812126
+[   75.004360] rkisp1: Consti10: ISP_FRAME_VS 14: 75000745393
+[   75.004376] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.005971] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.005986] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75002369101 now2: 75002370268
+[   75.005997] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 9 buf_idx: 0 frame_timestamp: 74965451097 delay:36 ms
+[   75.006003] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.006012] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75002 ms
+[   75.006023] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 14 buf_idx: 0 frame_timestamp: 74965451097 delay:36 ms
+[   75.006033] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 10 buf_idx: 0 frame_timestamp: 74972796723 delay:29 ms
+[   75.006040] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7345626 (ns)
+[   75.006106] rkisp1: Consti10: ISP_FRAME_IN 14: 75002490726
+[   75.006114] rkisp1: Consti10: ISP_FRAME_END 14: 75002500934
+[   75.006120] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.006128] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.006136] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 14
+[   75.011423] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.011438] rkisp1: rkisp_trigger_read_back
+[   75.011449] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.011743] rkisp1: Consti10:rkisp_isp_isr: delay 5626542 interval: 1769542
+[   75.011752] rkisp1: Consti10: ISP_FRAME_VS 15: 75008137393
+[   75.011764] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.011779] rkisp1: MIPI error: size: 0x40104004
+[   75.013386] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.013404] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75009785602 now2: 75009787060
+[   75.013416] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 10 buf_idx: 0 frame_timestamp: 74972796723 delay:36 ms
+[   75.013422] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.013430] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75009 ms
+[   75.013441] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 15 buf_idx: 0 frame_timestamp: 74972796723 delay:36 ms
+[   75.013451] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 11 buf_idx: 0 frame_timestamp: 74980276224 delay:29 ms
+[   75.013458] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7479501 (ns)
+[   75.013528] rkisp1: Consti10: ISP_FRAME_IN 15: 75009912185
+[   75.013537] rkisp1: Consti10: ISP_FRAME_END 15: 75009923268
+[   75.013543] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.013550] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.013559] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 15
+[   75.018839] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.018855] rkisp1: rkisp_trigger_read_back
+[   75.018866] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.019194] rkisp1: Consti10:rkisp_isp_isr: delay 5637043 interval: 1795500
+[   75.019211] rkisp1: Consti10: ISP_FRAME_VS 16: 75015594436
+[   75.019227] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.019243] rkisp1: MIPI error: size: 0x40104004
+[   75.020807] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.020825] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75017205894 now2: 75017207061
+[   75.020837] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 11 buf_idx: 0 frame_timestamp: 74980276224 delay:36 ms
+[   75.020843] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.020852] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75017 ms
+[   75.020863] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 16 buf_idx: 0 frame_timestamp: 74980276224 delay:36 ms
+[   75.020873] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 12 buf_idx: 0 frame_timestamp: 74987646350 delay:29 ms
+[   75.020881] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7370126 (ns)
+[   75.020973] rkisp1: Consti10: ISP_FRAME_IN 16: 75017354061
+[   75.020991] rkisp1: Consti10: ISP_FRAME_END 16: 75017374478
+[   75.021003] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.021011] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.021020] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 16
+[   75.026247] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.026262] rkisp1: rkisp_trigger_read_back
+[   75.026273] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.026612] rkisp1: Consti10:rkisp_isp_isr: delay 5609917 interval: 1814167
+[   75.026625] rkisp1: Consti10: ISP_FRAME_VS 17: 75023008603
+[   75.026638] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.026653] rkisp1: MIPI error: size: 0x40104004
+[   75.028211] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.028230] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75024611895 now2: 75024613062
+[   75.028241] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 12 buf_idx: 0 frame_timestamp: 74987646350 delay:36 ms
+[   75.028247] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.028256] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75024 ms
+[   75.028267] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 17 buf_idx: 0 frame_timestamp: 74987646350 delay:36 ms
+[   75.028277] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 13 buf_idx: 0 frame_timestamp: 74995277225 delay:29 ms
+[   75.028283] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7630875 (ns)
+[   75.028365] rkisp1: Consti10: ISP_FRAME_IN 17: 75024746062
+[   75.028380] rkisp1: Consti10: ISP_FRAME_END 17: 75024762103
+[   75.028387] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.028394] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.028403] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 17
+[   75.033654] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.033669] rkisp1: rkisp_trigger_read_back
+[   75.033680] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.034001] rkisp1: Consti10:rkisp_isp_isr: delay 5607001 interval: 1777708
+[   75.034013] rkisp1: Consti10: ISP_FRAME_VS 18: 75030397979
+[   75.034028] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.034045] rkisp1: MIPI error: size: 0x40104004
+[   75.035607] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.035625] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75032006229 now2: 75032007396
+[   75.035636] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 13 buf_idx: 0 frame_timestamp: 74995277225 delay:36 ms
+[   75.035642] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.035651] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75032 ms
+[   75.035662] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 18 buf_idx: 0 frame_timestamp: 74995277225 delay:36 ms
+[   75.035672] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 14 buf_idx: 0 frame_timestamp: 75002433268 delay:29 ms
+[   75.035678] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7156043 (ns)
+[   75.035746] rkisp1: Consti10: ISP_FRAME_IN 18: 75032130771
+[   75.035755] rkisp1: Consti10: ISP_FRAME_END 18: 75032141271
+[   75.035761] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.035768] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.035777] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 18
+[   75.041068] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.041083] rkisp1: rkisp_trigger_read_back
+[   75.041094] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.041390] rkisp1: Consti10:rkisp_isp_isr: delay 5633834 interval: 1772167
+[   75.041400] rkisp1: Consti10: ISP_FRAME_VS 19: 75037784438
+[   75.041411] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.041427] rkisp1: MIPI error: size: 0x40104004
+[   75.043046] rkisp1: Consti10: ISP_FRAME_IN 19: 75039415438
+[   75.043060] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043084] rkisp1: Consti10: ISP_FRAME_END 19: 75039467646
+[   75.043091] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043098] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043107] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043168] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043181] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75039563896 now2: 75039565063
+[   75.043192] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 14 buf_idx: 0 frame_timestamp: 75002433268 delay:37 ms
+[   75.043199] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 19
+[   75.043208] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75039 ms
+[   75.043218] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 19 buf_idx: 0 frame_timestamp: 75002433268 delay:37 ms
+[   75.043229] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 15 buf_idx: 0 frame_timestamp: 75009851227 delay:29 ms
+[   75.043236] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7417959 (ns)
+[   75.048479] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.048494] rkisp1: rkisp_trigger_read_back
+[   75.048505] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.048798] rkisp1: Consti10:rkisp_isp_isr: delay 5714917 interval: 1692833
+[   75.048807] rkisp1: Consti10: ISP_FRAME_VS 20: 75045191897
+[   75.048819] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.048833] rkisp1: MIPI error: size: 0x40104004
+[   75.050434] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.050452] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75046833397 now2: 75046834855
+[   75.050463] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 15 buf_idx: 0 frame_timestamp: 75009851227 delay:36 ms
+[   75.050469] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.050477] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75046 ms
+[   75.050488] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 20 buf_idx: 0 frame_timestamp: 75009851227 delay:36 ms
+[   75.050498] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 16 buf_idx: 0 frame_timestamp: 75017274728 delay:29 ms
+[   75.050505] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7423501 (ns)
+[   75.050586] rkisp1: Consti10: ISP_FRAME_IN 20: 75046970772
+[   75.050595] rkisp1: Consti10: ISP_FRAME_END 20: 75046980981
+[   75.050602] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.050609] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.050618] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 20
+[   75.055885] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.055901] rkisp1: rkisp_trigger_read_back
+[   75.055913] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.056209] rkisp1: Consti10:rkisp_isp_isr: delay 5609042 interval: 1798417
+[   75.056219] rkisp1: Consti10: ISP_FRAME_VS 21: 75052604314
+[   75.056236] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.056250] rkisp1: MIPI error: size: 0x40104004
+[   75.057868] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.057891] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75054271481 now2: 75054272940
+[   75.057905] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 16 buf_idx: 0 frame_timestamp: 75017274728 delay:36 ms
+[   75.057911] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.057921] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75054 ms
+[   75.057931] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 75017274728 delay:36 ms
+[   75.057941] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 17 buf_idx: 0 frame_timestamp: 75024676645 delay:29 ms
+[   75.057948] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7401917 (ns)
+[   75.058031] rkisp1: Consti10: ISP_FRAME_IN 21: 75054412356
+[   75.058043] rkisp1: Consti10: ISP_FRAME_END 21: 75054428398
+[   75.058049] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.058056] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.058067] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 21
+[   75.063297] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.063314] rkisp1: rkisp_trigger_read_back
+[   75.063326] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.063704] rkisp1: Consti10:rkisp_isp_isr: delay 5638792 interval: 1837792
+[   75.063732] rkisp1: Consti10: ISP_FRAME_VS 22: 75060116482
+[   75.063751] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.063773] rkisp1: MIPI error: size: 0x40104004
+[   75.065261] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.065275] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75061658232 now2: 75061659399
+[   75.065286] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 17 buf_idx: 0 frame_timestamp: 75024676645 delay:36 ms
+[   75.065292] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.065301] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75061 ms
+[   75.065311] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 75024676645 delay:36 ms
+[   75.065321] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 18 buf_idx: 0 frame_timestamp: 75032071854 delay:29 ms
+[   75.065328] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7395209 (ns)
+[   75.065394] rkisp1: Consti10: ISP_FRAME_IN 22: 75061778690
+[   75.065403] rkisp1: Consti10: ISP_FRAME_END 22: 75061789190
+[   75.065409] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.065415] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.065423] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 22
+[   75.070707] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.070725] rkisp1: rkisp_trigger_read_back
+[   75.070738] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.071037] rkisp1: Consti10:rkisp_isp_isr: delay 5626834 interval: 1722584
+[   75.071047] rkisp1: Consti10: ISP_FRAME_VS 23: 75067432358
+[   75.071061] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.071076] rkisp1: MIPI error: size: 0x40104004
+[   75.072675] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.072694] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75069075024 now2: 75069076483
+[   75.072706] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 18 buf_idx: 0 frame_timestamp: 75032071854 delay:37 ms
+[   75.072712] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.072721] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75069 ms
+[   75.072732] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 75032071854 delay:37 ms
+[   75.072743] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 19 buf_idx: 0 frame_timestamp: 75039628938 delay:29 ms
+[   75.072750] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7557084 (ns)
+[   75.072854] rkisp1: Consti10: ISP_FRAME_IN 23: 75069230483
+[   75.072866] rkisp1: Consti10: ISP_FRAME_END 23: 75069251774
+[   75.072873] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.072880] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.072890] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 23
+[   75.078102] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.078117] rkisp1: rkisp_trigger_read_back
+[   75.078129] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.078434] rkisp1: Consti10:rkisp_isp_isr: delay 5556542 interval: 1834875
+[   75.078449] rkisp1: Consti10: ISP_FRAME_VS 24: 75074831942
+[   75.078462] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.078479] rkisp1: MIPI error: size: 0x40104004
+[   75.080056] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.080075] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75076455358 now2: 75076457108
+[   75.080088] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 19 buf_idx: 0 frame_timestamp: 75039628938 delay:36 ms
+[   75.080095] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.080104] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75076 ms
+[   75.080114] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 75039628938 delay:36 ms
+[   75.080125] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 20 buf_idx: 0 frame_timestamp: 75046898147 delay:29 ms
+[   75.080131] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7269209 (ns)
+[   75.080218] rkisp1: Consti10: ISP_FRAME_IN 24: 75076598275
+[   75.080229] rkisp1: Consti10: ISP_FRAME_END 24: 75076614900
+[   75.080235] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.080242] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.080251] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 24
+[   75.085590] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.085607] rkisp1: rkisp_trigger_read_back
+[   75.085618] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.085931] rkisp1: Consti10:rkisp_isp_isr: delay 5699167 interval: 1807167
+[   75.085940] rkisp1: Consti10: ISP_FRAME_VS 25: 75082324567
+[   75.085952] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.085966] rkisp1: MIPI error: size: 0x40104004
+[   75.088000] rkisp1: Consti10: ISP_FRAME_IN 25: 75084367693
+[   75.088018] rkisp1: Consti10: ISP_FRAME_END 25: 75084403568
+[   75.088025] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.088033] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.088042] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.088099] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.088127] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75084509734 now2: 75084511193
+[   75.088143] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 20 buf_idx: 0 frame_timestamp: 75046898147 delay:37 ms
+[   75.088154] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 25
+[   75.088163] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75084 ms
+[   75.088173] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 75046898147 delay:37 ms
+[   75.088183] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 75054341481 delay:30 ms
+[   75.088189] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7443334 (ns)
+[   75.092918] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.092934] rkisp1: rkisp_trigger_read_back
+[   75.092945] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.093238] rkisp1: Consti10:rkisp_isp_isr: delay 5219083 interval: 2089501
+[   75.093246] rkisp1: Consti10: ISP_FRAME_VS 26: 75089632276
+[   75.093258] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.093272] rkisp1: MIPI error: size: 0x40104004
+[   75.094905] rkisp1: Consti10: ISP_FRAME_IN 26: 75091268235
+[   75.094923] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.094964] rkisp1: Consti10: ISP_FRAME_END 26: 75091344068
+[   75.094984] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.094996] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.095013] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.095038] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.095049] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75091432443 now2: 75091433610
+[   75.095060] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 75054341481 delay:37 ms
+[   75.095066] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 26
+[   75.095075] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75091 ms
+[   75.095086] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 75054341481 delay:37 ms
+[   75.095097] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 75061721232 delay:29 ms
+[   75.095103] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7379751 (ns)
+[   75.101090] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.101107] rkisp1: rkisp_trigger_read_back
+[   75.101118] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 27
+[   75.101428] rkisp1: Consti10:rkisp_isp_isr: delay 6464209 interval: 1721709
+[   75.101452] rkisp1: Consti10: ISP_FRAME_VS 27: 75097835986
+[   75.101470] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 27
+[   75.101495] rkisp1: MIPI error: size: 0x40104004
+[   75.103193] rkisp1: Consti10: ISP_FRAME_IN 27: 75099562069
+[   75.103211] rkisp1: Consti10: ISP_FRAME_END 27: 75099597069
+[   75.103219] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.103226] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.103236] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.103281] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.103291] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75099674944 now2: 75099676402
+[   75.103302] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 75061721232 delay:37 ms
+[   75.103309] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.103328] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75099 ms
+[   75.103344] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 28 buf_idx: 0 frame_timestamp: 75061721232 delay:37 ms
+[   75.103359] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 75069143274 delay:30 ms
+[   75.103370] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7422042 (ns)
+[   75.108128] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.108147] rkisp1: rkisp_trigger_read_back
+[   75.108160] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.108493] rkisp1: Consti10:rkisp_isp_isr: delay 5260209 interval: 1788208
+[   75.108509] rkisp1: Consti10: ISP_FRAME_VS 28: 75104894028
+[   75.108526] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 28
+[   75.108543] rkisp1: MIPI error: size: 0x40104004
+[   75.110092] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.110109] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75106490611 now2: 75106492070
+[   75.110120] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 75069143274 delay:37 ms
+[   75.110127] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.110136] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75106 ms
+[   75.110147] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75069143274 delay:37 ms
+[   75.110157] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 75076525067 delay:29 ms
+[   75.110164] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7381793 (ns)
+[   75.110230] rkisp1: Consti10: ISP_FRAME_IN 28: 75106614862
+[   75.110239] rkisp1: Consti10: ISP_FRAME_END 28: 75106625070
+[   75.110245] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.110252] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.110261] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.115532] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.115549] rkisp1: rkisp_trigger_read_back
+[   75.115562] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.115880] rkisp1: Consti10:rkisp_isp_isr: delay 5624500 interval: 1768376
+[   75.115896] rkisp1: Consti10: ISP_FRAME_VS 29: 75112280487
+[   75.115910] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117604] rkisp1: Consti10: ISP_FRAME_IN 29: 75113973904
+[   75.117625] rkisp1: Consti10: ISP_FRAME_END 29: 75114006571
+[   75.117635] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117642] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117651] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117675] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117686] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75114069279 now2: 75114070446
+[   75.117697] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 75076525067 delay:37 ms
+[   75.117703] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 29
+[   75.117712] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75114 ms
+[   75.117723] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75076525067 delay:37 ms
+[   75.117733] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 75084582651 delay:29 ms
+[   75.117740] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8057584 (ns)
+[   75.122950] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.122965] rkisp1: rkisp_trigger_read_back
+[   75.122977] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.123266] rkisp1: Consti10:rkisp_isp_isr: delay 5644625 interval: 1756417
+[   75.123274] rkisp1: Consti10: ISP_FRAME_VS 30: 75119659654
+[   75.123287] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.123302] rkisp1: MIPI error: size: 0x40104004
+[   75.125062] rkisp1: Consti10: ISP_FRAME_IN 30: 75121430363
+[   75.125078] rkisp1: Consti10: ISP_FRAME_END 30: 75121464196
+[   75.125086] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.125093] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.125102] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.125125] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.125136] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75121519321 now2: 75121520488
+[   75.125147] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 75084582651 delay:36 ms
+[   75.125152] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 30
+[   75.125161] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75121 ms
+[   75.125172] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 30 buf_idx: 0 frame_timestamp: 75084582651 delay:36 ms
+[   75.125181] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 75091496902 delay:30 ms
+[   75.125188] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6914251 (ns)
+[   75.129953] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.129967] rkisp1: rkisp_trigger_read_back
+[   75.129976] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.130267] rkisp1: Consti10:rkisp_isp_isr: delay 5188751 interval: 1812417
+[   75.130276] rkisp1: Consti10: ISP_FRAME_VS 31: 75126661405
+[   75.130290] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.131932] rkisp1: Consti10: ISP_FRAME_IN 31: 75128302030
+[   75.131947] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.131961] rkisp1: Consti10: ISP_FRAME_END 31: 75128347239
+[   75.131968] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.131975] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.131983] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.131999] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.132010] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75128393322 now2: 75128394780
+[   75.132021] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 75091496902 delay:36 ms
+[   75.132026] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 31
+[   75.132035] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75128 ms
+[   75.132046] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 31 buf_idx: 0 frame_timestamp: 75091496902 delay:36 ms
+[   75.132056] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 28 buf_idx: 0 frame_timestamp: 75099767986 delay:28 ms
+[   75.132062] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8271084 (ns)
+[   75.137726] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.137743] rkisp1: rkisp_trigger_read_back
+[   75.137755] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 32
+[   75.138073] rkisp1: Consti10:rkisp_isp_isr: delay 6094959 interval: 1695167
+[   75.138087] rkisp1: Consti10: ISP_FRAME_VS 32: 75134472239
+[   75.138102] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 32
+[   75.138123] rkisp1: MIPI error: size: 0x40104004
+[   75.139683] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.139704] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75136083406 now2: 75136084573
+[   75.139716] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 28 buf_idx: 0 frame_timestamp: 75099767986 delay:36 ms
+[   75.139722] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.139731] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75136 ms
+[   75.139742] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 33 buf_idx: 0 frame_timestamp: 75099767986 delay:36 ms
+[   75.139752] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75106557403 delay:29 ms
+[   75.139759] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6789417 (ns)
+[   75.139895] rkisp1: Consti10: ISP_FRAME_IN 32: 75136268031
+[   75.139909] rkisp1: Consti10: ISP_FRAME_END 32: 75136294281
+[   75.139916] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.139923] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.139932] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.145310] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.145327] rkisp1: rkisp_trigger_read_back
+[   75.145338] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.145646] rkisp1: Consti10:rkisp_isp_isr: delay 5735626 interval: 1852083
+[   75.145667] rkisp1: Consti10: ISP_FRAME_VS 33: 75142052657
+[   75.145685] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 33
+[   75.147269] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.147289] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75143669657 now2: 75143670824
+[   75.147301] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75106557403 delay:37 ms
+[   75.147307] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.147316] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75143 ms
+[   75.147327] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75106557403 delay:37 ms
+[   75.147338] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75114133737 delay:29 ms
+[   75.147345] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7576334 (ns)
+[   75.147440] rkisp1: Consti10: ISP_FRAME_IN 33: 75143817824
+[   75.147452] rkisp1: Consti10: ISP_FRAME_END 33: 75143838240
+[   75.147459] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.147467] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.147476] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.152195] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.152211] rkisp1: rkisp_trigger_read_back
+[   75.152222] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.152589] rkisp1: Consti10:rkisp_isp_isr: delay 5117292 interval: 1808625
+[   75.152605] rkisp1: Consti10: ISP_FRAME_VS 34: 75148989366
+[   75.152621] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.152638] rkisp1: MIPI error: size: 0x40104004
+[   75.154174] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.154195] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75150573116 now2: 75150574866
+[   75.154206] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 75114133737 delay:36 ms
+[   75.154212] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.154221] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75150 ms
+[   75.154231] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75114133737 delay:36 ms
+[   75.154250] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 30 buf_idx: 0 frame_timestamp: 75121581155 delay:28 ms
+[   75.154263] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7447418 (ns)
+[   75.154347] rkisp1: Consti10: ISP_FRAME_IN 34: 75150732658
+[   75.154361] rkisp1: Consti10: ISP_FRAME_END 34: 75150747533
+[   75.154368] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.154375] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.154385] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 34
+[   75.159832] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.159847] rkisp1: rkisp_trigger_read_back
+[   75.159858] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.160159] rkisp1: Consti10:rkisp_isp_isr: delay 5792209 interval: 1791709
+[   75.160169] rkisp1: Consti10: ISP_FRAME_VS 35: 75156553450
+[   75.160185] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.160201] rkisp1: MIPI error: size: 0x40104004
+[   75.161883] rkisp1: Consti10: ISP_FRAME_IN 35: 75158251533
+[   75.161900] rkisp1: Consti10: ISP_FRAME_END 35: 75158285367
+[   75.161907] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.161914] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.161923] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.161947] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.161960] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75158342533 now2: 75158343992
+[   75.161972] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 30 buf_idx: 0 frame_timestamp: 75121581155 delay:36 ms
+[   75.161978] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 35
+[   75.161988] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75158 ms
+[   75.161999] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 35 buf_idx: 0 frame_timestamp: 75121581155 delay:36 ms
+[   75.162008] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 31 buf_idx: 0 frame_timestamp: 75128455739 delay:29 ms
+[   75.162014] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6874584 (ns)
+[   75.167004] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.167021] rkisp1: rkisp_trigger_read_back
+[   75.167033] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.167357] rkisp1: Consti10:rkisp_isp_isr: delay 5439001 interval: 1745333
+[   75.167373] rkisp1: Consti10: ISP_FRAME_VS 36: 75163757034
+[   75.167388] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.168971] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.168990] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75165370242 now2: 75165372284
+[   75.169001] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 31 buf_idx: 0 frame_timestamp: 75128455739 delay:36 ms
+[   75.169007] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.169016] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75165 ms
+[   75.169026] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 36 buf_idx: 0 frame_timestamp: 75128455739 delay:36 ms
+[   75.169042] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 33 buf_idx: 0 frame_timestamp: 75136152239 delay:29 ms
+[   75.169051] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7696500 (ns)
+[   75.169128] rkisp1: Consti10: ISP_FRAME_IN 36: 75165512284
+[   75.169138] rkisp1: Consti10: ISP_FRAME_END 36: 75165523951
+[   75.169145] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.169152] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.169162] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 36
+[   75.174789] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.174806] rkisp1: rkisp_trigger_read_back
+[   75.174817] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 37
+[   75.175161] rkisp1: Consti10:rkisp_isp_isr: delay 6010959 interval: 1799583
+[   75.175174] rkisp1: Consti10: ISP_FRAME_VS 37: 75171556201
+[   75.175188] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 37
+[   75.175204] rkisp1: MIPI error: size: 0x40104004
+[   75.177139] rkisp1: Consti10: ISP_FRAME_IN 37: 75173507743
+[   75.177158] rkisp1: Consti10: ISP_FRAME_END 37: 75173543618
+[   75.177166] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.177174] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.177184] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.177259] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.177273] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75173655618 now2: 75173657077
+[   75.177298] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 33 buf_idx: 0 frame_timestamp: 75136152239 delay:37 ms
+[   75.177309] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.177329] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75173 ms
+[   75.177345] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75136152239 delay:37 ms
+[   75.177360] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75143738782 delay:29 ms
+[   75.177368] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7586543 (ns)
+[   75.181810] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.181825] rkisp1: rkisp_trigger_read_back
+[   75.181836] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.182123] rkisp1: Consti10:rkisp_isp_isr: delay 4964459 interval: 2009000
+[   75.182132] rkisp1: Consti10: ISP_FRAME_VS 38: 75178517410
+[   75.182144] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.183759] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.183779] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75180158036 now2: 75180159202
+[   75.183790] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75143738782 delay:36 ms
+[   75.183797] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.183805] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75180 ms
+[   75.183816] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75143738782 delay:36 ms
+[   75.183826] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75150661783 delay:29 ms
+[   75.183833] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6923001 (ns)
+[   75.183923] rkisp1: Consti10: ISP_FRAME_IN 38: 75180303286
+[   75.183935] rkisp1: Consti10: ISP_FRAME_END 38: 75180320494
+[   75.183943] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.183950] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.183960] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 38
+[   75.189221] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.189236] rkisp1: rkisp_trigger_read_back
+[   75.189248] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.189548] rkisp1: Consti10:rkisp_isp_isr: delay 5608459 interval: 1812125
+[   75.189559] rkisp1: Consti10: ISP_FRAME_VS 39: 75185942953
+[   75.189575] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.189592] rkisp1: MIPI error: size: 0x40104004
+[   75.191201] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.191223] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75187603703 now2: 75187604870
+[   75.191235] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 34 buf_idx: 0 frame_timestamp: 75150661783 delay:36 ms
+[   75.191242] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.191250] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75187 ms
+[   75.191261] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 39 buf_idx: 0 frame_timestamp: 75150661783 delay:36 ms
+[   75.191271] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 35 buf_idx: 0 frame_timestamp: 75158407867 delay:29 ms
+[   75.191277] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7746084 (ns)
+[   75.191360] rkisp1: Consti10: ISP_FRAME_IN 39: 75187744870
+[   75.191369] rkisp1: Consti10: ISP_FRAME_END 39: 75187755370
+[   75.191375] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.191389] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.191398] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 39
+[   75.196634] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.196653] rkisp1: rkisp_trigger_read_back
+[   75.196666] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.197057] rkisp1: Consti10:rkisp_isp_isr: delay 5672334 interval: 1827000
+[   75.197073] rkisp1: Consti10: ISP_FRAME_VS 40: 75193455995
+[   75.197087] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.198603] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.198624] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75195004745 now2: 75195005912
+[   75.198636] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 35 buf_idx: 0 frame_timestamp: 75158407867 delay:36 ms
+[   75.198642] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.198650] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75195 ms
+[   75.198660] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 40 buf_idx: 0 frame_timestamp: 75158407867 delay:36 ms
+[   75.198671] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 36 buf_idx: 0 frame_timestamp: 75165444326 delay:29 ms
+[   75.198678] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7036459 (ns)
+[   75.198781] rkisp1: Consti10: ISP_FRAME_IN 40: 75195156995
+[   75.198795] rkisp1: Consti10: ISP_FRAME_END 40: 75195180912
+[   75.198802] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.198810] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.198820] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 40
+[   75.204061] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.204077] rkisp1: rkisp_trigger_read_back
+[   75.204088] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.204377] rkisp1: Consti10:rkisp_isp_isr: delay 5580167 interval: 1752334
+[   75.204385] rkisp1: Consti10: ISP_FRAME_VS 41: 75200770704
+[   75.204398] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.204413] rkisp1: MIPI error: size: 0x40104004
+[   75.206023] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.206042] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75202423579 now2: 75202424746
+[   75.206054] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 36 buf_idx: 0 frame_timestamp: 75165444326 delay:36 ms
+[   75.206060] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.206068] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75202 ms
+[   75.206079] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 41 buf_idx: 0 frame_timestamp: 75165444326 delay:36 ms
+[   75.206089] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75173761785 delay:28 ms
+[   75.206096] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8317459 (ns)
+[   75.206197] rkisp1: Consti10: ISP_FRAME_IN 41: 75202575829
+[   75.206208] rkisp1: Consti10: ISP_FRAME_END 41: 75202594496
+[   75.206216] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.206223] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.206232] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 41
+[   75.211456] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.211471] rkisp1: rkisp_trigger_read_back
+[   75.211486] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.211866] rkisp1: Consti10:rkisp_isp_isr: delay 5645793 interval: 1833708
+[   75.211878] rkisp1: Consti10: ISP_FRAME_VS 42: 75208261288
+[   75.211891] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.211906] rkisp1: MIPI error: size: 0x40104004
+[   75.213417] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.213436] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75209816455 now2: 75209817914
+[   75.213450] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75173761785 delay:36 ms
+[   75.213457] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.213466] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75209 ms
+[   75.213476] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 42 buf_idx: 0 frame_timestamp: 75173761785 delay:36 ms
+[   75.213487] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75180225994 delay:29 ms
+[   75.213493] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6464209 (ns)
+[   75.213588] rkisp1: Consti10: ISP_FRAME_IN 42: 75209965497
+[   75.213600] rkisp1: Consti10: ISP_FRAME_END 42: 75209985039
+[   75.213608] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.213615] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.213627] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 42
+[   75.219223] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.219241] rkisp1: rkisp_trigger_read_back
+[   75.219252] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 43
+[   75.219601] rkisp1: Consti10:rkisp_isp_isr: delay 5988792 interval: 1745042
+[   75.219631] rkisp1: Consti10: ISP_FRAME_VS 43: 75216016414
+[   75.219662] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 43
+[   75.219694] rkisp1: MIPI error: size: 0x40104004
+[   75.221192] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.221210] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75217591706 now2: 75217592873
+[   75.221222] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 38 buf_idx: 0 frame_timestamp: 75180225994 delay:37 ms
+[   75.221228] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.221237] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75217 ms
+[   75.221248] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75180225994 delay:37 ms
+[   75.221258] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 39 buf_idx: 0 frame_timestamp: 75187670786 delay:29 ms
+[   75.221265] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7444792 (ns)
+[   75.221394] rkisp1: Consti10: ISP_FRAME_IN 43: 75217769039
+[   75.221407] rkisp1: Consti10: ISP_FRAME_END 43: 75217792664
+[   75.221414] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.221422] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.221431] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.226262] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.226276] rkisp1: rkisp_trigger_read_back
+[   75.226288] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.226580] rkisp1: Consti10:rkisp_isp_isr: delay 5171543 interval: 1818833
+[   75.226588] rkisp1: Consti10: ISP_FRAME_VS 44: 75222973832
+[   75.226600] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.226614] rkisp1: MIPI error: size: 0x40104004
+[   75.228712] rkisp1: Consti10: ISP_FRAME_IN 44: 75225080248
+[   75.228730] rkisp1: Consti10: ISP_FRAME_END 44: 75225115540
+[   75.228737] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.228744] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.228753] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.228800] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.228823] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75225206248 now2: 75225207707
+[   75.228839] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 39 buf_idx: 0 frame_timestamp: 75187670786 delay:37 ms
+[   75.228850] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 44
+[   75.228863] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75225 ms
+[   75.228878] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75187670786 delay:37 ms
+[   75.228893] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 40 buf_idx: 0 frame_timestamp: 75195071245 delay:30 ms
+[   75.228904] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7400459 (ns)
+[   75.233674] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.233690] rkisp1: rkisp_trigger_read_back
+[   75.233701] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.234014] rkisp1: Consti10:rkisp_isp_isr: delay 5282084 interval: 2151041
+[   75.234035] rkisp1: Consti10: ISP_FRAME_VS 45: 75230420374
+[   75.234053] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.234077] rkisp1: MIPI error: size: 0x40104004
+[   75.235651] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.235670] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75232051082 now2: 75232052249
+[   75.235682] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 40 buf_idx: 0 frame_timestamp: 75195071245 delay:36 ms
+[   75.235688] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.235696] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75232 ms
+[   75.235707] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 45 buf_idx: 0 frame_timestamp: 75195071245 delay:36 ms
+[   75.235717] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 41 buf_idx: 0 frame_timestamp: 75202489496 delay:29 ms
+[   75.235724] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7418251 (ns)
+[   75.235808] rkisp1: Consti10: ISP_FRAME_IN 45: 75232190207
+[   75.235819] rkisp1: Consti10: ISP_FRAME_END 45: 75232205374
+[   75.235827] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.235834] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.235844] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 45
+[   75.241535] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.241551] rkisp1: rkisp_trigger_read_back
+[   75.241562] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 46
+[   75.241928] rkisp1: Consti10:rkisp_isp_isr: delay 6088834 interval: 1808042
+[   75.241964] rkisp1: Consti10: ISP_FRAME_VS 46: 75238348458
+[   75.241985] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 46
+[   75.242011] rkisp1: MIPI error: size: 0x40104004
+[   75.243490] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.243508] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75239890208 now2: 75239891375
+[   75.243520] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 41 buf_idx: 0 frame_timestamp: 75202489496 delay:37 ms
+[   75.243526] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.243535] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75239 ms
+[   75.243546] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 47 buf_idx: 0 frame_timestamp: 75202489496 delay:37 ms
+[   75.243556] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 42 buf_idx: 0 frame_timestamp: 75209887330 delay:30 ms
+[   75.243562] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7397834 (ns)
+[   75.243672] rkisp1: Consti10: ISP_FRAME_IN 46: 75240055583
+[   75.243682] rkisp1: Consti10: ISP_FRAME_END 46: 75240068125
+[   75.243688] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.243695] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.243704] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.249344] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.249361] rkisp1: rkisp_trigger_read_back
+[   75.249372] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.249689] rkisp1: Consti10:rkisp_isp_isr: delay 6002501 interval: 1773917
+[   75.249697] rkisp1: Consti10: ISP_FRAME_VS 47: 75246082876
+[   75.249712] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 47
+[   75.249729] rkisp1: MIPI error: size: 0x40104004
+[   75.251346] rkisp1: Consti10: ISP_FRAME_IN 47: 75247710959
+[   75.251364] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251385] rkisp1: Consti10: ISP_FRAME_END 47: 75247770459
+[   75.251391] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251399] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251408] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251425] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251436] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75247819167 now2: 75247820334
+[   75.251446] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 42 buf_idx: 0 frame_timestamp: 75209887330 delay:37 ms
+[   75.251455] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.251468] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75247 ms
+[   75.251479] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 48 buf_idx: 0 frame_timestamp: 75209887330 delay:37 ms
+[   75.251494] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75217658206 delay:30 ms
+[   75.251504] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7770876 (ns)
+[   75.255892] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.255908] rkisp1: rkisp_trigger_read_back
+[   75.255919] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.256240] rkisp1: Consti10:rkisp_isp_isr: delay 4838168 interval: 1699541
+[   75.256256] rkisp1: Consti10: ISP_FRAME_VS 48: 75252640710
+[   75.256270] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.256286] rkisp1: MIPI error: size: 0x40104004
+[   75.257855] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.257873] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75254254210 now2: 75254255376
+[   75.257884] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75217658206 delay:36 ms
+[   75.257890] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.257899] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75254 ms
+[   75.257909] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 48 buf_idx: 0 frame_timestamp: 75217658206 delay:36 ms
+[   75.257919] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75225303082 delay:28 ms
+[   75.257926] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7644876 (ns)
+[   75.257995] rkisp1: Consti10: ISP_FRAME_IN 48: 75254379335
+[   75.258004] rkisp1: Consti10: ISP_FRAME_END 48: 75254390418
+[   75.258010] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.258017] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.258026] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 48
+[   75.263509] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.263525] rkisp1: rkisp_trigger_read_back
+[   75.263537] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.263900] rkisp1: Consti10:rkisp_isp_isr: delay 5876792 interval: 1782083
+[   75.263915] rkisp1: Consti10: ISP_FRAME_VS 49: 75260299294
+[   75.263931] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.263965] rkisp1: MIPI error: size: 0x40104004
+[   75.265515] rkisp1: Consti10: ISP_FRAME_IN 49: 75261883919
+[   75.265531] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265579] rkisp1: Consti10: ISP_FRAME_END 49: 75261963835
+[   75.265597] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265609] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265626] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265649] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265659] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75262042585 now2: 75262043752
+[   75.265670] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 44 buf_idx: 0 frame_timestamp: 75225303082 delay:36 ms
+[   75.265676] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 49
+[   75.265684] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75262 ms
+[   75.265695] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 49 buf_idx: 0 frame_timestamp: 75225303082 delay:36 ms
+[   75.265705] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 45 buf_idx: 0 frame_timestamp: 75232117291 delay:29 ms
+[   75.265711] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 6814209 (ns)
+[   75.270912] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.270928] rkisp1: rkisp_trigger_read_back
+[   75.270939] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 50
+[   75.271250] rkisp1: Consti10:rkisp_isp_isr: delay 5666793 interval: 1696625
+[   75.271273] rkisp1: Consti10: ISP_FRAME_VS 50: 75267657169
+[   75.271291] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 50
+[   75.271318] rkisp1: MIPI error: size: 0x40104004
+[   75.272870] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.272889] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75269269795 now2: 75269270961
+[   75.272901] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 45 buf_idx: 0 frame_timestamp: 75232117291 delay:37 ms
+[   75.272907] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.272915] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75269 ms
+[   75.272926] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 51 buf_idx: 0 frame_timestamp: 75232117291 delay:37 ms
+[   75.272936] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 47 buf_idx: 0 frame_timestamp: 75239955833 delay:29 ms
+[   75.272942] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7838542 (ns)
+[   75.273039] rkisp1: Consti10: ISP_FRAME_IN 50: 75269423503
+[   75.273049] rkisp1: Consti10: ISP_FRAME_END 50: 75269434878
+[   75.273055] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.273062] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.273078] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.278125] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.278140] rkisp1: rkisp_trigger_read_back
+[   75.278152] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.278460] rkisp1: Consti10:rkisp_isp_isr: delay 5403708 interval: 1804542
+[   75.278471] rkisp1: Consti10: ISP_FRAME_VS 51: 75274855795
+[   75.278485] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.278506] rkisp1: MIPI error: size: 0x40104004
+[   75.280086] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.280103] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 75276485045 now2: 75276486212
+[   75.280115] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 47 buf_idx: 0 frame_timestamp: 75239955833 delay:36 ms
+[   75.280125] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.280137] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 0 sof_ts:0 delay now-ts:75276 ms
+[   75.280147] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 51 buf_idx: 0 frame_timestamp: 75239955833 delay:36 ms
+[   75.280157] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 48 buf_idx: 0 frame_timestamp: 75247897334 delay:28 ms
+[   75.280164] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7941501 (ns)
+[   75.280248] rkisp1: Consti10: ISP_FRAME_IN 51: 75276628545
+[   75.280262] rkisp1: Consti10: ISP_FRAME_END 51: 75276647212
+[   75.280271] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.280279] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.280289] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 51
+[   75.284932] rkisp-bridge-ispp: bridge_s_stream 0
+[   75.285532] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[   75.285545] rkisp1: rkisp_trigger_read_back
+[   75.285556] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.285854] rkisp1: Consti10:rkisp_isp_isr: delay 5590959 interval: 1808334
+[   75.285862] rkisp1: Consti10: ISP_FRAME_VS 52: 75282247504
+[   75.285875] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.287523] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.287554] rkisp1: Consti10: ISP_FRAME_IN 52: 75283935963
+[   75.287563] rkisp1: Consti10: ISP_FRAME_END 52: 75283949379
+[   75.287570] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.287577] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.287585] rkisp1: Consti10:rkisp_dmarx_get_frame-return early 52
+[   75.287686] imx415 1-0010: s_stream: OFF 1284x720, hdr: 0, bpp: 10
+[   75.287906] rockchip-mipi-dphy-rx ff4b8000.csi-dphy: stream on:0
+[   75.289025] rkisp1: SP streaming = 0, MP streaming = 0
+[   75.289049] rkisp1: streaming(MP:0, SP:0), MI_CTRL:80380000, ISP_CTRL:80446106, MIPI_CTRL:a0820401
+[   75.289102] rkisp1: free_bridge_buf
+[   75.289112] rkisp1: rkisp_free_buffer buf:0x5dc08000~0x5e865000
+[   75.289122] rkisp1: rkisp_free_buffer buf:0x5e865000~0x5e8e5000
+[   75.289130] rkisp1: rkisp_free_buffer buf:0x5e8e5000~0x5f542000
+[   75.289138] rkisp1: rkisp_free_buffer buf:0x5f542000~0x5f5c2000
+[   75.289145] rkisp1: rkisp_free_buffer buf:0x5f5c2000~0x6021f000
+[   75.289153] rkisp1: rkisp_free_buffer buf:0x6021f000~0x6029f000
+[   75.289161] rkisp1: rkisp_free_buffer buf:0x6029f000~0x60efc000
+[   75.289168] rkisp1: rkisp_free_buffer buf:0x60efc000~0x60f7c000
+[   75.289176] rkisp1: rkisp_free_buffer buf:0x60f7c000~0x61bd9000
+[   75.289183] rkisp1: rkisp_free_buffer buf:0x61bd9000~0x61c59000
+[   75.289192] rkisp1: rkisp_free_buffer buf:0x61c59000~0x61d94000
+[   75.289213] rkisp1: rkisp_free_buffer buf:0x6200a000~0x62145000
+[   75.289224] rkisp1: rkisp_free_buffer buf:0x61ecf000~0x6200a000
+[   75.289234] rkisp1: rkisp_free_buffer buf:0x61d94000~0x61ecf000
+[   75.357214] rkisp-bridge-ispp: bridge_s_power 0
+[   75.357347] rkisp1: rkisp_isp_sd_s_power on:0

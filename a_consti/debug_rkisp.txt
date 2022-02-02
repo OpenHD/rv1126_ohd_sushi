@@ -1,0 +1,1070 @@
+// taken with imx415 on CSI1, 1080p 90fps
+
+[  413.853539] rkisp1: readback frame:345 time:1 0xa0820401
+...
+[  413.853587] rkisp1: Consti10: ISP_FRAME_VS 345: 413850414854 | +48
+..
+[  413.857697] rkisp1: Consti10: ISP_FRAME_IN 345: 413854522980  | +4110
+[  413.857706] rkisp1: Consti10: ISP_FRAME_END 345: 413854535521 | +8
+
+
+
+--
+
+413854626521-413854522980
+
+
+(413857697-(413854522980/1000)) / 1000 / 1000=3.17
+
+
+
+
+[root@RV1126_RV1109:/sys/module/video_rkisp/parameters]# dmesg
+[  413.853264] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  413.853539] rkisp1: readback frame:345 time:1 0xa0820401
+[  413.853577] rkisp1: isp isr:0x40, 0x0
+[  413.853587] rkisp1: Consti10: ISP_FRAME_VS 345: 413850414854
+[  413.853601] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  413.853621] rkisp1: csi state:0x40104004
+[  413.853628] rkisp1: MIPI error: size: 0x40104004
+[  413.856368] rkisp1: csi state:0x40000000
+[  413.857675] rkisp1: isp isr:0x22, 0x0
+[  413.857697] rkisp1: Consti10: ISP_FRAME_IN 345: 413854522980
+[  413.857706] rkisp1: Consti10: ISP_FRAME_END 345: 413854535521
+[  413.857721] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.857729] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.857765] rkisp1: mi isr:0x80000000
+[  413.857790] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413854ms
+[  413.857797] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413854626521
+[  413.857816] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413798562932 delay:56 ms
+[  413.857829] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413809740475 delay:44 ms
+[  413.857890] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.857913] rkisp1: csi state:0x1000040
+[  413.859027] rkisp1: csi state:0x40000000
+[  413.861626] rkisp1: csi state:0x40000000
+[  413.865161] rkisp1: mi isr:0x40000
+[  413.865186] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  413.865463] rkisp1: readback frame:346 time:1 0xa0820401
+[  413.865482] rkisp1: isp isr:0x40, 0x0
+[  413.865492] rkisp1: Consti10: ISP_FRAME_VS 346: 413862320106
+[  413.865505] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  413.865522] rkisp1: csi state:0x40104004
+[  413.865529] rkisp1: MIPI error: size: 0x40104004
+[  413.867442] rkisp1: csi state:0x40000000
+[  413.869199] rkisp1: csi state:0x1000040
+[  413.869226] rkisp1: isp isr:0x20, 0x0
+[  413.869238] rkisp1: Consti10: ISP_FRAME_IN 346: 413866064523
+[  413.869250] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.869260] rkisp1: isp isr:0x2, 0x0
+[  413.869268] rkisp1: Consti10: ISP_FRAME_END 346: 413866097481
+[  413.869281] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.869291] rkisp1: mi isr:0x80000000
+[  413.869308] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413866ms
+[  413.869317] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413866147064
+[  413.869326] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413809740475 delay:56 ms
+[  413.869335] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413821660893 delay:44 ms
+[  413.869394] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.870083] rkisp1: csi state:0x40000000
+[  413.872781] rkisp1: csi state:0x40000000
+[  413.875457] rkisp1: mi isr:0x40000
+[  413.875482] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  413.875758] rkisp1: readback frame:347 time:1 0xa0820401
+[  413.875779] rkisp1: isp isr:0x40, 0x0
+[  413.875789] rkisp1: Consti10: ISP_FRAME_VS 347: 413872616815
+[  413.875803] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  413.875821] rkisp1: csi state:0x40100004
+[  413.879344] rkisp1: csi state:0x40000000
+[  413.879477] rkisp1: csi state:0x8000040
+[  413.879497] rkisp1: isp isr:0x20, 0x0
+[  413.879508] rkisp1: Consti10: ISP_FRAME_IN 347: 413876334399
+[  413.879519] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.879531] rkisp1: mi isr:0x80000000
+[  413.879544] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413876ms
+[  413.879551] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413876380774
+[  413.879560] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413821660893 delay:54 ms
+[  413.879568] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413831952353 delay:44 ms
+[  413.879631] rkisp1: rkisp_check_idle irq:0x20 ends:0x22 mask:0x23
+[  413.879644] rkisp1: isp isr:0x2, 0x0
+[  413.879653] rkisp1: Consti10: ISP_FRAME_END 347: 413876481399
+[  413.879667] rkisp1: rkisp_check_idle irq:0x1 ends:0x23 mask:0x23
+[  413.881190] rkisp1: csi state:0x40000000
+[  413.883844] rkisp1: csi state:0x40000000
+[  413.886524] rkisp1: mi isr:0x40000
+[  413.886550] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  413.886847] rkisp1: readback frame:348 time:1 0xa0820401
+[  413.886872] rkisp1: isp isr:0x40, 0x0
+[  413.886882] rkisp1: Consti10: ISP_FRAME_VS 348: 413883709774
+[  413.886896] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  413.886919] rkisp1: csi state:0x40100004
+[  413.889636] rkisp1: csi state:0x40000000
+[  413.890589] rkisp1: csi state:0x1000040
+[  413.890611] rkisp1: isp isr:0x20, 0x0
+[  413.890622] rkisp1: Consti10: ISP_FRAME_IN 348: 413887448650
+[  413.890635] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.890645] rkisp1: isp isr:0x2, 0x0
+[  413.890654] rkisp1: Consti10: ISP_FRAME_END 348: 413887483066
+[  413.890666] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.890678] rkisp1: mi isr:0x80000000
+[  413.890691] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413887ms
+[  413.890698] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413887527691
+[  413.890706] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413831952353 delay:55 ms
+[  413.890715] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413843118229 delay:44 ms
+[  413.890778] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.892313] rkisp1: csi state:0x40000000
+[  413.894980] rkisp1: csi state:0x40000000
+[  413.897630] rkisp1: mi isr:0x40000
+[  413.897656] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  413.897938] rkisp1: readback frame:349 time:1 0xa0820401
+[  413.898012] rkisp1: isp isr:0x40, 0x0
+[  413.898023] rkisp1: Consti10: ISP_FRAME_VS 349: 413894850859
+[  413.898057] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  413.898086] rkisp1: csi state:0x40104004
+[  413.898097] rkisp1: MIPI error: size: 0x40104004
+[  413.901482] rkisp1: csi state:0x40000000
+[  413.901661] rkisp1: csi state:0x1000040
+[  413.901676] rkisp1: isp isr:0x20, 0x0
+[  413.901687] rkisp1: Consti10: ISP_FRAME_IN 349: 413898513901
+[  413.901698] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.901709] rkisp1: mi isr:0x80000000
+[  413.901722] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413898ms
+[  413.901729] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413898559109
+[  413.901737] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413843118229 delay:55 ms
+[  413.901746] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413854669396 delay:43 ms
+[  413.901808] rkisp1: rkisp_check_idle irq:0x20 ends:0x22 mask:0x23
+[  413.901822] rkisp1: isp isr:0x2, 0x0
+[  413.901831] rkisp1: Consti10: ISP_FRAME_END 349: 413898659734
+[  413.901847] rkisp1: rkisp_check_idle irq:0x1 ends:0x23 mask:0x23
+[  413.903417] rkisp1: csi state:0x40000000
+[  413.906063] rkisp1: csi state:0x40000000
+[  413.908764] rkisp1: mi isr:0x40000
+[  413.908788] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  413.909064] rkisp1: readback frame:350 time:1 0xa0820401
+[  413.909084] rkisp1: isp isr:0x40, 0x0
+[  413.909094] rkisp1: Consti10: ISP_FRAME_VS 350: 413905921943
+[  413.909108] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  413.909126] rkisp1: csi state:0x40104004
+[  413.909133] rkisp1: MIPI error: size: 0x40104004
+[  413.911866] rkisp1: csi state:0x40000000
+[  413.912790] rkisp1: csi state:0x8000040
+[  413.912824] rkisp1: isp isr:0x20, 0x0
+[  413.912836] rkisp1: Consti10: ISP_FRAME_IN 350: 413909661402
+[  413.912848] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.912864] rkisp1: isp isr:0x2, 0x0
+[  413.912872] rkisp1: Consti10: ISP_FRAME_END 350: 413909701069
+[  413.912885] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.912896] rkisp1: mi isr:0x80000000
+[  413.912909] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413909ms
+[  413.912916] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413909745985
+[  413.912925] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413854669396 delay:55 ms
+[  413.912933] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413866171273 delay:43 ms
+[  413.912989] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.914529] rkisp1: csi state:0x40000000
+[  413.917174] rkisp1: csi state:0x40000000
+[  413.919859] rkisp1: mi isr:0x40000
+[  413.919888] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  413.920189] rkisp1: readback frame:351 time:1 0xa0820401
+[  413.920224] rkisp1: isp isr:0x40, 0x0
+[  413.920235] rkisp1: Consti10: ISP_FRAME_VS 351: 413917062153
+[  413.920249] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  413.920275] rkisp1: csi state:0x40104004
+[  413.920282] rkisp1: MIPI error: size: 0x40104004
+[  413.922975] rkisp1: csi state:0x40000000
+[  413.923923] rkisp1: csi state:0x1000040
+[  413.923948] rkisp1: isp isr:0x20, 0x0
+[  413.923960] rkisp1: Consti10: ISP_FRAME_IN 351: 413920786153
+[  413.923973] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.923983] rkisp1: isp isr:0x2, 0x0
+[  413.924007] rkisp1: Consti10: ISP_FRAME_END 351: 413920831361
+[  413.924027] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.924043] rkisp1: mi isr:0x80000000
+[  413.924061] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413920ms
+[  413.924072] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413920901945
+[  413.924086] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413866171273 delay:54 ms
+[  413.924095] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413876404982 delay:44 ms
+[  413.924160] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.925637] rkisp1: csi state:0x40000000
+[  413.928298] rkisp1: csi state:0x40000000
+[  413.931742] rkisp1: mi isr:0x40000
+[  413.931769] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  413.932067] rkisp1: readback frame:352 time:1 0xa0820401
+[  413.932107] rkisp1: isp isr:0x40, 0x0
+[  413.932119] rkisp1: Consti10: ISP_FRAME_VS 352: 413928946112
+[  413.932133] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  413.932156] rkisp1: csi state:0x40104004
+[  413.932163] rkisp1: MIPI error: size: 0x40104004
+[  413.934093] rkisp1: csi state:0x40000000
+[  413.935810] rkisp1: csi state:0x1000040
+[  413.935838] rkisp1: isp isr:0x20, 0x0
+[  413.935851] rkisp1: Consti10: ISP_FRAME_IN 352: 413932676821
+[  413.935863] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.935873] rkisp1: isp isr:0x2, 0x0
+[  413.935882] rkisp1: Consti10: ISP_FRAME_END 352: 413932710654
+[  413.935894] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.935905] rkisp1: mi isr:0x80000000
+[  413.935918] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413932ms
+[  413.935925] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413932754988
+[  413.935934] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413876404982 delay:56 ms
+[  413.935942] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413887551316 delay:45 ms
+[  413.936003] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.936748] rkisp1: csi state:0x40000000
+[  413.939401] rkisp1: csi state:0x40000000
+[  413.942146] rkisp1: mi isr:0x40000
+[  413.942171] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  413.942446] rkisp1: readback frame:353 time:1 0xa0820401
+[  413.942467] rkisp1: isp isr:0x40, 0x0
+[  413.942476] rkisp1: Consti10: ISP_FRAME_VS 353: 413939304363
+[  413.942490] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  413.942508] rkisp1: csi state:0x40104004
+[  413.942514] rkisp1: MIPI error: size: 0x40104004
+[  413.945194] rkisp1: csi state:0x40000000
+[  413.946177] rkisp1: csi state:0x8000040
+[  413.946192] rkisp1: isp isr:0x20, 0x0
+[  413.946203] rkisp1: Consti10: ISP_FRAME_IN 353: 413943029822
+[  413.946215] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.946227] rkisp1: mi isr:0x80000000
+[  413.946240] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413943ms
+[  413.946247] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413943077072
+[  413.946256] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413887551316 delay:55 ms
+[  413.946264] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413898582151 delay:44 ms
+[  413.946320] rkisp1: rkisp_check_idle irq:0x20 ends:0x22 mask:0x23
+[  413.946333] rkisp1: isp isr:0x2, 0x0
+[  413.946343] rkisp1: Consti10: ISP_FRAME_END 353: 413943171572
+[  413.946357] rkisp1: rkisp_check_idle irq:0x1 ends:0x23 mask:0x23
+[  413.947857] rkisp1: csi state:0x40000000
+[  413.951063] rkisp1: csi state:0x40000000
+[  413.953219] rkisp1: mi isr:0x40000
+[  413.953244] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  413.953526] rkisp1: readback frame:354 time:1 0xa0820401
+[  413.953549] rkisp1: isp isr:0x40, 0x0
+[  413.953561] rkisp1: Consti10: ISP_FRAME_VS 354: 413950388864
+[  413.953574] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  413.953593] rkisp1: csi state:0x40104004
+[  413.953601] rkisp1: MIPI error: size: 0x40104004
+[  413.956306] rkisp1: csi state:0x40000000
+[  413.957251] rkisp1: csi state:0x1000040
+[  413.957271] rkisp1: isp isr:0x20, 0x0
+[  413.957286] rkisp1: Consti10: ISP_FRAME_IN 354: 413954109073
+[  413.957300] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.957312] rkisp1: isp isr:0x2, 0x0
+[  413.957321] rkisp1: Consti10: ISP_FRAME_END 354: 413954150198
+[  413.957334] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.957346] rkisp1: mi isr:0x80000000
+[  413.957360] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413954ms
+[  413.957368] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413954197740
+[  413.957377] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413898582151 delay:55 ms
+[  413.957386] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413909769902 delay:44 ms
+[  413.957465] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.958964] rkisp1: csi state:0x40000000
+[  413.961621] rkisp1: csi state:0x40000000
+[  413.964272] rkisp1: mi isr:0x40000
+[  413.964299] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  413.964596] rkisp1: readback frame:355 time:1 0xa0820401
+[  413.964665] rkisp1: isp isr:0x40, 0x0
+[  413.964678] rkisp1: Consti10: ISP_FRAME_VS 355: 413961504282
+[  413.964692] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  413.964716] rkisp1: csi state:0x40104004
+[  413.964723] rkisp1: MIPI error: size: 0x40104004
+[  413.967415] rkisp1: csi state:0x40000000
+[  413.968338] rkisp1: csi state:0x1000040
+[  413.968362] rkisp1: isp isr:0x20, 0x0
+[  413.968374] rkisp1: Consti10: ISP_FRAME_IN 355: 413965200283
+[  413.968386] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.968397] rkisp1: isp isr:0x2, 0x0
+[  413.968405] rkisp1: Consti10: ISP_FRAME_END 355: 413965234116
+[  413.968422] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.968460] rkisp1: mi isr:0x80000000
+[  413.968474] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413965ms
+[  413.968481] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413965310241
+[  413.968490] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413909769902 delay:55 ms
+[  413.968498] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413920931695 delay:44 ms
+[  413.968562] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.970071] rkisp1: csi state:0x40000000
+[  413.972724] rkisp1: csi state:0x40000000
+[  413.975367] rkisp1: mi isr:0x40000
+[  413.975391] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  413.975666] rkisp1: readback frame:356 time:1 0xa0820401
+[  413.975687] rkisp1: isp isr:0x40, 0x0
+[  413.975697] rkisp1: Consti10: ISP_FRAME_VS 356: 413972524617
+[  413.975710] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  413.975728] rkisp1: csi state:0x40104004
+[  413.975734] rkisp1: MIPI error: size: 0x40104004
+[  413.978547] rkisp1: csi state:0x40000000
+[  413.979402] rkisp1: csi state:0x8000040
+[  413.979429] rkisp1: isp isr:0x20, 0x0
+[  413.979441] rkisp1: Consti10: ISP_FRAME_IN 356: 413976266992
+[  413.979454] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.979465] rkisp1: isp isr:0x2, 0x0
+[  413.979474] rkisp1: Consti10: ISP_FRAME_END 356: 413976302284
+[  413.979486] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.979498] rkisp1: mi isr:0x80000000
+[  413.979511] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413976ms
+[  413.979518] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413976347492
+[  413.979526] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413920931695 delay:55 ms
+[  413.979535] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413932778321 delay:43 ms
+[  413.979594] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.981186] rkisp1: csi state:0x40000000
+[  413.983831] rkisp1: csi state:0x40000000
+[  413.986483] rkisp1: mi isr:0x40000
+[  413.986505] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  413.986780] rkisp1: readback frame:357 time:1 0xa0820401
+[  413.986861] rkisp1: isp isr:0x40, 0x0
+[  413.986873] rkisp1: Consti10: ISP_FRAME_VS 357: 413983699826
+[  413.986889] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  413.986910] rkisp1: csi state:0x40104004
+[  413.986916] rkisp1: MIPI error: size: 0x40104004
+[  413.989638] rkisp1: csi state:0x40000000
+[  413.990523] rkisp1: csi state:0x1000040
+[  413.990593] rkisp1: isp isr:0x22, 0x0
+[  413.990608] rkisp1: Consti10: ISP_FRAME_IN 357: 413987433160
+[  413.990617] rkisp1: Consti10: ISP_FRAME_END 357: 413987446285
+[  413.990634] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  413.990642] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  413.990657] rkisp1: mi isr:0x80000000
+[  413.990671] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413987ms
+[  413.990677] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413987506951
+[  413.990686] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413932778321 delay:54 ms
+[  413.990694] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413943100114 delay:44 ms
+[  413.990759] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  413.992296] rkisp1: csi state:0x40000000
+[  413.994946] rkisp1: csi state:0x40000000
+[  413.997594] rkisp1: mi isr:0x40000
+[  413.997619] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  413.997893] rkisp1: readback frame:358 time:1 0xa0820401
+[  413.997912] rkisp1: isp isr:0x40, 0x0
+[  413.997922] rkisp1: Consti10: ISP_FRAME_VS 358: 413994750202
+[  413.997936] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  413.997954] rkisp1: csi state:0x40104004
+[  413.997960] rkisp1: MIPI error: size: 0x40104004
+[  414.000747] rkisp1: csi state:0x40000000
+[  414.001619] rkisp1: csi state:0x1000040
+[  414.001645] rkisp1: isp isr:0x20, 0x0
+[  414.001657] rkisp1: Consti10: ISP_FRAME_IN 358: 413998483244
+[  414.001672] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.001685] rkisp1: isp isr:0x2, 0x0
+[  414.001694] rkisp1: Consti10: ISP_FRAME_END 358: 413998522328
+[  414.001706] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.001719] rkisp1: mi isr:0x80000000
+[  414.001732] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:413998ms
+[  414.001739] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 413998568703
+[  414.001748] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413943100114 delay:55 ms
+[  414.001757] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413954222823 delay:44 ms
+[  414.001824] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.003388] rkisp1: csi state:0x40000000
+[  414.006051] rkisp1: csi state:0x40000000
+[  414.008702] rkisp1: mi isr:0x40000
+[  414.008726] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.009002] rkisp1: readback frame:359 time:1 0xa0820401
+[  414.009022] rkisp1: isp isr:0x40, 0x0
+[  414.009033] rkisp1: Consti10: ISP_FRAME_VS 359: 414005860370
+[  414.009046] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.009064] rkisp1: csi state:0x40104004
+[  414.009071] rkisp1: MIPI error: size: 0x40104004
+[  414.011851] rkisp1: csi state:0x40000000
+[  414.012735] rkisp1: csi state:0x8000040
+[  414.012758] rkisp1: isp isr:0x20, 0x0
+[  414.012770] rkisp1: Consti10: ISP_FRAME_IN 359: 414009595745
+[  414.012782] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.012796] rkisp1: isp isr:0x2, 0x0
+[  414.012805] rkisp1: Consti10: ISP_FRAME_END 359: 414009633370
+[  414.012819] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.012834] rkisp1: mi isr:0x80000000
+[  414.012847] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414009ms
+[  414.012855] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414009684995
+[  414.012864] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413954222823 delay:55 ms
+[  414.012873] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413965334741 delay:44 ms
+[  414.012947] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.014522] rkisp1: csi state:0x40000000
+[  414.017153] rkisp1: csi state:0x40000000
+[  414.019941] rkisp1: mi isr:0x40000
+[  414.019964] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.020247] rkisp1: readback frame:360 time:1 0xa0820401
+[  414.020272] rkisp1: isp isr:0x40, 0x0
+[  414.020283] rkisp1: Consti10: ISP_FRAME_VS 360: 414017110246
+[  414.020298] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.020321] rkisp1: csi state:0x40100004
+[  414.022950] rkisp1: csi state:0x40000000
+[  414.023956] rkisp1: csi state:0x1000040
+[  414.023973] rkisp1: isp isr:0x20, 0x0
+[  414.023983] rkisp1: Consti10: ISP_FRAME_IN 360: 414020810913
+[  414.023994] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.024004] rkisp1: isp isr:0x2, 0x0
+[  414.024012] rkisp1: Consti10: ISP_FRAME_END 360: 414020840955
+[  414.024024] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.024034] rkisp1: mi isr:0x80000000
+[  414.024047] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414020ms
+[  414.024053] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414020883246
+[  414.024062] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413965334741 delay:55 ms
+[  414.024071] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413976371409 delay:44 ms
+[  414.024128] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.025616] rkisp1: csi state:0x40000000
+[  414.028269] rkisp1: csi state:0x40000000
+[  414.030922] rkisp1: mi isr:0x40000
+[  414.030946] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.031222] rkisp1: readback frame:361 time:1 0xa0820401
+[  414.031242] rkisp1: isp isr:0x40, 0x0
+[  414.031252] rkisp1: Consti10: ISP_FRAME_VS 361: 414028079831
+[  414.031266] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.031283] rkisp1: csi state:0x40100004
+[  414.034074] rkisp1: csi state:0x40000000
+[  414.034989] rkisp1: isp isr:0x20, 0x0
+[  414.035007] rkisp1: Consti10: ISP_FRAME_IN 361: 414031832414
+[  414.035026] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.035043] rkisp1: isp isr:0x2, 0x0
+[  414.035053] rkisp1: Consti10: ISP_FRAME_END 361: 414031880831
+[  414.035066] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.035077] rkisp1: mi isr:0x80000000
+[  414.035090] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414031ms
+[  414.035098] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414031927206
+[  414.035106] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413976371409 delay:55 ms
+[  414.035115] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413987530868 delay:44 ms
+[  414.035189] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.035219] rkisp1: csi state:0x1000040
+[  414.036735] rkisp1: csi state:0x40000000
+[  414.039380] rkisp1: csi state:0x40000000
+[  414.042046] rkisp1: mi isr:0x40000
+[  414.042072] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.042356] rkisp1: readback frame:362 time:1 0xa0820401
+[  414.042386] rkisp1: isp isr:0x40, 0x0
+[  414.042398] rkisp1: Consti10: ISP_FRAME_VS 362: 414039224998
+[  414.042412] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.042433] rkisp1: csi state:0x40104004
+[  414.042440] rkisp1: MIPI error: size: 0x40104004
+[  414.045181] rkisp1: csi state:0x40000000
+[  414.046097] rkisp1: csi state:0x8000040
+[  414.046125] rkisp1: isp isr:0x20, 0x0
+[  414.046138] rkisp1: Consti10: ISP_FRAME_IN 362: 414042964165
+[  414.046151] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.046166] rkisp1: isp isr:0x2, 0x0
+[  414.046175] rkisp1: Consti10: ISP_FRAME_END 362: 414043003832
+[  414.046188] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.046202] rkisp1: mi isr:0x80000000
+[  414.046216] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414043ms
+[  414.046223] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414043052832
+[  414.046232] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413987530868 delay:55 ms
+[  414.046242] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 413998593494 delay:44 ms
+[  414.046318] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.047860] rkisp1: csi state:0x40000000
+[  414.050490] rkisp1: csi state:0x40000000
+[  414.053140] rkisp1: mi isr:0x40000
+[  414.053165] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.053463] rkisp1: readback frame:363 time:1 0xa0820401
+[  414.053595] rkisp1: isp isr:0x40, 0x0
+[  414.053623] rkisp1: Consti10: ISP_FRAME_VS 363: 414050445999
+[  414.053638] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.053666] rkisp1: csi state:0x40104004
+[  414.053680] rkisp1: MIPI error: size: 0x40104004
+[  414.056300] rkisp1: csi state:0x40000000
+[  414.057203] rkisp1: csi state:0x1000040
+[  414.057229] rkisp1: isp isr:0x20, 0x0
+[  414.057239] rkisp1: Consti10: ISP_FRAME_IN 363: 414054067041
+[  414.057252] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.057262] rkisp1: isp isr:0x2, 0x0
+[  414.057271] rkisp1: Consti10: ISP_FRAME_END 363: 414054099708
+[  414.057283] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.057295] rkisp1: mi isr:0x80000000
+[  414.057308] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414054ms
+[  414.057315] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414054144625
+[  414.057323] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 413998593494 delay:55 ms
+[  414.057332] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414009709204 delay:44 ms
+[  414.057395] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.058945] rkisp1: csi state:0x40000000
+[  414.061598] rkisp1: csi state:0x40000000
+[  414.064255] rkisp1: mi isr:0x40000
+[  414.064280] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.064554] rkisp1: readback frame:364 time:1 0xa0820401
+[  414.064575] rkisp1: isp isr:0x40, 0x0
+[  414.064586] rkisp1: Consti10: ISP_FRAME_VS 364: 414061413251
+[  414.064599] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.064617] rkisp1: csi state:0x40104004
+[  414.064624] rkisp1: MIPI error: size: 0x40104004
+[  414.067405] rkisp1: csi state:0x40000000
+[  414.068299] rkisp1: csi state:0x1000040
+[  414.068323] rkisp1: isp isr:0x20, 0x0
+[  414.068334] rkisp1: Consti10: ISP_FRAME_IN 364: 414065160584
+[  414.068346] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.068357] rkisp1: isp isr:0x2, 0x0
+[  414.068365] rkisp1: Consti10: ISP_FRAME_END 364: 414065194126
+[  414.068383] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.068397] rkisp1: mi isr:0x80000000
+[  414.068410] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414065ms
+[  414.068417] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414065246918
+[  414.068426] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414009709204 delay:55 ms
+[  414.068435] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414020906871 delay:44 ms
+[  414.068507] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.070050] rkisp1: csi state:0x40000000
+[  414.072719] rkisp1: csi state:0x40000000
+[  414.075357] rkisp1: mi isr:0x40000
+[  414.075382] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.075666] rkisp1: readback frame:365 time:1 0xa0820401
+[  414.075685] rkisp1: isp isr:0x40, 0x0
+[  414.075697] rkisp1: Consti10: ISP_FRAME_VS 365: 414072523127
+[  414.075712] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.075732] rkisp1: csi state:0x40104004
+[  414.075741] rkisp1: MIPI error: size: 0x40104004
+[  414.078514] rkisp1: csi state:0x40000000
+[  414.079405] rkisp1: csi state:0x8000040
+[  414.079426] rkisp1: isp isr:0x20, 0x0
+[  414.079438] rkisp1: Consti10: ISP_FRAME_IN 365: 414076264335
+[  414.079450] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.079461] rkisp1: isp isr:0x2, 0x0
+[  414.079470] rkisp1: Consti10: ISP_FRAME_END 365: 414076298752
+[  414.079482] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.079494] rkisp1: mi isr:0x80000000
+[  414.079506] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414076ms
+[  414.079513] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414076342794
+[  414.079522] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414020906871 delay:55 ms
+[  414.079530] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414031951414 delay:44 ms
+[  414.079588] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.081181] rkisp1: csi state:0x40000000
+[  414.083818] rkisp1: csi state:0x40000000
+[  414.086469] rkisp1: mi isr:0x40000
+[  414.086493] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.086767] rkisp1: readback frame:366 time:1 0xa0820401
+[  414.086833] rkisp1: isp isr:0x40, 0x0
+[  414.086846] rkisp1: Consti10: ISP_FRAME_VS 366: 414083672086
+[  414.086859] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.086880] rkisp1: csi state:0x40104004
+[  414.086886] rkisp1: MIPI error: size: 0x40104004
+[  414.089617] rkisp1: csi state:0x40000000
+[  414.090517] rkisp1: isp isr:0x20, 0x0
+[  414.090538] rkisp1: Consti10: ISP_FRAME_IN 366: 414087362545
+[  414.090552] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.090568] rkisp1: isp isr:0x2, 0x0
+[  414.090578] rkisp1: Consti10: ISP_FRAME_END 366: 414087406295
+[  414.090592] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.090607] rkisp1: mi isr:0x80000000
+[  414.090620] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414087ms
+[  414.090627] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414087457045
+[  414.090636] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414031951414 delay:55 ms
+[  414.090645] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414043078207 delay:44 ms
+[  414.090714] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.090744] rkisp1: csi state:0x1000040
+[  414.092305] rkisp1: csi state:0x40000000
+[  414.094931] rkisp1: csi state:0x40000000
+[  414.097582] rkisp1: mi isr:0x40000
+[  414.097606] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.097888] rkisp1: readback frame:367 time:1 0xa0820401
+[  414.097960] rkisp1: isp isr:0x40, 0x0
+[  414.097974] rkisp1: Consti10: ISP_FRAME_VS 367: 414094800629
+[  414.097989] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.098008] rkisp1: csi state:0x40104004
+[  414.098016] rkisp1: MIPI error: size: 0x40104004
+[  414.100722] rkisp1: csi state:0x40000000
+[  414.101622] rkisp1: csi state:0x1000040
+[  414.101649] rkisp1: isp isr:0x20, 0x0
+[  414.101661] rkisp1: Consti10: ISP_FRAME_IN 367: 414098486713
+[  414.101673] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.101706] rkisp1: isp isr:0x2, 0x0
+[  414.101715] rkisp1: Consti10: ISP_FRAME_END 367: 414098543879
+[  414.101728] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.101743] rkisp1: mi isr:0x80000000
+[  414.101759] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414098ms
+[  414.101766] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414098595504
+[  414.101775] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414043078207 delay:55 ms
+[  414.101785] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414054168541 delay:44 ms
+[  414.101854] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.103398] rkisp1: csi state:0x40000000
+[  414.106038] rkisp1: csi state:0x40000000
+[  414.108692] rkisp1: mi isr:0x40000
+[  414.108716] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.108989] rkisp1: readback frame:368 time:1 0xa0820401
+[  414.109009] rkisp1: isp isr:0x40, 0x0
+[  414.109020] rkisp1: Consti10: ISP_FRAME_VS 368: 414105847505
+[  414.109034] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.109052] rkisp1: csi state:0x40104004
+[  414.109059] rkisp1: MIPI error: size: 0x40104004
+[  414.111845] rkisp1: csi state:0x40000000
+[  414.112715] rkisp1: csi state:0x8000040
+[  414.112733] rkisp1: isp isr:0x20, 0x0
+[  414.112746] rkisp1: Consti10: ISP_FRAME_IN 368: 414109571505
+[  414.112760] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.112776] rkisp1: isp isr:0x2, 0x0
+[  414.112785] rkisp1: Consti10: ISP_FRAME_END 368: 414109613797
+[  414.112798] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.112810] rkisp1: mi isr:0x80000000
+[  414.112824] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414109ms
+[  414.112831] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414109660755
+[  414.112839] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414054168541 delay:55 ms
+[  414.112847] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414065271418 delay:44 ms
+[  414.112915] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.114498] rkisp1: csi state:0x40000000
+[  414.117148] rkisp1: csi state:0x40000000
+[  414.119796] rkisp1: mi isr:0x40000
+[  414.119819] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.120120] rkisp1: readback frame:369 time:1 0xa0820401
+[  414.120269] rkisp1: isp isr:0x40, 0x0
+[  414.120294] rkisp1: Consti10: ISP_FRAME_VS 369: 414117121298
+[  414.120317] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.120346] rkisp1: csi state:0x40104004
+[  414.120360] rkisp1: MIPI error: size: 0x40104004
+[  414.122954] rkisp1: csi state:0x40000000
+[  414.123864] rkisp1: csi state:0x1000040
+[  414.123888] rkisp1: isp isr:0x20, 0x0
+[  414.123901] rkisp1: Consti10: ISP_FRAME_IN 369: 414120726007
+[  414.123912] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.123923] rkisp1: isp isr:0x2, 0x0
+[  414.123931] rkisp1: Consti10: ISP_FRAME_END 369: 414120760132
+[  414.123944] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.123956] rkisp1: mi isr:0x80000000
+[  414.123969] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414120ms
+[  414.123975] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414120805340
+[  414.123984] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414065271418 delay:55 ms
+[  414.123992] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414076367585 delay:44 ms
+[  414.124051] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.125605] rkisp1: csi state:0x40000000
+[  414.128256] rkisp1: csi state:0x40000000
+[  414.130910] rkisp1: mi isr:0x40000
+[  414.130935] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.131210] rkisp1: readback frame:370 time:1 0xa0820401
+[  414.131230] rkisp1: isp isr:0x40, 0x0
+[  414.131240] rkisp1: Consti10: ISP_FRAME_VS 370: 414128068132
+[  414.131253] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.131276] rkisp1: csi state:0x40104004
+[  414.131284] rkisp1: MIPI error: size: 0x40104004
+[  414.134044] rkisp1: csi state:0x40000000
+[  414.134932] rkisp1: csi state:0x1000040
+[  414.134962] rkisp1: isp isr:0x20, 0x0
+[  414.134975] rkisp1: Consti10: ISP_FRAME_IN 370: 414131800883
+[  414.134987] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.135000] rkisp1: isp isr:0x2, 0x0
+[  414.135009] rkisp1: Consti10: ISP_FRAME_END 370: 414131837341
+[  414.135021] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.135036] rkisp1: mi isr:0x80000000
+[  414.135050] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414131ms
+[  414.135057] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414131886633
+[  414.135066] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414076367585 delay:55 ms
+[  414.135076] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414087481253 delay:44 ms
+[  414.135156] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.136706] rkisp1: csi state:0x40000000
+[  414.139371] rkisp1: csi state:0x40000000
+[  414.142018] rkisp1: mi isr:0x40000
+[  414.142044] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.142319] rkisp1: readback frame:371 time:1 0xa0820401
+[  414.142341] rkisp1: isp isr:0x40, 0x0
+[  414.142352] rkisp1: Consti10: ISP_FRAME_VS 371: 414139179467
+[  414.142366] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.142383] rkisp1: csi state:0x40104004
+[  414.142390] rkisp1: MIPI error: size: 0x40104004
+[  414.145171] rkisp1: csi state:0x40000000
+[  414.146074] rkisp1: isp isr:0x20, 0x0
+[  414.146095] rkisp1: Consti10: ISP_FRAME_IN 371: 414142916592
+[  414.146109] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.146123] rkisp1: isp isr:0x2, 0x0
+[  414.146132] rkisp1: Consti10: ISP_FRAME_END 371: 414142960634
+[  414.146146] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.146160] rkisp1: mi isr:0x80000000
+[  414.146174] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414143ms
+[  414.146181] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414143010509
+[  414.146190] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414087481253 delay:55 ms
+[  414.146199] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414098621171 delay:44 ms
+[  414.146268] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.146295] rkisp1: csi state:0x8000040
+[  414.147834] rkisp1: csi state:0x40000000
+[  414.150478] rkisp1: csi state:0x40000000
+[  414.153127] rkisp1: mi isr:0x40000
+[  414.153150] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.153426] rkisp1: readback frame:372 time:1 0xa0820401
+[  414.153503] rkisp1: isp isr:0x40, 0x0
+[  414.153523] rkisp1: Consti10: ISP_FRAME_VS 372: 414150345926
+[  414.153540] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.153560] rkisp1: csi state:0x40104004
+[  414.153578] rkisp1: MIPI error: size: 0x40104004
+[  414.156294] rkisp1: csi state:0x40000000
+[  414.157163] rkisp1: csi state:0x1000040
+[  414.157188] rkisp1: isp isr:0x20, 0x0
+[  414.157200] rkisp1: Consti10: ISP_FRAME_IN 372: 414154026177
+[  414.157212] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.157223] rkisp1: isp isr:0x2, 0x0
+[  414.157235] rkisp1: Consti10: ISP_FRAME_END 372: 414154059718
+[  414.157251] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.157264] rkisp1: mi isr:0x80000000
+[  414.157276] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414154ms
+[  414.157295] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414154125052
+[  414.157313] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414098621171 delay:55 ms
+[  414.157327] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414109683797 delay:44 ms
+[  414.157408] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.158938] rkisp1: csi state:0x40000000
+[  414.161645] rkisp1: csi state:0x40000000
+[  414.164242] rkisp1: mi isr:0x40000
+[  414.164266] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.164547] rkisp1: readback frame:373 time:1 0xa0820401
+[  414.164621] rkisp1: isp isr:0x40, 0x0
+[  414.164634] rkisp1: Consti10: ISP_FRAME_VS 373: 414161460761
+[  414.164650] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.164669] rkisp1: csi state:0x40100004
+[  414.167401] rkisp1: csi state:0x40000000
+[  414.168274] rkisp1: csi state:0x1000040
+[  414.168297] rkisp1: isp isr:0x20, 0x0
+[  414.168309] rkisp1: Consti10: ISP_FRAME_IN 373: 414165135469
+[  414.168322] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.168332] rkisp1: isp isr:0x2, 0x0
+[  414.168341] rkisp1: Consti10: ISP_FRAME_END 373: 414165169594
+[  414.168353] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.168365] rkisp1: mi isr:0x80000000
+[  414.168378] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414165ms
+[  414.168385] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414165214803
+[  414.168394] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414109683797 delay:55 ms
+[  414.168402] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414120828965 delay:44 ms
+[  414.168460] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.170038] rkisp1: csi state:0x40000000
+[  414.172700] rkisp1: csi state:0x40000000
+[  414.175350] rkisp1: mi isr:0x40000
+[  414.175374] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.175649] rkisp1: readback frame:374 time:1 0xa0820401
+[  414.175669] rkisp1: isp isr:0x40, 0x0
+[  414.175679] rkisp1: Consti10: ISP_FRAME_VS 374: 414172506762
+[  414.175692] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.175709] rkisp1: csi state:0x40100004
+[  414.178513] rkisp1: csi state:0x40000000
+[  414.179370] rkisp1: csi state:0x8000040
+[  414.179391] rkisp1: isp isr:0x20, 0x0
+[  414.179402] rkisp1: Consti10: ISP_FRAME_IN 374: 414176228720
+[  414.179414] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.179427] rkisp1: isp isr:0x2, 0x0
+[  414.179435] rkisp1: Consti10: ISP_FRAME_END 374: 414176264304
+[  414.179448] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.179460] rkisp1: mi isr:0x80000000
+[  414.179473] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414176ms
+[  414.179480] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414176309512
+[  414.179489] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414120828965 delay:55 ms
+[  414.179497] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414131912591 delay:44 ms
+[  414.179556] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.181151] rkisp1: csi state:0x40000000
+[  414.183809] rkisp1: csi state:0x40000000
+[  414.186455] rkisp1: mi isr:0x40000
+[  414.186477] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.186751] rkisp1: readback frame:375 time:1 0xa0820401
+[  414.186845] rkisp1: isp isr:0x40, 0x0
+[  414.186863] rkisp1: Consti10: ISP_FRAME_VS 375: 414183687513
+[  414.186879] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.186901] rkisp1: csi state:0x40104004
+[  414.186912] rkisp1: MIPI error: size: 0x40104004
+[  414.189611] rkisp1: csi state:0x40000000
+[  414.190484] rkisp1: csi state:0x1000040
+[  414.190508] rkisp1: isp isr:0x20, 0x0
+[  414.190520] rkisp1: Consti10: ISP_FRAME_IN 375: 414187346763
+[  414.190532] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.190543] rkisp1: isp isr:0x2, 0x0
+[  414.190551] rkisp1: Consti10: ISP_FRAME_END 375: 414187380305
+[  414.190563] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.190574] rkisp1: mi isr:0x80000000
+[  414.190587] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414187ms
+[  414.190594] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414187423472
+[  414.190602] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414131912591 delay:55 ms
+[  414.190611] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414143035300 delay:44 ms
+[  414.190674] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.192275] rkisp1: csi state:0x40000000
+[  414.194917] rkisp1: csi state:0x40000000
+[  414.197582] rkisp1: mi isr:0x40000
+[  414.197607] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.197882] rkisp1: readback frame:376 time:1 0xa0820401
+[  414.197921] rkisp1: isp isr:0x40, 0x0
+[  414.197932] rkisp1: Consti10: ISP_FRAME_VS 376: 414194758889
+[  414.197945] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.197967] rkisp1: csi state:0x40104004
+[  414.197973] rkisp1: MIPI error: size: 0x40104004
+[  414.200727] rkisp1: csi state:0x40000000
+[  414.201624] rkisp1: csi state:0x1000040
+[  414.201644] rkisp1: isp isr:0x20, 0x0
+[  414.201656] rkisp1: Consti10: ISP_FRAME_IN 376: 414198482014
+[  414.201669] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.201680] rkisp1: isp isr:0x2, 0x0
+[  414.201689] rkisp1: Consti10: ISP_FRAME_END 376: 414198518181
+[  414.201703] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.201717] rkisp1: mi isr:0x80000000
+[  414.201731] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414198ms
+[  414.201738] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414198567764
+[  414.201747] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414143035300 delay:55 ms
+[  414.201756] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414154167635 delay:44 ms
+[  414.201827] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.203364] rkisp1: csi state:0x40000000
+[  414.206031] rkisp1: csi state:0x40000000
+[  414.208678] rkisp1: mi isr:0x40000
+[  414.208702] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.208978] rkisp1: readback frame:377 time:1 0xa0820401
+[  414.209013] rkisp1: isp isr:0x40, 0x0
+[  414.209024] rkisp1: Consti10: ISP_FRAME_VS 377: 414205850973
+[  414.209038] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.209056] rkisp1: csi state:0x40104004
+[  414.209063] rkisp1: MIPI error: size: 0x40104004
+[  414.211829] rkisp1: csi state:0x40000000
+[  414.212703] rkisp1: csi state:0x8000040
+[  414.212726] rkisp1: isp isr:0x20, 0x0
+[  414.212738] rkisp1: Consti10: ISP_FRAME_IN 377: 414209564474
+[  414.212750] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.212761] rkisp1: isp isr:0x2, 0x0
+[  414.212770] rkisp1: Consti10: ISP_FRAME_END 377: 414209598307
+[  414.212782] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.212794] rkisp1: mi isr:0x80000000
+[  414.212807] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414209ms
+[  414.212814] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414209643224
+[  414.212822] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414154167635 delay:55 ms
+[  414.212831] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414165238428 delay:44 ms
+[  414.212888] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.214492] rkisp1: csi state:0x40000000
+[  414.217140] rkisp1: csi state:0x40000000
+[  414.219786] rkisp1: mi isr:0x40000
+[  414.219810] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.220103] rkisp1: readback frame:378 time:1 0xa0820401
+[  414.220240] rkisp1: isp isr:0x40, 0x0
+[  414.220274] rkisp1: Consti10: ISP_FRAME_VS 378: 414217096766
+[  414.220299] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.220338] rkisp1: csi state:0x40104004
+[  414.220347] rkisp1: MIPI error: size: 0x40104004
+[  414.222944] rkisp1: csi state:0x40000000
+[  414.223830] rkisp1: csi state:0x1000040
+[  414.223846] rkisp1: isp isr:0x20, 0x0
+[  414.223857] rkisp1: Consti10: ISP_FRAME_IN 378: 414220684267
+[  414.223870] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.223882] rkisp1: mi isr:0x80000000
+[  414.223895] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414220ms
+[  414.223901] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414220731225
+[  414.223910] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414165238428 delay:55 ms
+[  414.223918] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414176333429 delay:44 ms
+[  414.223975] rkisp1: rkisp_check_idle irq:0x20 ends:0x22 mask:0x23
+[  414.223988] rkisp1: isp isr:0x2, 0x0
+[  414.223998] rkisp1: Consti10: ISP_FRAME_END 378: 414220826308
+[  414.224012] rkisp1: rkisp_check_idle irq:0x1 ends:0x23 mask:0x23
+[  414.225600] rkisp1: csi state:0x40000000
+[  414.228260] rkisp1: csi state:0x40000000
+[  414.230895] rkisp1: mi isr:0x40000
+[  414.230919] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.231195] rkisp1: readback frame:379 time:1 0xa0820401
+[  414.231212] rkisp1: isp isr:0x40, 0x0
+[  414.231223] rkisp1: Consti10: ISP_FRAME_VS 379: 414228050892
+[  414.231236] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.231254] rkisp1: csi state:0x40104004
+[  414.231260] rkisp1: MIPI error: size: 0x40104004
+[  414.234048] rkisp1: csi state:0x40000000
+[  414.234932] rkisp1: csi state:0x1000040
+[  414.234987] rkisp1: isp isr:0x22, 0x0
+[  414.234999] rkisp1: Consti10: ISP_FRAME_IN 379: 414231825351
+[  414.235008] rkisp1: Consti10: ISP_FRAME_END 379: 414231836726
+[  414.235035] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.235048] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.235069] rkisp1: mi isr:0x80000000
+[  414.235084] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414231ms
+[  414.235092] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414231921309
+[  414.235101] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414176333429 delay:55 ms
+[  414.235110] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414187447097 delay:44 ms
+[  414.235191] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.236708] rkisp1: csi state:0x40000000
+[  414.239357] rkisp1: csi state:0x40000000
+[  414.242009] rkisp1: mi isr:0x40000
+[  414.242034] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.242310] rkisp1: readback frame:380 time:1 0xa0820401
+[  414.242330] rkisp1: isp isr:0x40, 0x0
+[  414.242341] rkisp1: Consti10: ISP_FRAME_VS 380: 414239168643
+[  414.242354] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.242371] rkisp1: csi state:0x40104004
+[  414.242378] rkisp1: MIPI error: size: 0x40104004
+[  414.245168] rkisp1: csi state:0x40000000
+[  414.246051] rkisp1: isp isr:0x20, 0x0
+[  414.246068] rkisp1: Consti10: ISP_FRAME_IN 380: 414242893810
+[  414.246081] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.246097] rkisp1: isp isr:0x2, 0x0
+[  414.246106] rkisp1: Consti10: ISP_FRAME_END 380: 414242934935
+[  414.246118] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.246132] rkisp1: mi isr:0x80000000
+[  414.246145] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414242ms
+[  414.246152] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414242981894
+[  414.246161] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414187447097 delay:55 ms
+[  414.246169] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414198592848 delay:44 ms
+[  414.246259] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.246333] rkisp1: csi state:0x8000040
+[  414.247821] rkisp1: csi state:0x40000000
+[  414.250488] rkisp1: csi state:0x40000000
+[  414.253116] rkisp1: mi isr:0x40000
+[  414.253139] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.253415] rkisp1: readback frame:381 time:1 0xa0820401
+[  414.253482] rkisp1: isp isr:0x40, 0x0
+[  414.253495] rkisp1: Consti10: ISP_FRAME_VS 381: 414250321978
+[  414.253509] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.253528] rkisp1: csi state:0x40104004
+[  414.253535] rkisp1: MIPI error: size: 0x40104004
+[  414.256270] rkisp1: csi state:0x40000000
+[  414.257155] rkisp1: csi state:0x1000040
+[  414.257186] rkisp1: isp isr:0x22, 0x0
+[  414.257197] rkisp1: Consti10: ISP_FRAME_IN 381: 414254023812
+[  414.257206] rkisp1: Consti10: ISP_FRAME_END 381: 414254034895
+[  414.257221] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.257229] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.257243] rkisp1: mi isr:0x80000000
+[  414.257256] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414254ms
+[  414.257263] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414254092353
+[  414.257271] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414198592848 delay:55 ms
+[  414.257280] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414209667140 delay:44 ms
+[  414.257347] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.258923] rkisp1: csi state:0x40000000
+[  414.261579] rkisp1: csi state:0x40000000
+[  414.264249] rkisp1: mi isr:0x40000
+[  414.264274] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.264549] rkisp1: readback frame:382 time:1 0xa0820401
+[  414.264590] rkisp1: isp isr:0x40, 0x0
+[  414.264600] rkisp1: Consti10: ISP_FRAME_VS 382: 414261428062
+[  414.264614] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.264635] rkisp1: csi state:0x40104004
+[  414.264641] rkisp1: MIPI error: size: 0x40104004
+[  414.267379] rkisp1: csi state:0x40000000
+[  414.268283] rkisp1: csi state:0x1000040
+[  414.268308] rkisp1: isp isr:0x20, 0x0
+[  414.268319] rkisp1: Consti10: ISP_FRAME_IN 382: 414265145063
+[  414.268331] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.268343] rkisp1: isp isr:0x2, 0x0
+[  414.268352] rkisp1: Consti10: ISP_FRAME_END 382: 414265180938
+[  414.268364] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.268377] rkisp1: mi isr:0x80000000
+[  414.268389] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414265ms
+[  414.268396] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414265226146
+[  414.268405] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414209667140 delay:55 ms
+[  414.268414] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414220754850 delay:44 ms
+[  414.268473] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.270028] rkisp1: csi state:0x40000000
+[  414.272696] rkisp1: csi state:0x40000000
+[  414.275336] rkisp1: mi isr:0x40000
+[  414.275360] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.275635] rkisp1: readback frame:383 time:1 0xa0820401
+[  414.275670] rkisp1: isp isr:0x40, 0x0
+[  414.275682] rkisp1: Consti10: ISP_FRAME_VS 383: 414272509063
+[  414.275696] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.275716] rkisp1: csi state:0x40104004
+[  414.275722] rkisp1: MIPI error: size: 0x40104004
+[  414.278484] rkisp1: csi state:0x40000000
+[  414.279349] rkisp1: csi state:0x8000040
+[  414.279367] rkisp1: isp isr:0x20, 0x0
+[  414.279377] rkisp1: Consti10: ISP_FRAME_IN 383: 414276204480
+[  414.279390] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.279403] rkisp1: mi isr:0x80000000
+[  414.279415] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414276ms
+[  414.279422] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414276252314
+[  414.279431] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414220754850 delay:55 ms
+[  414.279439] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414231946393 delay:44 ms
+[  414.279497] rkisp1: rkisp_check_idle irq:0x20 ends:0x22 mask:0x23
+[  414.279512] rkisp1: isp isr:0x2, 0x0
+[  414.279522] rkisp1: Consti10: ISP_FRAME_END 383: 414276350022
+[  414.279536] rkisp1: rkisp_check_idle irq:0x1 ends:0x23 mask:0x23
+[  414.281150] rkisp1: csi state:0x40000000
+[  414.284363] rkisp1: csi state:0x40000000
+[  414.286447] rkisp1: mi isr:0x40000
+[  414.286472] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.286767] rkisp1: readback frame:384 time:1 0xa0820401
+[  414.286933] rkisp1: isp isr:0x40, 0x0
+[  414.286951] rkisp1: Consti10: ISP_FRAME_VS 384: 414283774690
+[  414.286967] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.286995] rkisp1: csi state:0x40104004
+[  414.287001] rkisp1: MIPI error: size: 0x40104004
+[  414.289600] rkisp1: csi state:0x40000000
+[  414.290521] rkisp1: csi state:0x1000040
+[  414.290549] rkisp1: isp isr:0x20, 0x0
+[  414.290560] rkisp1: Consti10: ISP_FRAME_IN 384: 414287386107
+[  414.290572] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.290583] rkisp1: isp isr:0x2, 0x0
+[  414.290592] rkisp1: Consti10: ISP_FRAME_END 384: 414287420815
+[  414.290605] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.290616] rkisp1: mi isr:0x80000000
+[  414.290630] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414287ms
+[  414.290636] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414287466315
+[  414.290645] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414231946393 delay:55 ms
+[  414.290653] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414243006394 delay:44 ms
+[  414.290715] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.292256] rkisp1: csi state:0x40000000
+[  414.296429] rkisp1: csi state:0x40000000
+[  414.297560] rkisp1: mi isr:0x40000
+[  414.297584] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.297860] rkisp1: readback frame:385 time:1 0xa0820401
+[  414.297907] rkisp1: isp isr:0x40, 0x0
+[  414.297917] rkisp1: Consti10: ISP_FRAME_VS 385: 414294744566
+[  414.297932] rkisp-bridge-ispp: update pic(shd:0x5dc08000 base:0x5dc08000) gain(shd:0x5e865000 base:0x5f542000)
+[  414.297949] rkisp1: csi state:0x40104004
+[  414.297956] rkisp1: MIPI error: size: 0x40104004
+[  414.300712] rkisp1: csi state:0x40000000
+[  414.301593] rkisp1: csi state:0x1000040
+[  414.301622] rkisp1: isp isr:0x20, 0x0
+[  414.301634] rkisp1: Consti10: ISP_FRAME_IN 385: 414298459524
+[  414.301646] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.301667] rkisp1: isp isr:0x2, 0x0
+[  414.301676] rkisp1: Consti10: ISP_FRAME_END 385: 414298505024
+[  414.301689] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.301702] rkisp1: mi isr:0x80000000
+[  414.301716] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414298ms
+[  414.301723] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414298552274
+[  414.301732] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414243006394 delay:55 ms
+[  414.301740] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414254115978 delay:44 ms
+[  414.301803] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.303349] rkisp1: csi state:0x40000000
+[  414.306601] rkisp1: csi state:0x40000000
+[  414.308738] rkisp1: mi isr:0x40000
+[  414.308765] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.309042] rkisp1: readback frame:386 time:1 0xa0820401
+[  414.309085] rkisp1: isp isr:0x40, 0x0
+[  414.309106] rkisp1: Consti10: ISP_FRAME_VS 386: 414305933775
+[  414.309125] rkisp-bridge-ispp: update pic(shd:0x5e8e5000 base:0x5e8e5000) gain(shd:0x5e865000 base:0x6021f000)
+[  414.309147] rkisp1: csi state:0x40100004
+[  414.311824] rkisp1: csi state:0x40000000
+[  414.312761] rkisp1: csi state:0x8000040
+[  414.312777] rkisp1: isp isr:0x20, 0x0
+[  414.312788] rkisp1: Consti10: ISP_FRAME_IN 386: 414309615484
+[  414.312800] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.312826] rkisp1: isp isr:0x2, 0x0
+[  414.312835] rkisp1: Consti10: ISP_FRAME_END 386: 414309664192
+[  414.312848] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.312859] rkisp1: mi isr:0x80000000
+[  414.312872] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414309ms
+[  414.312879] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414309709109
+[  414.312888] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414254115978 delay:55 ms
+[  414.312897] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414265250354 delay:44 ms
+[  414.312955] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.314469] rkisp1: csi state:0x40000000
+[  414.317134] rkisp1: csi state:0x40000000
+[  414.319846] rkisp1: mi isr:0x40000
+[  414.319873] rkisp1: update_dmatx_v2 stream:4 Y:0x62442000 SHD:0x6219f000
+[  414.320168] rkisp1: readback frame:387 time:1 0xa0820401
+[  414.320250] rkisp1: isp isr:0x40, 0x0
+[  414.320279] rkisp1: Consti10: ISP_FRAME_VS 387: 414317106360
+[  414.320294] rkisp-bridge-ispp: update pic(shd:0x5f5c2000 base:0x5f5c2000) gain(shd:0x5e865000 base:0x60efc000)
+[  414.320318] rkisp1: csi state:0x40100004
+[  414.323011] rkisp1: csi state:0x40000000
+[  414.324261] rkisp1: isp isr:0x22, 0x0
+[  414.324280] rkisp1: Consti10: ISP_FRAME_IN 387: 414321105693
+[  414.324289] rkisp1: Consti10: ISP_FRAME_END 387: 414321118235
+[  414.324304] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.324312] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.324332] rkisp1: mi isr:0x80000000
+[  414.324349] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414321ms
+[  414.324356] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414321185902
+[  414.324365] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414265250354 delay:55 ms
+[  414.324374] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414276275939 delay:44 ms
+[  414.324435] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.324463] rkisp1: csi state:0x1000040
+[  414.325589] rkisp1: csi state:0x40000000
+[  414.328306] rkisp1: csi state:0x40000000
+[  414.330885] rkisp1: mi isr:0x40000
+[  414.330910] rkisp1: update_dmatx_v2 stream:4 Y:0x61efc000 SHD:0x62442000
+[  414.331188] rkisp1: readback frame:388 time:1 0xa0820401
+[  414.331208] rkisp1: isp isr:0x40, 0x0
+[  414.331219] rkisp1: Consti10: ISP_FRAME_VS 388: 414328046486
+[  414.331232] rkisp-bridge-ispp: update pic(shd:0x6029f000 base:0x6029f000) gain(shd:0x5e865000 base:0x61bd9000)
+[  414.331250] rkisp1: csi state:0x40104004
+[  414.331256] rkisp1: MIPI error: size: 0x40104004
+[  414.334031] rkisp1: csi state:0x40000000
+[  414.335075] rkisp1: isp isr:0x22, 0x0
+[  414.335096] rkisp1: Consti10: ISP_FRAME_IN 388: 414331920986
+[  414.335104] rkisp1: Consti10: ISP_FRAME_END 388: 414331933819
+[  414.335119] rkisp1: rkisp_check_idle irq:0x2 ends:0x2 mask:0x23
+[  414.335126] rkisp1: rkisp_check_idle irq:0x1 ends:0x3 mask:0x23
+[  414.335142] rkisp1: mi isr:0x80000000
+[  414.335155] rkisp-bridge-ispp: Consti10:rkisp_frame_end: delay now-ts:414331ms
+[  414.335162] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now 414331991278
+[  414.335170] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: 414276275939 delay:55 ms
+[  414.335179] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: 414287489357 delay:44 ms
+[  414.335238] rkisp1: rkisp_check_idle irq:0x20 ends:0x23 mask:0x23
+[  414.335260] rkisp1: csi state:0x1000040
+[  414.336673] rkisp1: csi state:0x40000000
+[  414.340886] rkisp1: csi state:0x40000000
+[  414.341997] rkisp1: mi isr:0x40000
+[  414.342020] rkisp1: update_dmatx_v2 stream:4 Y:0x6219f000 SHD:0x61efc000
+[  414.342295] rkisp1: readback frame:389 time:1 0xa0820401
+[  414.342315] rkisp1: isp isr:0x40, 0x0
+[  414.342325] rkisp1: Consti10: ISP_FRAME_VS 389: 414339152862
+[  414.342339] rkisp-bridge-ispp: update pic(shd:0x60f7c000 base:0x60f7c000) gain(shd:0x5e865000 base:0x5e865000)
+[  414.342356] rkisp1: csi state:0x40104004

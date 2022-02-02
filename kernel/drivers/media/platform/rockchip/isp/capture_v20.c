@@ -1070,16 +1070,32 @@ static void sp_disable_mi(struct rkisp_stream *stream)
 	mi_ctrl_spyuv_disable(base);
 }
 
+//Consti10
+static u64 __maybe_unused timeval_to_nsec(struct timeval* t) {
+    return t->tv_sec * 1000000000 + t->tv_usec * 1000;
+}
+
 static void update_dmatx_v2(struct rkisp_stream *stream)
 {
 	struct rkisp_device *dev = stream->ispdev;
 	void __iomem *base = dev->base_addr;
 	struct rkisp_dummy_buffer *buf = NULL;
 	u8 index;
+    u64 tmp;
+    u64 delayNs;
+
+    v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev,
+             "Consti10:update_dmatx_v2(0): stream->next_buf?:%s\n",stream->next_buf ? "y":"n");
 
 	if (stream->next_buf) {
 		mi_set_y_addr(stream,
 			      stream->next_buf->buff_addr[RKISP_PLANE_Y]);
+        //tmp= timeval_to_nsec(&stream->next_buf->vb.vb2_buf.timestamp);
+        tmp= stream->next_buf->vb.vb2_buf.timestamp;
+        delayNs=ktime_get_ns()-tmp;
+        v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev,
+                 "Consti10:stream->next_buf: sequence: %d index: %d timestamp:%lld delay:%lld (ns)\n",
+                 stream->next_buf->vb.sequence,stream->next_buf->vb.vb2_buf.index,tmp,delayNs);
 	} else {
 		if (stream->id == RKISP_STREAM_DMATX0)
 			index = dev->hdr.index[HDR_DMA0];
@@ -1104,7 +1120,7 @@ static void update_dmatx_v2(struct rkisp_stream *stream)
 			mi_set_y_addr(stream, buf->dma_addr);
 	}
 	v4l2_dbg(2, rkisp_debug, &dev->v4l2_dev,
-		 "%s stream:%d Y:0x%x SHD:0x%x\n",
+		 "%s (20) stream:%d Y:0x%x SHD:0x%x\n",
 		 __func__, stream->id,
 		 readl(base + stream->config->mi.y_base_ad_init),
 		 readl(base + stream->config->mi.y_base_ad_shd));
@@ -1409,8 +1425,11 @@ static int mi_frame_end(struct rkisp_stream *stream)
 		stream->dbg.interval = ns - stream->dbg.timestamp;
 		stream->dbg.timestamp = ns;
 		stream->dbg.id = stream->curr_buf->vb.sequence;
-		if (stream->id == RKISP_STREAM_MP || stream->id == RKISP_STREAM_SP)
-			stream->dbg.delay = ns - dev->isp_sdev.frm_timestamp;
+		if (stream->id == RKISP_STREAM_MP || stream->id == RKISP_STREAM_SP){
+            stream->dbg.delay = ns - dev->isp_sdev.frm_timestamp;
+            v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:mi_frame_end: delay %d\n",dev->isp_sdev.dbg.delay);
+        }
+
 
 		if (is_rdbk_stream(stream) &&
 		    dev->dmarx_dev.trigger == T_MANUAL) {

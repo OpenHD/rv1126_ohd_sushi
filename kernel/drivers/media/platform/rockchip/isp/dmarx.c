@@ -384,9 +384,13 @@ static struct streams_ops rkisp2_dmarx_streams_ops = {
 static int dmarx_frame_end(struct rkisp_stream *stream)
 {
 	unsigned long lock_flags = 0;
+    u64 curr_buf_timestamp=0;
 
 	spin_lock_irqsave(&stream->vbq_lock, lock_flags);
 	if (stream->curr_buf) {
+        curr_buf_timestamp=stream->curr_buf->vb.vb2_buf.timestamp;
+        v4l2_dbg(1,rkisp_debug,&stream->ispdev->v4l2_dev, "Consti10:dmarx_frame_end:done_with: sequence: %d timestamp:%lld\n",
+                 stream->curr_buf->vb.sequence,curr_buf_timestamp);
 		vb2_buffer_done(&stream->curr_buf->vb.vb2_buf,
 			VB2_BUF_STATE_DONE);
 		stream->curr_buf = NULL;
@@ -398,6 +402,9 @@ static int dmarx_frame_end(struct rkisp_stream *stream)
 					struct rkisp_buffer,
 					queue);
 		list_del(&stream->curr_buf->queue);
+        curr_buf_timestamp=stream->curr_buf->vb.vb2_buf.timestamp;
+        v4l2_dbg(1,rkisp_debug,&stream->ispdev->v4l2_dev, "Consti10:dmarx_frame_end:new_buf: sequence: %d timestamp:%lld\n",
+                 stream->curr_buf->vb.sequence,curr_buf_timestamp);
 	}
 	spin_unlock_irqrestore(&stream->vbq_lock, lock_flags);
 
@@ -865,6 +872,7 @@ void rkisp_dmarx_isr(u32 mis_val, struct rkisp_device *dev)
 	struct rkisp_stream *stream;
 
 	if (mis_val & CIF_MI_DMA_READY) {
+        v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev, "Consti10:rkisp_dmarx_isr:CIF_MI_DMA_READY\n");
 		stream = &dev->dmarx_dev.stream[RKISP_STREAM_DMARX];
 		stream->frame_end = true;
 		writel(CIF_MI_DMA_READY, base + CIF_MI_ICR);
@@ -990,6 +998,7 @@ void rkisp_dmarx_get_frame(struct rkisp_device *dev, u32 *id,
 
 	if (!dev->dmarx_dev.trigger && id) {
 		*id = atomic_read(&dev->isp_sdev.frm_sync_seq) - 1;
+        v4l2_dbg(1, rkisp_debug, &dev->v4l2_dev,"Consti10:rkisp_dmarx_get_frame-return early %d\n",*id);
 		return;
 	}
 
@@ -1012,8 +1021,8 @@ void rkisp_dmarx_get_frame(struct rkisp_device *dev, u32 *id,
 		*timestamp = frame_timestamp;
 
     //Consti10
-    v4l2_err(&dev->v4l2_dev, "rkisp_dmarx_get_frame sof_timestamp:%lld timestamp:%lld sync:%s\n",sof_time,frame_timestamp,sync ? "y":"n");
-    v4l2_err(&dev->v4l2_dev, "rkisp_dmarx_get_frame delay now-ts: %lld (ms) now-sof_ts: %lld (ms)\n",
+    v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev, "Consti10:rkisp_dmarx_get_frame sof_timestamp:%lld timestamp:%lld sync:%s\n",sof_time,frame_timestamp,sync ? "y":"n");
+    v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev, "Consti10:rkisp_dmarx_get_frame delay now-ts: %lld (ms) now-sof_ts: %lld (ms)\n",
              div_u64(ktime_get_ns()-frame_timestamp,1000*1000),
              div_u64(ktime_get_ns()-sof_time,1000*1000));
 }

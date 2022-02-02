@@ -506,7 +506,7 @@ static void update_dmatx_v2(struct rkisp_stream *stream)
 			mi_set_y_addr(stream, buf->dma_addr);
 	}
 	v4l2_dbg(2, rkisp_debug, &dev->v4l2_dev,
-		 "%s stream:%d Y:0x%x SHD:0x%x\n",
+		 "%s (21) stream:%d Y:0x%x SHD:0x%x\n",
 		 __func__, stream->id,
 		 readl(base + stream->config->mi.y_base_ad_init),
 		 readl(base + stream->config->mi.y_base_ad_shd));

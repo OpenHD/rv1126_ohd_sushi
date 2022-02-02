@@ -4288,6 +4288,7 @@ static void rkcif_vb_done_oneframe(struct rkcif_stream *stream,
 
 void rkcif_irq_oneframe(struct rkcif_device *cif_dev)
 {
+    // Consti10: never called in pingpong
 	/* TODO: xuhf-debug: add stream type */
 	struct rkcif_stream *stream;
 	u32 lastline, lastpix, ctl, cif_frmst, intstat, frmid;
@@ -4309,6 +4310,7 @@ void rkcif_irq_oneframe(struct rkcif_device *cif_dev)
 	stream = &cif_dev->stream[RKCIF_STREAM_CIF];
 
 	if ((intstat & PST_INF_FRAME_END)) {
+        //v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_oneframe:PST_INF_FRAME_END %lld\n",ktime_get_ns());
 		rkcif_write_register(cif_dev, CIF_REG_DVP_INTSTAT,
 				     PST_INF_FRAME_END_CLR);
 
@@ -4319,6 +4321,7 @@ void rkcif_irq_oneframe(struct rkcif_device *cif_dev)
 	}
 
 	if ((intstat & FRAME_END)) {
+        //v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_oneframe:FRAME_END %lld\n",ktime_get_ns());
 		struct vb2_v4l2_buffer *vb_done = NULL;
 
 		rkcif_write_register(cif_dev, CIF_REG_DVP_INTSTAT,
@@ -5745,6 +5748,8 @@ void rkcif_irq_pingpong(struct rkcif_device *cif_dev)
 
 		intstat = rkcif_read_register(cif_dev, CIF_REG_MIPI_LVDS_INTSTAT);
 		lastline = rkcif_read_register(cif_dev, CIF_REG_MIPI_LVDS_LINE_LINE_CNT_ID0_1);
+
+        v4l2_dbg(1,rkcif_debug,&cif_dev->v4l2_dev,"Consti10:rkcif_irq_pingpong: intstat %d, lastline %d\n",intstat,lastline);
 
 		/* clear all interrupts that has been triggered */
 		rkcif_write_register(cif_dev, CIF_REG_MIPI_LVDS_INTSTAT, intstat);

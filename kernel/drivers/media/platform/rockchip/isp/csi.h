@@ -101,4 +101,7 @@ int rkisp_csi_config_patch(struct rkisp_device *dev);
 void rkisp_trigger_read_back(struct rkisp_csi_device *csi, u8 dma2frm, u32 mode);
 int rkisp_csi_trigger_event(struct rkisp_device *dev, u32 cmd, void *arg);
 void rkisp_csi_sof(struct rkisp_device *dev, u8 id);
+// Consti10
+void consti10_print_rkisp_device(struct rkisp_device *dev,const char* caller);
+
 #endif

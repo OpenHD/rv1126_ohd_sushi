@@ -279,7 +279,7 @@ static int isp_show(struct seq_file *p, void *v)
 
 		if (!stream->streaming)
 			continue;
-		seq_printf(p, "%-10s %s Format:%c%c%c%c Size:%dx%d (frame:%d rate:%dms delay:%dms)\n",
+		seq_printf(p, "%-10s %s Format:%c%c%c%c Size:%dx%d (frame:%d rate:%dms delay:%dms consti_real_delay_ns: %lld)\n",
 			   "Output",
 			   stream->vnode.vdev.name,
 			   stream->out_fmt.pixelformat,
@@ -290,7 +290,8 @@ static int isp_show(struct seq_file *p, void *v)
 			   stream->out_fmt.height,
 			   stream->dbg.id,
 			   stream->dbg.interval / 1000 / 1000,
-			   stream->dbg.delay / 1000 / 1000);
+			   stream->dbg.delay / 1000 / 1000,
+               stream->dbg.consti_real_delay_ns);
 	}
 
 	switch (dev->isp_ver) {

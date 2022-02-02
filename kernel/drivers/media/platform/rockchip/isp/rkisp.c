@@ -2412,6 +2412,9 @@ void rkisp_isp_isr(unsigned int isp_mis,
 
 	v4l2_dbg(3, rkisp_debug, &dev->v4l2_dev,
 		 "isp isr:0x%x, 0x%x\n", isp_mis, isp3a_mis);
+
+    consti10_print_rkisp_device(dev,"rkisp_isp_isr");
+
 	dev->isp_isr_cnt++;
 	/* start edge of v_sync */
 	if (isp_mis & CIF_ISP_V_START) {
@@ -2422,6 +2425,8 @@ void rkisp_isp_isr(unsigned int isp_mis,
 			dev->isp_sdev.dbg.timestamp = ktime_get_ns();
 			/* v-blank: frame_end - frame_start */
 			dev->isp_sdev.dbg.delay = dev->isp_sdev.dbg.timestamp - tmp;
+            v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:rkisp_isp_isr: delay %d interval: %d\n",
+                     dev->isp_sdev.dbg.delay,dev->isp_sdev.dbg.interval);
 		}
 		rkisp_set_state(dev, ISP_FRAME_VS);
         v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10: ISP_FRAME_VS %d: %lld\n",dev->csi_dev.frame_cnt,ktime_get_ns());

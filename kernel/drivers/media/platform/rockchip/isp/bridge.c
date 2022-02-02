@@ -523,6 +523,8 @@ static int frame_end(struct rkisp_bridge_device *dev, bool en, u32 state)
 	if (state == FRAME_IRQ && ispdev->cap_dev.is_done_early)
 		return 0;
 
+    consti10_print_rkisp_device(ispdev,"frame_end");
+
 	rkisp_dmarx_get_frame(dev->ispdev, &dev->dbg.id, NULL, NULL, true);
 	dev->dbg.interval = ns - dev->dbg.timestamp;
 	dev->dbg.timestamp = ns;
@@ -539,23 +541,34 @@ static int frame_end(struct rkisp_bridge_device *dev, bool en, u32 state)
 		} else {
 			u64 sof_ns = 0;
 			struct rkisp_ispp_reg *reg_buf = NULL;
-            u64 tmp=0;
+            u64 now_ts=ktime_get_ns();
+            u64 curr_buf_timestamp=0;
+            u64 next_buf_timestamp=0;
 
+            v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: now: %lld now2: %lld\n",now_ts,ktime_get_real_ns());
+            if(hw->cur_buf){
+                curr_buf_timestamp=hw->cur_buf->frame_timestamp;
+                v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: %d buf_idx: %d frame_timestamp: %lld delay:%lld ms\n",
+                         hw->cur_buf->frame_id,hw->cur_buf->buf_idx,curr_buf_timestamp,div_u64(now_ts-(curr_buf_timestamp),1000*1000));
+            }
 			ns = 0;
 			rkisp_dmarx_get_frame(dev->ispdev,
 				&hw->cur_buf->frame_id, &sof_ns, &ns, true);
-            //Consti10
-            v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: delay now-ts:%lldms\n",div_u64(ktime_get_ns()-ns,1000*1000));
-            // weird:
-            v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: now %lld\n",ktime_get_ns());
+            v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: ts: %lld sof_ts:%lld delay now-ts:%lld ms\n",
+                     ns,sof_ns,div_u64(now_ts-(ns),1000*1000));
             if(hw->cur_buf){
-                tmp=hw->cur_buf->frame_timestamp;
-                v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: hw->cur_buf->frame_timestamp: ts: %lld delay:%lld ms\n",tmp,div_u64(ktime_get_ns()-tmp,1000*1000));
+                curr_buf_timestamp=hw->cur_buf->frame_timestamp;
+                v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: hw->cur_buf: frame_id: %d buf_idx: %d frame_timestamp: %lld delay:%lld ms\n",
+                         hw->cur_buf->frame_id,hw->cur_buf->buf_idx,curr_buf_timestamp,div_u64(now_ts-(curr_buf_timestamp),1000*1000));
             }
             if(hw->nxt_buf) {
-                tmp=hw->nxt_buf->frame_timestamp;
-                v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: hw->nxt_buf->frame_timestamp: ts: %lld delay:%lld ms\n",tmp,div_u64(ktime_get_ns()-tmp,1000*1000));
+                next_buf_timestamp=hw->nxt_buf->frame_timestamp;
+                v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: %d buf_idx: %d frame_timestamp: %lld delay:%lld ms\n",
+                         hw->nxt_buf->frame_id,hw->nxt_buf->buf_idx,next_buf_timestamp,div_u64(now_ts-(next_buf_timestamp),1000*1000));
             }
+            v4l2_dbg(1,rkisp_debug,&dev->sd,"Consti10:rkisp_frame_end: Delta between curr and next buf: %lld (ns)\n",
+                     next_buf_timestamp-curr_buf_timestamp);
+
             //
 			if (!sof_ns)
 				sof_ns = 0;
@@ -1404,6 +1417,9 @@ void rkisp_bridge_sendtopp_buffer(struct rkisp_device *dev, u32 dev_id, u32 buf_
 	bool find_flg = false;
 	u32 *vaddr, size;
 	u64 pic_ts, gain_ts;
+
+    v4l2_dbg(1, rkisp_debug, &br_dev->sd,
+             "Consti10:rkisp_bridge_sendtopp_buffer buf_idx:%d\n",buf_idx);
 
 	spin_lock_irqsave(&hw->buf_lock, lock_flags);
 	list_for_each_entry(cur_buf, &hw->rpt_list, list) {
