@@ -1,9 +1,14 @@
 #!/bin/bash
 
-FLASH_TOOL_BIN= ./tools/linux/Linux_Upgrade_Tool/Linux_Upgrade_Tool/upgrade_tool
+FLASH_TOOL_BIN=./tools/linux/Linux_Upgrade_Tool/Linux_Upgrade_Tool/upgrade_tool
 
-#IMAGE_DIR= /media/consti10/INTENSO/a_newjear/35_aybering_dtsi_x6/update.img
-IMAGE_DIR=IMAGE/RV1126-OPENHD_20220116.1702_RELEASE_TEST/IMAGES/update.img
+#IMAGE_DIR=IMAGE/RV1126-OPENHD_20220204.1550_RELEASE_TEST
+MOST_RECENT_IMAGE_OUTPUT_DIR=$(ls IMAGE/ -Art | tail -n 1)
+
+MOST_RECENT_IMAGE_OUTPUT_DIR_FILE=IMAGE/$MOST_RECENT_IMAGE_OUTPUT_DIR/IMAGES/update.img
 
 
-$FLASH_TOOL_BIN uf $IMAGE_DIR
+echo "Flasing update.img from $MOST_RECENT_IMAGE_OUTPUT_DIR_FILE"
+
+
+sudo $FLASH_TOOL_BIN uf $MOST_RECENT_IMAGE_OUTPUT_DIR_FILE

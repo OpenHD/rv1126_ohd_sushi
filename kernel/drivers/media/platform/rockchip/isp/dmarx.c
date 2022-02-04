@@ -385,6 +385,7 @@ static int dmarx_frame_end(struct rkisp_stream *stream)
 {
 	unsigned long lock_flags = 0;
     u64 curr_buf_timestamp=0;
+    v4l2_dbg(1,rkisp_debug,&stream->ispdev->v4l2_dev, "Consti10:dmarx_frame_end_begin()\n");
 
 	spin_lock_irqsave(&stream->vbq_lock, lock_flags);
 	if (stream->curr_buf) {
@@ -409,6 +410,7 @@ static int dmarx_frame_end(struct rkisp_stream *stream)
 	spin_unlock_irqrestore(&stream->vbq_lock, lock_flags);
 
 	stream->ops->update_mi(stream);
+    v4l2_dbg(1,rkisp_debug,&stream->ispdev->v4l2_dev, "Consti10:dmarx_frame_end_end()\n");
 	return 0;
 }
 

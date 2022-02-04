@@ -1252,6 +1252,7 @@ static void rdbk_frame_end(struct rkisp_stream *stream)
 	u32 numerator = sensor->fi.interval.numerator;
 	u64 l_ts, m_ts, s_ts;
 	int ret, max_dma, fps = -1, time = 30000000;
+    v4l2_dbg(1,rkisp_debug,&isp_dev->v4l2_dev,"Consti10:rdbk_frame_end_begin()\n");
 
 	if (stream->id != RKISP_STREAM_DMATX2)
 		return;
@@ -1359,6 +1360,7 @@ static void rdbk_frame_end(struct rkisp_stream *stream)
 	cap->rdbk_buf[RDBK_L] = NULL;
 	cap->rdbk_buf[RDBK_M] = NULL;
 	cap->rdbk_buf[RDBK_S] = NULL;
+    v4l2_dbg(1,rkisp_debug,&isp_dev->v4l2_dev,"Consti10:rdbk_frame_end_end()\n");
 	return;
 
 RDBK_FRM_UNMATCH:
@@ -1388,6 +1390,7 @@ static int mi_frame_end(struct rkisp_stream *stream)
 	unsigned long lock_flags = 0;
 	u64 ns = 0;
 	int i = 0;
+    v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:mi_frame_end_begin()\n");
 
 	if (!stream->next_buf && stream->streaming &&
 	    dev->dmarx_dev.trigger == T_MANUAL &&
@@ -1528,6 +1531,7 @@ static int mi_frame_end(struct rkisp_stream *stream)
 	if (interlaced)
 		stream->u.sp.field_rec = stream->u.sp.field;
 
+    v4l2_dbg(1,rkisp_debug,&dev->v4l2_dev,"Consti10:mi_frame_end_end()\n");
 	return 0;
 }
 

@@ -1,0 +1,38 @@
+
+// LEDs for OpenHD RV1126 SOM carrier from Max
+
+/ {
+    // For GPIO2_B4_D_K18
+    /*leds {
+        compatible = "gpio-leds";
+        user_led: user {
+            label = "firefly:yellow:user";
+            linux,default-trigger = "ir-user-click";
+            default-state = "off";
+            gpios = <&gpio2 RK_PB4 GPIO_ACTIVE_HIGH>;
+            pinctrl-names = "default";
+            pinctrl-0 = <&led_user>;
+        };
+    };
+    //pinctrl needs to add GPIO multiplexing control
+    led_user: led-user {
+    	rockchip,pins = <2 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>;
+    };*/
+
+    // For GPIO 2 C0
+    leds {
+        compatible = "gpio-leds";
+        user_led: user {
+            label = "openhd:green4";
+            linux,default-trigger = "ir-user-click";
+            default-state = "off";
+            gpios = <&gpio2 RK_PC0 GPIO_ACTIVE_HIGH>;
+            pinctrl-names = "default";
+            pinctrl-0 = <&led_user>;
+        };
+    };
+    //pinctrl needs to add GPIO multiplexing control
+    led_user: led-user {
+        rockchip,pins = <2 RK_PC0 RK_FUNC_GPIO &pcfg_pull_none>;
+    };
+};

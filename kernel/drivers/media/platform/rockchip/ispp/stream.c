@@ -421,6 +421,7 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 	struct rkisp_ispp_reg *reg_buf = NULL;
 	unsigned long lock_flags = 0;
 	int i = 0;
+    v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp_frame_end_begin()\n");
 
 	if (state == FRAME_IRQ && dev->stream_vdev.is_done_early)
 		return 0;
@@ -528,6 +529,7 @@ static int rkispp_frame_end(struct rkispp_stream *stream, u32 state)
 	spin_unlock_irqrestore(&stream->vbq_lock, lock_flags);
 
 	update_mi(stream);
+    v4l2_dbg(1, rkispp_debug,&dev->v4l2_dev,"Consti10:rkispp_frame_end_end()\n");
 	return 0;
 }
 

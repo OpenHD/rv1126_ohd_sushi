@@ -458,6 +458,12 @@ static void fill_MPP_FMT_YUV420SP(RK_U8 *buf, RK_U32 width, RK_U32 height,
             p[x * 2 + 1] = 64  + x + frame_count * 5;
         }
     }
+    // Consti10
+    if(frame_count % 2 == 0){
+        memset(buf,256,width*height/4);
+    }else{
+        memset(buf,0,width*height/4);
+    }
 }
 
 static void fill_MPP_FMT_YUV422SP(RK_U8 *buf, RK_U32 width, RK_U32 height,
@@ -1102,11 +1108,11 @@ MPP_RET fill_image(RK_U8 *buf, RK_U32 width, RK_U32 height,
 MPP_RET fill_image_consti(RK_U8 *buf, RK_U32 width, RK_U32 height,
                    RK_U32 hor_stride, RK_U32 ver_stride, MppFrameFormat fmt,
                    RK_U32 frame_count){
-    if(frame_count<10){
+    //if(frame_count<10){
         return fill_image(buf,width,height,hor_stride,ver_stride,fmt,frame_count);
-    }else{
-        return MPP_OK;
-    }
+    //}else{
+    //    return MPP_OK;
+    //}
 }
 
 RK_S32 parse_config_line(const char *str, OpsLine *info)
