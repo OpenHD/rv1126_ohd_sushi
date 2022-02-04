@@ -827,10 +827,14 @@ void consti10_print_rkisp_device(struct rkisp_device *dev,const char* caller){
     struct rkisp_dmarx_device* dmarx=&dev->dmarx_dev;
     struct rkisp_bridge_device* bridge=&dev->br_dev;
     v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:print_rkisp_device:%s time:%lld\n",caller,ktime_get_ns());
-    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_csi_device frm_cnt:(%d:%d:%d:%d)\n",
-             csi->frame_cnt,csi->frame_cnt_x1,csi->frame_cnt_x2,csi->frame_cnt_x3);
-    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_dmarx_device pre_frame:(%d:%lld) cur_frame:(%d:%lld)\n",
-             dmarx->pre_frame.id,dmarx->pre_frame.timestamp,dmarx->cur_frame.id,dmarx->cur_frame.timestamp);
-    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:bridge_device: fs_ns:%lld buf_num:%d dbg:(%d:%lld)\n",
+    v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_csi_device frm_cnt:(%d:%d:%d:%d)\n"
+                                      "Consti10:rkisp_dmarx_device pre_frame:(%d:%lld) cur_frame:(%d:%lld)\n"
+                                      "Consti10:bridge_device: fs_ns:%lld buf_num:%d dbg:(%d:%lld)\n",
+             csi->frame_cnt,csi->frame_cnt_x1,csi->frame_cnt_x2,csi->frame_cnt_x3,
+             dmarx->pre_frame.id,dmarx->pre_frame.timestamp,dmarx->cur_frame.id,dmarx->cur_frame.timestamp,
              bridge->fs_ns,bridge->buf_num,bridge->dbg.id,bridge->dbg.timestamp);
+    //v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:rkisp_dmarx_device pre_frame:(%d:%lld) cur_frame:(%d:%lld)\n",
+    //         dmarx->pre_frame.id,dmarx->pre_frame.timestamp,dmarx->cur_frame.id,dmarx->cur_frame.timestamp);
+    //v4l2_dbg(1, rkisp_debug, v4l2_dev,"Consti10:bridge_device: fs_ns:%lld buf_num:%d dbg:(%d:%lld)\n",
+    //         bridge->fs_ns,bridge->buf_num,bridge->dbg.id,bridge->dbg.timestamp);
 }

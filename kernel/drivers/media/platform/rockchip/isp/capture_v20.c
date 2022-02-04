@@ -1093,9 +1093,9 @@ static void update_dmatx_v2(struct rkisp_stream *stream)
         //tmp= timeval_to_nsec(&stream->next_buf->vb.vb2_buf.timestamp);
         tmp= stream->next_buf->vb.vb2_buf.timestamp;
         delayNs=ktime_get_ns()-tmp;
-        v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev,
-                 "Consti10:stream->next_buf: sequence: %d index: %d timestamp:%lld delay:%lld (ns)\n",
-                 stream->next_buf->vb.sequence,stream->next_buf->vb.vb2_buf.index,tmp,delayNs);
+        //v4l2_dbg(1, rkisp_debug,&dev->v4l2_dev,
+        //         "Consti10:stream->next_buf: sequence: %d index: %d timestamp:%lld delay:%lld (ns)\n",
+        //         stream->next_buf->vb.sequence,stream->next_buf->vb.vb2_buf.index,tmp,delayNs);
 	} else {
 		if (stream->id == RKISP_STREAM_DMATX0)
 			index = dev->hdr.index[HDR_DMA0];
