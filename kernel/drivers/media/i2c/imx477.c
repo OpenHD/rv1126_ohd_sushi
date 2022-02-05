@@ -1704,6 +1704,7 @@ static int imx477_start_streaming(struct imx477 *imx477)
 	const struct imx477_reg_list *reg_list;
 	const struct imx477_reg_list *extra_regs;
 	int ret;
+    dev_err(&client->dev, "%s begin\n",__func__);
 
 	if (!imx477->common_regs_written) {
 		ret = imx477_write_regs(imx477, mode_common_regs,
@@ -1753,7 +1754,7 @@ static int imx477_start_streaming(struct imx477 *imx477)
 	ret =  __v4l2_ctrl_handler_setup(imx477->sd.ctrl_handler);
 	if (ret)
 		return ret;
-
+    dev_err(&client->dev, "%s begin\n",__func__);
 	/* set stream on register */
 	return imx477_write_reg(imx477, IMX477_REG_MODE_SELECT,
 				IMX477_REG_VALUE_08BIT, IMX477_MODE_STREAMING);
@@ -2170,6 +2171,7 @@ static int imx477_probe(struct i2c_client *client)
 	struct imx477 *imx477;
 	const struct of_device_id *match;
 	int ret;
+    dev_err(&client->dev, "%s begin\n",__func__);
 
 	imx477 = devm_kzalloc(&client->dev, sizeof(*imx477), GFP_KERNEL);
 	if (!imx477)
@@ -2271,6 +2273,7 @@ error_power_off:
 	pm_runtime_set_suspended(&client->dev);
 	imx477_power_off(&client->dev);
 
+    dev_err(&client->dev, "%s end\n",__func__);
 	return ret;
 }
 
