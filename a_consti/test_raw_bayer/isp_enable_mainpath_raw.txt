@@ -1,0 +1,41 @@
+- entity 13: rkisp-bridge-ispp (1 pad, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 17: rkisp_mainpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video17
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 []
+
+
+media-ctl -d /dev/media2 -l '"rkisp-isp-subdev":2->"rkisp-bridge-ispp":0[0]'
+media-ctl -d /dev/media2 -l '"rkisp-isp-subdev":2->"rkisp_mainpath":0[1]'
+
+- entity 13: rkisp-bridge-ispp (1 pad, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 []
+
+- entity 17: rkisp_mainpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video17
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 23: rkisp_selfpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video18
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+media-ctl -d /dev/media2 --set-v4l2 '"rkisp-isp-subdev":2[fmt:SGBRG10_1X10/1284x720]'
+
+
+--set-fmt-video=width=1280,height=720,pixelformat=NV12 
+
+v4l2-ctl -d /dev/video17 --stream-mmap=4 --stream-count=1 --stream-skip=10 --stream-to=/tmp/cap_isp.raw
+
+
+./oem/usr/bin/v4l2_test_mplane -i /dev/video17 -o /tmp/mamamia.raw -n 1 -f 1

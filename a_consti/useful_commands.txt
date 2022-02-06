@@ -114,3 +114,8 @@ grep -H '' /sys/class/video4linux/video*/name
 
 
 /sys/bus/i2c/drivers/imx415
+
+echo 1 > /sys/module/video_rkisp/parameters/debug
+
+rkisp_consti_demo --width 1280 --height 720  --device /dev/video39
+

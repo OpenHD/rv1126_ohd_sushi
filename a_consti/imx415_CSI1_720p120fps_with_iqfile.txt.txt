@@ -1,0 +1,1330 @@
+[root@RV1126_RV1109:/oem/usr/bin]# dmesg
+[ 8931.653805] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.653813] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.653823] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.653830] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.653841] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.653848] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.653857] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.653865] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.653874] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.653881] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.654178] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931653752987
+[ 8931.654188] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.654198] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.654207] rkisp1: Consti10:bridge_device: fs_ns:8931643187361 buf_num:5 dbg:(20:8931645693653)
+[ 8931.654218] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.654226] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.654237] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.654244] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.654364] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931653940237
+[ 8931.654374] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.654385] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.654394] rkisp1: Consti10:bridge_device: fs_ns:8931643187361 buf_num:5 dbg:(20:8931645693653)
+[ 8931.654401] rkisp1: Consti10: ISP_FRAME_IN 20: 8931653981654
+[ 8931.654410] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.654418] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.654434] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931654013737
+[ 8931.654441] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.654450] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.654459] rkisp1: Consti10:bridge_device: fs_ns:8931643187361 buf_num:5 dbg:(20:8931645693653)
+[ 8931.654466] rkisp1: Consti10: ISP_FRAME_VS 20: 8931654046404
+[ 8931.654485] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.654493] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.654507] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.654525] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.655485] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931655059654
+[ 8931.655499] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.655508] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.655518] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(20:8931645693653)
+[ 8931.655528] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655536] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655545] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655552] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655563] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655571] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655580] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655588] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655596] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655603] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655910] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931655486070
+[ 8931.655922] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.655934] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.655944] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(20:8931645693653)
+[ 8931.655955] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655965] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.655977] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.655987] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.656044] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 22 idx: 1 timestamp: 8931655613820 delay: 3500
+[ 8931.656808] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.656821] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 3 timestamp:0 delay:8931656398112 (ns)
+[ 8931.656888] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931656464904
+[ 8931.656904] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.656919] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.656935] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(20:8931645693653)
+[ 8931.656954] rkisp1: Consti10: ISP_FRAME_IN 20: 8931656529070
+[ 8931.656975] rkisp1: Consti10: ISP_FRAME_END 20: 8931656549779
+[ 8931.656996] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.657009] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.657021] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.657028] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.657797] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.657810] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.657835] rkisp1: Consti10:print_rkisp_device:frame_end time:8931657413987
+[ 8931.657844] rkisp1: Consti10:rkisp_csi_device frm_cnt:(20:-1:20:-1)
+[ 8931.657854] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(20:8931633570526) cur_frame:(21:8931641902569)
+[ 8931.657863] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(20:8931645693653)
+[ 8931.657871] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.657880] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.657890] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931657468237 now2: 8931657469112
+[ 8931.657900] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 16 buf_idx: 0 frame_timestamp: 8931600235648 delay:57 ms
+[ 8931.657908] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931641902569 timestamp:8931641902569 sync:y
+[ 8931.657916] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.657927] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931641902569 sof_ts:8931641902569 delay now-ts:15 ms
+[ 8931.657937] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 8931600235648 delay:57 ms
+[ 8931.657947] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 17 buf_idx: 0 frame_timestamp: 8931608567691 delay:48 ms
+[ 8931.657954] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8332043 (ns)
+[ 8931.658067] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.658119] rkisp1: MIPI error: size: 0x48004044
+[ 8931.659776] imx415 1-0010: set exposure(shr0) 1409 = cur_vts(1695) - val(286)
+[ 8931.660117] rkisp1: rkisp_trigger_read_back
+[ 8931.660135] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.660145] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.660698] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931660269696
+[ 8931.660710] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.660721] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.660731] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(21:8931657412821)
+[ 8931.660740] rkisp1: Consti10:rkisp_isp_isr: delay 3770084 interval: 4207875
+[ 8931.660747] rkisp1: Consti10: ISP_FRAME_VS 21: 8931660328321
+[ 8931.660761] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.660769] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.661740] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931661312696
+[ 8931.661752] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.661762] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.661780] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(21:8931657412821)
+[ 8931.661803] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.661816] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.661830] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.661843] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.661863] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.661877] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.661892] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.661900] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.661909] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.661917] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.662155] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931661729488
+[ 8931.662165] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.662174] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.662183] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(21:8931657412821)
+[ 8931.662193] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.662201] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.662212] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.662219] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.662350] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931661926654
+[ 8931.662364] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.662379] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.662394] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(21:8931657412821)
+[ 8931.662403] rkisp1: Consti10: ISP_FRAME_IN 21: 8931661983821
+[ 8931.662413] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.662421] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.662435] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931662015904
+[ 8931.662443] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.662453] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.662461] rkisp1: Consti10:bridge_device: fs_ns:8931654058362 buf_num:5 dbg:(21:8931657412821)
+[ 8931.662469] rkisp1: Consti10: ISP_FRAME_VS 21: 8931662049154
+[ 8931.662482] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.662491] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.662506] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.662514] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.663469] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931663035863
+[ 8931.663482] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.663494] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.663503] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(21:8931657412821)
+[ 8931.663517] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663526] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.663536] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663545] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.663561] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663569] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.663580] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663587] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.663598] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663606] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.663888] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931663456154
+[ 8931.663904] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.663915] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.663925] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(21:8931657412821)
+[ 8931.663937] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663946] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.663965] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.663978] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.664079] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931663655363
+[ 8931.664088] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.664098] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.664106] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(21:8931657412821)
+[ 8931.664114] rkisp1: Consti10: ISP_FRAME_IN 21: 8931663694738
+[ 8931.664124] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.664132] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.664145] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931663725363
+[ 8931.664154] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.664162] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.664171] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(21:8931657412821)
+[ 8931.664179] rkisp1: Consti10: ISP_FRAME_END 21: 8931663759779
+[ 8931.664187] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.664195] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.664206] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.664214] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.664961] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.664972] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.664996] rkisp1: Consti10:print_rkisp_device:frame_end time:8931664575571
+[ 8931.665005] rkisp1: Consti10:rkisp_csi_device frm_cnt:(21:-1:21:-1)
+[ 8931.665015] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(21:8931641902569) cur_frame:(22:8931650232278)
+[ 8931.665024] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(21:8931657412821)
+[ 8931.665033] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.665041] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.665052] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931664630405 now2: 8931664631571
+[ 8931.665062] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 17 buf_idx: 0 frame_timestamp: 8931608567691 delay:56 ms
+[ 8931.665071] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931650232278 timestamp:8931650232278 sync:y
+[ 8931.665078] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.665087] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931650232278 sof_ts:8931650232278 delay now-ts:14 ms
+[ 8931.665098] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 8931608567691 delay:56 ms
+[ 8931.665108] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 18 buf_idx: 0 frame_timestamp: 8931616902650 delay:47 ms
+[ 8931.665115] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8334959 (ns)
+[ 8931.665235] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.665273] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 23 idx: 2 timestamp: 8931664844780 delay: 3208
+[ 8931.666042] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.666057] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 0 timestamp:0 delay:8931665632571 (ns)
+[ 8931.666085] rkisp1: MIPI error: size: 0x40004004
+[ 8931.667933] rkisp1: rkisp_trigger_read_back
+[ 8931.667957] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.667967] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.667990] imx415 1-0010: set exposure(shr0) 1419 = cur_vts(1695) - val(276)
+[ 8931.668821] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931668389113
+[ 8931.668834] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.668844] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.668854] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(22:8931664574405)
+[ 8931.668865] rkisp1: Consti10:rkisp_isp_isr: delay 4685334 interval: 3439625
+[ 8931.668872] rkisp1: Consti10: ISP_FRAME_VS 22: 8931668452697
+[ 8931.668885] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.668893] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.669866] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931669437947
+[ 8931.669878] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.669888] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.669899] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(22:8931664574405)
+[ 8931.669910] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.669918] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.669927] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.669936] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.669946] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.669954] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.669963] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.669970] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.669980] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.669987] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.670272] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931669852113
+[ 8931.670280] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.670289] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.670298] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(22:8931664574405)
+[ 8931.670308] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.670316] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.670327] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.670336] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.670463] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931670039072
+[ 8931.670473] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.670482] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.670491] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(22:8931664574405)
+[ 8931.670498] rkisp1: Consti10: ISP_FRAME_IN 22: 8931670079322
+[ 8931.670508] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.670516] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.670529] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931670109363
+[ 8931.670536] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.670545] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.670554] rkisp1: Consti10:bridge_device: fs_ns:8931662057321 buf_num:5 dbg:(22:8931664574405)
+[ 8931.670560] rkisp1: Consti10: ISP_FRAME_VS 22: 8931670141738
+[ 8931.670574] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.670581] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.670597] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.670605] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.671576] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931671148280
+[ 8931.671590] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.671601] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.671621] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(22:8931664574405)
+[ 8931.671644] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.671658] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.671680] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.671700] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.671723] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.671731] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.671744] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.671751] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.671760] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.671768] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.671996] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931671568572
+[ 8931.672007] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.672017] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.672027] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(22:8931664574405)
+[ 8931.672039] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.672047] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.672060] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.672068] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.672180] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931671754364
+[ 8931.672190] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.672199] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.672209] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(22:8931664574405)
+[ 8931.672216] rkisp1: Consti10: ISP_FRAME_IN 22: 8931671796947
+[ 8931.672226] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.672234] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.672248] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931671828447
+[ 8931.672257] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.672265] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.672274] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(22:8931664574405)
+[ 8931.672282] rkisp1: Consti10: ISP_FRAME_END 22: 8931671863155
+[ 8931.672291] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.672299] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.672309] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.672316] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.673081] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.673093] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.673153] rkisp1: Consti10:print_rkisp_device:frame_end time:8931672728822
+[ 8931.673163] rkisp1: Consti10:rkisp_csi_device frm_cnt:(22:-1:22:-1)
+[ 8931.673172] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(22:8931650232278) cur_frame:(23:8931658557904)
+[ 8931.673182] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(22:8931664574405)
+[ 8931.673191] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.673198] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.673209] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931672787447 now2: 8931672788614
+[ 8931.673220] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 18 buf_idx: 0 frame_timestamp: 8931616902650 delay:55 ms
+[ 8931.673228] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931658557904 timestamp:8931658557904 sync:y
+[ 8931.673236] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.673245] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931658557904 sof_ts:8931658557904 delay now-ts:14 ms
+[ 8931.673255] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 8931616902650 delay:55 ms
+[ 8931.673266] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 19 buf_idx: 0 frame_timestamp: 8931625232651 delay:47 ms
+[ 8931.673273] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8330001 (ns)
+[ 8931.673429] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.673472] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 24 idx: 3 timestamp: 8931673041197 delay: 4667
+[ 8931.674308] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.674321] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 1 timestamp:0 delay:8931673897531 (ns)
+[ 8931.676022] rkisp1: rkisp_trigger_read_back
+[ 8931.676115] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.676131] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.677013] imx415 1-0010: set exposure(shr0) 1429 = cur_vts(1695) - val(266)
+[ 8931.678741] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931678306656
+[ 8931.678756] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.678766] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.678776] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(23:8931672727947)
+[ 8931.678786] rkisp1: Consti10:rkisp_isp_isr: delay 6502709 interval: 3418042
+[ 8931.678793] rkisp1: Consti10: ISP_FRAME_VS 23: 8931678374031
+[ 8931.678807] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.678815] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.679793] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931679360739
+[ 8931.679806] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.679817] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.679826] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(23:8931672727947)
+[ 8931.679837] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.679846] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.679854] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.679862] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.679873] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.679881] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.679891] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.679899] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.679908] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.679915] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.680201] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931679770239
+[ 8931.680214] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.680224] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.680233] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(23:8931672727947)
+[ 8931.680246] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.680255] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.680266] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.680275] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.680380] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931679955739
+[ 8931.680390] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.680399] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.680409] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(23:8931672727947)
+[ 8931.680417] rkisp1: Consti10: ISP_FRAME_IN 23: 8931679997739
+[ 8931.680427] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.680435] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.680449] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931680029531
+[ 8931.680457] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.680466] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.680475] rkisp1: Consti10:bridge_device: fs_ns:8931670149030 buf_num:5 dbg:(23:8931672727947)
+[ 8931.680482] rkisp1: Consti10: ISP_FRAME_VS 23: 8931680062781
+[ 8931.680499] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.680507] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.680978] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 25 idx: 0 timestamp: 8931680541990 delay: 2916
+[ 8931.681692] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.681705] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 2 timestamp:0 delay:8931681281365 (ns)
+[ 8931.681723] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931681302656
+[ 8931.681732] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.681741] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.681750] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(23:8931672727947)
+[ 8931.681763] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681771] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681779] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681787] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681799] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681807] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681816] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681824] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681833] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681841] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681901] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931681479406
+[ 8931.681910] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.681920] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.681928] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(23:8931672727947)
+[ 8931.681940] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681948] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.681959] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.681967] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.682087] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931681663740
+[ 8931.682097] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.682107] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.682116] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(23:8931672727947)
+[ 8931.682124] rkisp1: Consti10: ISP_FRAME_IN 23: 8931681705156
+[ 8931.682134] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.682143] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.682156] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931681736365
+[ 8931.682165] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.682173] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.682181] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(23:8931672727947)
+[ 8931.682190] rkisp1: Consti10: ISP_FRAME_END 23: 8931681770781
+[ 8931.682198] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.682206] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.682214] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.682222] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.682957] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.682968] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.683014] rkisp1: Consti10:print_rkisp_device:frame_end time:8931682591240
+[ 8931.683024] rkisp1: Consti10:rkisp_csi_device frm_cnt:(23:-1:23:-1)
+[ 8931.683034] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(23:8931658557904) cur_frame:(24:8931666901905)
+[ 8931.683043] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(23:8931672727947)
+[ 8931.683051] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.683059] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.683069] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931682647240 now2: 8931682648990
+[ 8931.683080] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 19 buf_idx: 0 frame_timestamp: 8931625232651 delay:57 ms
+[ 8931.683088] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931666901905 timestamp:8931666901905 sync:y
+[ 8931.683096] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.683105] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931666901905 sof_ts:8931666901905 delay now-ts:15 ms
+[ 8931.683115] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 8931625232651 delay:57 ms
+[ 8931.683125] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 20 buf_idx: 0 frame_timestamp: 8931633570526 delay:49 ms
+[ 8931.683132] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8337875 (ns)
+[ 8931.683281] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.683306] rkisp1: Consti10:dmarx_frame_end:new_buf: sequence: 0 timestamp:0
+[ 8931.683318] rkisp1: rkisp_trigger_read_back
+[ 8931.683328] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.683336] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 6 (ms) now-sof_ts: 6 (ms)
+[ 8931.683939] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931683514073
+[ 8931.683949] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.683959] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.683968] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(24:8931682590365)
+[ 8931.683976] rkisp1: Consti10:rkisp_isp_isr: delay 1786458 interval: 3404626
+[ 8931.683983] rkisp1: Consti10: ISP_FRAME_VS 24: 8931683564531
+[ 8931.683994] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.684002] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.684783] imx415 1-0010: set exposure(shr0) 1437 = cur_vts(1695) - val(258)
+[ 8931.684977] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931684550657
+[ 8931.684990] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.685001] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.685014] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(24:8931682590365)
+[ 8931.685028] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685038] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.685048] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685061] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.685073] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685083] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.685095] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685104] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.685114] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685124] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.685396] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931684970657
+[ 8931.685408] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.685419] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.685429] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(24:8931682590365)
+[ 8931.685442] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685450] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.685461] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685469] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.685581] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931685154115
+[ 8931.685596] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.685611] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.685625] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(24:8931682590365)
+[ 8931.685645] rkisp1: Consti10: ISP_FRAME_IN 24: 8931685219740
+[ 8931.685667] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685681] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.685702] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931685281282
+[ 8931.685711] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.685720] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.685728] rkisp1: Consti10:bridge_device: fs_ns:8931680072114 buf_num:5 dbg:(24:8931682590365)
+[ 8931.685736] rkisp1: Consti10: ISP_FRAME_VS 24: 8931685317448
+[ 8931.685755] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685764] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.685779] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.685787] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.686743] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931686304157
+[ 8931.686759] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.686771] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.686781] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(24:8931682590365)
+[ 8931.686795] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.686804] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.686813] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.686820] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.686832] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.686841] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.686850] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.686860] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.686869] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.686876] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.687151] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931686721240
+[ 8931.687173] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.687190] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.687205] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(24:8931682590365)
+[ 8931.687220] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.687229] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.687241] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.687249] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.687338] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931686913448
+[ 8931.687348] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.687358] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.687367] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(24:8931682590365)
+[ 8931.687374] rkisp1: Consti10: ISP_FRAME_IN 24: 8931686955157
+[ 8931.687384] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.687392] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.687406] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931686986365
+[ 8931.687414] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.687423] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.687431] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(24:8931682590365)
+[ 8931.687439] rkisp1: Consti10: ISP_FRAME_END 24: 8931687020198
+[ 8931.687448] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.687456] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.687465] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.687473] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.688219] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.688229] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.688252] rkisp1: Consti10:print_rkisp_device:frame_end time:8931687831324
+[ 8931.688261] rkisp1: Consti10:rkisp_csi_device frm_cnt:(24:-1:24:-1)
+[ 8931.688270] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(24:8931666901905) cur_frame:(25:8931675917906)
+[ 8931.688279] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(24:8931682590365)
+[ 8931.688287] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.688295] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.688305] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931687883240 now2: 8931687884699
+[ 8931.688315] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 20 buf_idx: 0 frame_timestamp: 8931633570526 delay:54 ms
+[ 8931.688323] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931675917906 timestamp:8931675917906 sync:y
+[ 8931.688331] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.688340] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931675917906 sof_ts:8931675917906 delay now-ts:11 ms
+[ 8931.688350] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 8931633570526 delay:54 ms
+[ 8931.688361] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 8931641902569 delay:45 ms
+[ 8931.688367] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8332043 (ns)
+[ 8931.688502] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.689298] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 26 idx: 1 timestamp: 8931688861199 delay: 3791
+[ 8931.689991] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.690005] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 3 timestamp:0 delay:8931689581032 (ns)
+[ 8931.690055] rkisp1: MIPI error: size: 0x40004004
+[ 8931.691576] rkisp1: rkisp_trigger_read_back
+[ 8931.691603] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.691624] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.693000] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931692556907
+[ 8931.693014] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.693026] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.693036] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(25:8931687830157)
+[ 8931.693045] rkisp1: Consti10:rkisp_isp_isr: delay 5604959 interval: 3463542
+[ 8931.693053] rkisp1: Consti10: ISP_FRAME_VS 25: 8931692633907
+[ 8931.693068] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.693076] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.693562] imx415 1-0010: set exposure(shr0) 1445 = cur_vts(1695) - val(250)
+[ 8931.694030] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931693599907
+[ 8931.694042] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.694052] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.694062] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(25:8931687830157)
+[ 8931.694074] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694082] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694091] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694098] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694109] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694116] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694126] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694133] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694142] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694149] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694446] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931694019616
+[ 8931.694456] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.694467] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.694476] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(25:8931687830157)
+[ 8931.694488] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694496] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694507] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694515] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694627] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931694204241
+[ 8931.694638] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.694647] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.694656] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(25:8931687830157)
+[ 8931.694663] rkisp1: Consti10: ISP_FRAME_IN 25: 8931694243908
+[ 8931.694672] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694680] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694694] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931694274533
+[ 8931.694702] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.694711] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.694720] rkisp1: Consti10:bridge_device: fs_ns:8931685325907 buf_num:5 dbg:(25:8931687830157)
+[ 8931.694727] rkisp1: Consti10: ISP_FRAME_VS 25: 8931694307783
+[ 8931.694741] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694749] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.694766] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.694775] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.695743] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931695312866
+[ 8931.695756] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.695766] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.695775] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(25:8931687830157)
+[ 8931.695787] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.695796] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.695805] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.695812] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.695823] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.695830] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.695840] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.695848] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.695856] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.695864] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.696154] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931695729366
+[ 8931.696164] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.696173] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.696183] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(25:8931687830157)
+[ 8931.696193] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.696202] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.696214] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.696222] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.696815] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931696377158
+[ 8931.696830] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.696841] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.696851] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(25:8931687830157)
+[ 8931.696859] rkisp1: Consti10: ISP_FRAME_IN 25: 8931696439283
+[ 8931.696867] rkisp1: Consti10: ISP_FRAME_END 25: 8931696448033
+[ 8931.696878] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.696886] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.696896] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.696904] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.697621] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.697629] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.697657] rkisp1: Consti10:print_rkisp_device:frame_end time:8931697236700
+[ 8931.697665] rkisp1: Consti10:rkisp_csi_device frm_cnt:(25:-1:25:-1)
+[ 8931.697674] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(25:8931675917906) cur_frame:(26:8931683603615)
+[ 8931.697682] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(25:8931687830157)
+[ 8931.697691] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.697698] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.697708] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931697286866 now2: 8931697287741
+[ 8931.697718] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 21 buf_idx: 0 frame_timestamp: 8931641902569 delay:55 ms
+[ 8931.697727] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931683603615 timestamp:8931683603615 sync:y
+[ 8931.697734] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.697743] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931683603615 sof_ts:8931683603615 delay now-ts:13 ms
+[ 8931.697753] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 8931641902569 delay:55 ms
+[ 8931.697763] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 8931650232278 delay:47 ms
+[ 8931.697770] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8329709 (ns)
+[ 8931.697878] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.697915] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 27 idx: 2 timestamp: 8931697487241 delay: 4084
+[ 8931.698645] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.698658] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 0 timestamp:0 delay:8931698235658 (ns)
+[ 8931.698679] rkisp1: MIPI error: size: 0x48004044
+[ 8931.699796] rkisp1: rkisp_trigger_read_back
+[ 8931.699826] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.699845] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.700574] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931700129450
+[ 8931.700591] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.700603] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.700613] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(26:8931697235825)
+[ 8931.700623] rkisp1: Consti10:rkisp_isp_isr: delay 3755209 interval: 3822875
+[ 8931.700631] rkisp1: Consti10: ISP_FRAME_VS 26: 8931700211991
+[ 8931.700650] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.700659] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.701561] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931701129283
+[ 8931.701574] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.701584] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.701593] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(26:8931697235825)
+[ 8931.701606] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.701614] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.701623] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.701630] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.701642] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.701650] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.701660] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.701668] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.701677] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.701685] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.702011] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931701583700
+[ 8931.702024] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.702033] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.702043] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(26:8931697235825)
+[ 8931.702054] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.702062] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.702075] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.702082] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.702123] imx415 1-0010: set exposure(shr0) 1451 = cur_vts(1695) - val(244)
+[ 8931.702155] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931701734200
+[ 8931.702164] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.702173] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.702182] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(26:8931697235825)
+[ 8931.702190] rkisp1: Consti10: ISP_FRAME_IN 26: 8931701770658
+[ 8931.702200] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.702208] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.702227] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931701806242
+[ 8931.702236] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.702246] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.702254] rkisp1: Consti10:bridge_device: fs_ns:8931694315658 buf_num:5 dbg:(26:8931697235825)
+[ 8931.702261] rkisp1: Consti10: ISP_FRAME_VS 26: 8931701842117
+[ 8931.702278] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.702286] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.702301] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.702309] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.703274] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931702836117
+[ 8931.703289] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.703298] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.703308] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(26:8931697235825)
+[ 8931.703321] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703329] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703338] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703345] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703356] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703364] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703374] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703381] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703390] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703398] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703696] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931703266325
+[ 8931.703708] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.703718] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.703727] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(26:8931697235825)
+[ 8931.703739] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703747] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703759] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703767] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703874] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931703440742
+[ 8931.703888] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.703903] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.703917] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(26:8931697235825)
+[ 8931.703930] rkisp1: Consti10: ISP_FRAME_IN 26: 8931703511325
+[ 8931.703946] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.703955] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.703981] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931703551867
+[ 8931.703994] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.704008] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.704022] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(26:8931697235825)
+[ 8931.704035] rkisp1: Consti10: ISP_FRAME_END 26: 8931703616909
+[ 8931.704045] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.704052] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.704061] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.704068] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.704826] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.704837] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.704860] rkisp1: Consti10:print_rkisp_device:frame_end time:8931704439700
+[ 8931.704869] rkisp1: Consti10:rkisp_csi_device frm_cnt:(26:-1:26:-1)
+[ 8931.704879] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(26:8931683603615) cur_frame:(27:8931691888991)
+[ 8931.704888] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(26:8931697235825)
+[ 8931.704896] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.704904] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.704915] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931704493367 now2: 8931704494534
+[ 8931.704926] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 22 buf_idx: 0 frame_timestamp: 8931650232278 delay:54 ms
+[ 8931.704934] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931691888991 timestamp:8931691888991 sync:y
+[ 8931.704941] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.704950] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931691888991 sof_ts:8931691888991 delay now-ts:12 ms
+[ 8931.704963] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 27 buf_idx: 0 frame_timestamp: 8931650232278 delay:54 ms
+[ 8931.704973] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 8931658557904 delay:45 ms
+[ 8931.704980] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8325626 (ns)
+[ 8931.705126] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.705974] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 28 idx: 3 timestamp: 8931705532284 delay: 3791
+[ 8931.706691] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.706705] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 1 timestamp:0 delay:8931706280409 (ns)
+[ 8931.706771] rkisp1: MIPI error: size: 0x40004004
+[ 8931.708207] rkisp1: rkisp_trigger_read_back
+[ 8931.708232] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.708251] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.708948] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931708522742
+[ 8931.708970] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.708986] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.709002] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(27:8931704438242)
+[ 8931.709022] rkisp1: Consti10:rkisp_isp_isr: delay 4979625 interval: 3413084
+[ 8931.709034] rkisp1: Consti10: ISP_FRAME_VS 27: 8931708614909
+[ 8931.709054] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.709073] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.709774] imx415 1-0010: set exposure(shr0) 1459 = cur_vts(1695) - val(236)
+[ 8931.710005] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931709576534
+[ 8931.710016] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.710025] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.710034] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(27:8931704438242)
+[ 8931.710055] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710071] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710086] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710101] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710123] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710139] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710162] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710169] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710179] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710187] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710422] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931709995367
+[ 8931.710433] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.710443] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.710453] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(27:8931704438242)
+[ 8931.710465] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710473] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710484] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710492] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710596] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931710172409
+[ 8931.710606] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.710616] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.710626] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(27:8931704438242)
+[ 8931.710634] rkisp1: Consti10: ISP_FRAME_IN 27: 8931710214992
+[ 8931.710645] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710653] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.710665] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931710245909
+[ 8931.710673] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.710682] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.710691] rkisp1: Consti10:bridge_device: fs_ns:8931701851742 buf_num:5 dbg:(27:8931704438242)
+[ 8931.710698] rkisp1: Consti10: ISP_FRAME_VS 27: 8931710279159
+[ 8931.710715] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710723] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.710739] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.710747] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.711717] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931711283368
+[ 8931.711729] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.711739] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.711748] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(27:8931704438242)
+[ 8931.711761] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.711769] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.711777] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.711784] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.711796] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.711815] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.711836] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.711849] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.711870] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.711882] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.712132] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931711706868
+[ 8931.712142] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.712151] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.712162] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(27:8931704438242)
+[ 8931.712172] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.712179] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.712191] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.712200] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.712319] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931711894409
+[ 8931.712328] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.712337] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.712346] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(27:8931704438242)
+[ 8931.712354] rkisp1: Consti10: ISP_FRAME_IN 27: 8931711934659
+[ 8931.712365] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.712372] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.712385] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931711965576
+[ 8931.712393] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.712411] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.712425] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(27:8931704438242)
+[ 8931.712438] rkisp1: Consti10: ISP_FRAME_END 27: 8931712019534
+[ 8931.712459] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.712472] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.712492] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.712505] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.713251] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.713260] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.713309] rkisp1: Consti10:print_rkisp_device:frame_end time:8931712886659
+[ 8931.713319] rkisp1: Consti10:rkisp_csi_device frm_cnt:(27:-1:27:-1)
+[ 8931.713328] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(27:8931691888991) cur_frame:(28:8931700270908)
+[ 8931.713336] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(27:8931704438242)
+[ 8931.713345] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.713355] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.713364] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931712943243 now2: 8931712944118
+[ 8931.713375] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 23 buf_idx: 0 frame_timestamp: 8931658557904 delay:54 ms
+[ 8931.713383] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931700270908 timestamp:8931700270908 sync:y
+[ 8931.713391] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.713402] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931700270908 sof_ts:8931700270908 delay now-ts:12 ms
+[ 8931.713412] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 28 buf_idx: 0 frame_timestamp: 8931658557904 delay:54 ms
+[ 8931.713422] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 8931666901905 delay:46 ms
+[ 8931.713428] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8344001 (ns)
+[ 8931.713576] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.714292] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 29 idx: 0 timestamp: 8931713859660 delay: 2916
+[ 8931.715009] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.715022] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 2 timestamp:0 delay:8931714599035 (ns)
+[ 8931.715041] rkisp1: MIPI error: size: 0x40004004
+[ 8931.718231] imx415 1-0010: set exposure(shr0) 1463 = cur_vts(1695) - val(232)
+[ 8931.720481] rkisp1: rkisp_trigger_read_back
+[ 8931.720507] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.720527] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.721120] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931720689327
+[ 8931.721134] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.721144] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.721154] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(28:8931712885784)
+[ 8931.721163] rkisp1: Consti10:rkisp_isp_isr: delay 8723168 interval: 3423584
+[ 8931.721170] rkisp1: Consti10: ISP_FRAME_VS 28: 8931720750577
+[ 8931.721184] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.721192] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.722168] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931721738160
+[ 8931.722182] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.722192] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.722201] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(28:8931712885784)
+[ 8931.722214] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722222] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722231] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722239] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722250] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722257] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722266] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722275] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722284] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722291] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722587] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931722156994
+[ 8931.722602] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.722618] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.722633] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(28:8931712885784)
+[ 8931.722644] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722653] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722664] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.722671] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.722699] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 30 idx: 1 timestamp: 8931722272202 delay: 3208
+[ 8931.723415] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.723430] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 3 timestamp:0 delay:8931723006035 (ns)
+[ 8931.723483] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931723059702
+[ 8931.723493] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.723502] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.723522] rkisp1: Consti10:bridge_device: fs_ns:8931710287618 buf_num:5 dbg:(28:8931712885784)
+[ 8931.723537] rkisp1: Consti10: ISP_FRAME_VS 28: 8931723116577
+[ 8931.723556] rkisp1: Consti10: ISP_FRAME_IN 28: 8931723136994
+[ 8931.723576] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723596] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.723649] rkisp1: MIPI error: size: 0x48104044
+[ 8931.723877] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931723450827
+[ 8931.723887] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.723897] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.723908] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(28:8931712885784)
+[ 8931.723919] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723927] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.723936] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723944] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.723955] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723963] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.723972] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723980] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.723989] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.723997] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 14 (ms) now-sof_ts: 14 (ms)
+[ 8931.724289] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931723863244
+[ 8931.724299] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.724310] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.724319] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(28:8931712885784)
+[ 8931.724330] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.724338] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.724350] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.724358] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.724476] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931724052827
+[ 8931.724485] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.724495] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.724503] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(28:8931712885784)
+[ 8931.724511] rkisp1: Consti10: ISP_FRAME_IN 28: 8931724092202
+[ 8931.724521] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.724529] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.724541] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931724122244
+[ 8931.724560] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.724575] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.724589] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(28:8931712885784)
+[ 8931.724608] rkisp1: Consti10: ISP_FRAME_END 28: 8931724183494
+[ 8931.724627] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.724640] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.724654] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.724667] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 15 (ms) now-sof_ts: 15 (ms)
+[ 8931.725405] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.725416] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 16 (ms) now-sof_ts: 16 (ms)
+[ 8931.725467] rkisp1: Consti10:print_rkisp_device:frame_end time:8931725044494
+[ 8931.725476] rkisp1: Consti10:rkisp_csi_device frm_cnt:(28:-1:28:-1)
+[ 8931.725486] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(28:8931700270908) cur_frame:(29:8931708680826)
+[ 8931.725495] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(28:8931712885784)
+[ 8931.725503] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.725511] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 16 (ms) now-sof_ts: 16 (ms)
+[ 8931.725521] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931725099327 now2: 8931725100494
+[ 8931.725531] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 24 buf_idx: 0 frame_timestamp: 8931666901905 delay:58 ms
+[ 8931.725540] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931708680826 timestamp:8931708680826 sync:y
+[ 8931.725547] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 16 (ms) now-sof_ts: 16 (ms)
+[ 8931.725556] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931708680826 sof_ts:8931708680826 delay now-ts:16 ms
+[ 8931.725567] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 29 buf_idx: 0 frame_timestamp: 8931666901905 delay:58 ms
+[ 8931.725577] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 8931675917906 delay:49 ms
+[ 8931.725584] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 9016001 (ns)
+[ 8931.725732] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.725765] rkisp1: Consti10:dmarx_frame_end:new_buf: sequence: 0 timestamp:0
+[ 8931.725782] rkisp1: rkisp_trigger_read_back
+[ 8931.725795] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.725805] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.726527] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931726094494
+[ 8931.726542] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.726554] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.726563] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(29:8931725043327)
+[ 8931.726574] rkisp1: Consti10:rkisp_isp_isr: delay 1969917 interval: 3440208
+[ 8931.726596] rkisp1: Consti10: ISP_FRAME_VS 29: 8931726177036
+[ 8931.726611] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.726631] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.727540] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931727100744
+[ 8931.727557] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.727569] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.727580] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(29:8931725043327)
+[ 8931.727594] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.727603] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.727614] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.727622] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.727635] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.727643] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.727654] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.727662] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.727671] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.727685] imx415 1-0010: set exposure(shr0) 1467 = cur_vts(1695) - val(228)
+[ 8931.727693] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.727973] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931727530078
+[ 8931.727998] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.728014] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.728025] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(29:8931725043327)
+[ 8931.728045] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.728058] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.728070] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.728078] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.728141] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931727717036
+[ 8931.728152] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.728161] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.728171] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(29:8931725043327)
+[ 8931.728181] rkisp1: Consti10: ISP_FRAME_IN 29: 8931727760494
+[ 8931.728190] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.728199] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.728220] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931727798411
+[ 8931.728229] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.728240] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.728249] rkisp1: Consti10:bridge_device: fs_ns:8931723131160 buf_num:5 dbg:(29:8931725043327)
+[ 8931.728261] rkisp1: Consti10: ISP_FRAME_VS 29: 8931727839536
+[ 8931.728279] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.728288] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.728313] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.728323] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.729270] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931728841119
+[ 8931.729283] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.729294] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.729303] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(29:8931725043327)
+[ 8931.729316] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729324] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729332] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729339] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729351] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729359] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729368] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729376] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729385] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729392] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729683] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931729259661
+[ 8931.729694] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.729704] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.729713] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(29:8931725043327)
+[ 8931.729724] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729732] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729744] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729751] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729869] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931729445744
+[ 8931.729879] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.729889] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.729898] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(29:8931725043327)
+[ 8931.729905] rkisp1: Consti10: ISP_FRAME_IN 29: 8931729485703
+[ 8931.729914] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729923] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729936] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931729516328
+[ 8931.729944] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.729953] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.729961] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(29:8931725043327)
+[ 8931.729969] rkisp1: Consti10: ISP_FRAME_END 29: 8931729549869
+[ 8931.729977] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.729985] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.729993] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.730001] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.730716] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.730725] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.730765] rkisp1: Consti10:print_rkisp_device:frame_end time:8931730342620
+[ 8931.730774] rkisp1: Consti10:rkisp_csi_device frm_cnt:(29:-1:29:-1)
+[ 8931.730783] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(29:8931708680826) cur_frame:(30:8931716887451)
+[ 8931.730792] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(29:8931725043327)
+[ 8931.730801] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.730808] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.730819] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931730397161 now2: 8931730398328
+[ 8931.730829] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 25 buf_idx: 0 frame_timestamp: 8931675917906 delay:54 ms
+[ 8931.730838] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931716887451 timestamp:8931716887451 sync:y
+[ 8931.730845] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.730854] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931716887451 sof_ts:8931716887451 delay now-ts:13 ms
+[ 8931.730865] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 30 buf_idx: 0 frame_timestamp: 8931675917906 delay:54 ms
+[ 8931.730875] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 8931683603615 delay:46 ms
+[ 8931.730881] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 7685709 (ns)
+[ 8931.730988] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.731031] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 31 idx: 2 timestamp: 8931730602786 delay: 3500
+[ 8931.731754] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.731766] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 0 timestamp:0 delay:8931731343328 (ns)
+[ 8931.733055] rkisp1: rkisp_trigger_read_back
+[ 8931.733077] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.733086] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 6 (ms) now-sof_ts: 6 (ms)
+[ 8931.733795] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931733360203
+[ 8931.733810] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.733820] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.733830] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(30:8931730342036)
+[ 8931.733839] rkisp1: Consti10:rkisp_isp_isr: delay 3869542 interval: 3397042
+[ 8931.733847] rkisp1: Consti10: ISP_FRAME_VS 30: 8931733427578
+[ 8931.733861] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.733869] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.734784] imx415 1-0010: set exposure(shr0) 1475 = cur_vts(1695) - val(220)
+[ 8931.734822] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931734396495
+[ 8931.734834] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.734844] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.734853] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(30:8931730342036)
+[ 8931.734865] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.734873] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.734882] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.734890] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.734901] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.734908] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.734917] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.734925] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.734934] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.734941] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.735242] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931734817662
+[ 8931.735254] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.735264] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.735273] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(30:8931730342036)
+[ 8931.735284] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.735292] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.735304] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.735311] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.735427] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931735002870
+[ 8931.735437] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.735447] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.735455] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(30:8931730342036)
+[ 8931.735463] rkisp1: Consti10: ISP_FRAME_IN 30: 8931735043412
+[ 8931.735473] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.735481] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.735494] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931735074620
+[ 8931.735502] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.735510] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.735519] rkisp1: Consti10:bridge_device: fs_ns:8931727850328 buf_num:5 dbg:(30:8931730342036)
+[ 8931.735526] rkisp1: Consti10: ISP_FRAME_VS 30: 8931735107287
+[ 8931.735543] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.735551] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.735566] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.735574] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.736548] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931736111787
+[ 8931.736564] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.736574] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.736583] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(30:8931730342036)
+[ 8931.736597] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.736605] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.736614] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.736622] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.736633] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.736641] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.736651] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.736659] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.736667] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.736675] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.736952] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931736526245
+[ 8931.736962] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.736971] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.736980] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(30:8931730342036)
+[ 8931.736991] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.737000] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.737011] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.737019] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.737139] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931736712912
+[ 8931.737149] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.737159] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.737168] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(30:8931730342036)
+[ 8931.737175] rkisp1: Consti10: ISP_FRAME_IN 30: 8931736756370
+[ 8931.737187] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.737195] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.737214] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931736794287
+[ 8931.737225] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.737233] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.737242] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(30:8931730342036)
+[ 8931.737250] rkisp1: Consti10: ISP_FRAME_END 30: 8931736831037
+[ 8931.737259] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.737267] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.737276] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.737283] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.738017] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.738028] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.738077] rkisp1: Consti10:print_rkisp_device:frame_end time:8931737654995
+[ 8931.738086] rkisp1: Consti10:rkisp_csi_device frm_cnt:(30:-1:30:-1)
+[ 8931.738097] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(30:8931716887451) cur_frame:(31:8931726252869)
+[ 8931.738106] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(30:8931730342036)
+[ 8931.738114] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.738122] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.738132] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931737710412 now2: 8931737711579
+[ 8931.738142] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 26 buf_idx: 0 frame_timestamp: 8931683603615 delay:54 ms
+[ 8931.738150] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931726252869 timestamp:8931726252869 sync:y
+[ 8931.738158] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.738167] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931726252869 sof_ts:8931726252869 delay now-ts:11 ms
+[ 8931.738177] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 31 buf_idx: 0 frame_timestamp: 8931683603615 delay:54 ms
+[ 8931.738187] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 27 buf_idx: 0 frame_timestamp: 8931691888991 delay:45 ms
+[ 8931.738194] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8285376 (ns)
+[ 8931.738302] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.739302] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 32 idx: 3 timestamp: 8931738860454 delay: 4083
+[ 8931.740012] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.740025] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 1 timestamp:0 delay:8931739601579 (ns)
+[ 8931.740092] rkisp1: MIPI error: size: 0x40004004
+[ 8931.741509] rkisp1: rkisp_trigger_read_back
+[ 8931.741530] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.741540] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 7 (ms) now-sof_ts: 7 (ms)
+[ 8931.742752] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931742318746
+[ 8931.742768] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.742778] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.742787] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(31:8931737654120)
+[ 8931.742798] rkisp1: Consti10:rkisp_isp_isr: delay 5546042 interval: 3411626
+[ 8931.742807] rkisp1: Consti10: ISP_FRAME_VS 31: 8931742387871
+[ 8931.742825] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.742834] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 8 (ms) now-sof_ts: 8 (ms)
+[ 8931.743153] imx415 1-0010: set exposure(shr0) 1483 = cur_vts(1695) - val(212)
+[ 8931.743806] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931743370204
+[ 8931.743820] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.743831] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.743841] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(31:8931737654120)
+[ 8931.743853] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.743861] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.743871] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.743879] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.743891] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.743898] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.743908] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.743916] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.743924] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.743931] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 9 (ms) now-sof_ts: 9 (ms)
+[ 8931.744210] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931743781163
+[ 8931.744222] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.744231] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.744240] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(31:8931737654120)
+[ 8931.744251] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.744259] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.744270] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.744277] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.744396] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931743971621
+[ 8931.744407] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.744418] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.744427] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(31:8931737654120)
+[ 8931.744435] rkisp1: Consti10: ISP_FRAME_IN 31: 8931744015663
+[ 8931.744445] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.744453] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.744467] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931744048038
+[ 8931.744475] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.744484] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.744493] rkisp1: Consti10:bridge_device: fs_ns:8931735115162 buf_num:5 dbg:(31:8931737654120)
+[ 8931.744500] rkisp1: Consti10: ISP_FRAME_VS 31: 8931744080704
+[ 8931.744514] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.744521] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.744537] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.744545] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 10 (ms) now-sof_ts: 10 (ms)
+[ 8931.745524] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931745092788
+[ 8931.745538] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.745548] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.745558] rkisp1: Consti10:bridge_device: fs_ns:8931744088288 buf_num:5 dbg:(31:8931737654120)
+[ 8931.745571] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745580] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745589] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745596] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745609] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745617] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745627] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745634] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745643] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745651] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745920] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931745492663
+[ 8931.745931] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.745941] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.745951] rkisp1: Consti10:bridge_device: fs_ns:8931744088288 buf_num:5 dbg:(31:8931737654120)
+[ 8931.745962] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745970] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.745982] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.745989] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 11 (ms) now-sof_ts: 11 (ms)
+[ 8931.746103] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931745679913
+[ 8931.746118] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.746133] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.746147] rkisp1: Consti10:bridge_device: fs_ns:8931744088288 buf_num:5 dbg:(31:8931737654120)
+[ 8931.746160] rkisp1: Consti10: ISP_FRAME_IN 31: 8931745741454
+[ 8931.746171] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.746179] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.746193] rkisp1: Consti10:print_rkisp_device:rkisp_isp_isr time:8931745773829
+[ 8931.746201] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.746210] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.746219] rkisp1: Consti10:bridge_device: fs_ns:8931744088288 buf_num:5 dbg:(31:8931737654120)
+[ 8931.746226] rkisp1: Consti10: ISP_FRAME_END 31: 8931745807371
+[ 8931.746235] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.746243] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.746252] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.746260] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.747003] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.747013] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 12 (ms) now-sof_ts: 12 (ms)
+[ 8931.747074] rkisp1: Consti10:print_rkisp_device:frame_end time:8931746650871
+[ 8931.747084] rkisp1: Consti10:rkisp_csi_device frm_cnt:(31:-1:31:-1)
+[ 8931.747093] rkisp1: Consti10:rkisp_dmarx_device pre_frame:(31:8931726252869) cur_frame:(32:8931733594120)
+[ 8931.747104] rkisp1: Consti10:bridge_device: fs_ns:8931744088288 buf_num:5 dbg:(31:8931737654120)
+[ 8931.747112] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.747119] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.747130] rkisp-bridge-ispp: Consti10:rkisp_frame_end: now: 8931746708038 now2: 8931746709204
+[ 8931.747140] rkisp-bridge-ispp: Consti10:rkisp_frame_end1: hw->cur_buf: frame_id: 27 buf_idx: 0 frame_timestamp: 8931691888991 delay:54 ms
+[ 8931.747161] rkisp1: Consti10:rkisp_dmarx_get_frame sof_timestamp:8931733594120 timestamp:8931733594120 sync:y
+[ 8931.747175] rkisp1: Consti10:rkisp_dmarx_get_frame delay now-ts: 13 (ms) now-sof_ts: 13 (ms)
+[ 8931.747190] rkisp-bridge-ispp: Consti10:rkisp_frame_end: ts: 8931733594120 sof_ts:8931733594120 delay now-ts:13 ms
+[ 8931.747205] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->cur_buf: frame_id: 32 buf_idx: 0 frame_timestamp: 8931691888991 delay:54 ms
+[ 8931.747220] rkisp-bridge-ispp: Consti10:rkisp_frame_end: hw->nxt_buf: frame_id: 28 buf_idx: 0 frame_timestamp: 8931700270908 delay:46 ms
+[ 8931.747232] rkisp-bridge-ispp: Consti10:rkisp_frame_end: Delta between curr and next buf: 8381917 (ns)
+[ 8931.747385] rkisp1: Consti10:dmarx_frame_end:done_with: sequence: 0 timestamp:0
+[ 8931.747618] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 33 idx: 0 timestamp: 8931747186080 delay: 4083
+[ 8931.748330] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.748342] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 2 timestamp:0 delay:8931747919621 (ns)
+[ 8931.748363] rkisp1: MIPI error: size: 0x40004004
+[ 8931.755955] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 34 idx: 1 timestamp: 8931755520164 delay: 3208
+[ 8931.756657] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:y
+[ 8931.756668] rkisp1: Consti10:stream->next_buf: sequence: 0 index: 3 timestamp:0 delay:8931756245247 (ns)
+[ 8931.764289] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 35 idx: 2 timestamp: 8931763853665 delay: 2333
+[ 8931.764982] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.765028] rkisp1: MIPI error: size: 0x40004004
+[ 8931.772620] rkisp1: tx stream:4 lose frame:36, isp state:0x201 frame:32
+[ 8931.772685] rkisp1: Consti10:YYY::rdbk_frame_end sequence: 36 idx: 3 timestamp: 8931772257457 delay: 2333
+[ 8931.773384] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.773469] rkisp1: MIPI error: size: 0x40004004
+[ 8931.780965] rkisp1: tx stream:4 lose frame:37, isp state:0x201 frame:32
+[ 8931.781025] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.781046] rkisp1: MIPI error: size: 0x40004004
+[ 8931.781081] rkisp1: no luma buffer available
+[ 8931.789281] rkisp1: tx stream:4 lose frame:38, isp state:0x201 frame:32
+[ 8931.789329] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.789347] rkisp1: MIPI error: size: 0x40004004
+[ 8931.789379] rkisp1: no luma buffer available
+[ 8931.797619] rkisp1: tx stream:4 lose frame:39, isp state:0x201 frame:32
+[ 8931.797684] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.797709] rkisp1: MIPI error: size: 0x40004004
+[ 8931.797742] rkisp1: no luma buffer available
+[ 8931.805948] rkisp1: tx stream:4 lose frame:40, isp state:0x201 frame:32
+[ 8931.805994] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.806015] rkisp1: MIPI error: size: 0x40004004
+[ 8931.806060] rkisp1: no luma buffer available
+[ 8931.814283] rkisp1: tx stream:4 lose frame:41, isp state:0x201 frame:32
+[ 8931.814332] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.814369] rkisp1: no luma buffer available
+[ 8931.822608] rkisp1: tx stream:4 lose frame:42, isp state:0x201 frame:32
+[ 8931.822653] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.822673] rkisp1: MIPI error: size: 0x40004004
+[ 8931.822707] rkisp1: no luma buffer available
+[ 8931.830949] rkisp1: tx stream:4 lose frame:43, isp state:0x201 frame:32
+[ 8931.831000] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.831024] rkisp1: MIPI error: size: 0x40004004
+[ 8931.831056] rkisp1: no luma buffer available
+[ 8931.839274] rkisp1: tx stream:4 lose frame:44, isp state:0x201 frame:32
+[ 8931.839320] rkisp1: Consti10:update_dmatx_v2(0): stream->next_buf?:n
+[ 8931.842243] rkisp1: rkisp_stop_streaming 4
+[ 8931.864421] rkisp-bridge-ispp: bridge_s_stream 0
+[ 8932.876361] rkisp-bridge-ispp: bridge_stop timeout ret:0
+[ 8932.876457] imx415 1-0010: s_stream: OFF 1284x720, hdr: 0, bpp: 10
+[ 8932.877499] rockchip-mipi-dphy-rx ff4b8000.csi-dphy: stream on:0
+[ 8932.886413] rkisp1: SP streaming = 0, MP streaming = 0
+[ 8932.886438] rkisp1: streaming(MP:0, SP:0), MI_CTRL:380000, ISP_CTRL:80446186, MIPI_CTRL:a0820401
+[ 8932.886496] rkisp1: free_bridge_buf
+[ 8932.886509] rkisp1: rkisp_free_buffer buf:0x5e25b000~0x5eeb8000
+[ 8932.886520] rkisp1: rkisp_free_buffer buf:0x5eeb8000~0x5ef38000
+[ 8932.886528] rkisp1: rkisp_free_buffer buf:0x5ef38000~0x5fb95000
+[ 8932.886536] rkisp1: rkisp_free_buffer buf:0x5fb95000~0x5fc15000
+[ 8932.886544] rkisp1: rkisp_free_buffer buf:0x5fc15000~0x60872000
+[ 8932.886551] rkisp1: rkisp_free_buffer buf:0x60872000~0x608f2000
+[ 8932.886559] rkisp1: rkisp_free_buffer buf:0x608f2000~0x6154f000
+[ 8932.886566] rkisp1: rkisp_free_buffer buf:0x6154f000~0x615cf000
+[ 8932.886574] rkisp1: rkisp_free_buffer buf:0x615cf000~0x6222c000
+[ 8932.886581] rkisp1: rkisp_free_buffer buf:0x6222c000~0x622ac000
+[ 8932.886590] rkisp1: rkisp_free_buffer buf:0x5dc08000~0x5dd43000
+[ 8932.953265] rkisp-bridge-ispp: bridge_s_power 0
+[ 8932.953439] rkisp1: rkisp_isp_sd_s_power on:0

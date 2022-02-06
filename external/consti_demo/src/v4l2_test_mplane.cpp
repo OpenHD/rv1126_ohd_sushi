@@ -257,16 +257,16 @@ int main(int argc, char **argv)
         printf("Ts: %lld Delay: %f ms\n",timestampUs,latencyUs/1000.0f);*/
         const auto timestamp=timevalToTimePointSystemClock(buf.timestamp);
         const auto delay=std::chrono::system_clock::now()-timestamp;
-        std::cout<<"Buff idx:"<<buf.index<<" Delay:"<<std::chrono::duration_cast<std::chrono::microseconds>(delay).count()/1000.0f<<" ms"
-        "timestamp: "<<timestamp.time_since_epoch().count()<<"\n";
+        const float delayMs=std::chrono::duration_cast<std::chrono::microseconds>(delay).count()/1000.0f;
+        std::cout<<"Buff idx:"<<buf.index<<" Sequence:"<<buf.sequence<<" Delay:"<<delayMs<<" ms timestamp: "<<timestamp.time_since_epoch().count()<<"\n";
 
         for (j = 0; j < num_planes; j++) {
             buffer* thisBuffer=&buffers[buf.index];
-            //v4l2_plane* thisPlane=thisBuffer->planes_buffer;
-            const uint8_t* data=(uint8_t*)((buffers + buf.index)->plane_start + j)->start;
-            const int data_len=(tmp_plane + j)->bytesused;
+            //const uint8_t* data=(uint8_t*)thisBuffer->plane_start[j]->start;
+            const uint8_t* data=(uint8_t*)thisBuffer->plane_start[j].start;
+            const int data_len=tmp_plane[j].bytesused;
 
-            printf("plane[%d] start = %p, bytesused = %d\n", j, ((buffers + buf.index)->plane_start + j)->start,data_len);
+            printf("plane[%d] data = %p, data_len = %d\n", j, data,data_len);
 
             // for gc2053:
             // data len is     3317760

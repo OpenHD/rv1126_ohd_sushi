@@ -80,7 +80,9 @@ demo/drmDsp
 ${RK_AIQ_INCLUDE_DIR}
 )
 #source directory
-AUX_SOURCE_DIRECTORY(demo DIR_SRCS)
+# Consti10 workaround
+#AUX_SOURCE_DIRECTORY(demo DIR_SRCS)
+SET(DIR_SRCS demo/display.c demo/drmDsp.c demo/rga_control.c demo/rkdrm_display.c demo/rkRgaApi.cpp)
 AUX_SOURCE_DIRECTORY(demo/drmDsp DRMDSP_DIR_SRCS)
 AUX_SOURCE_DIRECTORY(demo/ae_algo_demo AEDEMO_DIR_SRCS)
 list(APPEND DIR_SRCS ${DRMDSP_DIR_SRCS})
@@ -107,9 +109,16 @@ add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 #
 link_directories("${LIBRARY_OUTPUT_PATH}" "${RK_AIQ_LIB_DIR}" "${RK_DRM_LIB_DIR}")
 #add executable file
-ADD_EXECUTABLE(rkisp_demo ${DIR_SRCS})
+ADD_EXECUTABLE(rkisp_demo demo/rkisp_demo.cpp ${DIR_SRCS})
 target_link_libraries(rkisp_demo ${RK_AIQ_LIB} ${RK_DRM_LIB} ${RK_RGA_LIB} ${LINK_ASAN} pthread)
 
 install(TARGETS rkisp_demo
+    RUNTIME DESTINATION bin
+)
+
+#Consti10 added
+ADD_EXECUTABLE(rkisp_consti_demo demo/rkisp_consti_demo.cpp ${DIR_SRCS})
+target_link_libraries(rkisp_consti_demo ${RK_AIQ_LIB} ${RK_DRM_LIB} ${RK_RGA_LIB} ${LINK_ASAN} pthread)
+install(TARGETS rkisp_consti_demo
     RUNTIME DESTINATION bin
 )

@@ -196,23 +196,21 @@ static const char *consti10_rkcif_pixelcode_to_string(uint32_t mbus_code)
 
 #include <sys/time.h>
 #include <chrono>
-using namespace std::chrono;
-constexpr nanoseconds timevalToDuration(timeval tv){
-    auto duration = seconds{tv.tv_sec}
-                    + microseconds {tv.tv_usec};
-    return duration_cast<nanoseconds>(duration);
+static std::chrono::nanoseconds timevalToDuration(timeval tv){
+    auto duration = std::chrono::seconds{tv.tv_sec}
+                    + std::chrono::microseconds{tv.tv_usec};
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(duration);
 }
-constexpr time_point<system_clock, nanoseconds>
+static std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds>
 timevalToTimePointSystemClock(timeval tv){
-    return time_point<system_clock, nanoseconds>{
-            duration_cast<system_clock::duration>(timevalToDuration(tv))};
+    return std::chrono::time_point<std::chrono::system_clock,std::chrono::nanoseconds>{
+            std::chrono::duration_cast<std::chrono::system_clock::duration>(timevalToDuration(tv))};
 }
-constexpr time_point<steady_clock, nanoseconds>
+static std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>
 timevalToTimePointSteadyClock(timeval tv){
-    return time_point<steady_clock, nanoseconds>{
-            duration_cast<steady_clock::duration>(timevalToDuration(tv))};
+    return std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>{
+            std::chrono::duration_cast<std::chrono::steady_clock::duration>(timevalToDuration(tv))};
 }
-
 static uint64_t getTimeUs(){
     struct timeval time;
     gettimeofday(&time, NULL);

@@ -19,5 +19,6 @@ adb push buildroot/output/rockchip_rv1126_rv1109/build/camera_engine_rkaiq-1.0/a
 #note: Not pushing the stuff under /oem/usr/include/rkaiq
 
 adb push buildroot/output/rockchip_rv1126_rv1109/target/usr/bin/rkisp_demo /usr/bin/rkisp_demo
+adb push buildroot/output/rockchip_rv1126_rv1109/target/usr/bin/rkisp_consti_demo /usr/bin/rkisp_consti_demo
 
 echo "flashing done"
