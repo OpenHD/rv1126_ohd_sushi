@@ -1,0 +1,14 @@
+Filling code:
+// first frame all green
+// second frame all white-gray
+// alternating
+
+./mpi_enc_test -w 1280 -h 720 -o /tmp/rv_1280x720_green_white.h264 -n 480
+./mpi_enc_test -w 1280 -h 720 -o /tmp/rv_1280x720_green_white.h265 -n 480 -t 16777220
+
+
+./mpi_enc_test -w 1920 -h 1080 -o /tmp/rv_1920x1080_green_white.h264 -n 480
+./mpi_enc_test -w 1920 -h 1080 -o /tmp/rv_1920x1080_green_white.h265 -n 480 -t 16777220
+
+# extra gop interval
+./mpi_enc_test -w 1280 -h 720 -o /tmp/rv_1280x720_green_white_gop.h265 -n 480 -t 16777220 -g 1
