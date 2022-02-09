@@ -46,7 +46,7 @@ static void sendViaUDPIfEnabled(const void* data,int data_length){
     if(udpSender!= nullptr){
         udpSender->splitAndSend((uint8_t*)data,data_length,CHUNK_SIZE);
     }
-    std::cout<<"Sent\n";
+    //std::cout<<"Sent\n";
 }
 
 typedef struct {
@@ -99,13 +99,8 @@ typedef struct {
     /* NOTE: packet buffer may overflow */
     size_t packet_size;
 
-    RK_U32 osd_enable;
-    RK_U32 osd_mode;
     RK_U32 split_mode;
     RK_U32 split_arg;
-
-    RK_U32 user_data_enable;
-    RK_U32 roi_enable;
 
     // rate control runtime parameter
 
@@ -467,12 +462,6 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
         mpp_enc_ref_cfg_deinit(&ref);
     }
 
-    /* setup test mode by env */
-    mpp_env_get_u32("osd_enable", &p->osd_enable, 0);
-    mpp_env_get_u32("osd_mode", &p->osd_mode, MPP_ENC_OSD_PLT_TYPE_DEFAULT);
-    mpp_env_get_u32("roi_enable", &p->roi_enable, 0);
-    mpp_env_get_u32("user_data_enable", &p->user_data_enable, 0);
-
 RET:
     return ret;
 }
@@ -616,89 +605,6 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         /* NOTE: It is important to clear output packet length!! */
         mpp_packet_set_length(packet, 0);
         mpp_meta_set_packet(meta, KEY_OUTPUT_PACKET, packet);
-
-        if (p->osd_enable || p->user_data_enable || p->roi_enable) {
-            if (p->user_data_enable) {
-                MppEncUserData user_data;
-                char *str = "this is user data\n";
-
-                if ((p->frame_count & 10) == 0) {
-                    user_data.pdata = str;
-                    user_data.len = strlen(str) + 1;
-                    mpp_meta_set_ptr(meta, KEY_USER_DATA, &user_data);
-                }
-                static RK_U8 uuid_debug_info[16] = {
-                    0x57, 0x68, 0x97, 0x80, 0xe7, 0x0c, 0x4b, 0x65,
-                    0xa9, 0x06, 0xae, 0x29, 0x94, 0x11, 0xcd, 0x9a
-                };
-
-                MppEncUserDataSet data_group;
-                MppEncUserDataFull datas[2];
-                char *str1 = "this is user data 1\n";
-                char *str2 = "this is user data 2\n";
-                data_group.count = 2;
-                datas[0].len = strlen(str1) + 1;
-                datas[0].pdata = str1;
-                datas[0].uuid = uuid_debug_info;
-
-                datas[1].len = strlen(str2) + 1;
-                datas[1].pdata = str2;
-                datas[1].uuid = uuid_debug_info;
-
-                data_group.datas = datas;
-
-                mpp_meta_set_ptr(meta, KEY_USER_DATAS, &data_group);
-            }
-
-            if (p->osd_enable) {
-                /* gen and cfg osd plt */
-                mpi_enc_gen_osd_plt(&p->osd_plt, p->frame_count);
-
-                p->osd_plt_cfg.change = MPP_ENC_OSD_PLT_CFG_CHANGE_ALL;
-                p->osd_plt_cfg.type = MPP_ENC_OSD_PLT_TYPE_USERDEF;
-                p->osd_plt_cfg.plt = &p->osd_plt;
-
-                ret = mpi->control(ctx, MPP_ENC_SET_OSD_PLT_CFG, &p->osd_plt_cfg);
-                if (ret) {
-                    mpp_err("mpi control enc set osd plt failed ret %d\n", ret);
-                    goto RET;
-                }
-
-                /* gen and cfg osd plt */
-                mpi_enc_gen_osd_data(&p->osd_data, p->buf_grp, p->width,
-                                     p->height, p->frame_count);
-                mpp_meta_set_ptr(meta, KEY_OSD_DATA, (void*)&p->osd_data);
-            }
-
-            if (p->roi_enable) {
-                MppEncROIRegion *region = p->roi_region;
-
-                /* calculated in pixels */
-                region->x = 304;
-                region->y = 480;
-                region->w = 1344;
-                region->h = 600;
-                region->intra = 0;              /* flag of forced intra macroblock */
-                region->quality = 24;           /* qp of macroblock */
-                region->abs_qp_en = 1;
-                region->area_map_en = 1;
-                region->qp_area_idx = 0;
-
-                region++;
-                region->x = region->y = 16;
-                region->w = region->h = 64;    /* 16-pixel aligned is better */
-                region->intra = 1;              /* flag of forced intra macroblock */
-                region->quality = 10;           /* qp of macroblock */
-                region->abs_qp_en = 1;
-                region->area_map_en = 1;
-                region->qp_area_idx = 1;
-
-                p->roi_cfg.number = 2;
-                p->roi_cfg.regions = p->roi_region;
-
-                mpp_meta_set_ptr(meta, KEY_ROI_DATA, (void*)&p->roi_cfg); // new way for roi
-            }
-        }
 
         /*
          * NOTE: in non-block mode the frame can be resent.
