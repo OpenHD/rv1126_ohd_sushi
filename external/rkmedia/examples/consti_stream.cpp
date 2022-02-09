@@ -38,6 +38,7 @@ extern "C"{
 #include "common_consti/UDPSender.h"
 #include "common_consti/make_unique.hpp"
 #include "common_consti/rtp_enc.h"
+#include "common_consti/Helper.hpp"
 //
 #include "easymedia/utils.h"
 #include "easymedia/codec.h"
@@ -64,28 +65,9 @@ static uint64_t frameDeltaAvgCount=0;
 static uint64_t bytesSinceLastCalculation=0;
 static uint64_t lastBitrateCalculationMs=0;
 
-// this is just a NALU with no content
-static __attribute__((unused)) uint8_t fakeNALU[4]={0,0,0,1};
-// this is the data for an h264 AUD unit
-static __attribute__((unused)) uint8_t EXAMPLE_AUD[6]={0,0,0,1,9,48};
-
 static const size_t RTP_PACKET_SIZE= 1466;
 static std::vector<std::vector<uint8_t>> rtpPacketsBuffer(50,std::vector<uint8_t>(RTP_PACKET_SIZE));
 rtp_enc rtpEnc;
-
-static uint64_t getTimeMs(){
-    struct timeval time;
-    gettimeofday(&time, NULL);
-    uint64_t millis = (time.tv_sec * ((uint64_t)1000)) + ((uint64_t)time.tv_usec / ((uint64_t)1000));
-    return millis;
-}
-
-static uint64_t __attribute__((unused)) getTimeUs(){
-    struct timeval time;
-    gettimeofday(&time, NULL);
-    uint64_t micros = (time.tv_sec * ((uint64_t)1000*1000)) + ((uint64_t)time.tv_usec);
-    return micros;
-}
 
 static void __attribute__((unused)) writeToFileIfEnabled(const void* data, int data_length){
     // if enabled the file pointer is not null

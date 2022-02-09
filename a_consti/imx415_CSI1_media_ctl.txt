@@ -1,0 +1,552 @@
+[root@RV1126_RV1109:/]# media-ctl -pd /dev/media0
+Media controller API version 4.19.111
+
+Media device information
+------------------------
+driver          rkcif
+model           rkcif_mipi_lvds
+serial          
+bus info        
+hw revision     0x0
+driver version  4.19.111
+
+Device topology
+- entity 1: stream_cif_mipi_id0 (1 pad, 4 links)
+            type Node subtype V4L flags 0
+            device node name /dev/video0
+	pad0: Sink
+		<- "rockchip-mipi-csi2":1 [ENABLED]
+		<- "rockchip-mipi-csi2":2 []
+		<- "rockchip-mipi-csi2":3 []
+		<- "rockchip-mipi-csi2":4 []
+
+- entity 5: stream_cif_mipi_id1 (1 pad, 4 links)
+            type Node subtype V4L flags 0
+            device node name /dev/video1
+	pad0: Sink
+		<- "rockchip-mipi-csi2":1 []
+		<- "rockchip-mipi-csi2":2 [ENABLED]
+		<- "rockchip-mipi-csi2":3 []
+		<- "rockchip-mipi-csi2":4 []
+
+- entity 9: stream_cif_mipi_id2 (1 pad, 4 links)
+            type Node subtype V4L flags 0
+            device node name /dev/video2
+	pad0: Sink
+		<- "rockchip-mipi-csi2":1 []
+		<- "rockchip-mipi-csi2":2 []
+		<- "rockchip-mipi-csi2":3 [ENABLED]
+		<- "rockchip-mipi-csi2":4 []
+
+- entity 13: stream_cif_mipi_id3 (1 pad, 4 links)
+             type Node subtype V4L flags 0
+             device node name /dev/video3
+	pad0: Sink
+		<- "rockchip-mipi-csi2":1 []
+		<- "rockchip-mipi-csi2":2 []
+		<- "rockchip-mipi-csi2":3 []
+		<- "rockchip-mipi-csi2":4 [ENABLED]
+
+- entity 17: rockchip-mipi-csi2 (5 pads, 17 links)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev2
+	pad0: Sink
+		<- "rockchip-mipi-dphy-rx":1 [ENABLED]
+	pad1: Source
+		-> "stream_cif_mipi_id0":0 [ENABLED]
+		-> "stream_cif_mipi_id1":0 []
+		-> "stream_cif_mipi_id2":0 []
+		-> "stream_cif_mipi_id3":0 []
+	pad2: Source
+		-> "stream_cif_mipi_id0":0 []
+		-> "stream_cif_mipi_id1":0 [ENABLED]
+		-> "stream_cif_mipi_id2":0 []
+		-> "stream_cif_mipi_id3":0 []
+	pad3: Source
+		-> "stream_cif_mipi_id0":0 []
+		-> "stream_cif_mipi_id1":0 []
+		-> "stream_cif_mipi_id2":0 [ENABLED]
+		-> "stream_cif_mipi_id3":0 []
+	pad4: Source
+		-> "stream_cif_mipi_id0":0 []
+		-> "stream_cif_mipi_id1":0 []
+		-> "stream_cif_mipi_id2":0 []
+		-> "stream_cif_mipi_id3":0 [ENABLED]
+
+- entity 23: rockchip-mipi-dphy-rx (2 pads, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev3
+	pad0: Sink
+	pad1: Source
+		-> "rockchip-mipi-csi2":0 [ENABLED]
+
+- entity 28: rkcif-mipi-luma (0 pad, 0 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video4
+
+
+[root@RV1126_RV1109:/]# media-ctl -pd /dev/media1
+Media controller API version 4.19.111
+
+Media device information
+------------------------
+driver          rkisp
+model           rkisp0
+serial          
+bus info        
+hw revision     0x0
+driver version  4.19.111
+
+Device topology
+- entity 1: rkisp-isp-subdev (4 pads, 10 links)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev4
+	pad0: Sink
+		[fmt:SBGGR10_1X10/800x600 field:none
+		 crop.bounds:(0,0)/800x600
+		 crop:(0,0)/800x600]
+		<- "rkisp_rawrd0_m":0 []
+		<- "rkisp_rawrd2_s":0 []
+		<- "rkisp_rawrd1_l":0 []
+		<- "rkcif_mipi_lvds":0 [ENABLED]
+	pad1: Sink
+		<- "rkisp-input-params":0 [ENABLED]
+	pad2: Source
+		[fmt:YUYV8_2X8/800x600 field:none colorspace:smpte170m quantization:full-range
+		 crop.bounds:(0,0)/800x600
+		 crop:(0,0)/800x600]
+		-> "rkisp-bridge-ispp":0 [ENABLED]
+		-> "rkisp_mainpath":0 []
+		-> "rkisp_selfpath":0 [ENABLED]
+	pad3: Source
+		-> "rkisp-statistics":0 [ENABLED]
+		-> "rkisp-mipi-luma":0 [ENABLED]
+
+- entity 6: rkisp-csi-subdev (6 pads, 4 links)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev5
+	pad0: Sink
+	pad1: Source
+	pad2: Source
+		-> "rkisp_rawwr0":0 [ENABLED]
+	pad3: Source
+		-> "rkisp_rawwr1":0 [ENABLED]
+	pad4: Source
+		-> "rkisp_rawwr2":0 [ENABLED]
+	pad5: Source
+		-> "rkisp_rawwr3":0 [ENABLED]
+
+- entity 13: rkisp-bridge-ispp (1 pad, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 17: rkisp_mainpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video5
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 []
+
+- entity 23: rkisp_selfpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video6
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 29: rkisp_rawwr0 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video7
+	pad0: Sink
+		<- "rkisp-csi-subdev":2 [ENABLED]
+
+- entity 35: rkisp_rawwr1 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video8
+	pad0: Sink
+		<- "rkisp-csi-subdev":3 [ENABLED]
+
+- entity 41: rkisp_rawwr2 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video9
+	pad0: Sink
+		<- "rkisp-csi-subdev":4 [ENABLED]
+
+- entity 47: rkisp_rawwr3 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video10
+	pad0: Sink
+		<- "rkisp-csi-subdev":5 [ENABLED]
+
+- entity 53: rkisp_rawrd0_m (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video11
+	pad0: Source
+		-> "rkisp-isp-subdev":0 []
+
+- entity 59: rkisp_rawrd2_s (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video12
+	pad0: Source
+		-> "rkisp-isp-subdev":0 []
+
+- entity 65: rkisp_rawrd1_l (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video13
+	pad0: Source
+		-> "rkisp-isp-subdev":0 []
+
+- entity 71: rkisp-statistics (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video14
+	pad0: Sink
+		<- "rkisp-isp-subdev":3 [ENABLED]
+
+- entity 77: rkisp-input-params (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video15
+	pad0: Source
+		-> "rkisp-isp-subdev":1 [ENABLED]
+
+- entity 83: rkisp-mipi-luma (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video16
+	pad0: Sink
+		<- "rkisp-isp-subdev":3 [ENABLED]
+
+- entity 89: rkcif_mipi_lvds (1 pad, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev6
+	pad0: Source
+		[fmt:unknown/0x0]
+		-> "rkisp-isp-subdev":0 [ENABLED]
+
+
+[root@RV1126_RV1109:/]# media-ctl -pd /dev/media2
+Media controller API version 4.19.111
+
+Media device information
+------------------------
+driver          rkisp
+model           rkisp1
+serial          
+bus info        
+hw revision     0x0
+driver version  4.19.111
+
+Device topology
+- entity 1: rkisp-isp-subdev (4 pads, 10 links)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev7
+	pad0: Sink
+		[fmt:SGBRG10_1X10/1284x720 field:none
+		 crop.bounds:(0,0)/1284x720
+		 crop:(0,0)/1280x720]
+		<- "rkisp-csi-subdev":1 [ENABLED]
+		<- "rkisp_rawrd0_m":0 [ENABLED]
+		<- "rkisp_rawrd2_s":0 [ENABLED]
+		<- "rkisp_rawrd1_l":0 [ENABLED]
+	pad1: Sink
+		<- "rkisp-input-params":0 [ENABLED]
+	pad2: Source
+		[fmt:YUYV8_2X8/1280x720 field:none colorspace:smpte170m quantization:full-range
+		 crop.bounds:(0,0)/1280x720
+		 crop:(0,0)/1280x720]
+		-> "rkisp-bridge-ispp":0 [ENABLED]
+		-> "rkisp_mainpath":0 []
+		-> "rkisp_selfpath":0 [ENABLED]
+	pad3: Source
+		-> "rkisp-statistics":0 [ENABLED]
+		-> "rkisp-mipi-luma":0 [ENABLED]
+
+- entity 6: rkisp-csi-subdev (6 pads, 6 links)
+            type V4L2 subdev subtype Unknown flags 0
+            device node name /dev/v4l-subdev8
+	pad0: Sink
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		<- "rockchip-mipi-dphy-rx":1 [ENABLED]
+	pad1: Source
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		-> "rkisp-isp-subdev":0 [ENABLED]
+	pad2: Source
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		-> "rkisp_rawwr0":0 [ENABLED]
+	pad3: Source
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		-> "rkisp_rawwr1":0 [ENABLED]
+	pad4: Source
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		-> "rkisp_rawwr2":0 [ENABLED]
+	pad5: Source
+		[fmt:SGBRG10_1X10/1284x720 field:none]
+		-> "rkisp_rawwr3":0 [ENABLED]
+
+- entity 13: rkisp-bridge-ispp (1 pad, 1 link)
+             type V4L2 subdev subtype Unknown flags 0
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 17: rkisp_mainpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video17
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 []
+
+- entity 23: rkisp_selfpath (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video18
+	pad0: Sink
+		<- "rkisp-isp-subdev":2 [ENABLED]
+
+- entity 29: rkisp_rawwr0 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video19
+	pad0: Sink
+		<- "rkisp-csi-subdev":2 [ENABLED]
+
+- entity 35: rkisp_rawwr1 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video20
+	pad0: Sink
+		<- "rkisp-csi-subdev":3 [ENABLED]
+
+- entity 41: rkisp_rawwr2 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video21
+	pad0: Sink
+		<- "rkisp-csi-subdev":4 [ENABLED]
+
+- entity 47: rkisp_rawwr3 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video22
+	pad0: Sink
+		<- "rkisp-csi-subdev":5 [ENABLED]
+
+- entity 53: rkisp_rawrd0_m (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video23
+	pad0: Source
+		-> "rkisp-isp-subdev":0 [ENABLED]
+
+- entity 59: rkisp_rawrd2_s (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video24
+	pad0: Source
+		-> "rkisp-isp-subdev":0 [ENABLED]
+
+- entity 65: rkisp_rawrd1_l (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video25
+	pad0: Source
+		-> "rkisp-isp-subdev":0 [ENABLED]
+
+- entity 71: rkisp-statistics (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video26
+	pad0: Sink
+		<- "rkisp-isp-subdev":3 [ENABLED]
+
+- entity 77: rkisp-input-params (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video27
+	pad0: Source
+		-> "rkisp-isp-subdev":1 [ENABLED]
+
+- entity 83: rkisp-mipi-luma (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video28
+	pad0: Sink
+		<- "rkisp-isp-subdev":3 [ENABLED]
+
+- entity 89: rockchip-mipi-dphy-rx (2 pads, 2 links)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev9
+	pad0: Sink
+		[fmt:SGBRG10_1X10/1284x720@10000/1349870 field:none
+		 crop.bounds:(0,0)/1280x720]
+		<- "m01_f_imx415 1-0010":0 [ENABLED]
+	pad1: Source
+		[fmt:SGBRG10_1X10/1284x720@10000/1349870 field:none
+		 crop.bounds:(0,0)/1280x720]
+		-> "rkisp-csi-subdev":0 [ENABLED]
+
+- entity 92: m01_f_imx415 1-0010 (1 pad, 1 link)
+             type V4L2 subdev subtype Sensor flags 0
+             device node name /dev/v4l-subdev10
+	pad0: Source
+		[fmt:SGBRG10_1X10/1284x720@10000/1349870 field:none
+		 crop.bounds:(0,0)/1280x720]
+		-> "rockchip-mipi-dphy-rx":0 [ENABLED]
+
+- entity 96: m01_f_ircut (0 pad, 0 link)
+             type V4L2 subdev subtype Lens flags 1
+             device node name /dev/v4l-subdev11
+
+
+[root@RV1126_RV1109:/]# media-ctl -pd /dev/media3
+Media controller API version 4.19.111
+
+Media device information
+------------------------
+driver          rkispp
+model           rkispp0
+serial          
+bus info        
+hw revision     0x0
+driver version  4.19.111
+
+Device topology
+- entity 1: rkispp_input_image (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video29
+	pad0: Source
+		-> "rkispp-subdev":0 []
+
+- entity 5: rkispp_m_bypass (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video30
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 9: rkispp_scale0 (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video31
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 13: rkispp_scale1 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video32
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 17: rkispp_scale2 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video33
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 21: rkispp_iqtool (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video34
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 25: rkispp_input_params (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video35
+	pad0: Source
+		-> "rkispp-subdev":1 [ENABLED]
+
+- entity 29: rkispp-stats (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video36
+	pad0: Sink
+		<- "rkispp-subdev":3 [ENABLED]
+
+- entity 33: rkispp-subdev (4 pads, 8 links)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev0
+	pad0: Sink
+		[fmt:YUYV8_2X8/800x600 field:none colorspace:smpte170m quantization:full-range
+		 crop.bounds:(0,0)/800x600
+		 crop:(0,0)/800x600]
+		<- "rkispp_input_image":0 []
+	pad1: Sink
+		<- "rkispp_input_params":0 [ENABLED]
+	pad2: Source
+		[fmt:YUYV8_2X8/800x600 field:none colorspace:smpte170m quantization:full-range]
+		-> "rkispp_m_bypass":0 [ENABLED]
+		-> "rkispp_scale0":0 [ENABLED]
+		-> "rkispp_scale1":0 [ENABLED]
+		-> "rkispp_scale2":0 [ENABLED]
+		-> "rkispp_iqtool":0 [ENABLED]
+	pad3: Source
+		-> "rkispp-stats":0 [ENABLED]
+
+[root@RV1126_RV1109:/]# media-ctl -pd /dev/media4
+Media controller API version 4.19.111
+
+Media device information
+------------------------
+driver          rkispp
+model           rkispp1
+serial          
+bus info        
+hw revision     0x0
+driver version  4.19.111
+
+Device topology
+- entity 1: rkispp_input_image (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video37
+	pad0: Source
+		-> "rkispp-subdev":0 []
+
+- entity 5: rkispp_m_bypass (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video38
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 9: rkispp_scale0 (1 pad, 1 link)
+            type Node subtype V4L flags 0
+            device node name /dev/video39
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 13: rkispp_scale1 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video40
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 17: rkispp_scale2 (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video41
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 21: rkispp_iqtool (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video42
+	pad0: Sink
+		<- "rkispp-subdev":2 [ENABLED]
+
+- entity 25: rkispp_input_params (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video43
+	pad0: Source
+		-> "rkispp-subdev":1 [ENABLED]
+
+- entity 29: rkispp-stats (1 pad, 1 link)
+             type Node subtype V4L flags 0
+             device node name /dev/video44
+	pad0: Sink
+		<- "rkispp-subdev":3 [ENABLED]
+
+- entity 33: rkispp-subdev (4 pads, 8 links)
+             type V4L2 subdev subtype Unknown flags 0
+             device node name /dev/v4l-subdev1
+	pad0: Sink
+		[fmt:YUYV8_2X8/1280x720 field:none colorspace:smpte170m quantization:full-range
+		 crop.bounds:(0,0)/1280x720
+		 crop:(0,0)/1280x720]
+		<- "rkispp_input_image":0 []
+	pad1: Sink
+		<- "rkispp_input_params":0 [ENABLED]
+	pad2: Source
+		[fmt:YUYV8_2X8/1280x720 field:none colorspace:smpte170m quantization:full-range]
+		-> "rkispp_m_bypass":0 [ENABLED]
+		-> "rkispp_scale0":0 [ENABLED]
+		-> "rkispp_scale1":0 [ENABLED]
+		-> "rkispp_scale2":0 [ENABLED]
+		-> "rkispp_iqtool":0 [ENABLED]
+	pad3: Source
+		-> "rkispp-stats":0 [ENABLED]
+
+
+
+
+
+
+

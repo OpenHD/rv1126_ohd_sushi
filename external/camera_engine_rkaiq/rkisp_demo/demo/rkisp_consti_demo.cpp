@@ -42,7 +42,7 @@
 #define CAPTURE_CNT_FILENAME ".capture_cnt"
 #define ENABLE_UAPI_TEST
 #define IQFILE_PATH_MAX_LEN 256
-//#define OFFLINE_FRAME_TEST
+#define OFFLINE_FRAME_TEST
 //#define CUSTOM_AE_DEMO_TEST
 
 struct buffer {
@@ -172,6 +172,8 @@ void test_update_iqfile(const rk_aiq_sys_ctx_t* ctx)
 }
 
 static int set_ae_onoff(const rk_aiq_sys_ctx_t* ctx, bool onoff);
+// Consti10:
+// This one is called from its own thread and talks to rkaiq by reading user input
 void test_imgproc(const demo_context_t* demo_ctx) {
 
    if (demo_ctx == NULL) {
@@ -789,6 +791,14 @@ void test_imgproc(const demo_context_t* demo_ctx) {
        set_ae_onoff(ctx, false);
        printf("set ae off\n");
        break;
+    case '*':
+        {
+            char output_dir[64] = {0};
+            printf("test to capture raw sync\n");
+            rk_aiq_uapi_debug_captureRawSync(ctx, CAPTURE_RAW_AND_YUV_SYNC, 5, "/tmp", output_dir);
+            printf("Raw's storage directory is (%s)\n", output_dir);
+        }
+            break;
     default:
         break;
     }
@@ -1933,8 +1943,10 @@ static void rkisp_routine(demo_context_t *ctx)
 
         if (ctx->aiq_ctx) {
             printf("%s:-------- init mipi tx/rx -------------\n",get_sensor_name(ctx));
-            if (ctx->writeFileSync)
+            if (ctx->writeFileSync){
                 rk_aiq_uapi_debug_captureRawYuvSync(ctx->aiq_ctx, CAPTURE_RAW_AND_YUV_SYNC);
+                printf("-------- Enable YUV/RAW sync -------------\n");
+            }
 #ifdef CUSTOM_AE_DEMO_TEST
             //ae_reg.stAeExpFunc.pfn_ae_init = ae_init;
             //ae_reg.stAeExpFunc.pfn_ae_run = ae_run;
@@ -2067,6 +2079,8 @@ int main(int argc, char **argv)
     demo_context_t second_ctx;
 
     parse_args(argc, argv, &main_ctx);
+
+    printf("writeFileSync:%d\n",main_ctx.writeFileSync);
 
     if (main_ctx.vop) {
         if (strlen(main_ctx.dev_name) && strlen(main_ctx.dev_name2)) {

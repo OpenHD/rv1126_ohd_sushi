@@ -14,7 +14,7 @@ echo "removed directory"
 
 echo "rebuild done"
 
-adb push buildroot/output/rockchip_rv1126_rv1109/build/camera_engine_rkaiq-1.0/all_lib/Release/librkaiq.so /oem/usr/lib/librkaiq.so
+#adb push buildroot/output/rockchip_rv1126_rv1109/build/camera_engine_rkaiq-1.0/all_lib/Release/librkaiq.so /oem/usr/lib/librkaiq.so
 
 #note: Not pushing the stuff under /oem/usr/include/rkaiq
 

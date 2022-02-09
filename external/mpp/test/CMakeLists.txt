@@ -20,6 +20,29 @@ macro(add_mpp_test module)
     endif()
 endmacro()
 
+
+#Consti10 added
+aux_source_directory(../../rkmedia/examples/common_consti COMMON_CONSTI_SRC)
+macro(add_mpp_test2 module)
+    set(test_name ${module}_test)
+    string(TOUPPER ${test_name} test_tag)
+    #message(STATUS "moduule   : ${module}")
+    #message(STATUS "test_name : ${test_name}")
+    #message(STATUS "test_tag  : ${test_tag}")
+
+    option(${test_tag} "Build mpp ${module} unit test" ${BUILD_TEST})
+    #${COMMON_CONSTI_SRC}
+    if(${test_tag})
+        add_executable(${test_name} ${test_name}.cpp mpp_event_trigger.c mpp_parse_cfg.c ${COMMON_CONSTI_SRC})
+        target_link_libraries(${test_name} ${MPP_SHARED} utils)
+        set_target_properties(${test_name} PROPERTIES FOLDER "test")
+        install(TARGETS ${test_name} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+        #add_test(NAME ${test_name} COMMAND ${test_name})
+    endif()
+endmacro()
+
+
+
 # mpi unit test
 add_mpp_test(mpi)
 
@@ -34,6 +57,9 @@ add_mpp_test(mpi_dec_mt)
 
 # mpi encoder unit test
 add_mpp_test(mpi_enc)
+
+#Consti10
+add_mpp_test2(mpi_stream)
 
 #Consti10
 add_mpp_test(mpi_get_frame)

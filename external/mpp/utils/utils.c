@@ -439,9 +439,10 @@ static void fill_MPP_FMT_YUV420SP(RK_U8 *buf, RK_U32 width, RK_U32 height,
                                   RK_U32 hor_stride, RK_U32 ver_stride,
                                   RK_U32 frame_count)
 {
-    printf("fill_MPP_FMT_YUV420SP\n");
+    printf("fill_MPP_FMT_YUV420SP frame:%d hor_stride:%d ver_stride:%d\n",frame_count,hor_stride,ver_stride);
     // MPP_FMT_YUV420SP = ffmpeg: nv12
     // https://www.fourcc.org/pixel-format/yuv-nv12/
+    // https://stackoverflow.com/questions/60356545/which-yuv-format-is-this-really-yuv420sp
     RK_U8 *p = buf;
     RK_U32 x, y;
 
@@ -459,10 +460,13 @@ static void fill_MPP_FMT_YUV420SP(RK_U8 *buf, RK_U32 width, RK_U32 height,
         }
     }
     // Consti10
+    // 0 -> all green
+    // 128 -> all gray
+    // 255 -> white gray-ish
     if(frame_count % 2 == 0){
-        memset(buf,256,width*height/4);
+        memset(buf,0,width*height*3/2);
     }else{
-        memset(buf,0,width*height/4);
+        memset(buf,255,width*height*3/2);
     }
 }
 

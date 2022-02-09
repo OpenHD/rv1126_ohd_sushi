@@ -148,5 +148,9 @@ namespace GenericHelper{
     }
 }
 
+// this is just a NALU with no content
+static __attribute__((unused)) uint8_t fakeNALU[4]={0,0,0,1};
+// this is the data for an h264 AUD unit
+static __attribute__((unused)) uint8_t EXAMPLE_AUD[6]={0,0,0,1,9,48};
 
 #endif //RV1126_RV1109_V2_2_0_20210825_HELPER_H

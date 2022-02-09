@@ -41,6 +41,13 @@ add_dependencies(consti_stream easymedia)
 target_link_libraries(consti_stream easymedia)
 target_include_directories(consti_stream PRIVATE ${CMAKE_SOURCE_DIR}/include)
 install(TARGETS consti_stream RUNTIME DESTINATION "bin")
+# --------
+#add_executable(consti_mpp_stream consti_mpp_stream.cpp ${COMMON_SRC} ${COMMON_CONSTI_SRC})
+#add_dependencies(consti_mpp_stream easymedia)
+#target_link_libraries(consti_mpp_stream easymedia)
+#target_include_directories(consti_mpp_stream PRIVATE ${CMAKE_SOURCE_DIR}/include)
+#install(TARGETS consti_mpp_stream RUNTIME DESTINATION "bin")
+# ---------
 #Consti10
 add_executable(consti_run_isp consti_run_isp.c ${COMMON_SRC})
 add_dependencies(consti_run_isp easymedia)

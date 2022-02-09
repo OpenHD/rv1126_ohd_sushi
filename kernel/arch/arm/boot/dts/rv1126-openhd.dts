@@ -239,7 +239,7 @@
 	};
 	*/
 	// For GPIO 2 C0
-    leds {
+    /*leds {
         compatible = "gpio-leds";
         user_led: user {
             label = "openhd:green4";
@@ -253,7 +253,7 @@
     //pinctrl needs to add GPIO multiplexing control
     led_user: led-user {
         rockchip,pins = <2 RK_PC0 RK_FUNC_GPIO &pcfg_pull_up>;
-    };
+    };*/
 };
 
 &display_subsystem {
@@ -364,7 +364,7 @@
 	phy-handle = <&phy>;
 	status = "okay";
 };*/
-/*&gmac {
+&gmac {
 	phy-mode = "rgmii";
 	clock_in_out = "input";
 
@@ -390,7 +390,7 @@
 
 	phy-handle = <&phy>;
 	status = "okay";
-};*/
+};
 /* CONSTI10 TODO END*/
 
 &i2c0 {
