@@ -930,8 +930,10 @@ int main(int argc, char **argv)
     memset((void*)cmd, 0, sizeof(*cmd));
 
     // parse the cmd option
-    if (argc > 1)
+    if (argc > 1){
         ret = mpi_enc_test_cmd_update_by_args(cmd, argc, argv);
+        std::cout<<"Parse returned:"<<ret<<"\n";
+    }
 
     if (ret) {
         mpi_enc_test_help();
