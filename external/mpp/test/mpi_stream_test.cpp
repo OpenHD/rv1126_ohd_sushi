@@ -41,6 +41,8 @@ static const int M_DESTINATION_PORT=5600;
 static const int CHUNK_SIZE=1446;
 static const int MY_WANTED_UDP_SENDBUFF_SIZE=1024*1024*10;
 static std::unique_ptr<UDPSender> udpSender=nullptr;
+AvgCalculator avgEncodeDelay;
+AvgCalculator avgCameraFrameDelay;
 
 static void sendViaUDPIfEnabled(const void* data,int data_length){
     if(udpSender!= nullptr){
@@ -578,7 +580,14 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 cam_buf = camera_frame_to_buf(p->cam_ctx, cam_frm_idx);
                 mpp_assert(cam_buf);
                 const auto delta=std::chrono::steady_clock::now()-before;
-                std::cout<<"Camera get frame took:"<<MyTimeHelper::R(delta)<<"\n";
+                const auto cameraFrameTsUs=consti_get_timestamp(p->cam_ctx,cam_frm_idx);
+                const auto cameraFrameDelayUs=getTimeUs()- cameraFrameTsUs;
+                std::cout<<"Camera get frame took:"<<MyTimeHelper::R(delta)<<" age:"<<cameraFrameDelayUs/1000.0f<<"ms\n";
+                avgCameraFrameDelay.addUs(cameraFrameDelayUs);
+                if(avgCameraFrameDelay.getNSamples()>=120){
+                    std::cout<<"Avg Camera frame delay:"<<avgCameraFrameDelay.getAvgReadable()<<"\n";
+                    avgCameraFrameDelay.reset();
+                }
             }
         }
         const auto encodeBegin=std::chrono::steady_clock::now();
@@ -644,6 +653,11 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
 
                 const auto encodeDelay=std::chrono::steady_clock::now()-encodeBegin;
                 std::cout<<"Encode took:"<<MyTimeHelper::R(encodeDelay)<<"\n";
+                avgEncodeDelay.add(encodeDelay);
+                if(avgEncodeDelay.getNSamples()>=120){
+                    std::cout<<"Avg encode delay:"<<avgEncodeDelay.getAvgReadable()<<"\n";
+                    avgEncodeDelay.reset();
+                }
 
                 if (p->fp_output)
                     fwrite(ptr, 1, len, p->fp_output);

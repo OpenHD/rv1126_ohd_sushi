@@ -39,6 +39,7 @@ typedef struct CamFrame_t {
     RK_S32      export_fd;
     RK_S32      sequence;
     MppBuffer   buffer;
+    uint64_t timestampUs; // Consti10
 } CamFrame;
 
 struct CamSource {
@@ -381,10 +382,11 @@ RK_S32 camera_source_get_frame(CamSource *ctx)
     if (V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE == type)
         buf.bytesused = buf.m.planes[0].bytesused;
     //Consti10
-    /*uint64_t buffTsUs=microsec(buf.timestamp);
+    uint64_t buffTsUs=microsec(buf.timestamp);
     uint64_t delayUs=getTimeUs()-buffTsUs;
     float delayMs=delayUs > 0 ? ((float)delayUs)/1000.0f : delayUs;
-    printf("Buff sequence: %d ts: %lld delay: %lld us %f ms\n",buf.sequence,buffTsUs,delayUs,delayMs);*/
+    printf("Buff sequence: %d ts: %lld delay: %lld us %f ms\n",buf.sequence,buffTsUs,delayUs,delayMs);
+    ctx->fbuf[buf.index].timestampUs=buffTsUs;
 
     return buf.index;
 }
@@ -425,4 +427,8 @@ MppBuffer camera_frame_to_buf(CamSource *ctx, RK_S32 idx)
         return NULL;
 
     return ctx->fbuf[idx].buffer;
+}
+
+uint64_t consti_get_timestamp(CamSource* ctx,RK_S32 idx){
+    return ctx->fbuf[idx].timestampUs;
 }

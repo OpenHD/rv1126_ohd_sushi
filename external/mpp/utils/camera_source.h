@@ -39,6 +39,8 @@ MPP_RET camera_source_put_frame(CamSource *ctx, RK_S32 idx);
 
 MppBuffer camera_frame_to_buf(CamSource *ctx, RK_S32 idx);
 
+uint64_t consti_get_timestamp(CamSource* ctx,RK_S32 idx);
+
 #ifdef __cplusplus
 }
 #endif

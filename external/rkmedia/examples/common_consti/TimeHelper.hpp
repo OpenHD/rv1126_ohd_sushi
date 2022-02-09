@@ -5,6 +5,7 @@
 #ifndef LIVEVIDEO10MS_TIMEHELPER_HPP
 #define LIVEVIDEO10MS_TIMEHELPER_HPP
 
+#include <sys/time.h>
 #include <chrono>
 #include <deque>
 #include <algorithm>
@@ -85,6 +86,9 @@ public:
         if(value>max){
             max=value;
         }
+    }
+    void addUs(uint64_t valueUs){
+        add(std::chrono::nanoseconds(valueUs*1000));
     }
     // Returns the average of all samples.
     // If 0 samples were recorded, return 0
@@ -281,19 +285,17 @@ public:
     }
 };
 
-#include <sys/time.h>
-#include <chrono>
-static std::chrono::nanoseconds timevalToDuration(timeval tv){
+static __attribute__((unused)) std::chrono::nanoseconds timevalToDuration(timeval tv){
     auto duration = std::chrono::seconds{tv.tv_sec}
                     + std::chrono::microseconds{tv.tv_usec};
     return std::chrono::duration_cast<std::chrono::nanoseconds>(duration);
 }
-static std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds>
+static __attribute__((unused)) std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds>
 timevalToTimePointSystemClock(timeval tv){
     return std::chrono::time_point<std::chrono::system_clock,std::chrono::nanoseconds>{
             std::chrono::duration_cast<std::chrono::system_clock::duration>(timevalToDuration(tv))};
 }
-static std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>
+static __attribute__((unused)) std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>
 timevalToTimePointSteadyClock(timeval tv){
     return std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>{
             std::chrono::duration_cast<std::chrono::steady_clock::duration>(timevalToDuration(tv))};
