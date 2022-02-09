@@ -119,3 +119,5 @@ echo 1 > /sys/module/video_rkisp/parameters/debug
 
 rkisp_consti_demo --width 1280 --height 720  --device /dev/video39
 
+./mpi_stream_test -w 1280 -h 720 -i /dev/video39 -o /tmp/null.h264 -r 120
+

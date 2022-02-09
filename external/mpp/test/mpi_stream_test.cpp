@@ -59,7 +59,7 @@ typedef struct {
 
     // src and dst
     FILE *fp_input;
-    FILE *fp_output;
+    FILE *fp_output=NULL;
 
     // base flow context
     MppCtx ctx;
@@ -133,7 +133,8 @@ MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
     if (!p) {
         mpp_err_f("create MpiEncTestData failed\n");
         ret = MPP_ERR_MALLOC;
-        goto RET;
+        *data = p;
+        return ret;
     }
 
     // get paramter from cmd
@@ -182,10 +183,12 @@ MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
     }
 
     if (cmd->file_output) {
-        p->fp_output = fopen(cmd->file_output, "w+b");
-        if (NULL == p->fp_output) {
-            mpp_err("failed to open output file %s\n", cmd->file_output);
-            ret = MPP_ERR_OPEN_FILE;
+        if(strstr(cmd->file_output,"null")==NULL){
+            p->fp_output = fopen(cmd->file_output, "w+b");
+            if (NULL == p->fp_output) {
+                mpp_err("failed to open output file %s\n", cmd->file_output);
+                ret = MPP_ERR_OPEN_FILE;
+            }
         }
     }
 
@@ -221,7 +224,6 @@ MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
     else
         p->header_size = 0;
 
-RET:
     *data = p;
     return ret;
 }
@@ -423,7 +425,7 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
     ret = mpi->control(ctx, MPP_ENC_SET_CFG, cfg);
     if (ret) {
         mpp_err("mpi control enc set cfg failed ret %d\n", ret);
-        goto RET;
+        return ret;
     }
 
     /* optional */
@@ -431,7 +433,7 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
     ret = mpi->control(ctx, MPP_ENC_SET_SEI_CFG, &p->sei_mode);
     if (ret) {
         mpp_err("mpi control enc set sei cfg failed ret %d\n", ret);
-        goto RET;
+        return ret;
     }
 
     if (p->type == MPP_VIDEO_CodingAVC || p->type == MPP_VIDEO_CodingHEVC) {
@@ -439,7 +441,7 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
         ret = mpi->control(ctx, MPP_ENC_SET_HEADER_MODE, &p->header_mode);
         if (ret) {
             mpp_err("mpi control enc set header mode failed ret %d\n", ret);
-            goto RET;
+            return ret;
         }
     }
 
@@ -457,12 +459,10 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
         ret = mpi->control(ctx, MPP_ENC_SET_REF_CFG, ref);
         if (ret) {
             mpp_err("mpi control enc set ref cfg failed ret %d\n", ret);
-            goto RET;
+            return ret;
         }
         mpp_enc_ref_cfg_deinit(&ref);
     }
-
-RET:
     return ret;
 }
 
@@ -472,7 +472,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
     MppApi *mpi;
     MppCtx ctx;
     RK_U32 cap_num = 0;
-    uint64_t lastTs=0;
+    std::chrono::steady_clock::time_point lastTs=std::chrono::steady_clock::now();
     uint64_t frameDeltaAvgSum=0;
     uint64_t frameDeltaAvgCount=0;
 
@@ -497,7 +497,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         ret = mpi->control(ctx, MPP_ENC_GET_HDR_SYNC, packet);
         if (ret) {
             mpp_err("mpi control enc get extra info failed\n");
-            goto RET;
+            return ret;
         } else {
             /* get and write sps/pps for H.264 */
 
@@ -512,7 +512,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         mpp_packet_deinit(&packet);
     }
 
-    lastTs=getTimeMs();
+    lastTs=std::chrono::steady_clock::now();
     frameDeltaAvgSum=0;
     frameDeltaAvgCount=0;
 
@@ -525,20 +525,19 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         MppBuffer cam_buf = NULL;
         RK_U32 eoi = 1;
 
-        uint64_t now=getTimeMs();
-        uint64_t delta=now-lastTs;
-        printf("Frame delta: %lld\n",delta);
-        lastTs=getTimeMs();
+        const auto now=std::chrono::steady_clock::now();
+        const auto delta=now-lastTs;
+        std::cout<<"Frame delta: "<<MyTimeHelper::R(delta)<<"\n";
+        lastTs=now;
         // calculate average
-        frameDeltaAvgSum+=delta;
+        frameDeltaAvgSum+=std::chrono::duration_cast<std::chrono::microseconds>(delta).count();
         frameDeltaAvgCount++;
         if(frameDeltaAvgCount>100){
-            float avgFrameDelta=(float)((double)frameDeltaAvgSum / (double)frameDeltaAvgCount);
+            float avgFrameDelta=(float)((double)frameDeltaAvgSum / (double)frameDeltaAvgCount / 1000.0);
             printf("Avg of frame delta: %f\n",avgFrameDelta);
             frameDeltaAvgSum=0;
             frameDeltaAvgCount=0;
         }
-
         if (p->fp_input) {
             ret = read_image((RK_U8*)buf, p->fp_input, p->width, p->height,
                              p->hor_stride, p->ver_stride, p->fmt);
@@ -554,7 +553,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 }
                 mpp_log("%p found last frame. feof %d\n", ctx, feof(p->fp_input));
             } else if (ret == MPP_ERR_VALUE)
-                goto RET;
+                return ret;
         } else {
             if (p->cam_ctx == NULL) {
                 uint64_t before=getTimeMs();
@@ -564,8 +563,9 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 uint64_t deltaX=getTimeMs()-before;
                 printf("Filling frame took: %lld ms\n",deltaX);
                 if (ret)
-                    goto RET;
+                    return ret;
             } else {
+                const auto before=std::chrono::steady_clock::now();
                 cam_frm_idx = camera_source_get_frame(p->cam_ctx);
                 mpp_assert(cam_frm_idx >= 0);
 
@@ -577,13 +577,15 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
 
                 cam_buf = camera_frame_to_buf(p->cam_ctx, cam_frm_idx);
                 mpp_assert(cam_buf);
+                const auto delta=std::chrono::steady_clock::now()-before;
+                std::cout<<"Camera get frame took:"<<MyTimeHelper::R(delta)<<"\n";
             }
         }
-
+        const auto encodeBegin=std::chrono::steady_clock::now();
         ret = mpp_frame_init(&frame);
         if (ret) {
             mpp_err_f("mpp_frame_init failed\n");
-            goto RET;
+            return ret;
         }
 
         mpp_frame_set_width(frame, p->width);
@@ -617,7 +619,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         if (ret) {
             mpp_err("mpp encode put frame failed\n");
             mpp_frame_deinit(&frame);
-            goto RET;
+            return ret;
         }
         mpp_frame_deinit(&frame);
 
@@ -625,7 +627,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
             ret = mpi->encode_get_packet(ctx, &packet);
             if (ret) {
                 mpp_err("mpp encode get packet failed\n");
-                goto RET;
+                return ret;
             }
 
             mpp_assert(packet);
@@ -639,6 +641,9 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 RK_S32 log_len = 0;
 
                 p->pkt_eos = mpp_packet_get_eos(packet);
+
+                const auto encodeDelay=std::chrono::steady_clock::now()-encodeBegin;
+                std::cout<<"Encode took:"<<MyTimeHelper::R(encodeDelay)<<"\n";
 
                 if (p->fp_output)
                     fwrite(ptr, 1, len, p->fp_output);
@@ -703,7 +708,6 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         if (p->frm_eos && p->pkt_eos)
             break;
     }
-RET:
     return ret;
 }
 

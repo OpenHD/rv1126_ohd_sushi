@@ -306,7 +306,7 @@ static uint64_t __attribute__((unused)) getTimeUs(){
     return micros;
 }
 
-static uint64_t getTimeMs(){
+static uint64_t __attribute__((unused)) getTimeMs(){
     return getTimeUs()/1000;
 }
 
