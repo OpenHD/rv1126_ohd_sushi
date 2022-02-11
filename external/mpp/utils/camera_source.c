@@ -99,12 +99,20 @@ static RK_S32 camera_source_ioctl(RK_S32 fd, RK_S32 req, void* arg)
             // mpp_err("ret = %d, errno %d", ret, errno);
             break;
         }
+        // Consti10- busy wait
         // 10 milliseconds
-        poll_time.tv_sec = 0;
+        /*poll_time.tv_sec = 0;
         poll_time.tv_nsec = 10000000;
-        nanosleep(&poll_time, NULL);
+        nanosleep(&poll_time, NULL);*/
     }
 
+    return ret;
+}
+
+static RK_S32 consti10_camera_source_ioctl(RK_S32 fd, RK_S32 req, void* arg)
+{
+    RK_S32 ret;
+    ret = ioctl(fd, req, arg);
     return ret;
 }
 
@@ -126,7 +134,8 @@ CamSource *camera_source_init(const char *device, RK_U32 bufcnt, RK_U32 width, R
         return NULL;
 
     ctx->bufcnt = bufcnt;
-    ctx->fd = open(device, O_RDWR, 0);
+    // Consti10- added 0_NONBLOCK
+    ctx->fd = open(device, O_RDWR | O_NONBLOCK, 0);
     if (ctx->fd < 0) {
         mpp_err_f("Cannot open device\n");
         goto FAIL;
@@ -362,6 +371,8 @@ RK_S32 camera_source_get_frame(CamSource *ctx)
     buf = (struct v4l2_buffer) {0};
     buf.type   = type;
     buf.memory = V4L2_MEMORY_MMAP;
+    int tmp;
+    int old;
 
     struct v4l2_plane planes[FMT_NUM_PLANES];
     if (V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE == type) {
@@ -373,10 +384,19 @@ RK_S32 camera_source_get_frame(CamSource *ctx)
         mpp_err_f("VIDIOC_DQBUF\n");
         return -1;
     }
-
     if (buf.index > ctx->bufcnt) {
         mpp_err_f("buffer index out of bounds\n");
         return -1;
+    }
+    // Consti10 - update to the most recent frame even though this can mean
+    // we drop a frame
+    old=buf.index;
+    tmp=consti10_camera_source_ioctl(ctx->fd, VIDIOC_DQBUF, &buf);
+    if(tmp==0){
+        printf("Got a buffer on second call\n");
+        camera_source_put_frame(ctx,old);
+    }else{
+        printf("Didn't get buffer on second call\n");
     }
 
     if (V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE == type)

@@ -5,14 +5,14 @@ _LDFLAGS := $(LDFLAGS) -lrt
 #_LDFLAGS := $(LDFLAGS) -lrt -lsodium
 #_LDFLAGS := $(LDFLAGS)
 
-all_bin: v4l2_test_mplane
+all_bin: v4l2_test_mplane freq
 all: all_bin
 
 %.o: %.cpp $(DEPS)
 	$(CXX) -c -o $@ $< $(_CFLAGS) $(_LDFLAGS)
 
-#freq: $(OBJ)
-#	$(CXX) -o $@ $^ $(CFLAGS) $(_LDFLAGS)
+freq: $(OBJ)
+	$(CXX) -o $@ $^ $(CFLAGS) $(_LDFLAGS)
 
 #v4l2_test: v4l2_test.o
 #	$(CXX) -o $@ $^ $(CFLAGS) $(_LDFLAGS)

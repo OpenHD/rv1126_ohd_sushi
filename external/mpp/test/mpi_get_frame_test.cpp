@@ -33,12 +33,9 @@
 #include "mpi_enc_utils.h"
 #include "camera_source.h"
 
-static uint64_t getTimeMs(){
-    struct timeval time;
-    gettimeofday(&time, NULL);
-    uint64_t millis = (time.tv_sec * ((uint64_t)1000)) + ((uint64_t)time.tv_usec / ((uint64_t)1000));
-    return millis;
-}
+#include "../../rkmedia/examples/common_consti/TimeHelper.hpp"
+AvgCalculator avgCameraFrameDelay;
+
 
 typedef struct {
     CamSource *cam_ctx;
@@ -52,7 +49,6 @@ typedef struct {
 int main(int argc, char **argv)
 {
 //Consti10
-    char* file_input="/dev/video0";
     int quit=0;
     MpiGetFrameTestData *p = NULL;
     p = mpp_calloc(MpiGetFrameTestData, 1);
@@ -62,8 +58,19 @@ int main(int argc, char **argv)
     }
     p->width=1280;
     p->height=720;
-    p->fmt=0;
-    mpp_log("open camera device");
+    p->fmt=(MppFrameFormat)0;
+    char* file_input="/dev/video38";
+    int c;
+    while ((c = getopt(argc, argv, "w:h:i:")) != -1) {
+        switch (c) {
+            case 'w': p->width=atoi(optarg); break;
+            case 'h': p->height=atoi(optarg); break;
+            case 'i': file_input=optarg; break;
+            default:
+                break;
+        }
+    }
+    mpp_log("open camera device %s %d %d",file_input,p->width,p->height);
     p->cam_ctx = camera_source_init(file_input, 4, p->width, p->height, p->fmt);
     mpp_log("new framecap ok");
     if (p->cam_ctx == NULL)
@@ -85,6 +92,13 @@ int main(int argc, char **argv)
             quit=1;
         }
         printf("Got camera frame %d cam_frm_idx: %d\n",cap_num,cam_frm_idx);
+        const auto cameraFrameTsUs=consti_get_timestamp(p->cam_ctx,cam_frm_idx);
+        const auto cameraFrameDelayUs=getTimeUs()- cameraFrameTsUs;
+        avgCameraFrameDelay.addUs(cameraFrameDelayUs);
+        if(avgCameraFrameDelay.getNSamples()>=120){
+            std::cout<<"Avg Camera frame delay:"<<avgCameraFrameDelay.getAvgReadable()<<"\n";
+            avgCameraFrameDelay.reset();
+        }
 
         cam_buf = camera_frame_to_buf(p->cam_ctx, cam_frm_idx);
         mpp_assert(cam_buf);

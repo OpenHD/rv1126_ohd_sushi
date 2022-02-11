@@ -36,6 +36,7 @@
 
 #include "../../rkmedia/examples/common_consti/TimeHelper.hpp"
 #include "../../rkmedia/examples/common_consti/UDPSender.h"
+#include "../../rkmedia/examples/common_consti/Helper.hpp"
 
 static const int M_DESTINATION_PORT=5600;
 static const int CHUNK_SIZE=1446;
@@ -43,6 +44,7 @@ static const int MY_WANTED_UDP_SENDBUFF_SIZE=1024*1024*10;
 static std::unique_ptr<UDPSender> udpSender=nullptr;
 AvgCalculator avgEncodeDelay;
 AvgCalculator avgCameraFrameDelay;
+AvgCalculator avgFrameDelta;
 
 static void sendViaUDPIfEnabled(const void* data,int data_length){
     if(udpSender!= nullptr){
@@ -121,6 +123,18 @@ typedef struct {
     RK_S32 vi_len;
 } MpiEncTestData;
 
+// Consti10
+static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
+    // write packet to file here
+    void *ptr   = mpp_packet_get_pos(packet);
+    size_t len  = mpp_packet_get_length(packet);
+    if (p->fp_output){
+        fwrite(ptr, 1, len, p->fp_output);
+    }
+    sendViaUDPIfEnabled(ptr,len);
+    sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
+}
+
 MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
 {
     MpiEncTestData *p = NULL;
@@ -168,6 +182,8 @@ MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
     p->fps_out_den  = cmd->fps_out_den;
     p->fps_out_num  = cmd->fps_out_num;
 
+    printf("gop mode:%d gop_len:%d vi_len:%d\n",p->gop_mode,p->gop_len,p->vi_len);
+
     if (cmd->file_input) {
         if (!strncmp(cmd->file_input, "/dev/video", 10)) {
             mpp_log("open camera device");
@@ -191,6 +207,8 @@ MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
                 mpp_err("failed to open output file %s\n", cmd->file_output);
                 ret = MPP_ERR_OPEN_FILE;
             }
+        }else{
+            std::cout<<"File output disabled\n";
         }
     }
 
@@ -446,8 +464,8 @@ MPP_RET test_mpp_enc_cfg_setup(MpiEncTestData *p)
             return ret;
         }
     }
-
-    mpp_env_get_u32("gop_mode", &gop_mode, gop_mode);
+    //Consti10 use -g input only
+    //mpp_env_get_u32("gop_mode", &gop_mode, gop_mode);
     if (gop_mode) {
         MppEncRefCfg ref;
 
@@ -475,8 +493,6 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
     MppCtx ctx;
     RK_U32 cap_num = 0;
     std::chrono::steady_clock::time_point lastTs=std::chrono::steady_clock::now();
-    uint64_t frameDeltaAvgSum=0;
-    uint64_t frameDeltaAvgCount=0;
 
     if (NULL == p)
         return MPP_ERR_NULL_PTR;
@@ -503,20 +519,19 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         } else {
             /* get and write sps/pps for H.264 */
 
-            void *ptr   = mpp_packet_get_pos(packet);
+            /*void *ptr   = mpp_packet_get_pos(packet);
             size_t len  = mpp_packet_get_length(packet);
 
             if (p->fp_output)
                 fwrite(ptr, 1, len, p->fp_output);
-            sendViaUDPIfEnabled(ptr,len);
+            sendViaUDPIfEnabled(ptr,len);*/
+            processEncodedPacket(p,packet);
         }
 
         mpp_packet_deinit(&packet);
     }
 
     lastTs=std::chrono::steady_clock::now();
-    frameDeltaAvgSum=0;
-    frameDeltaAvgCount=0;
 
     while (!p->pkt_eos) {
         MppMeta meta = NULL;
@@ -531,14 +546,10 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
         const auto delta=now-lastTs;
         std::cout<<"Frame delta: "<<MyTimeHelper::R(delta)<<"\n";
         lastTs=now;
-        // calculate average
-        frameDeltaAvgSum+=std::chrono::duration_cast<std::chrono::microseconds>(delta).count();
-        frameDeltaAvgCount++;
-        if(frameDeltaAvgCount>100){
-            float avgFrameDelta=(float)((double)frameDeltaAvgSum / (double)frameDeltaAvgCount / 1000.0);
-            printf("Avg of frame delta: %f\n",avgFrameDelta);
-            frameDeltaAvgSum=0;
-            frameDeltaAvgCount=0;
+        avgFrameDelta.add(delta);
+        if(avgFrameDelta.getNSamples()>100){
+            std::cout<<"Avg frame delta:"<<avgFrameDelta.getAvgReadable()<<"\n";
+            avgFrameDelta.reset();
         }
         if (p->fp_input) {
             ret = read_image((RK_U8*)buf, p->fp_input, p->width, p->height,
@@ -570,6 +581,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 const auto before=std::chrono::steady_clock::now();
                 cam_frm_idx = camera_source_get_frame(p->cam_ctx);
                 mpp_assert(cam_frm_idx >= 0);
+                // xxx
 
                 /* skip unstable frames */
                 if (cap_num++ < 50) {
@@ -659,9 +671,10 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                     avgEncodeDelay.reset();
                 }
 
-                if (p->fp_output)
+                /*if (p->fp_output)
                     fwrite(ptr, 1, len, p->fp_output);
-                sendViaUDPIfEnabled(ptr,len);
+                sendViaUDPIfEnabled(ptr,len);*/
+                processEncodedPacket(p,packet);
 
                 log_len += snprintf(log_buf + log_len, log_size - log_len,
                                     "encoded frame %-4d", p->frame_count);

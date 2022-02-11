@@ -62,7 +62,8 @@ add_mpp_test(mpi_enc)
 add_mpp_test2(mpi_stream)
 
 #Consti10
-add_mpp_test(mpi_get_frame)
+#add_mpp_test(mpi_get_frame)
+add_mpp_test2(mpi_get_frame)
 
 # mpi rc unit test
 add_mpp_test(mpi_rc)
