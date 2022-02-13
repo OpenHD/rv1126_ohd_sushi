@@ -37,6 +37,9 @@
 #include "../../rkmedia/examples/common_consti/TimeHelper.hpp"
 #include "../../rkmedia/examples/common_consti/UDPSender.h"
 #include "../../rkmedia/examples/common_consti/Helper.hpp"
+#include <queue>
+#include <mutex>
+#include <thread>
 
 static const int M_DESTINATION_PORT=5600;
 static const int CHUNK_SIZE=1446;
@@ -45,6 +48,7 @@ static std::unique_ptr<UDPSender> udpSender=nullptr;
 AvgCalculator avgEncodeDelay;
 AvgCalculator avgCameraFrameDelay;
 AvgCalculator avgFrameDelta;
+AvgCalculator avgConsumerThreadDelay;
 
 static void sendViaUDPIfEnabled(const void* data,int data_length){
     if(udpSender!= nullptr){
@@ -123,17 +127,63 @@ typedef struct {
     RK_S32 vi_len;
 } MpiEncTestData;
 
+
+struct BufferWithTimestamp{
+    std::vector<uint8_t> data;
+    std::chrono::steady_clock::time_point timeStamp;
+    // make it non copyable
+    //BufferWithTimestamp(const BufferWithTimestamp&) = delete;
+    //BufferWithTimestamp& operator = (const BufferWithTimestamp&) = delete;
+};
+static bool consumerThreadRun=true;
+std::queue<std::shared_ptr<BufferWithTimestamp>> consumerThreadQueue;
+std::mutex consumerThreadMutex;
+
 // Consti10
 static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
     // write packet to file here
+    const auto timestampBegin=std::chrono::steady_clock::now();
     void *ptr   = mpp_packet_get_pos(packet);
-    size_t len  = mpp_packet_get_length(packet);
-    if (p->fp_output){
+    const size_t len  = mpp_packet_get_length(packet);
+    /*if (p->fp_output){
         fwrite(ptr, 1, len, p->fp_output);
     }
     sendViaUDPIfEnabled(ptr,len);
-    sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
+    sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));*/
+    std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>();
+    buff->data.resize(len);
+    buff->timeStamp=timestampBegin;
+    std::memcpy(buff->data.data(),ptr,len);
+    consumerThreadMutex.lock();
+    consumerThreadQueue.push(std::move(buff));
+    consumerThreadMutex.unlock();
 }
+
+static void consumerThreadLoop(MpiEncTestData *p){
+    std::cout<<"Consumer thread begin\n";
+    while (consumerThreadRun){
+        std::shared_ptr<BufferWithTimestamp> buf;
+        consumerThreadMutex.lock();
+        if(!consumerThreadQueue.empty()){
+            buf=consumerThreadQueue.front();
+            consumerThreadQueue.pop();
+        }
+        consumerThreadMutex.unlock();
+        if(buf){
+            const auto delay=std::chrono::steady_clock::now()-buf->timeStamp;
+            std::cout<<"Consumer thread buffer delay:"<<MyTimeHelper::R(delay)<<"\n";
+            avgConsumerThreadDelay.add(delay);
+            if(avgConsumerThreadDelay.getNSamples()>100){
+                std::cout<<"Avg Consumer Thread delay:"<<avgConsumerThreadDelay.getAvgReadable()<<"\n";
+                avgConsumerThreadDelay.reset();
+            }
+            sendViaUDPIfEnabled(buf->data.data(),buf->data.size());
+            sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
+        }
+    }
+    std::cout<<"Consumer thread end\n";
+}
+
 
 MPP_RET test_ctx_init(MpiEncTestData **data, MpiEncTestArgs *cmd)
 {
@@ -500,6 +550,9 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
     mpi = p->mpi;
     ctx = p->ctx;
 
+    consumerThreadRun=true;
+    std::thread consumerThread(consumerThreadLoop,p);
+
     if (p->type == MPP_VIDEO_CodingAVC || p->type == MPP_VIDEO_CodingHEVC) {
         MppPacket packet = NULL;
 
@@ -710,7 +763,8 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                                             " qp %d", avg_qp);
                 }
 
-                mpp_log("%p %s\n", ctx, log_buf);
+                //mpp_log("%p %s\n", ctx, log_buf);
+                printf("%s\n",log_buf);
 
                 mpp_packet_deinit(&packet);
 
@@ -734,6 +788,10 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
 
         if (p->frm_eos && p->pkt_eos)
             break;
+    }
+    consumerThreadRun=false;
+    if(consumerThread.joinable()){
+        consumerThread.join();
     }
     return ret;
 }
