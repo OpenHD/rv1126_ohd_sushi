@@ -129,11 +129,14 @@ typedef struct {
 
 
 struct BufferWithTimestamp{
-    std::vector<uint8_t> data;
-    std::chrono::steady_clock::time_point timeStamp;
+    const std::vector<uint8_t> data;
+    const std::chrono::steady_clock::time_point timeStamp;
+    // constructor copies data into new buffer
+    BufferWithTimestamp(void* ptr,size_t dataSize,std::chrono::steady_clock::time_point ts):
+        data((uint8_t*)ptr,((uint8_t*)ptr)+dataSize),timeStamp(ts){}
     // make it non copyable
-    //BufferWithTimestamp(const BufferWithTimestamp&) = delete;
-    //BufferWithTimestamp& operator = (const BufferWithTimestamp&) = delete;
+    BufferWithTimestamp(const BufferWithTimestamp&) = delete;
+    BufferWithTimestamp& operator = (const BufferWithTimestamp&) = delete;
 };
 static bool consumerThreadRun=true;
 std::queue<std::shared_ptr<BufferWithTimestamp>> consumerThreadQueue;
@@ -150,10 +153,7 @@ static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
     }
     sendViaUDPIfEnabled(ptr,len);
     sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));*/
-    std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>();
-    buff->data.resize(len);
-    buff->timeStamp=timestampBegin;
-    std::memcpy(buff->data.data(),ptr,len);
+    std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>(ptr,len,timestampBegin);
     consumerThreadMutex.lock();
     consumerThreadQueue.push(std::move(buff));
     consumerThreadMutex.unlock();
@@ -171,7 +171,7 @@ static void consumerThreadLoop(MpiEncTestData *p){
         consumerThreadMutex.unlock();
         if(buf){
             const auto delay=std::chrono::steady_clock::now()-buf->timeStamp;
-            std::cout<<"Consumer thread buffer delay:"<<MyTimeHelper::R(delay)<<"\n";
+            //std::cout<<"Consumer thread buffer delay:"<<MyTimeHelper::R(delay)<<"\n";
             avgConsumerThreadDelay.add(delay);
             if(avgConsumerThreadDelay.getNSamples()>100){
                 std::cout<<"Avg Consumer Thread delay:"<<avgConsumerThreadDelay.getAvgReadable()<<"\n";
