@@ -37,6 +37,7 @@
 #include "../../rkmedia/examples/common_consti/TimeHelper.hpp"
 #include "../../rkmedia/examples/common_consti/UDPSender.h"
 #include "../../rkmedia/examples/common_consti/Helper.hpp"
+#include "../../rkmedia/examples/common_consti/ThreadsafeQueue.hpp"
 #include <queue>
 #include <mutex>
 #include <thread>
@@ -49,12 +50,30 @@ AvgCalculator avgEncodeDelay;
 AvgCalculator avgCameraFrameDelay;
 AvgCalculator avgFrameDelta;
 AvgCalculator avgConsumerThreadDelay;
+BitrateCalculator udpBitrateCalculator;
+static bool firstNALU= true;
 
 static void sendViaUDPIfEnabled(const void* data,int data_length){
     if(udpSender!= nullptr){
         udpSender->splitAndSend((uint8_t*)data,data_length,CHUNK_SIZE);
+        udpBitrateCalculator.addBytes(data_length);
     }
     //std::cout<<"Sent\n";
+}
+
+// Instead of writing the NALU header at the beginning of each new NALU
+// (which leads to one frame "stuck" between the sender and receier/parser)
+// after the first frame, send the delimiter immediately and remove it
+// from the beginning of the next frame
+static void sendNALUZeroLatency(const void* nalu_data,int nalu_data_length){
+    if(firstNALU){
+        sendViaUDPIfEnabled(nalu_data,nalu_data_length);
+        sendViaUDPIfEnabled(NAL_HDR,sizeof(NAL_HDR));
+        firstNALU=false;
+    }else{
+        sendViaUDPIfEnabled(((uint8_t*)nalu_data)+sizeof(NAL_HDR),nalu_data_length-sizeof(NAL_HDR));
+        sendViaUDPIfEnabled(NAL_HDR,sizeof(NAL_HDR));
+    }
 }
 
 typedef struct {
@@ -139,8 +158,9 @@ struct BufferWithTimestamp{
     BufferWithTimestamp& operator = (const BufferWithTimestamp&) = delete;
 };
 static bool consumerThreadRun=true;
-std::queue<std::shared_ptr<BufferWithTimestamp>> consumerThreadQueue;
-std::mutex consumerThreadMutex;
+//std::queue<std::shared_ptr<BufferWithTimestamp>> consumerThreadQueue;
+//std::mutex consumerThreadMutex;
+ThreadsafeQueue<BufferWithTimestamp> consumerThreadQueue;
 
 // Consti10
 static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
@@ -154,21 +174,13 @@ static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
     sendViaUDPIfEnabled(ptr,len);
     sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));*/
     std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>(ptr,len,timestampBegin);
-    consumerThreadMutex.lock();
     consumerThreadQueue.push(std::move(buff));
-    consumerThreadMutex.unlock();
 }
 
 static void consumerThreadLoop(MpiEncTestData *p){
     std::cout<<"Consumer thread begin\n";
     while (consumerThreadRun){
-        std::shared_ptr<BufferWithTimestamp> buf;
-        consumerThreadMutex.lock();
-        if(!consumerThreadQueue.empty()){
-            buf=consumerThreadQueue.front();
-            consumerThreadQueue.pop();
-        }
-        consumerThreadMutex.unlock();
+        const auto buf=consumerThreadQueue.popIfAvailable();
         if(buf){
             const auto delay=std::chrono::steady_clock::now()-buf->timeStamp;
             //std::cout<<"Consumer thread buffer delay:"<<MyTimeHelper::R(delay)<<"\n";
@@ -177,8 +189,7 @@ static void consumerThreadLoop(MpiEncTestData *p){
                 std::cout<<"Avg Consumer Thread delay:"<<avgConsumerThreadDelay.getAvgReadable()<<"\n";
                 avgConsumerThreadDelay.reset();
             }
-            sendViaUDPIfEnabled(buf->data.data(),buf->data.size());
-            sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));
+            sendNALUZeroLatency(buf->data.data(),buf->data.size());
         }
     }
     std::cout<<"Consumer thread end\n";

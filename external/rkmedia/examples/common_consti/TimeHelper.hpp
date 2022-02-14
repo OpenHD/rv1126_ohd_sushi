@@ -312,5 +312,29 @@ static uint64_t __attribute__((unused)) getTimeMs(){
     return getTimeUs()/1000;
 }
 
+class BitrateCalculator{
+private:
+    uint64_t nBytes;
+    std::chrono::steady_clock::time_point begin;
+    bool firstTime=true;
+public:
+    void addBytes(uint64_t bytes){
+        nBytes+=bytes;
+        if(firstTime){
+            begin=std::chrono::steady_clock::now();
+            firstTime=false;
+        }
+        const auto delta=std::chrono::steady_clock::now()-begin;
+        if(delta>=std::chrono::seconds(1)){
+            const double bytesPerSecond=nBytes/(std::chrono::duration_cast<std::chrono::milliseconds>(delta).count()/1000.0);
+            const double mBytesPerSecond=bytesPerSecond/1024/1024;
+            const double mBitsPerSecond=mBytesPerSecond*8;
+            std::cout<<"Avg Bitrate:"<<mBitsPerSecond<<" MBit/s\n";
+            nBytes=0;
+            begin=std::chrono::steady_clock::now();
+        }
+    }
+};
+
 
 #endif //LIVEVIDEO10MS_TIMEHELPER_HPP
