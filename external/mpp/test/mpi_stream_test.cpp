@@ -50,6 +50,7 @@ AvgCalculator avgEncodeDelay;
 AvgCalculator avgCameraFrameDelay;
 AvgCalculator avgFrameDelta;
 AvgCalculator avgConsumerThreadDelay;
+AvgCalculator avgTotalDelay;
 BitrateCalculator udpBitrateCalculator;
 static bool firstNALU= true;
 
@@ -62,7 +63,7 @@ static void sendViaUDPIfEnabled(const void* data,int data_length){
 }
 
 // Instead of writing the NALU header at the beginning of each new NALU
-// (which leads to one frame "stuck" between the sender and receier/parser)
+// (which leads to one frame "stuck" between the sender and receiver/parser)
 // after the first frame, send the delimiter immediately and remove it
 // from the beginning of the next frame
 static void sendNALUZeroLatency(const void* nalu_data,int nalu_data_length){
@@ -149,10 +150,14 @@ typedef struct {
 
 struct BufferWithTimestamp{
     const std::vector<uint8_t> data;
-    const std::chrono::steady_clock::time_point timeStamp;
+    // timestamp we got from v4l2 during camera dequeue
+    const std::chrono::steady_clock::time_point timeStampCamera;
+    // timestamp when this buffer was enqued
+    const std::chrono::steady_clock::time_point timeStampEnqueued;
     // constructor copies data into new buffer
-    BufferWithTimestamp(void* ptr,size_t dataSize,std::chrono::steady_clock::time_point ts):
-        data((uint8_t*)ptr,((uint8_t*)ptr)+dataSize),timeStamp(ts){}
+    BufferWithTimestamp(void* ptr,size_t dataSize,std::chrono::steady_clock::time_point tsCamera,
+                        std::chrono::steady_clock::time_point tsEnqueued):
+        data((uint8_t*)ptr,((uint8_t*)ptr)+dataSize),timeStampCamera(tsCamera),timeStampEnqueued(tsEnqueued){}
     // make it non copyable
     BufferWithTimestamp(const BufferWithTimestamp&) = delete;
     BufferWithTimestamp& operator = (const BufferWithTimestamp&) = delete;
@@ -163,17 +168,12 @@ static bool consumerThreadRun=true;
 ThreadsafeQueue<BufferWithTimestamp> consumerThreadQueue;
 
 // Consti10
-static void processEncodedPacket(MpiEncTestData *p, MppPacket packet){
+static void processEncodedPacket(MpiEncTestData *p, MppPacket packet,std::chrono::steady_clock::time_point cameraTs){
     // write packet to file here
     const auto timestampBegin=std::chrono::steady_clock::now();
     void *ptr   = mpp_packet_get_pos(packet);
     const size_t len  = mpp_packet_get_length(packet);
-    /*if (p->fp_output){
-        fwrite(ptr, 1, len, p->fp_output);
-    }
-    sendViaUDPIfEnabled(ptr,len);
-    sendViaUDPIfEnabled(EXAMPLE_AUD,sizeof(EXAMPLE_AUD));*/
-    std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>(ptr,len,timestampBegin);
+    std::shared_ptr<BufferWithTimestamp> buff=std::make_shared<BufferWithTimestamp>(ptr,len,cameraTs,timestampBegin);
     consumerThreadQueue.push(std::move(buff));
 }
 
@@ -182,14 +182,23 @@ static void consumerThreadLoop(MpiEncTestData *p){
     while (consumerThreadRun){
         const auto buf=consumerThreadQueue.popIfAvailable();
         if(buf){
-            const auto delay=std::chrono::steady_clock::now()-buf->timeStamp;
+            const auto delayQueue=std::chrono::steady_clock::now()-buf->timeStampEnqueued;
             //std::cout<<"Consumer thread buffer delay:"<<MyTimeHelper::R(delay)<<"\n";
-            avgConsumerThreadDelay.add(delay);
+            avgConsumerThreadDelay.add(delayQueue);
             if(avgConsumerThreadDelay.getNSamples()>100){
                 std::cout<<"Avg Consumer Thread delay:"<<avgConsumerThreadDelay.getAvgReadable()<<"\n";
                 avgConsumerThreadDelay.reset();
             }
             sendNALUZeroLatency(buf->data.data(),buf->data.size());
+            if(p->fp_output){
+                fwrite(buf->data.data(),1,buf->data.size(), p->fp_output);
+            }
+            const auto totalDelay=std::chrono::steady_clock::now()-buf->timeStampCamera;
+            avgTotalDelay.add(totalDelay);
+            if(avgTotalDelay.getNSamples()>100){
+                std::cout<<"Avg Total delay:"<<avgTotalDelay.getAvgReadable()<<"\n";
+                avgTotalDelay.reset();
+            }
         }
     }
     std::cout<<"Consumer thread end\n";
@@ -589,7 +598,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
             if (p->fp_output)
                 fwrite(ptr, 1, len, p->fp_output);
             sendViaUDPIfEnabled(ptr,len);*/
-            processEncodedPacket(p,packet);
+            processEncodedPacket(p,packet,std::chrono::steady_clock::now());
         }
 
         mpp_packet_deinit(&packet);
@@ -615,6 +624,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
             std::cout<<"Avg frame delta:"<<avgFrameDelta.getAvgReadable()<<"\n";
             avgFrameDelta.reset();
         }
+        std::chrono::steady_clock::time_point cameraFrameTimePoint=std::chrono::steady_clock::now();
         if (p->fp_input) {
             ret = read_image((RK_U8*)buf, p->fp_input, p->width, p->height,
                              p->hor_stride, p->ver_stride, p->fmt);
@@ -664,6 +674,8 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                     std::cout<<"Avg Camera frame delay:"<<avgCameraFrameDelay.getAvgReadable()<<"\n";
                     avgCameraFrameDelay.reset();
                 }
+                const auto cameraFrameTsNanoseconds=std::chrono::nanoseconds(cameraFrameTsUs*1000);
+                cameraFrameTimePoint= nanosecondsToTimePointSteadyClock(cameraFrameTsNanoseconds);
             }
         }
         const auto encodeBegin=std::chrono::steady_clock::now();
@@ -738,7 +750,7 @@ MPP_RET test_mpp_run(MpiEncTestData *p)
                 /*if (p->fp_output)
                     fwrite(ptr, 1, len, p->fp_output);
                 sendViaUDPIfEnabled(ptr,len);*/
-                processEncodedPacket(p,packet);
+                processEncodedPacket(p,packet,cameraFrameTimePoint);
 
                 log_len += snprintf(log_buf + log_len, log_size - log_len,
                                     "encoded frame %-4d", p->frame_count);

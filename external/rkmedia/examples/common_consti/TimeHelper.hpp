@@ -301,6 +301,13 @@ timevalToTimePointSteadyClock(timeval tv){
             std::chrono::duration_cast<std::chrono::steady_clock::duration>(timevalToDuration(tv))};
 }
 
+static __attribute__((unused)) std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>
+nanosecondsToTimePointSteadyClock(std::chrono::nanoseconds nanoseconds){
+    return std::chrono::time_point<std::chrono::steady_clock,std::chrono::nanoseconds>{
+            std::chrono::duration_cast<std::chrono::steady_clock::duration>(nanoseconds)};
+}
+
+
 static uint64_t __attribute__((unused)) getTimeUs(){
     struct timeval time;
     gettimeofday(&time, NULL);
@@ -327,8 +334,8 @@ public:
         const auto delta=std::chrono::steady_clock::now()-begin;
         if(delta>=std::chrono::seconds(1)){
             const double bytesPerSecond=nBytes/(std::chrono::duration_cast<std::chrono::milliseconds>(delta).count()/1000.0);
-            const double mBytesPerSecond=bytesPerSecond/1024/1024;
-            const double mBitsPerSecond=mBytesPerSecond*8;
+            const double mBytesPerSecond=bytesPerSecond/1024.0/1024.0;
+            const double mBitsPerSecond=mBytesPerSecond*8.0;
             std::cout<<"Avg Bitrate:"<<mBitsPerSecond<<" MBit/s\n";
             nBytes=0;
             begin=std::chrono::steady_clock::now();
